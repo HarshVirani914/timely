@@ -1,6 +1,6 @@
 import * as z from "zod"
 import * as imports from "../zod-utils"
-import { CompleteMembership, MembershipModel, CompleteEventType, EventTypeModel, CompleteWorkflow, WorkflowModel, CompleteVerifiedNumber, VerifiedNumberModel, CompleteUser, UserModel, CompleteVerificationToken, VerificationTokenModel, CompleteWebhook, WebhookModel, CompleteApp_RoutingForms_Form, App_RoutingForms_FormModel, CompleteApiKey, ApiKeyModel, CompleteCredential, CredentialModel, CompleteAccessCode, AccessCodeModel } from "./index"
+import { CompleteMembership, MembershipModel, CompleteEventType, EventTypeModel, CompleteWorkflow, WorkflowModel, CompleteVerifiedNumber, VerifiedNumberModel, CompleteUser, UserModel, CompleteVerificationToken, VerificationTokenModel, CompleteWebhook, WebhookModel, CompleteApp_RoutingForms_Form, App_RoutingForms_FormModel, CompleteApiKey, ApiKeyModel, CompleteCredential, CredentialModel, CompleteAccessCode, AccessCodeModel, CompleteInstantMeetingToken, InstantMeetingTokenModel } from "./index"
 
 // Helper schema for JSON fields
 type Literal = boolean | number | string
@@ -14,6 +14,7 @@ export const _TeamModel = z.object({
   slug: z.string().min(1).nullish(),
   logo: z.string().nullish(),
   logoUrl: z.string().nullish(),
+  calVideoLogo: z.string().nullish(),
   appLogo: z.string().nullish(),
   appIconLogo: z.string().nullish(),
   bio: z.string().nullish(),
@@ -45,6 +46,7 @@ export interface CompleteTeam extends z.infer<typeof _TeamModel> {
   apiKeys: CompleteApiKey[]
   credentials: CompleteCredential[]
   accessCodes: CompleteAccessCode[]
+  instantMeetingTokens: CompleteInstantMeetingToken[]
 }
 
 /**
@@ -66,4 +68,5 @@ export const TeamModel: z.ZodSchema<CompleteTeam> = z.lazy(() => _TeamModel.exte
   apiKeys: ApiKeyModel.array(),
   credentials: CredentialModel.array(),
   accessCodes: AccessCodeModel.array(),
+  instantMeetingTokens: InstantMeetingTokenModel.array(),
 }))

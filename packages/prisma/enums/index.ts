@@ -43,6 +43,7 @@ export const BookingStatus = {
   ACCEPTED: "ACCEPTED",
   REJECTED: "REJECTED",
   PENDING: "PENDING",
+  AWAITING_HOST: "AWAITING_HOST",
 } as const;
 
 export type BookingStatus = (typeof BookingStatus)[keyof typeof BookingStatus];
@@ -81,7 +82,9 @@ export const WebhookTriggerEvents = {
   BOOKING_REJECTED: "BOOKING_REJECTED",
   FORM_SUBMITTED: "FORM_SUBMITTED",
   MEETING_ENDED: "MEETING_ENDED",
+  MEETING_STARTED: "MEETING_STARTED",
   RECORDING_READY: "RECORDING_READY",
+  INSTANT_MEETING: "INSTANT_MEETING",
 } as const;
 
 export type WebhookTriggerEvents = (typeof WebhookTriggerEvents)[keyof typeof WebhookTriggerEvents];

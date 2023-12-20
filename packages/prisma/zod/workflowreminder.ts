@@ -13,6 +13,7 @@ export const _WorkflowReminderModel = z.object({
   workflowStepId: z.number().int().nullish(),
   cancelled: z.boolean().nullish(),
   seatReferenceId: z.string().nullish(),
+  isMandatoryReminder: z.boolean().nullish(),
 })
 
 export interface CompleteWorkflowReminder extends z.infer<typeof _WorkflowReminderModel> {

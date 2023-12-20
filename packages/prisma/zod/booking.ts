@@ -1,7 +1,7 @@
 import * as z from "zod"
 import * as imports from "../zod-utils"
 import { BookingStatus } from "@prisma/client"
-import { CompleteUser, UserModel, CompleteBookingReference, BookingReferenceModel, CompleteEventType, EventTypeModel, CompleteAttendee, AttendeeModel, CompletePayment, PaymentModel, CompleteDestinationCalendar, DestinationCalendarModel, CompleteWorkflowReminder, WorkflowReminderModel, CompleteBookingSeat, BookingSeatModel } from "./index"
+import { CompleteUser, UserModel, CompleteBookingReference, BookingReferenceModel, CompleteEventType, EventTypeModel, CompleteAttendee, AttendeeModel, CompletePayment, PaymentModel, CompleteDestinationCalendar, DestinationCalendarModel, CompleteWorkflowReminder, WorkflowReminderModel, CompleteBookingSeat, BookingSeatModel, CompleteInstantMeetingToken, InstantMeetingTokenModel } from "./index"
 
 // Helper schema for JSON fields
 type Literal = boolean | number | string
@@ -37,6 +37,8 @@ export const _BookingModel = z.object({
   scheduledJobs: z.string().array(),
   metadata: imports.bookingMetadataSchema,
   isRecorded: z.boolean(),
+  iCalUID: z.string().nullish(),
+  iCalSequence: z.number().int(),
 })
 
 export interface CompleteBooking extends z.infer<typeof _BookingModel> {
@@ -48,6 +50,7 @@ export interface CompleteBooking extends z.infer<typeof _BookingModel> {
   destinationCalendar?: CompleteDestinationCalendar | null
   workflowReminders: CompleteWorkflowReminder[]
   seatsReferences: CompleteBookingSeat[]
+  instantMeetingToken?: CompleteInstantMeetingToken | null
 }
 
 /**
@@ -64,4 +67,5 @@ export const BookingModel: z.ZodSchema<CompleteBooking> = z.lazy(() => _BookingM
   destinationCalendar: DestinationCalendarModel.nullish(),
   workflowReminders: WorkflowReminderModel.array(),
   seatsReferences: BookingSeatModel.array(),
+  instantMeetingToken: InstantMeetingTokenModel.nullish(),
 }))

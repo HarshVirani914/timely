@@ -40,6 +40,7 @@ export const _EventTypeModel = z.object({
   beforeEventBuffer: z.number().int(),
   afterEventBuffer: z.number().int(),
   seatsPerTimeSlot: z.number().int().nullish(),
+  onlyShowFirstAvailableSlot: z.boolean(),
   seatsShowAttendees: z.boolean().nullish(),
   seatsShowAvailabilityCount: z.boolean().nullish(),
   schedulingType: z.nativeEnum(SchedulingType).nullish(),
@@ -51,6 +52,7 @@ export const _EventTypeModel = z.object({
   successRedirectUrl: imports.successRedirectUrl.nullish(),
   bookingLimits: imports.intervalLimitsType,
   durationLimits: imports.intervalLimitsType,
+  isInstantEvent: z.boolean(),
 })
 
 export interface CompleteEventType extends z.infer<typeof _EventTypeModel> {
