@@ -1,5 +1,5 @@
 import type { IncomingMessage } from "http";
-import { dir } from "i18next";
+import { dir } from "next-i18next";
 import type { NextPageContext } from "next";
 import type { DocumentContext, DocumentProps } from "next/document";
 import Document, { Head, Html, Main, NextScript } from "next/document";
