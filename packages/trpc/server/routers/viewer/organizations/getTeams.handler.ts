@@ -1,5 +1,5 @@
-import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
-import { prisma } from "@calcom/prisma";
+import { isOrganisationAdmin } from "@timely/lib/server/queries/organisations";
+import { prisma } from "@timely/prisma";
 
 import { TRPCError } from "@trpc/server";
 

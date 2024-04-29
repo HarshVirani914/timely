@@ -1,4 +1,4 @@
-const base = require("@calcom/config/tailwind-preset");
+const base = require("@timely/config/tailwind-preset");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   ...base,

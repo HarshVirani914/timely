@@ -1,22 +1,21 @@
 import type { Prisma } from "@prisma/client";
+import stripe from "@timely/app-store/stripepayment/lib/server";
+import EventManager from "@timely/core/EventManager";
+import { sendAttendeeRequestEmail, sendOrganizerRequestEmail } from "@timely/emails";
+import { doesBookingRequireConfirmation } from "@timely/features/bookings/lib/doesBookingRequireConfirmation";
+import { handleConfirmation } from "@timely/features/bookings/lib/handleConfirmation";
+import { IS_PRODUCTION } from "@timely/lib/constants";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { getBooking } from "@timely/lib/payment/getBooking";
+import { handlePaymentSuccess } from "@timely/lib/payment/handlePaymentSuccess";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { prisma } from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
 import { buffer } from "micro";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
-
-import stripe from "@calcom/app-store/stripepayment/lib/server";
-import EventManager from "@calcom/core/EventManager";
-import { sendAttendeeRequestEmail, sendOrganizerRequestEmail } from "@calcom/emails";
-import { doesBookingRequireConfirmation } from "@calcom/features/bookings/lib/doesBookingRequireConfirmation";
-import { handleConfirmation } from "@calcom/features/bookings/lib/handleConfirmation";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { getBooking } from "@calcom/lib/payment/getBooking";
-import { handlePaymentSuccess } from "@calcom/lib/payment/handlePaymentSuccess";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { prisma } from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
 
 const log = logger.getSubLogger({ prefix: ["[paymentWebhook]"] });
 
@@ -121,7 +120,7 @@ const webhookHandlers: Record<string, WebhookHandler | undefined> = {
 
 /**
  * @deprecated
- * We need to create a PaymentManager in `@calcom/core`
+ * We need to create a PaymentManager in `@timely/core`
  * to prevent circular dependencies on App Store migration
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

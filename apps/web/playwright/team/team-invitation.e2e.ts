@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 
-import { WEBAPP_URL } from "@calcom/lib/constants";
+import { WEBAPP_URL } from "@timely/lib/constants";
 
 import { test } from "../lib/fixtures";
 import { localize, getInviteLink } from "../lib/testUtils";
@@ -32,7 +32,7 @@ test.describe("Team", () => {
         page,
         emails,
         invitedUserEmail,
-        `${team.name}'s admin invited you to join the team ${team.name} on Cal.com`,
+        `${team.name}'s admin invited you to join the team ${team.name} on Timely`,
         "signup?token"
       );
 
@@ -113,7 +113,7 @@ test.describe("Team", () => {
         page,
         emails,
         invitedUserEmail,
-        `${teamOwner.name} invited you to join the team ${team.name} on Cal.com`
+        `${teamOwner.name} invited you to join the team ${team.name} on Timely`
       );
 
       await expect(

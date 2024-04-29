@@ -1,8 +1,7 @@
+import { classNames } from "@timely/lib";
 import type { MotionProps } from "framer-motion";
 import { m } from "framer-motion";
 import { forwardRef } from "react";
-
-import { classNames } from "@calcom/lib";
 
 import { useBookerStore } from "../store";
 import type { BookerAreas, BookerLayout } from "../types";

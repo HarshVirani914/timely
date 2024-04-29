@@ -1,4 +1,4 @@
-import logger from "@calcom/lib/logger";
+import logger from "@timely/lib/logger";
 
 export type CloseComLead = {
   companyName?: string | null | undefined;

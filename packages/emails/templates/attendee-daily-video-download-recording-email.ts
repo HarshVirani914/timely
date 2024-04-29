@@ -1,8 +1,7 @@
 // TODO: We should find a way to keep App specific email templates within the App itself
+import { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import { renderEmail } from "../";
 import BaseEmail from "./_base-email";

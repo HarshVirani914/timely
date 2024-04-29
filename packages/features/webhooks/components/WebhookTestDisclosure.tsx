@@ -1,11 +1,10 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { ZTestTriggerInputSchema } from "@timely/trpc/server/routers/viewer/webhook/testTrigger.schema";
+import { Badge, Button, showToast } from "@timely/ui";
+import { Activity } from "@timely/ui/components/icon";
 import { useWatch } from "react-hook-form";
 import { ZodError } from "zod";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { ZTestTriggerInputSchema } from "@calcom/trpc/server/routers/viewer/webhook/testTrigger.schema";
-import { Badge, Button, showToast } from "@calcom/ui";
-import { Activity } from "@calcom/ui/components/icon";
 
 export default function WebhookTestDisclosure() {
   const [subscriberUrl, webhookSecret]: [string, string] = useWatch({ name: ["subscriberUrl", "secret"] });

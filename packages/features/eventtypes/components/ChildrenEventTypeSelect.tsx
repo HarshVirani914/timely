@@ -1,12 +1,11 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { classNames } from "@timely/lib";
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import { Avatar, Badge, Button, ButtonGroup, Select, Switch, Tooltip } from "@timely/ui";
+import { ExternalLink, X } from "@timely/ui/components/icon";
 import type { Props } from "react-select";
-
-import { classNames } from "@calcom/lib";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { Avatar, Badge, Button, ButtonGroup, Select, Switch, Tooltip } from "@calcom/ui";
-import { ExternalLink, X } from "@calcom/ui/components/icon";
 
 export type ChildrenEventType = {
   value: string;

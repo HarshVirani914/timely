@@ -1,8 +1,8 @@
-import classNames from "@calcom/lib/classNames";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
+import classNames from "@timely/lib/classNames";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
 import {
   Avatar,
   Button,
@@ -12,8 +12,8 @@ import {
   DropdownItem,
   DropdownMenuTrigger,
   showToast,
-} from "@calcom/ui";
-import { Ban, Check, MoreHorizontal, X } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Ban, Check, MoreHorizontal, X } from "@timely/ui/components/icon";
 
 interface Props {
   team: {

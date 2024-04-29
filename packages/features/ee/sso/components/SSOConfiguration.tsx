@@ -1,12 +1,11 @@
+import ConnectionInfo from "@timely/ee/sso/components/ConnectionInfo";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import OIDCConnection from "@timely/features/ee/sso/components/OIDCConnection";
+import SAMLConnection from "@timely/features/ee/sso/components/SAMLConnection";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Meta, Alert, SkeletonContainer, SkeletonText } from "@timely/ui";
 import { useState } from "react";
-
-import ConnectionInfo from "@calcom/ee/sso/components/ConnectionInfo";
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import OIDCConnection from "@calcom/features/ee/sso/components/OIDCConnection";
-import SAMLConnection from "@calcom/features/ee/sso/components/SAMLConnection";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Meta, Alert, SkeletonContainer, SkeletonText } from "@calcom/ui";
 
 const SkeletonLoader = ({ title, description }: { title: string; description: string }) => {
   return (

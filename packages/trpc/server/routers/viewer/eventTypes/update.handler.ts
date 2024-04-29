@@ -1,14 +1,13 @@
 import { Prisma } from "@prisma/client";
+import updateChildrenEventTypes from "@timely/features/ee/managed-event-types/lib/handleChildrenEventTypes";
+import { validateIntervalLimitOrder } from "@timely/lib";
+import logger from "@timely/lib/logger";
+import { getTranslation } from "@timely/lib/server";
+import { validateBookerLayouts } from "@timely/lib/validateBookerLayouts";
+import type { PrismaClient } from "@timely/prisma";
+import { WorkflowActions, WorkflowTriggerEvents } from "@timely/prisma/client";
+import { SchedulingType } from "@timely/prisma/enums";
 import type { NextApiResponse, GetServerSidePropsContext } from "next";
-
-import updateChildrenEventTypes from "@calcom/features/ee/managed-event-types/lib/handleChildrenEventTypes";
-import { validateIntervalLimitOrder } from "@calcom/lib";
-import logger from "@calcom/lib/logger";
-import { getTranslation } from "@calcom/lib/server";
-import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
-import type { PrismaClient } from "@calcom/prisma";
-import { WorkflowActions, WorkflowTriggerEvents } from "@calcom/prisma/client";
-import { SchedulingType } from "@calcom/prisma/enums";
 
 import { TRPCError } from "@trpc/server";
 

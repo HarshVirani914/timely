@@ -1,4 +1,4 @@
-import { AppSettingsComponentsMap } from "@calcom/app-store/apps.browser.generated";
+import { AppSettingsComponentsMap } from "@timely/app-store/apps.browser.generated";
 
 import { DynamicComponent } from "./DynamicComponent";
 

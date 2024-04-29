@@ -1,11 +1,11 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import type { RecurringEvent } from "@calcom/types/Calendar";
-import { Button, TextArea } from "@calcom/ui";
-import { X } from "@calcom/ui/components/icon";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import type { RecurringEvent } from "@timely/types/Calendar";
+import { Button, TextArea } from "@timely/ui";
+import { X } from "@timely/ui/components/icon";
 
 type Props = {
   booking: {

@@ -1,6 +1,5 @@
+import type { UpdateAppCredentialsOptions } from "@timely/trpc/server/routers/viewer/apps/updateAppCredentials.handler";
 import { z } from "zod";
-
-import type { UpdateAppCredentialsOptions } from "@calcom/trpc/server/routers/viewer/apps/updateAppCredentials.handler";
 
 import Paypal from "./Paypal";
 

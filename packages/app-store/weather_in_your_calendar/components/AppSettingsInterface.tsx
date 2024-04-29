@@ -1,11 +1,10 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, TextField } from "@timely/ui";
 import { useState } from "react";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, TextField } from "@calcom/ui";
-
 /*
-import * as Radio from "@calcom/ui";
-import { RadioField } from "@calcom/ui";
+import * as Radio from "@timely/ui";
+import { RadioField } from "@timely/ui";
 */
 
 export default function AppSettings() {

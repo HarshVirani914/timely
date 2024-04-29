@@ -5,7 +5,7 @@ import { type GetServerSidePropsContext } from "next";
 import { headers, cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
 
 import { buildLegacyCtx } from "@lib/buildLegacyCtx";
 

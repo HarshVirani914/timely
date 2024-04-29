@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getAppWithMetadata } from "@calcom/app-store/_appRegistry";
-import logger from "@calcom/lib/logger";
-import { prisma } from "@calcom/prisma";
-import type { AppCategories, Prisma } from "@calcom/prisma/client";
+import { getAppWithMetadata } from "@timely/app-store/_appRegistry";
+import logger from "@timely/lib/logger";
+import { prisma } from "@timely/prisma";
+import type { AppCategories, Prisma } from "@timely/prisma/client";
 
 const isDryRun = process.env.CRON_ENABLE_APP_SYNC !== "true";
 const log = logger.getSubLogger({

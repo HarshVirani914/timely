@@ -1,17 +1,16 @@
-import z from "zod";
-
-import type { SendgridNewContact } from "@calcom/lib/Sendgrid";
-import Sendgrid from "@calcom/lib/Sendgrid";
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import logger from "@calcom/lib/logger";
+import type { SendgridNewContact } from "@timely/lib/Sendgrid";
+import Sendgrid from "@timely/lib/Sendgrid";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import logger from "@timely/lib/logger";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import z from "zod";
 
 const apiKeySchema = z.object({
   encrypted: z.string(),

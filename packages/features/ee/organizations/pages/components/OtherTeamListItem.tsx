@@ -1,6 +1,6 @@
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
 import {
   Avatar,
   Button,
@@ -15,8 +15,8 @@ import {
   DropdownMenuTrigger,
   showToast,
   Tooltip,
-} from "@calcom/ui";
-import { Edit2, ExternalLink, Link as LinkIcon, MoreHorizontal, Trash } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Edit2, ExternalLink, Link as LinkIcon, MoreHorizontal, Trash } from "@timely/ui/components/icon";
 
 import { useOrgBranding } from "../../../organizations/context/provider";
 

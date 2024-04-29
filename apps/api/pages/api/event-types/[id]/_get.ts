@@ -1,8 +1,7 @@
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { MembershipRole } from "@timely/prisma/enums";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { MembershipRole } from "@calcom/prisma/enums";
 
 import { schemaEventTypeReadPublic } from "~/lib/validations/event-type";
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";
@@ -33,7 +32,7 @@ import getCalLink from "../_utils/getCalLink";
  *     tags:
  *     - event-types
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/event-types
+ *        url: https://docs.timely/core-features/event-types
  *     responses:
  *       200:
  *         description: OK

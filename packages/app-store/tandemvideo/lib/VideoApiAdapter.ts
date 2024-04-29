@@ -1,12 +1,11 @@
 import type { Prisma } from "@prisma/client";
-
-import { handleErrorsJson, handleErrorsRaw } from "@calcom/lib/errors";
-import { HttpError } from "@calcom/lib/http-error";
-import prisma from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { PartialReference } from "@calcom/types/EventManager";
-import type { VideoApiAdapter, VideoCallData } from "@calcom/types/VideoApiAdapter";
+import { handleErrorsJson, handleErrorsRaw } from "@timely/lib/errors";
+import { HttpError } from "@timely/lib/http-error";
+import prisma from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { PartialReference } from "@timely/types/EventManager";
+import type { VideoApiAdapter, VideoCallData } from "@timely/types/VideoApiAdapter";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 

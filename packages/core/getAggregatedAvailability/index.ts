@@ -1,6 +1,6 @@
-import type { DateRange } from "@calcom/lib/date-ranges";
-import { intersect } from "@calcom/lib/date-ranges";
-import { SchedulingType } from "@calcom/prisma/enums";
+import type { DateRange } from "@timely/lib/date-ranges";
+import { intersect } from "@timely/lib/date-ranges";
+import { SchedulingType } from "@timely/prisma/enums";
 
 import { mergeOverlappingDateRanges } from "./date-range-utils/mergeOverlappingDateRanges";
 

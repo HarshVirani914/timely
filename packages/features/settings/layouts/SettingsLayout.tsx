@@ -1,27 +1,20 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import type { ComponentProps } from "react";
-import React, { Suspense, useEffect, useState } from "react";
-
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { HOSTED_CAL_FEATURES, WEBAPP_URL } from "@calcom/lib/constants";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { IdentityProvider, MembershipRole, UserPermissionRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { VerticalTabItemProps } from "@calcom/ui";
-import { Badge, Button, ErrorBoundary, Skeleton, useMeta, VerticalTabItem } from "@calcom/ui";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { HOSTED_CAL_FEATURES, WEBAPP_URL } from "@timely/lib/constants";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { IdentityProvider, MembershipRole, UserPermissionRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { VerticalTabItemProps } from "@timely/ui";
+import { Badge, Button, ErrorBoundary, Skeleton, useMeta, VerticalTabItem } from "@timely/ui";
 import {
   ArrowLeft,
   ChevronDown,
   ChevronRight,
-  CreditCard,
   Key,
   Loader,
   Lock,
@@ -29,8 +22,13 @@ import {
   Plus,
   Terminal,
   User,
-  Users,
-} from "@calcom/ui/components/icon";
+  Users
+} from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import type { ComponentProps } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const tabs: VerticalTabItemProps[] = [
   {
@@ -43,8 +41,6 @@ const tabs: VerticalTabItemProps[] = [
       { name: "calendars", href: "/settings/my-account/calendars" },
       { name: "conferencing", href: "/settings/my-account/conferencing" },
       { name: "appearance", href: "/settings/my-account/appearance" },
-      // TODO
-      // { name: "referrals", href: "/settings/my-account/referrals" },
     ],
   },
   {
@@ -53,26 +49,15 @@ const tabs: VerticalTabItemProps[] = [
     icon: Key,
     children: [
       { name: "password", href: "/settings/security/password" },
-      { name: "impersonation", href: "/settings/security/impersonation" },
-      { name: "2fa_auth", href: "/settings/security/two-factor-auth" },
     ],
-  },
-  {
-    name: "billing",
-    href: "/settings/billing",
-    icon: CreditCard,
-    children: [{ name: "manage_billing", href: "/settings/billing" }],
   },
   {
     name: "developer",
     href: "/settings/developer",
     icon: Terminal,
     children: [
-      //
       { name: "webhooks", href: "/settings/developer/webhooks" },
       { name: "api_keys", href: "/settings/developer/api-keys" },
-      // TODO: Add profile level for embeds
-      // { name: "embeds", href: "/v2/settings/developer/embeds" },
     ],
   },
   {
@@ -94,18 +79,8 @@ const tabs: VerticalTabItemProps[] = [
       {
         name: "appearance",
         href: "/settings/organizations/appearance",
-      },
-      {
-        name: "billing",
-        href: "/settings/organizations/billing",
-      },
+      }
     ],
-  },
-  {
-    name: "teams",
-    href: "/settings/teams",
-    icon: Users,
-    children: [],
   },
   {
     name: "admin",
@@ -123,13 +98,6 @@ const tabs: VerticalTabItemProps[] = [
     ],
   },
 ];
-
-tabs.find((tab) => {
-  // Add "SAML SSO" to the tab
-  if (tab.name === "security" && !HOSTED_CAL_FEATURES) {
-    tab.children?.push({ name: "sso_configuration", href: "/settings/security/sso" });
-  }
-});
 
 // The following keys are assigned to admin only
 const adminRequiredKeys = ["admin"];

@@ -1,12 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useState, useEffect } from "react";
-import { Controller, useFieldArray, useFormContext, useForm } from "react-hook-form";
-import type { UseFormReturn, SubmitHandler } from "react-hook-form";
-import type { z } from "zod";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
 import {
   Label,
   Badge,
@@ -23,8 +18,12 @@ import {
   Input,
   Switch,
   showToast,
-} from "@calcom/ui";
-import { ArrowDown, ArrowUp, X, Plus, Trash2 } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ArrowDown, ArrowUp, X, Plus, Trash2 } from "@timely/ui/components/icon";
+import { useState, useEffect } from "react";
+import { Controller, useFieldArray, useFormContext, useForm } from "react-hook-form";
+import type { UseFormReturn, SubmitHandler } from "react-hook-form";
+import type { z } from "zod";
 
 import { fieldTypesConfigMap } from "./fieldTypes";
 import { fieldsThatSupportLabelAsSafeHtml } from "./fieldsThatSupportLabelAsSafeHtml";

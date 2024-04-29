@@ -1,6 +1,5 @@
+import { APP_NAME, WEBAPP_URL, IS_PRODUCTION } from "@timely/lib/constants";
 import type { TFunction } from "next-i18next";
-
-import { APP_NAME, WEBAPP_URL, IS_PRODUCTION } from "@calcom/lib/constants";
 
 import { V2BaseEmailHtml, CallToAction } from "../components";
 
@@ -10,7 +9,7 @@ type TeamInvite = {
   to: string;
   teamName: string;
   joinLink: string;
-  isCalcomMember: boolean;
+  isTimelyMember: boolean;
   isOrg: boolean;
 };
 
@@ -65,7 +64,7 @@ export const TeamInviteEmail = (
       </p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <CallToAction
-          label={props.language(props.isCalcomMember ? "email_user_cta" : "create_your_account")}
+          label={props.language(props.isTimelyMember ? "email_user_cta" : "create_your_account")}
           href={props.joinLink}
           endIconName="linkIcon"
         />
@@ -85,7 +84,7 @@ export const TeamInviteEmail = (
         </> */}
       </p>
       {/* 
-      {!props.isCalcomMember && (
+      {!props.isTimelyMember && (
         <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
           <EmailStep
             translationString={props.language("email_no_user_step_one")}
@@ -143,7 +142,7 @@ export const TeamInviteEmail = (
         <p style={{ fontWeight: 400, margin: 0 }}>
           <>
             {props.language("have_any_questions")}{" "}
-            <a href="mailto:support@cal.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
+            <a href="mailto:support@timely" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
               <>{props.language("contact")}</>
             </a>{" "}
             {props.language("our_support_team")}

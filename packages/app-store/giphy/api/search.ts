@@ -1,7 +1,6 @@
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z, ZodError } from "zod";
-
-import prisma from "@calcom/prisma";
 
 import { GiphyManager } from "../lib";
 

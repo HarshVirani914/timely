@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { md } from "@calcom/lib/markdownIt";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import type { TeamWithMembers } from "@calcom/lib/server/queries/teams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { md } from "@timely/lib/markdownIt";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import type { TeamWithMembers } from "@timely/lib/server/queries/teams";
 
 import { UserAvatar } from "@components/ui/avatar/UserAvatar";
 

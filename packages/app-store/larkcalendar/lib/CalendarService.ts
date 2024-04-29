@@ -1,15 +1,15 @@
-import { getLocation, getRichDescription } from "@calcom/lib/CalEventParser";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
-import type { BufferedBusyTime } from "@calcom/types/BufferedBusyTime";
+import { getLocation, getRichDescription } from "@timely/lib/CalEventParser";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
+import type { BufferedBusyTime } from "@timely/types/BufferedBusyTime";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 import refreshOAuthTokens from "../../_utils/oauth/refreshOAuthTokens";
 import { handleLarkError, isExpired, LARK_HOST } from "../common";

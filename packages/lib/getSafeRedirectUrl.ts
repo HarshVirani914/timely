@@ -1,4 +1,4 @@
-import { CONSOLE_URL, WEBAPP_URL, WEBSITE_URL } from "@calcom/lib/constants";
+import { CONSOLE_URL, WEBAPP_URL, WEBSITE_URL } from "@timely/lib/constants";
 
 // It ensures that redirection URL safe where it is accepted through a query params or other means where user can change it.
 export const getSafeRedirectUrl = (url = "") => {

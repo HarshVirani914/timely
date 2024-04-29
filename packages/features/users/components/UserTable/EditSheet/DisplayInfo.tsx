@@ -1,8 +1,8 @@
-import { classNames } from "@calcom/lib";
-import { useCopy } from "@calcom/lib/hooks/useCopy";
-import type { BadgeProps } from "@calcom/ui";
-import { Badge, Button, Label } from "@calcom/ui";
-import { ClipboardCheck, Clipboard } from "@calcom/ui/components/icon";
+import { classNames } from "@timely/lib";
+import { useCopy } from "@timely/lib/hooks/useCopy";
+import type { BadgeProps } from "@timely/ui";
+import { Badge, Button, Label } from "@timely/ui";
+import { ClipboardCheck, Clipboard } from "@timely/ui/components/icon";
 
 type DisplayInfoType<T extends boolean> = {
   label: string;

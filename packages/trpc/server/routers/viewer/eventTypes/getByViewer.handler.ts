@@ -1,18 +1,17 @@
 import { Prisma } from "@prisma/client";
+import { hasFilter } from "@timely/features/filters/lib/hasFilter";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { getTeamAvatarUrl, getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import { getBookerBaseUrlSync } from "@timely/lib/getBookerUrl/client";
+import { getBookerBaseUrl } from "@timely/lib/getBookerUrl/server";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import type { PrismaClient } from "@timely/prisma";
+import { baseEventTypeSelect } from "@timely/prisma";
+import { MembershipRole, SchedulingType } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 // eslint-disable-next-line no-restricted-imports
 import { orderBy } from "lodash";
-
-import { hasFilter } from "@calcom/features/filters/lib/hasFilter";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { getTeamAvatarUrl, getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
-import { getBookerBaseUrl } from "@calcom/lib/getBookerUrl/server";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import type { PrismaClient } from "@calcom/prisma";
-import { baseEventTypeSelect } from "@calcom/prisma";
-import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -264,7 +263,7 @@ export const getByViewerHandler = async ({ ctx, input }: GetByViewerOptions) => 
 
         if (input?.forRoutingForms) {
           // For Routing form we want to ensure that after migration of team to an org, the URL remains same for the team
-          // Once we solve this https://github.com/calcom/cal.com/issues/12399, we can remove this conditional change in slug
+          // Once we solve this https://github.com/timely/timely/issues/12399, we can remove this conditional change in slug
           slug = `team/${team.slug}`;
         } else {
           // In an Org, a team can be accessed without /team prefix as well as with /team prefix

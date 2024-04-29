@@ -1,4 +1,4 @@
-import type { AppMeta } from "@calcom/types/App";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -10,13 +10,13 @@ export const metadata = {
   categories: ["automation"],
   // If using static next public folder, can then be referenced from the base URL (/).
   logo: "icon-dark.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   slug: "wipe-my-cal",
   title: "Wipe my cal",
   type: "wipemycal_other",
-  url: "https://cal.com/apps/wipe-my-cal",
+  url: "https://timely/apps/wipe-my-cal",
   variant: "other",
-  email: "help@cal.com",
+  email: "help@timely",
   dirName: "wipemycalother",
 } as AppMeta;
 

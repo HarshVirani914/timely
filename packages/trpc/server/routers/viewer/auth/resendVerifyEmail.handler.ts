@@ -1,5 +1,5 @@
-import { sendEmailVerification } from "@calcom/features/auth/lib/verifyEmail";
-import logger from "@calcom/lib/logger";
+import { sendEmailVerification } from "@timely/features/auth/lib/verifyEmail";
+import logger from "@timely/lib/logger";
 
 import type { TrpcSessionUser } from "../../../trpc";
 

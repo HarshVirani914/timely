@@ -1,10 +1,10 @@
 {
-  "name": "@calcom/atoms",
+  "name": "@timely/atoms",
   "private": true,
   "sideEffects": false,
   "type": "module",
-  "description": "Cal.com Atoms",
-  "authors": "Cal.com, Inc.",
+  "description": "Timely Atoms",
+  "authors": "Timely, Inc.",
   "version": "1.0.0",
   "scripts": {
     "build": "node build.mjs"

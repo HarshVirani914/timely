@@ -1,13 +1,13 @@
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import { refreshAccessToken as getNewTokens } from "./helpers";
@@ -104,7 +104,7 @@ export default class BasecampCalendarService implements Calendar {
       hour12: true,
       minute: "numeric",
     });
-    const baseString = `<div>Event title: ${event.title}<br/>Date and time: ${date}, ${startTime} - ${endTime} ${timeZone}<br/>View on Cal.com: <a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="https://app.cal.com/booking/${event.uid}">https://app.cal.com/booking/${event.uid}</a> `;
+    const baseString = `<div>Event title: ${event.title}<br/>Date and time: ${date}, ${startTime} - ${endTime} ${timeZone}<br/>View on Timely: <a target="_blank" rel="noreferrer" class="autolinked" data-behavior="truncate" href="https://app.timely/booking/${event.uid}">https://app.timely/booking/${event.uid}</a> `;
     const guestString = `<br/>Guests: ${event.attendees.reduce((acc, attendee) => {
       return `${acc}<br/><a target=\"_blank\" rel=\"noreferrer\" class=\"autolinked\" data-behavior=\"truncate\" href=\"mailto:${attendee.email}\">${attendee.email}</a>`;
     }, "")}`;
@@ -131,7 +131,7 @@ export default class BasecampCalendarService implements Calendar {
           },
           body: JSON.stringify({
             description,
-            summary: `Cal.com: ${event.title}`,
+            summary: `Timely: ${event.title}`,
             starts_at: new Date(event.startTime).toISOString(),
             ends_at: new Date(event.endTime).toISOString(),
           }),
@@ -174,7 +174,7 @@ export default class BasecampCalendarService implements Calendar {
           },
           body: JSON.stringify({
             description,
-            summary: `Cal.com: ${event.title}`,
+            summary: `Timely: ${event.title}`,
             starts_at: new Date(event.startTime).toISOString(),
             ends_at: new Date(event.endTime).toISOString(),
           }),

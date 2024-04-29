@@ -1,5 +1,5 @@
-import { getCancelLink, getRescheduleLink } from "@calcom/lib/CalEventParser";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
+import { getCancelLink, getRescheduleLink } from "@timely/lib/CalEventParser";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 
 export function ManageLink(props: { calEvent: CalendarEvent; attendee: Person }) {
   // Only the original attendee can make changes to the event

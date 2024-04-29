@@ -3,16 +3,16 @@ import { createHmac } from "crypto";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { DailyLocationType } from "@calcom/app-store/locations";
-import { getDownloadLinkOfCalVideoByRecordingId } from "@calcom/core/videoClient";
-import { sendDailyVideoRecordingEmails } from "@calcom/emails";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import { getTeamIdFromEventType } from "@calcom/lib/getTeamIdFromEventType";
-import { defaultHandler } from "@calcom/lib/server";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import { DailyLocationType } from "@timely/app-store/locations";
+import { getDownloadLinkOfCalVideoByRecordingId } from "@timely/core/videoClient";
+import { sendDailyVideoRecordingEmails } from "@timely/emails";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import { getTeamIdFromEventType } from "@timely/lib/getTeamIdFromEventType";
+import { defaultHandler } from "@timely/lib/server";
+import { getTranslation } from "@timely/lib/server/i18n";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 const schema = z
   .object({

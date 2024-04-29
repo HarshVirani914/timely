@@ -1,7 +1,6 @@
+import getLabelValueMapFromResponses from "@timely/lib/getLabelValueMapFromResponses";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import getLabelValueMapFromResponses from "@calcom/lib/getLabelValueMapFromResponses";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { Info } from "./Info";
 

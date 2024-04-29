@@ -1,7 +1,6 @@
+import type { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import { createContext, useContext, createElement } from "react";
 import type z from "zod";
-
-import type { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 /**
  * Organization branding
@@ -16,9 +15,9 @@ export type OrganizationBranding =
       name?: string;
       /** acme */
       slug: string;
-      /** https://acme.cal.com */
+      /** https://acme.timely */
       fullDomain: string;
-      /** cal.com */
+      /** timely */
       domainSuffix: string;
     } & z.infer<typeof teamMetadataSchema>)
   | null
@@ -47,8 +46,8 @@ export function useOrgBranding() {
  * you can render the OrgBrandingProvider at the top of your Next.js pages, like so:
  *
  * ```ts
- * import { useOrgBrandingValues } from "@calcom/features/flags/hooks/useFlag"
- * import { OrgBrandingProvider, useOrgBranding } from @calcom/features/flags/context/provider"
+ * import { useOrgBrandingValues } from "@timely/features/flags/hooks/useFlag"
+ * import { OrgBrandingProvider, useOrgBranding } from @timely/features/flags/context/provider"
  *
  * export default function YourPage () {
  *   const orgBrand = useOrgBrandingValues()

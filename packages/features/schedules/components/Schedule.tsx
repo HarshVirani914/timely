@@ -1,3 +1,22 @@
+import type { ConfigType } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { defaultDayRange as DEFAULT_DAY_RANGE } from "@timely/lib/availability";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { weekdayNames } from "@timely/lib/weekday";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import type { TimeRange } from "@timely/types/schedule";
+import {
+  Button,
+  Dropdown,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  Select,
+  SkeletonText,
+  Switch,
+  CheckboxField,
+} from "@timely/ui";
+import { Copy, Plus, Trash } from "@timely/ui/components/icon";
 import { Fragment, useCallback, useEffect, useMemo, useState, useRef } from "react";
 import type {
   ArrayPath,
@@ -11,26 +30,6 @@ import type {
 } from "react-hook-form";
 import { Controller, useFieldArray, useFormContext } from "react-hook-form";
 import type { GroupBase, Props } from "react-select";
-
-import type { ConfigType } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { defaultDayRange as DEFAULT_DAY_RANGE } from "@calcom/lib/availability";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { weekdayNames } from "@calcom/lib/weekday";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import type { TimeRange } from "@calcom/types/schedule";
-import {
-  Button,
-  Dropdown,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-  Select,
-  SkeletonText,
-  Switch,
-  CheckboxField,
-} from "@calcom/ui";
-import { Copy, Plus, Trash } from "@calcom/ui/components/icon";
 
 export type { TimeRange };
 

@@ -1,9 +1,8 @@
 import { Prisma } from "@prisma/client";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { MembershipRole } from "@timely/prisma/client";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { MembershipRole } from "@calcom/prisma/client";
 
 import { schemaEventTypeCreateBodyParams, schemaEventTypeReadPublic } from "~/lib/validations/event-type";
 import { canUserAccessTeamWithRole } from "~/pages/api/teams/[teamId]/_auth-middleware";
@@ -254,7 +253,7 @@ import ensureOnlyMembersAsHosts from "./_utils/ensureOnlyMembersAsHosts";
  *     tags:
  *     - event-types
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/event-types
+ *        url: https://docs.timely/core-features/event-types
  *     responses:
  *       201:
  *         description: OK, event type created

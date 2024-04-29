@@ -1,12 +1,12 @@
-import useAddAppMutation from "@calcom/app-store/_utils/useAddAppMutation";
-import { doesAppSupportTeamInstall } from "@calcom/app-store/utils";
-import { Spinner } from "@calcom/features/calendars/weeklyview/components/spinner/Spinner";
-import type { UserAdminTeams } from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { AppFrontendPayload } from "@calcom/types/App";
-import type { ButtonProps } from "@calcom/ui";
+import useAddAppMutation from "@timely/app-store/_utils/useAddAppMutation";
+import { doesAppSupportTeamInstall } from "@timely/app-store/utils";
+import { Spinner } from "@timely/features/calendars/weeklyview/components/spinner/Spinner";
+import type { UserAdminTeams } from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { AppFrontendPayload } from "@timely/types/App";
+import type { ButtonProps } from "@timely/ui";
 import {
   Avatar,
   Button,
@@ -17,7 +17,7 @@ import {
   DropdownMenuPortal,
   DropdownMenuTrigger,
   showToast,
-} from "@calcom/ui";
+} from "@timely/ui";
 
 export const InstallAppButtonChild = ({
   userAdminTeams,

@@ -1,4 +1,4 @@
-import { userAdminRouter } from "@calcom/features/ee/users/server/trpc-router";
-import { createNextApiHandler } from "@calcom/trpc/server/createNextApiHandler";
+import { userAdminRouter } from "@timely/features/ee/users/server/trpc-router";
+import { createNextApiHandler } from "@timely/trpc/server/createNextApiHandler";
 
 export default createNextApiHandler(userAdminRouter);

@@ -1,9 +1,8 @@
 import type { Prisma } from "@prisma/client";
-
-import { appKeysSchemas } from "@calcom/app-store/apps.keys-schemas.generated";
-import { getLocalAppMetadata } from "@calcom/app-store/utils";
-import type { PrismaClient } from "@calcom/prisma";
-import { AppCategories } from "@calcom/prisma/enums";
+import { appKeysSchemas } from "@timely/app-store/apps.keys-schemas.generated";
+import { getLocalAppMetadata } from "@timely/app-store/utils";
+import type { PrismaClient } from "@timely/prisma";
+import { AppCategories } from "@timely/prisma/enums";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import type { TListLocalInputSchema } from "./listLocal.schema";

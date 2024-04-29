@@ -3,12 +3,12 @@ import type { EventTypeSetup, FormValues } from "pages/event-types/[type]";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Alert, Button, EmptyScreen, SettingsToggle } from "@calcom/ui";
-import { Zap } from "@calcom/ui/components/icon";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Alert, Button, EmptyScreen, SettingsToggle } from "@timely/ui";
+import { Zap } from "@timely/ui/components/icon";
 
 type InstantEventControllerProps = {
   eventType: EventTypeSetup;

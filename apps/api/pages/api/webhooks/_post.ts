@@ -2,8 +2,8 @@ import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 import { v4 as uuidv4 } from "uuid";
 
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaWebhookCreateBodyParams, schemaWebhookReadPublic } from "~/lib/validations/webhook";
 
@@ -55,7 +55,7 @@ import { schemaWebhookCreateBodyParams, schemaWebhookReadPublic } from "~/lib/va
  *     tags:
  *     - webhooks
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/webhooks
+ *        url: https://docs.timely/core-features/webhooks
  *     responses:
  *       201:
  *         description: OK, webhook created

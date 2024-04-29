@@ -1,14 +1,9 @@
-import classNames from "classnames";
-import { SendIcon } from "lucide-react";
-import { signIn } from "next-auth/react";
-import { useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
 import {
   Button,
   ButtonGroup,
@@ -25,9 +20,13 @@ import {
   DropdownMenuTrigger,
   showToast,
   Tooltip,
-} from "@calcom/ui";
-import { ExternalLink, MoreHorizontal, Edit2, Lock, UserX } from "@calcom/ui/components/icon";
-import { UserAvatar } from "@calcom/web/components/ui/avatar/UserAvatar";
+} from "@timely/ui";
+import { ExternalLink, MoreHorizontal, Edit2, Lock, UserX } from "@timely/ui/components/icon";
+import { UserAvatar } from "@timely/web/components/ui/avatar/UserAvatar";
+import classNames from "classnames";
+import { SendIcon } from "lucide-react";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 import MemberChangeRoleModal from "./MemberChangeRoleModal";
 import TeamAvailabilityModal from "./TeamAvailabilityModal";

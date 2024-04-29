@@ -1,8 +1,7 @@
 import type { Table } from "@tanstack/react-table";
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import { motion, AnimatePresence } from "framer-motion";
 import { Fragment } from "react";
-
-import type { SVGComponent } from "@calcom/types/SVGComponent";
 
 import { Button } from "../button";
 

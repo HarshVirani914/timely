@@ -1,8 +1,8 @@
 import type { NextApiRequest } from "next";
 
-import { deleteUser } from "@calcom/features/users/lib/userDeletionService";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { deleteUser } from "@timely/features/users/lib/userDeletionService";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaQueryUserId } from "~/lib/validations/shared/queryUserId";
 

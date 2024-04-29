@@ -4,11 +4,11 @@
   "slug": "fathom",
   "type": "fathom_analytics",
   "logo": "icon.svg",
-  "url": "https://cal.com",
+  "url": "https://timely",
   "variant": "analytics",
   "categories": ["analytics"],
-  "publisher": "Cal.com, Inc.",
-  "email": "help@cal.com",
+  "publisher": "Timely, Inc.",
+  "email": "help@timely",
   "extendsFeature": "EventType",
   "appData": {
     "tag": {

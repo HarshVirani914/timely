@@ -1,11 +1,10 @@
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Dialog, DialogClose, DialogContent, DialogFooter, showToast } from "@timely/ui";
+import { IS_VISUAL_REGRESSION_TESTING } from "@timely/web/constants";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Dialog, DialogClose, DialogContent, DialogFooter, showToast } from "@calcom/ui";
-import { IS_VISUAL_REGRESSION_TESTING } from "@calcom/web/constants";
 
 export default function TimezoneChangeDialog() {
   const { t } = useLocale();
@@ -43,14 +42,14 @@ export default function TimezoneChangeDialog() {
   useEffect(() => {
     const tzDifferent =
       !isLoading && dayjs.tz(undefined, currentTz).utcOffset() !== dayjs.tz(undefined, userTz).utcOffset();
-    const showDialog = tzDifferent && !document.cookie.includes("calcom-timezone-dialog=1");
+    const showDialog = tzDifferent && !document.cookie.includes("timely-timezone-dialog=1");
     setOpen(!IS_VISUAL_REGRESSION_TESTING && showDialog);
   }, [currentTz, isLoading, userTz]);
 
   // save cookie to not show again
   function onCancel(maxAge: number, toast: boolean) {
     setOpen(false);
-    document.cookie = `calcom-timezone-dialog=1;max-age=${maxAge}`;
+    document.cookie = `timely-timezone-dialog=1;max-age=${maxAge}`;
     toast && showToast(t("we_wont_show_again"), "success");
   }
 

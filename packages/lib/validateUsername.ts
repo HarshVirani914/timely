@@ -1,6 +1,6 @@
-import { getOrgUsernameFromEmail } from "@calcom/features/auth/signup/utils/getOrgUsernameFromEmail";
-import prisma from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { getOrgUsernameFromEmail } from "@timely/features/auth/signup/utils/getOrgUsernameFromEmail";
+import prisma from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 export const getUsernameForOrgMember = async ({
   email,

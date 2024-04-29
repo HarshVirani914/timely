@@ -1,6 +1,6 @@
-import type { Workflow, WorkflowStep } from "@calcom/prisma/client";
-import { WorkflowTriggerEvents } from "@calcom/prisma/client";
-import { WorkflowActions } from "@calcom/prisma/enums";
+import type { Workflow, WorkflowStep } from "@timely/prisma/client";
+import { WorkflowTriggerEvents } from "@timely/prisma/client";
+import { WorkflowActions } from "@timely/prisma/enums";
 
 export function allowDisablingHostConfirmationEmails(
   workflows: (Workflow & {

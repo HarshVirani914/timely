@@ -1,6 +1,6 @@
-import getApps from "@calcom/app-store/utils";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import getApps from "@timely/app-store/utils";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

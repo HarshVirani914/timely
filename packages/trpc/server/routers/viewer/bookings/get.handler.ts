@@ -1,9 +1,9 @@
-import { parseRecurringEvent } from "@calcom/lib";
-import type { PrismaClient } from "@calcom/prisma";
-import { bookingMinimalSelect } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { parseRecurringEvent } from "@timely/lib";
+import type { PrismaClient } from "@timely/prisma";
+import { bookingMinimalSelect } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { BookingStatus } from "@timely/prisma/enums";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import type { TGetInputSchema } from "./get.schema";

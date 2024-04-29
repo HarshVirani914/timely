@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
-  "name": "@calcom/vimcal",
+  "name": "@timely/vimcal",
   "version": "0.0.0",
   "main": "./index.ts",
   "description": "The world's fastest calendar, beautifully designed for a remote world\r",
   "dependencies": {
-    "@calcom/lib": "*"
+    "@timely/lib": "*"
   },
   "devDependencies": {
-    "@calcom/types": "*"
+    "@timely/types": "*"
   }
 }

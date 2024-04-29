@@ -2,7 +2,7 @@ import type { IncomingMessage } from "http";
 import type { AppContextType } from "next/dist/shared/lib/utils";
 import React from "react";
 
-import { trpc } from "@calcom/trpc/react";
+import { trpc } from "@timely/trpc/react";
 
 import type { AppProps } from "@lib/app-providers";
 
@@ -27,7 +27,7 @@ MyApp.getInitialProps = async (ctx: AppContextType) => {
   let newLocale = "en";
 
   if (req) {
-    const { getLocale } = await import("@calcom/features/auth/lib/getLocale");
+    const { getLocale } = await import("@timely/features/auth/lib/getLocale");
     newLocale = await getLocale(req as IncomingMessage & { cookies: Record<string, any> });
   } else if (typeof window !== "undefined" && window.calNewLocale) {
     newLocale = window.calNewLocale;

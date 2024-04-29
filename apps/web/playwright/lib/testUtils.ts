@@ -9,9 +9,9 @@ import { noop } from "lodash";
 import type { API, Messages } from "mailhog";
 import { totp } from "otplib";
 
-import type { Prisma } from "@calcom/prisma/client";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import type { Prisma } from "@timely/prisma/client";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 import type { Fixtures } from "./fixtures";
 import { test } from "./fixtures";

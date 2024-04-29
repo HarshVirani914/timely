@@ -1,9 +1,8 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import type { NextApiRequest } from "next";
 import { stringify } from "querystring";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import { getBasecampKeys } from "../lib/getBasecampKeys";
 

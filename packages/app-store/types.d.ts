@@ -1,8 +1,7 @@
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { ButtonProps } from "@timely/ui";
 import type React from "react";
 import type { z } from "zod";
-
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { ButtonProps } from "@calcom/ui";
 
 export type IntegrationOAuthCallbackState = {
   returnTo: string;

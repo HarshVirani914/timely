@@ -1,9 +1,9 @@
-import { getBookerBaseUrl } from "@calcom/lib/getBookerUrl/server";
-import { prisma } from "@calcom/prisma";
-import type { Webhook } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getBookerBaseUrl } from "@timely/lib/getBookerUrl/server";
+import { prisma } from "@timely/prisma";
+import type { Webhook } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

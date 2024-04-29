@@ -1,4 +1,4 @@
-import type { AppMeta } from "@calcom/types/App";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -10,12 +10,12 @@ export const metadata = {
   categories: ["conferencing"],
   variant: "conferencing",
   logo: "icon.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   url: "https://zoom.us/",
   category: "conferencing",
   slug: "zoom",
   title: "Zoom Video",
-  email: "help@cal.com",
+  email: "help@timely",
   appData: {
     location: {
       default: false,

@@ -1,9 +1,9 @@
-import { getUserAvailability } from "@calcom/core/getUserAvailability";
-import { isTeamMember } from "@calcom/lib/server/queries/teams";
-import { availabilityUserSelect } from "@calcom/prisma";
-import { prisma } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getUserAvailability } from "@timely/core/getUserAvailability";
+import { isTeamMember } from "@timely/lib/server/queries/teams";
+import { availabilityUserSelect } from "@timely/prisma";
+import { prisma } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

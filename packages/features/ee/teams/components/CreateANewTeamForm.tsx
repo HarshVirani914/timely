@@ -1,17 +1,16 @@
+import { HOSTED_CAL_FEATURES } from "@timely/lib/constants";
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import slugify from "@timely/lib/slugify";
+import { telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import { trpc } from "@timely/trpc/react";
+import { Alert, Button, Form, TextField } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import slugify from "@calcom/lib/slugify";
-import { telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import { trpc } from "@calcom/trpc/react";
-import { Alert, Button, Form, TextField } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
 
 import { useOrgBranding } from "../../organizations/context/provider";
 import { subdomainSuffix } from "../../organizations/lib/orgDomains";

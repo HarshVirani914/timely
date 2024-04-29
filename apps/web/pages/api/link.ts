@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import { defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
-import { UserPermissionRole } from "@calcom/prisma/enums";
-import { TRPCError } from "@calcom/trpc/server";
-import { createContext } from "@calcom/trpc/server/createContext";
-import { bookingsRouter } from "@calcom/trpc/server/routers/viewer/bookings/_router";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import { defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
+import { UserPermissionRole } from "@timely/prisma/enums";
+import { TRPCError } from "@timely/trpc/server";
+import { createContext } from "@timely/trpc/server/createContext";
+import { bookingsRouter } from "@timely/trpc/server/routers/viewer/bookings/_router";
 
 enum DirectAction {
   ACCEPT = "accept",

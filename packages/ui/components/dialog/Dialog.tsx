@@ -1,12 +1,11 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import classNames from "@timely/lib/classNames";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import { usePathname, useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 import React, { useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { SVGComponent } from "@calcom/types/SVGComponent";
 
 import type { ButtonProps } from "../../components/button";
 import { Button } from "../../components/button";

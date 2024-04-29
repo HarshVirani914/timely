@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import path from "path";
 
-import { prisma } from "@calcom/prisma";
+import { prisma } from "@timely/prisma";
 
 import { test } from "../lib/fixtures";
 

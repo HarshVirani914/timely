@@ -1,11 +1,10 @@
 import * as Popover from "@radix-ui/react-popover";
+import cx from "@timely/lib/classNames";
+import { fallBackHex, isValidHexCode } from "@timely/lib/getBrandColours";
+import { Button } from "@timely/ui";
+import { RotateCcw } from "@timely/ui/components/icon";
 import { useState } from "react";
 import { HexColorInput, HexColorPicker } from "react-colorful";
-
-import cx from "@calcom/lib/classNames";
-import { fallBackHex, isValidHexCode } from "@calcom/lib/getBrandColours";
-import { Button } from "@calcom/ui";
-import { RotateCcw } from "@calcom/ui/components/icon";
 
 export type ColorPickerProps = {
   defaultValue: string;

@@ -1,21 +1,20 @@
 import type { Calendar as OfficeCalendar, User } from "@microsoft/microsoft-graph-types-beta";
-import type { DefaultBodyType } from "msw";
-import { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import { getLocation, getRichDescription } from "@calcom/lib/CalEventParser";
-import { handleErrorsJson, handleErrorsRaw } from "@calcom/lib/errors";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
-import type { BufferedBusyTime } from "@calcom/types/BufferedBusyTime";
+import dayjs from "@timely/dayjs";
+import { getLocation, getRichDescription } from "@timely/lib/CalEventParser";
+import { handleErrorsJson, handleErrorsRaw } from "@timely/lib/errors";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
+import type { BufferedBusyTime } from "@timely/types/BufferedBusyTime";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { DefaultBodyType } from "msw";
+import { z } from "zod";
 
 import type { ParseRefreshTokenResponse } from "../../_utils/oauth/parseRefreshTokenResponse";
 import parseRefreshTokenResponse from "../../_utils/oauth/parseRefreshTokenResponse";

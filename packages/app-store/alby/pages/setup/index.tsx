@@ -1,14 +1,13 @@
 import { auth, Client, webln } from "@getalby/sdk";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Badge, Button, showToast } from "@timely/ui";
+import { Info } from "@timely/ui/components/icon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
-
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Badge, Button, showToast } from "@calcom/ui";
-import { Info } from "@calcom/ui/components/icon";
 
 import { albyCredentialKeysSchema } from "../../lib/albyCredentialKeysSchema";
 
@@ -92,7 +91,7 @@ function AlbySetupPage(props: IAlbySetupProps) {
       client_secret: props.clientSecret,
       callback: `${process.env.NEXT_PUBLIC_WEBAPP_URL}/apps/alby/setup?callback=true`,
       scopes: ["invoices:read", "account:read"],
-      user_agent: "cal.com",
+      user_agent: "timely",
     });
 
     const weblnOAuthProvider = new webln.OauthWeblnProvider({
@@ -106,7 +105,7 @@ function AlbySetupPage(props: IAlbySetupProps) {
     const webhookEndpoint = await client.createWebhookEndpoint({
       filter_types: ["invoice.incoming.settled"],
       url: `${process.env.NEXT_PUBLIC_WEBAPP_URL}/api/integrations/alby/webhook`,
-      description: "Cal.com",
+      description: "Timely",
     });
 
     saveKeysMutation.mutate({

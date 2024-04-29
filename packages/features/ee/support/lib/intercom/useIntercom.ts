@@ -1,12 +1,11 @@
 // eslint-disable-next-line no-restricted-imports
+import dayjs from "@timely/dayjs";
+import { CAL_URL } from "@timely/lib/constants";
+import { useHasTeamPlan, useHasPaidPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { trpc } from "@timely/trpc/react";
 import { noop } from "lodash";
 import { useIntercom as useIntercomLib } from "react-use-intercom";
 import { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useHasTeamPlan, useHasPaidPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { trpc } from "@calcom/trpc/react";
 
 // eslint-disable-next-line turbo/no-undeclared-env-vars
 export const isInterComEnabled = z.string().min(1).safeParse(process.env.NEXT_PUBLIC_INTERCOM_APP_ID).success;

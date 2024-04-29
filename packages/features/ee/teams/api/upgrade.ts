@@ -1,16 +1,15 @@
+import { getRequestedSlugError } from "@timely/app-store/stripepayment/lib/team-billing";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import stripe from "@timely/features/ee/payments/server/stripe";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import { closeComUpdateTeam } from "@timely/lib/sync/SyncServiceManager";
+import prisma from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
 import { z } from "zod";
-
-import { getRequestedSlugError } from "@calcom/app-store/stripepayment/lib/team-billing";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import stripe from "@calcom/features/ee/payments/server/stripe";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import { closeComUpdateTeam } from "@calcom/lib/sync/SyncServiceManager";
-import prisma from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 const querySchema = z.object({
   team: z.string().transform((val) => parseInt(val)),

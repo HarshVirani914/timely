@@ -1,11 +1,10 @@
+import { useBookerStore } from "@timely/features/bookings/Booker/store";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { parseRecurringDates } from "@timely/lib/parse-dates";
+import { getRecurringFreq } from "@timely/lib/recurringStrings";
+import { Tooltip, Alert } from "@timely/ui";
+import { Input } from "@timely/ui";
 import { useEffect, useState } from "react";
-
-import { useBookerStore } from "@calcom/features/bookings/Booker/store";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { parseRecurringDates } from "@calcom/lib/parse-dates";
-import { getRecurringFreq } from "@calcom/lib/recurringStrings";
-import { Tooltip, Alert } from "@calcom/ui";
-import { Input } from "@calcom/ui";
 
 import { useTimePreferences } from "../../lib";
 import type { PublicEvent } from "../../types";

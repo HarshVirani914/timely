@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
 import {
   ANDROID_CHROME_ICON_192,
   ANDROID_CHROME_ICON_256,
@@ -13,8 +13,8 @@ import {
   LOGO_ICON,
   MSTILE_ICON,
   WEBAPP_URL,
-} from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
+} from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
 
 const log = logger.getSubLogger({ prefix: ["[api/logo]"] });
 
@@ -108,7 +108,7 @@ function isValidLogoType(type: string): type is LogoType {
 async function getTeamLogos(subdomain: string, isValidOrgDomain: boolean) {
   try {
     if (
-      // if not cal.com
+      // if not timely
       IS_SELF_HOSTED ||
       // missing subdomain (empty string)
       !subdomain ||
@@ -118,7 +118,7 @@ async function getTeamLogos(subdomain: string, isValidOrgDomain: boolean) {
       throw new Error("No custom logo needed");
     }
     // load from DB
-    const { default: prisma } = await import("@calcom/prisma");
+    const { default: prisma } = await import("@timely/prisma");
     const team = await prisma.team.findFirst({
       where: {
         slug: subdomain,
@@ -164,7 +164,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const [subdomain] = domains;
   const teamLogos = await getTeamLogos(subdomain, isValidOrgDomain);
 
-  // Resolve all icon types to team logos, falling back to Cal.com defaults.
+  // Resolve all icon types to team logos, falling back to Timely defaults.
   const type: LogoType = parsedQuery?.type && isValidLogoType(parsedQuery.type) ? parsedQuery.type : "logo";
   const logoDefinition = logoDefinitions[type];
   const filteredLogo = teamLogos[logoDefinition.source] ?? logoDefinition.fallback;

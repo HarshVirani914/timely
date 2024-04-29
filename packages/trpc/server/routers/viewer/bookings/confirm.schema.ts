@@ -1,6 +1,5 @@
+import { bookingConfirmPatchBodySchema } from "@timely/prisma/zod-utils";
 import type { z } from "zod";
-
-import { bookingConfirmPatchBodySchema } from "@calcom/prisma/zod-utils";
 
 export const ZConfirmInputSchema = bookingConfirmPatchBodySchema;
 

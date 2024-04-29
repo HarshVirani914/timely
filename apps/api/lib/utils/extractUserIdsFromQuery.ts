@@ -1,6 +1,5 @@
+import { HttpError } from "@timely/lib/http-error";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
 
 import { schemaQuerySingleOrMultipleUserIds } from "~/lib/validations/shared/queryUserId";
 

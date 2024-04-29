@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
 
 export default function useIsBookingPage(): boolean {
   const pathname = usePathname();

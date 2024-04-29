@@ -1,10 +1,7 @@
-import Link from "next/link";
-import { Fragment } from "react";
-
-import { availabilityAsString } from "@calcom/lib/availability";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import { availabilityAsString } from "@timely/lib/availability";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Badge,
   Button,
@@ -14,8 +11,10 @@ import {
   DropdownItem,
   DropdownMenuTrigger,
   showToast,
-} from "@calcom/ui";
-import { Globe, MoreHorizontal, Trash, Star, Copy } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Globe, MoreHorizontal, Trash, Star, Copy } from "@timely/ui/components/icon";
+import Link from "next/link";
+import { Fragment } from "react";
 
 export function ScheduleListItem({
   schedule,

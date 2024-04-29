@@ -1,7 +1,6 @@
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
 
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";
 
@@ -27,7 +26,7 @@ import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransform
  *     tags:
  *     - event-types
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/event-types
+ *        url: https://docs.timely/core-features/event-types
  *     responses:
  *       201:
  *         description: OK, eventType removed successfully

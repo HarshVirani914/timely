@@ -1,9 +1,8 @@
 import { useId } from "@radix-ui/react-id";
 import * as Label from "@radix-ui/react-label";
 import * as PrimitiveSwitch from "@radix-ui/react-switch";
+import cx from "@timely/lib/classNames";
 import React from "react";
-
-import cx from "@calcom/lib/classNames";
 
 import { Tooltip } from "../../tooltip";
 

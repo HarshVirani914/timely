@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import { parseRecurringDates } from "@timely/lib/parse-dates";
 import { v4 as uuidv4 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { parseRecurringDates } from "@calcom/lib/parse-dates";
 
 import type { PublicEvent, BookingCreateBody, RecurringBookingCreateBody } from "../../types";
 

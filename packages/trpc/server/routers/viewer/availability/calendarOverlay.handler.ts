@@ -1,7 +1,7 @@
-import { getBusyCalendarTimes } from "@calcom/core/CalendarManager";
-import dayjs from "@calcom/dayjs";
-import { prisma } from "@calcom/prisma";
-import type { EventBusyDate } from "@calcom/types/Calendar";
+import { getBusyCalendarTimes } from "@timely/core/CalendarManager";
+import dayjs from "@timely/dayjs";
+import { prisma } from "@timely/prisma";
+import type { EventBusyDate } from "@timely/types/Calendar";
 
 import { TRPCError } from "@trpc/server";
 

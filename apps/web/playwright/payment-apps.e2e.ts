@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 
-import prisma from "@calcom/prisma";
+import prisma from "@timely/prisma";
 
 import { test } from "./lib/fixtures";
 import { selectFirstAvailableTimeSlotNextMonth } from "./lib/testUtils";

@@ -1,7 +1,6 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { classNames } from "@timely/lib";
 import type { ReactNode } from "react";
-
-import { classNames } from "@calcom/lib";
 
 import { Label } from "..";
 import Switch from "./Switch";

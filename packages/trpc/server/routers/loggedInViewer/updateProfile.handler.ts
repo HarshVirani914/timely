@@ -1,23 +1,22 @@
 import { Prisma } from "@prisma/client";
+import stripe from "@timely/app-store/stripepayment/lib/server";
+import { getPremiumMonthlyPlanPriceId } from "@timely/app-store/stripepayment/lib/utils";
+import { passwordResetRequest } from "@timely/features/auth/lib/passwordResetRequest";
+import hasKeyInMetadata from "@timely/lib/hasKeyInMetadata";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { getTranslation } from "@timely/lib/server";
+import { checkUsername } from "@timely/lib/server/checkUsername";
+import { resizeBase64Image } from "@timely/lib/server/resizeBase64Image";
+import slugify from "@timely/lib/slugify";
+import { updateWebUser as syncServicesUpdateWebUser } from "@timely/lib/sync/SyncServiceManager";
+import { validateBookerLayouts } from "@timely/lib/validateBookerLayouts";
+import { prisma } from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
+import { userMetadata as userMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 import type { GetServerSidePropsContext, NextApiResponse } from "next";
 import { v4 as uuidv4 } from "uuid";
-
-import stripe from "@calcom/app-store/stripepayment/lib/server";
-import { getPremiumMonthlyPlanPriceId } from "@calcom/app-store/stripepayment/lib/utils";
-import { passwordResetRequest } from "@calcom/features/auth/lib/passwordResetRequest";
-import hasKeyInMetadata from "@calcom/lib/hasKeyInMetadata";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { getTranslation } from "@calcom/lib/server";
-import { checkUsername } from "@calcom/lib/server/checkUsername";
-import { resizeBase64Image } from "@calcom/lib/server/resizeBase64Image";
-import slugify from "@calcom/lib/slugify";
-import { updateWebUser as syncServicesUpdateWebUser } from "@calcom/lib/sync/SyncServiceManager";
-import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
-import { prisma } from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

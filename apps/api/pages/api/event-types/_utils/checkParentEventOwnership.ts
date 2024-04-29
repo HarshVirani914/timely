@@ -1,6 +1,5 @@
+import { HttpError } from "@timely/lib/http-error";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
 
 /**
  * Checks if a user, identified by the provided userId, has ownership (or admin rights) over

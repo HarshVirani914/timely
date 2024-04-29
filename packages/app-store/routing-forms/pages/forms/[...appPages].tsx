@@ -1,27 +1,24 @@
 // TODO: i18n
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useEffect } from "react";
-import { useFormContext } from "react-hook-form";
-
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import SkeletonLoaderTeamList from "@calcom/features/ee/teams/components/SkeletonloaderTeamList";
-import { FilterResults } from "@calcom/features/filters/components/FilterResults";
-import { TeamsFilter } from "@calcom/features/filters/components/TeamsFilter";
-import { getTeamsFiltersFromQuery } from "@calcom/features/filters/lib/getTeamsFiltersFromQuery";
-import Shell, { ShellMain } from "@calcom/features/shell/Shell";
-import { UpgradeTip } from "@calcom/features/tips";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import useApp from "@calcom/lib/hooks/useApp";
-import { useHasPaidPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { trpc } from "@calcom/trpc/react";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import SkeletonLoaderTeamList from "@timely/features/ee/teams/components/SkeletonloaderTeamList";
+import { FilterResults } from "@timely/features/filters/components/FilterResults";
+import { TeamsFilter } from "@timely/features/filters/components/TeamsFilter";
+import { getTeamsFiltersFromQuery } from "@timely/features/filters/lib/getTeamsFiltersFromQuery";
+import Shell, { ShellMain } from "@timely/features/shell/Shell";
+import { UpgradeTip } from "@timely/features/tips";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import useApp from "@timely/lib/hooks/useApp";
+import { useHasPaidPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { trpc } from "@timely/trpc/react";
 import type {
   AppGetServerSidePropsContext,
   AppPrisma,
   AppSsrInit,
   AppUser,
-} from "@calcom/types/AppGetServerSideProps";
+} from "@timely/types/AppGetServerSideProps";
 import {
   Badge,
   Button,
@@ -32,7 +29,7 @@ import {
   ListLinkItem,
   Tooltip,
   ArrowButton,
-} from "@calcom/ui";
+} from "@timely/ui";
 import {
   BarChart,
   CheckCircle,
@@ -49,7 +46,9 @@ import {
   MessageCircle,
   Shuffle,
   Trash,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
+import { useEffect } from "react";
+import { useFormContext } from "react-hook-form";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 
@@ -186,7 +185,7 @@ export default function RoutingForms({
                 <Button color="primary" href={`${WEBAPP_URL}/settings/teams/new`}>
                   {t("upgrade")}
                 </Button>
-                <Button color="minimal" href="https://go.cal.com/teams-video" target="_blank">
+                <Button color="minimal" href="https://go.timely/teams-video" target="_blank">
                   {t("learn_more")}
                 </Button>
               </ButtonGroup>

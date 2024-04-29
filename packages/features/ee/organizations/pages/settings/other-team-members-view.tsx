@@ -1,16 +1,15 @@
 // import { debounce } from "lodash";
+import MemberInvitationModal from "@timely/ee/teams/components/MemberInvitationModal";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { Meta, showToast, Button } from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
-import MemberInvitationModal from "@calcom/ee/teams/components/MemberInvitationModal";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { Meta, showToast, Button } from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
 
 import { getLayout } from "../../../../settings/layouts/SettingsLayout";
 import MakeTeamPrivateSwitch from "../../../teams/components/MakeTeamPrivateSwitch";

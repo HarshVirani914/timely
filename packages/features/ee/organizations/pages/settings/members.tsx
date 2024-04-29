@@ -1,8 +1,8 @@
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { UserListTable } from "@calcom/features/users/components/UserTable/UserListTable";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Meta } from "@calcom/ui";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { UserListTable } from "@timely/features/users/components/UserTable/UserListTable";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Meta } from "@timely/ui";
 
 const MembersView = () => {
   const { t } = useLocale();

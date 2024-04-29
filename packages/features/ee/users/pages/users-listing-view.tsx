@@ -1,7 +1,7 @@
 "use client";
 
-import NoSSR from "@calcom/core/components/NoSSR";
-import { Button, Meta } from "@calcom/ui";
+import NoSSR from "@timely/core/components/NoSSR";
+import { Button, Meta } from "@timely/ui";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 import LicenseRequired from "../../common/components/LicenseRequired";

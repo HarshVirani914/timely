@@ -7,10 +7,10 @@ import Link from "next/link";
 import type { CSSProperties, SyntheticEvent } from "react";
 import React from "react";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, EmailField } from "@calcom/ui";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, EmailField } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import AuthContainer from "@components/ui/AuthContainer";

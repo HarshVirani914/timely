@@ -1,11 +1,10 @@
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { MembershipRole } from "@timely/prisma/client";
 import type { GetServerSidePropsContext } from "next";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { MembershipRole } from "@calcom/prisma/client";
-
 export const getServerSideProps = async ({ req, res }: GetServerSidePropsContext) => {
-  const prisma = await import("@calcom/prisma").then((mod) => mod.default);
+  const prisma = await import("@timely/prisma").then((mod) => mod.default);
   const flags = await getFeatureFlagMap(prisma);
   // Check if organizations are enabled
   if (flags["organizations"] !== true) {

@@ -1,9 +1,8 @@
 import type { UseMutationOptions } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
-
-import type { IntegrationOAuthCallbackState } from "@calcom/app-store/types";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import type { App } from "@calcom/types/App";
+import type { IntegrationOAuthCallbackState } from "@timely/app-store/types";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import type { App } from "@timely/types/App";
 
 import getInstalledAppPath from "./getInstalledAppPath";
 

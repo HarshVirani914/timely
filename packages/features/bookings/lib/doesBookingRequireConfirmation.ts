@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import type { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 import type { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
 
 /**
  * Determines if a booking actually requires confirmation(considering requiresConfirmationThreshold)

@@ -1,10 +1,9 @@
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 import z from "zod";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 const querySchema = z.object({
   org: z.string({ required_error: "org slug is required" }),

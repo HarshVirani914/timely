@@ -1,21 +1,20 @@
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import BrandColorsForm from "@timely/features/ee/components/BrandColorsForm";
+import { AppearanceSkeletonLoader } from "@timely/features/ee/components/CommonSkeletonLoaders";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import ThemeLabel from "@timely/features/settings/ThemeLabel";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@timely/lib/constants";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { Button, Form, Meta, showToast, SettingsToggle, Avatar, ImageUploader } from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import BrandColorsForm from "@calcom/features/ee/components/BrandColorsForm";
-import { AppearanceSkeletonLoader } from "@calcom/features/ee/components/CommonSkeletonLoaders";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import ThemeLabel from "@calcom/features/settings/ThemeLabel";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@calcom/lib/constants";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { Button, Form, Meta, showToast, SettingsToggle, Avatar, ImageUploader } from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
 
 type BrandColorsFormValues = {
   brandColor: string;

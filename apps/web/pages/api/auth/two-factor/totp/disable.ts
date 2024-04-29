@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { verifyPassword } from "@calcom/features/auth/lib/verifyPassword";
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import { totpAuthenticatorCheck } from "@calcom/lib/totp";
-import prisma from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/client";
+import { ErrorCode } from "@timely/features/auth/lib/ErrorCode";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { verifyPassword } from "@timely/features/auth/lib/verifyPassword";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import { totpAuthenticatorCheck } from "@timely/lib/totp";
+import prisma from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/client";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {

@@ -1,4 +1,4 @@
-import type { TimeRange } from "@calcom/types/schedule";
+import type { TimeRange } from "@timely/types/schedule";
 
 import type { CalendarEvent } from "./events";
 

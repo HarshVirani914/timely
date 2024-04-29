@@ -1,9 +1,8 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Button, Dialog, DialogContent, DialogFooter, Form, Label, Select, showToast } from "@timely/ui";
 import { useMemo } from "react";
 import { Controller, useForm } from "react-hook-form";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Button, Dialog, DialogContent, DialogFooter, Form, Label, Select, showToast } from "@calcom/ui";
 
 type InvitationLinkSettingsModalProps = {
   isOpen: boolean;

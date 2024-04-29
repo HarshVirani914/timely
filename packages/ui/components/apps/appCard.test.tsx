@@ -1,7 +1,6 @@
 /* eslint-disable playwright/missing-playwright-await */
 import { render, screen } from "@testing-library/react";
-
-import type { AppFrontendPayload } from "@calcom/types/App";
+import type { AppFrontendPayload } from "@timely/types/App";
 
 import { AppCard } from "./AppCard";
 

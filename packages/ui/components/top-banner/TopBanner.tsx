@@ -1,9 +1,8 @@
+import { TOP_BANNER_HEIGHT } from "@timely/lib/constants";
+import type { LucideIcon, LucideProps } from "@timely/ui/components/icon";
+import { AlertTriangle, Info } from "@timely/ui/components/icon";
 import classNames from "classnames";
 import type { ComponentType, ReactNode } from "react";
-
-import { TOP_BANNER_HEIGHT } from "@calcom/lib/constants";
-import type { LucideIcon, LucideProps } from "@calcom/ui/components/icon";
-import { AlertTriangle, Info } from "@calcom/ui/components/icon";
 
 export type TopBannerProps = {
   Icon?: ComponentType<LucideProps> & LucideIcon;

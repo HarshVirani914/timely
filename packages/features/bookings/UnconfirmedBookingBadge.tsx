@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Badge } from "@timely/ui";
 import Link from "next/link";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Badge } from "@calcom/ui";
 
 export default function UnconfirmedBookingBadge() {
   const { t } = useLocale();

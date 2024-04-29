@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import { MINUTES_DAY_END, MINUTES_DAY_START } from "@timely/lib/availability";
 import { describe, expect, it, beforeAll, vi } from "vitest";
-
-import dayjs from "@calcom/dayjs";
-import { MINUTES_DAY_END, MINUTES_DAY_START } from "@calcom/lib/availability";
 
 import type { DateRange } from "./date-ranges";
 import getSlots from "./slots";

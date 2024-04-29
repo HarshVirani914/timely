@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import getIP from "@timely/lib/getIP";
+import prisma, { readonlyPrisma } from "@timely/prisma";
+import type { SelectedCalendar, User as PrismaUser } from "@timely/prisma/client";
 import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next";
 import type { Session } from "next-auth";
 import type { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import getIP from "@calcom/lib/getIP";
-import prisma, { readonlyPrisma } from "@calcom/prisma";
-import type { SelectedCalendar, User as PrismaUser } from "@calcom/prisma/client";
 
 import type { CreateNextContextOptions } from "@trpc/server/adapters/next";
 

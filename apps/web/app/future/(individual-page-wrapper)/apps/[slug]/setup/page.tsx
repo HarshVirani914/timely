@@ -4,8 +4,8 @@ import type { GetServerSidePropsContext } from "next";
 import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 
-import { getServerSideProps } from "@calcom/app-store/_pages/setup/_getServerSideProps";
-import { APP_NAME } from "@calcom/lib/constants";
+import { getServerSideProps } from "@timely/app-store/_pages/setup/_getServerSideProps";
+import { APP_NAME } from "@timely/lib/constants";
 
 export const generateMetadata = async ({ params }: { params: Record<string, string | string[]> }) => {
   return await _generateMetadata(

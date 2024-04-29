@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import Script from "next/script";
 import { useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 // eslint-disable-next-line turbo/no-undeclared-env-vars
 const ZENDESK_KEY = process.env.NEXT_PUBLIC_ZENDESK_KEY;

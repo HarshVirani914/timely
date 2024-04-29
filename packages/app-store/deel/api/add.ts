@@ -1,5 +1,5 @@
-import { createDefaultInstallation } from "@calcom/app-store/_utils/installation";
-import type { AppDeclarativeHandler } from "@calcom/types/AppHandler";
+import { createDefaultInstallation } from "@timely/app-store/_utils/installation";
+import type { AppDeclarativeHandler } from "@timely/types/AppHandler";
 
 import appConfig from "../config.json";
 
@@ -11,7 +11,7 @@ const handler: AppDeclarativeHandler = {
   handlerType: "add",
   redirect: {
     newTab: true,
-    url: "https://go.cal.com/deel",
+    url: "https://go.timely/deel",
   },
   createCredential: ({ appType, user, slug, teamId }) =>
     createDefaultInstallation({ appType, userId: user.id, slug, key: {}, teamId }),

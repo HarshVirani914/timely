@@ -1,17 +1,16 @@
+import { sendTeamInviteEmail, sendOrganizationAutoJoinEmail } from "@timely/emails";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { isTeamAdmin } from "@timely/lib/server/queries";
+import { isOrganisationAdmin } from "@timely/lib/server/queries/organisations";
+import slugify from "@timely/lib/slugify";
+import { prisma } from "@timely/prisma";
+import type { Membership, Team } from "@timely/prisma/client";
+import { Prisma, type User } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import { randomBytes } from "crypto";
 import type { TFunction } from "next-i18next";
-
-import { sendTeamInviteEmail, sendOrganizationAutoJoinEmail } from "@calcom/emails";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { isTeamAdmin } from "@calcom/lib/server/queries";
-import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
-import slugify from "@calcom/lib/slugify";
-import { prisma } from "@calcom/prisma";
-import type { Membership, Team } from "@calcom/prisma/client";
-import { Prisma, type User } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 
@@ -123,14 +122,14 @@ export function validateInviteeEligibility(
   if (invitee && isOrg) {
     throw new TRPCError({
       code: "FORBIDDEN",
-      message: `You cannot add a user that already exists in Cal.com to an organization. If they wish to join via this email address, they must update their email address in their profile to that of your organization.`,
+      message: `You cannot add a user that already exists in Timely to an organization. If they wish to join via this email address, they must update their email address in their profile to that of your organization.`,
     });
   }
 
   if (team.parentId && invitee) {
     throw new TRPCError({
       code: "FORBIDDEN",
-      message: `You cannot add a user that already exists in Cal.com to an organization's team. If they wish to join via this email address, they must update their email address in their profile to that of your organization.`,
+      message: `You cannot add a user that already exists in Timely to an organization's team. If they wish to join via this email address, they must update their email address in their profile to that of your organization.`,
     });
   }
 }
@@ -370,7 +369,7 @@ export async function sendVerificationEmail({
       to: usernameOrEmail,
       teamName: team?.parent?.name || team.name,
       joinLink: `${WEBAPP_URL}/signup?token=${token}&callbackUrl=/getting-started`,
-      isCalcomMember: false,
+      isTimelyMember: false,
       isOrg: input.isOrg,
     });
   } else {
@@ -497,7 +496,7 @@ export const sendTeamInviteEmails = async ({
     if (currentUserName && currentUserTeamName) {
       const inviteTeamOptions = {
         joinLink: `${WEBAPP_URL}/auth/login?callbackUrl=/settings/teams`,
-        isCalcomMember: true,
+        isTimelyMember: true,
       };
       /**
        * Here we want to redirect to a different place if onboarding has been completed or not. This prevents the flash of going to teams -> Then to onboarding - also show a different email template.
@@ -519,7 +518,7 @@ export const sendTeamInviteEmails = async ({
         });
 
         inviteTeamOptions.joinLink = `${WEBAPP_URL}/signup?token=${token}&callbackUrl=/getting-started`;
-        inviteTeamOptions.isCalcomMember = false;
+        inviteTeamOptions.isTimelyMember = false;
       }
 
       return sendTeamInviteEmail({

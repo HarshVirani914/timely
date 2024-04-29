@@ -1,9 +1,8 @@
 import { Prisma } from "@prisma/client";
-
-import { getAppFromSlug } from "@calcom/app-store/utils";
-import prisma, { baseEventTypeSelect } from "@calcom/prisma";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { getAppFromSlug } from "@timely/app-store/utils";
+import prisma, { baseEventTypeSelect } from "@timely/prisma";
+import { SchedulingType } from "@timely/prisma/enums";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 
 import { WEBAPP_URL } from "../../../constants";
 import { getBookerBaseUrlSync } from "../../../getBookerUrl/client";

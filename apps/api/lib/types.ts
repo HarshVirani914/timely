@@ -1,4 +1,4 @@
-import type { EventLocationType } from "@calcom/app-store/locations";
+import type { EventLocationType } from "@timely/app-store/locations";
 import type {
   Attendee,
   Availability,
@@ -16,7 +16,7 @@ import type {
   Team,
   User,
   Webhook,
-} from "@calcom/prisma/client";
+} from "@timely/prisma/client";
 
 // Base response, used for all responses
 export type BaseResponse = {

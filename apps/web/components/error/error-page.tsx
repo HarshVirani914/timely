@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HttpError } from "@calcom/lib/http-error";
+import { HttpError } from "@timely/lib/http-error";
 
 type Props = {
   statusCode?: number | null;

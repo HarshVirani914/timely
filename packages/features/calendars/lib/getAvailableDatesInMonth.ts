@@ -1,5 +1,5 @@
-import dayjs from "@calcom/dayjs";
-import { daysInMonth, yyyymmdd } from "@calcom/lib/date-fns";
+import dayjs from "@timely/dayjs";
+import { daysInMonth, yyyymmdd } from "@timely/lib/date-fns";
 
 // calculate the available dates in the month:
 // *) Intersect with included dates.

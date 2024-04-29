@@ -1,8 +1,8 @@
 import { Trans } from "next-i18next";
 
-import type { ChildrenEventType } from "@calcom/features/eventtypes/components/ChildrenEventTypeSelect";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { ConfirmationDialogContent, Dialog } from "@calcom/ui";
+import type { ChildrenEventType } from "@timely/features/eventtypes/components/ChildrenEventTypeSelect";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { ConfirmationDialogContent, Dialog } from "@timely/ui";
 
 interface ManagedEventDialogProps {
   slugExistsChildrenDialogOpen: ChildrenEventType[];

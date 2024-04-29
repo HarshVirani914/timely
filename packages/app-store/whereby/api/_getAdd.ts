@@ -1,6 +1,5 @@
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
 
 import checkSession from "../../_utils/auth";
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";

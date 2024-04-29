@@ -7,9 +7,9 @@ import { type GetServerSidePropsContext } from "next";
 import { headers, cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { APP_NAME } from "@calcom/lib/constants";
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { APP_NAME } from "@timely/lib/constants";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
 
 import { buildLegacyCtx } from "@lib/buildLegacyCtx";
 

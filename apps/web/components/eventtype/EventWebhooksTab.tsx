@@ -5,16 +5,16 @@ import Link from "next/link";
 import type { EventTypeSetupProps } from "pages/event-types/[type]";
 import { useState } from "react";
 
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { WebhookForm } from "@calcom/features/webhooks/components";
-import type { WebhookFormSubmitData } from "@calcom/features/webhooks/components/WebhookForm";
-import WebhookListItem from "@calcom/features/webhooks/components/WebhookListItem";
-import { subscriberUrlReserved } from "@calcom/features/webhooks/lib/subscriberUrlReserved";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Alert, Button, Dialog, DialogContent, EmptyScreen, showToast } from "@calcom/ui";
-import { Plus, Lock } from "@calcom/ui/components/icon";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { WebhookForm } from "@timely/features/webhooks/components";
+import type { WebhookFormSubmitData } from "@timely/features/webhooks/components/WebhookForm";
+import WebhookListItem from "@timely/features/webhooks/components/WebhookListItem";
+import { subscriberUrlReserved } from "@timely/features/webhooks/lib/subscriberUrlReserved";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Alert, Button, Dialog, DialogContent, EmptyScreen, showToast } from "@timely/ui";
+import { Plus, Lock } from "@timely/ui/components/icon";
 
 export const EventWebhooksTab = ({ eventType }: Pick<EventTypeSetupProps, "eventType">) => {
   const { t } = useLocale();

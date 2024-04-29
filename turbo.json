@@ -1,27 +1,27 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "@calcom/prisma#build": {
+    "@timely/prisma#build": {
       "cache": false,
       "dependsOn": ["post-install"]
     },
-    "@calcom/prisma#db-migrate": {
+    "@timely/prisma#db-migrate": {
       "cache": false,
-      "dependsOn": ["@calcom/prisma#db-up"],
+      "dependsOn": ["@timely/prisma#db-up"],
       "inputs": ["./schema.prisma", "./migrations/**/*.sql"]
     },
-    "@calcom/prisma#db-seed": {
+    "@timely/prisma#db-seed": {
       "cache": false,
-      "dependsOn": ["@calcom/prisma#db-migrate"]
+      "dependsOn": ["@timely/prisma#db-migrate"]
     },
-    "@calcom/prisma#db-up": {
+    "@timely/prisma#db-up": {
       "cache": false
     },
-    "@calcom/prisma#dx": {
+    "@timely/prisma#dx": {
       "cache": false,
-      "dependsOn": ["@calcom/prisma#db-migrate"]
+      "dependsOn": ["@timely/prisma#db-migrate"]
     },
-    "@calcom/web#build": {
+    "@timely/web#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**"],
       "env": [
@@ -39,15 +39,15 @@
         "STRIPE_ORG_MONTHLY_PRICE_ID"
       ]
     },
-    "@calcom/web#dx": {
+    "@timely/web#dx": {
       "cache": false,
-      "dependsOn": ["@calcom/prisma#dx"]
+      "dependsOn": ["@timely/prisma#dx"]
     },
-    "@calcom/web#start": {
+    "@timely/web#start": {
       "cache": false,
       "dependsOn": []
     },
-    "@calcom/ai#build": {
+    "@timely/ai#build": {
       "env": [
         "FRONTEND_URL",
         "BACKEND_URL",
@@ -61,7 +61,7 @@
         "DATABASE_URL"
       ]
     },
-    "@calcom/website#build": {
+    "@timely/website#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**"],
       "env": [
@@ -101,7 +101,7 @@
     "db-seed": {},
     "deploy": {
       "cache": false,
-      "dependsOn": ["@calcom/web#build"]
+      "dependsOn": ["@timely/web#build"]
     },
     "clean": {
       "cache": false,
@@ -130,7 +130,7 @@
       "inputs": ["./schema.prisma", "./prisma/schema.prisma"],
       "env": ["PRISMA_GENERATE_DATAPROXY"]
     },
-    "@calcom/prisma#post-install": {
+    "@timely/prisma#post-install": {
       "cache": false,
       "outputs": ["dist/**", "build/**"]
     },
@@ -151,28 +151,28 @@
     "type-check:ci": {
       "cache": false
     },
-    "@calcom/prisma#db-reset": {
+    "@timely/prisma#db-reset": {
       "cache": false,
       "outputs": ["dist/**", "build/**"]
     },
-    "@calcom/app-store-cli#build": {
+    "@timely/app-store-cli#build": {
       "cache": false,
       "inputs": ["../../app-store/**/**"],
       "outputs": ["../../app-store/apps.server.generated.ts", "../../app-store/apps.browser.generated.tsx"]
     },
-    "@calcom/embed-react#type-check": {
-      "dependsOn": ["@calcom/embed-core#build", "@calcom/embed-snippet#build"],
+    "@timely/embed-react#type-check": {
+      "dependsOn": ["@timely/embed-core#build", "@timely/embed-snippet#build"],
       "outputs": ["dist/**", "build/**"]
     },
-    "@calcom/embed-core#build": {
+    "@timely/embed-core#build": {
       "cache": false,
       "outputs": ["../../../apps/web/public/embed/**"]
     },
     "embed-tests-update-snapshots:ci": {
       "cache": false,
       "dependsOn": [
-        "@calcom/prisma#db-seed",
-        "@calcom/web#build",
+        "@timely/prisma#db-seed",
+        "@timely/web#build",
         "^build",
         "^embed-tests-update-snapshots:ci"
       ],

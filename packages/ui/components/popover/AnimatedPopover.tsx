@@ -1,8 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
+import { classNames } from "@timely/lib";
+import { Tooltip } from "@timely/ui";
 import React from "react";
-
-import { classNames } from "@calcom/lib";
-import { Tooltip } from "@calcom/ui";
 
 import { ChevronDown } from "../icon";
 

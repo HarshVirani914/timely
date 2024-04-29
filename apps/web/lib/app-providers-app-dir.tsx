@@ -1,4 +1,10 @@
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { OrgBrandingProvider } from "@timely/features/ee/organizations/context/provider";
+import DynamicHelpscoutProvider from "@timely/features/ee/support/lib/helpscout/providerDynamic";
+import DynamicIntercomProvider from "@timely/features/ee/support/lib/intercom/providerDynamic";
+import { FeatureProvider } from "@timely/features/flags/context/provider";
+import { useFlags } from "@timely/features/flags/hooks";
+import { MetaProvider } from "@timely/ui";
 import { TrpcProvider } from "app/_trpc/trpc-provider";
 import { dir } from "i18next";
 import type { Session } from "next-auth";
@@ -10,13 +16,6 @@ import type { AppProps as NextAppProps } from "next/app";
 import type { ReadonlyURLSearchParams } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
-
-import { OrgBrandingProvider } from "@calcom/features/ee/organizations/context/provider";
-import DynamicHelpscoutProvider from "@calcom/features/ee/support/lib/helpscout/providerDynamic";
-import DynamicIntercomProvider from "@calcom/features/ee/support/lib/intercom/providerDynamic";
-import { FeatureProvider } from "@calcom/features/flags/context/provider";
-import { useFlags } from "@calcom/features/flags/hooks";
-import { MetaProvider } from "@calcom/ui";
 
 import useIsBookingPage from "@lib/hooks/useIsBookingPage";
 import type { WithNonceProps } from "@lib/withNonce";
@@ -114,7 +113,7 @@ const enum ThemeSupport {
   Booking = "userConfigured",
 }
 
-type CalcomThemeProps = Readonly<{
+type TimelyThemeProps = Readonly<{
   isBookingPage: boolean;
   themeBasis: string | null;
   nonce: string | undefined;
@@ -122,7 +121,7 @@ type CalcomThemeProps = Readonly<{
   children: React.ReactNode;
 }>;
 
-const CalcomThemeProvider = (props: CalcomThemeProps) => {
+const TimelyThemeProvider = (props: TimelyThemeProps) => {
   // Use namespace of embed to ensure same namespaced embed are displayed with same theme. This allows different embeds on the same website to be themed differently
   // One such example is our Embeds Demo and Testing page at http://localhost:3100
   // Having `getEmbedNamespace` defined on window before react initializes the app, ensures that embedNamespace is available on the first mount and can be used as part of storageKey
@@ -156,8 +155,8 @@ const CalcomThemeProvider = (props: CalcomThemeProps) => {
  * So, we handle all the cases here namely,
  * - Both Booking Pages, /free/30min and /pro/30min but configured with different themes but being operated together.
  * - Embeds using different namespace. They can be completely themed different on the same page.
- * - Embeds using the same namespace but showing different cal.com links with different themes
- * - Embeds using the same namespace and showing same cal.com links with different themes(Different theme is possible for same cal.com link in case of embed because of theme config available in embed)
+ * - Embeds using the same namespace but showing different timely links with different themes
+ * - Embeds using the same namespace and showing same timely links with different themes(Different theme is possible for same timely link in case of embed because of theme config available in embed)
  * - App has different theme then Booking Pages.
  *
  * All the above cases have one thing in common, which is the origin and thus localStorage is shared and thus `storageKey` is critical to avoid theme flickering.
@@ -258,7 +257,7 @@ const AppProviders = (props: PageWrapperProps) => {
           <CustomI18nextProvider i18n={props.i18n}>
             <TooltipProvider>
               {/* color-scheme makes background:transparent not work which is required by embed. We need to ensure next-theme adds color-scheme to `body` instead of `html`(https://github.com/pacocoursey/next-themes/blob/main/src/index.tsx#L74). Once that's done we can enable color-scheme support */}
-              <CalcomThemeProvider
+              <TimelyThemeProvider
                 themeBasis={props.themeBasis}
                 nonce={props.nonce}
                 isThemeSupported={/* undefined gets treated as true */ props.isThemeSupported ?? true}
@@ -268,7 +267,7 @@ const AppProviders = (props: PageWrapperProps) => {
                     <MetaProvider>{props.children}</MetaProvider>
                   </OrgBrandProvider>
                 </FeatureFlagsProvider>
-              </CalcomThemeProvider>
+              </TimelyThemeProvider>
             </TooltipProvider>
           </CustomI18nextProvider>
         </SessionProvider>

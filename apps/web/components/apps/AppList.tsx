@@ -1,15 +1,15 @@
 import { useCallback, useState } from "react";
 
-import { AppSettings } from "@calcom/app-store/_components/AppSettings";
-import { InstallAppButton } from "@calcom/app-store/components";
-import { getEventLocationTypeFromApp, type EventLocationType } from "@calcom/app-store/locations";
-import type { CredentialOwner } from "@calcom/app-store/types";
-import { AppSetDefaultLinkDialog } from "@calcom/features/apps/components/AppSetDefaultLinkDialog";
-import { BulkEditDefaultConferencingModal } from "@calcom/features/eventtypes/components/BulkEditDefaultConferencingModal";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { AppCategories } from "@calcom/prisma/enums";
-import { trpc, type RouterOutputs } from "@calcom/trpc";
-import type { App } from "@calcom/types/App";
+import { AppSettings } from "@timely/app-store/_components/AppSettings";
+import { InstallAppButton } from "@timely/app-store/components";
+import { getEventLocationTypeFromApp, type EventLocationType } from "@timely/app-store/locations";
+import type { CredentialOwner } from "@timely/app-store/types";
+import { AppSetDefaultLinkDialog } from "@timely/features/apps/components/AppSetDefaultLinkDialog";
+import { BulkEditDefaultConferencingModal } from "@timely/features/eventtypes/components/BulkEditDefaultConferencingModal";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { AppCategories } from "@timely/prisma/enums";
+import { trpc, type RouterOutputs } from "@timely/trpc";
+import type { App } from "@timely/types/App";
 import {
   Dropdown,
   DropdownItem,
@@ -20,8 +20,8 @@ import {
   Button,
   DropdownMenuItem,
   Alert,
-} from "@calcom/ui";
-import { MoreHorizontal, Trash, Video } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { MoreHorizontal, Trash, Video } from "@timely/ui/components/icon";
 
 import AppListCard from "@components/AppListCard";
 

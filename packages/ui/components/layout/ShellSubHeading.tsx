@@ -1,6 +1,5 @@
+import { classNames } from "@timely/lib";
 import type { ReactNode } from "react";
-
-import { classNames } from "@calcom/lib";
 
 export function ShellSubHeading(props: {
   title: ReactNode;

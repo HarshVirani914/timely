@@ -1,7 +1,7 @@
 import { signIn } from "next-auth/react";
 import { useEffect } from "react";
 
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
 
 import PageWrapper from "@components/PageWrapper";
 

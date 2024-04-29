@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
 import { useRef } from "react";
 import { shallow } from "zustand/shallow";
-
-import dayjs from "@calcom/dayjs";
 
 import { useCalendarStore } from "../../state/store";
 import { Event } from "./Event";

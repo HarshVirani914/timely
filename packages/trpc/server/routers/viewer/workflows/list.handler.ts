@@ -1,9 +1,9 @@
-import type { WorkflowType } from "@calcom/features/ee/workflows/components/WorkflowListPage";
-// import dayjs from "@calcom/dayjs";
-// import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import type { WorkflowType } from "@timely/features/ee/workflows/components/WorkflowListPage";
+// import dayjs from "@timely/dayjs";
+// import { getErrorFromUnknown } from "@timely/lib/errors";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TListInputSchema } from "./list.schema";
 

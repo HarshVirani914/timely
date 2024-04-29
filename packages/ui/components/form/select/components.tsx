@@ -1,7 +1,6 @@
+import { classNames } from "@timely/lib";
 import type { GroupBase, InputProps, OptionProps, ControlProps } from "react-select";
 import { components as reactSelectComponents } from "react-select";
-
-import { classNames } from "@calcom/lib";
 
 import { UpgradeTeamsBadge, UpgradeOrgsBadge } from "../../badge";
 import { Check } from "../../icon";

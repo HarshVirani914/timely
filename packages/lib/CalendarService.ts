@@ -1,6 +1,17 @@
 /* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="../types/ical.d.ts"/>
 import type { Prisma } from "@prisma/client";
+import dayjs from "@timely/dayjs";
+import sanitizeCalendarObject from "@timely/lib/sanitizeCalendarObject";
+import type {
+  Calendar,
+  CalendarEvent,
+  CalendarEventType,
+  EventBusyDate,
+  IntegrationCalendar,
+  NewCalendarEventType,
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 import ICAL from "ical.js";
 import type { Attendee, DateArray, DurationObject, Person } from "ics";
 import { createEvent } from "ics";
@@ -15,18 +26,6 @@ import {
   updateCalendarObject,
 } from "tsdav";
 import { v4 as uuidv4 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import sanitizeCalendarObject from "@calcom/lib/sanitizeCalendarObject";
-import type {
-  Calendar,
-  CalendarEvent,
-  CalendarEventType,
-  EventBusyDate,
-  IntegrationCalendar,
-  NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
 
 import { getLocation, getRichDescription } from "./CalEventParser";
 import { symmetricDecrypt } from "./crypto";
@@ -321,7 +320,7 @@ export default abstract class BaseCalendarService implements Calendar {
    * @returns {Promise<string | undefined>} - A Promise that resolves to the user's timezone or "Europe/London" as a default value if the timezone is not found.
    */
   getUserTimezoneFromDB = async (id: number): Promise<string | undefined> => {
-    const prisma = await import("@calcom/prisma").then((mod) => mod.default);
+    const prisma = await import("@timely/prisma").then((mod) => mod.default);
     const user = await prisma.user.findUnique({
       where: {
         id,
@@ -521,7 +520,7 @@ export default abstract class BaseCalendarService implements Calendar {
         const [mainHostDestinationCalendar] = event?.destinationCalendar ?? [];
         newCalendars.push({
           externalId: calendar.url,
-          /** @url https://github.com/calcom/cal.com/issues/7186 */
+          /** @url https://github.com/timely/timely/issues/7186 */
           name: typeof calendar.displayName === "string" ? calendar.displayName : "",
           primary: mainHostDestinationCalendar?.externalId
             ? mainHostDestinationCalendar.externalId === calendar.url

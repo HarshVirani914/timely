@@ -1,4 +1,4 @@
-import { prisma } from "@calcom/prisma";
+import { prisma } from "@timely/prisma";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import { getDefaultScheduleId } from "./util";

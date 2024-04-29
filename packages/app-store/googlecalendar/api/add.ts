@@ -1,9 +1,8 @@
+import { WEBAPP_URL_FOR_OAUTH } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { WEBAPP_URL_FOR_OAUTH } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import { encodeOAuthState } from "../../_utils/oauth/encodeOAuthState";

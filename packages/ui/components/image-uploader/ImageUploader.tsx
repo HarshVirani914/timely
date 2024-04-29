@@ -1,10 +1,9 @@
 import * as SliderPrimitive from "@radix-ui/react-slider";
+import checkIfItFallbackImage from "@timely/lib/checkIfItFallbackImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useState } from "react";
 import Cropper from "react-easy-crop";
-
-import checkIfItFallbackImage from "@calcom/lib/checkIfItFallbackImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import type { ButtonColor } from "../..";
 import { Button, Dialog, DialogClose, DialogContent, DialogTrigger, DialogFooter } from "../..";

@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import crypto from "node:crypto";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { defaultHandler } from "@calcom/lib/server";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { defaultHandler } from "@timely/lib/server";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession({ req, res });

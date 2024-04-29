@@ -1,12 +1,11 @@
+import appStore from "@timely/app-store";
+import dayjs from "@timely/dayjs";
+import { sendNoShowFeeChargedEmail } from "@timely/emails";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import { getTranslation } from "@timely/lib/server/i18n";
+import sendPayload from "@timely/lib/server/webhooks/sendPayload";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import { z } from "zod";
-
-import appStore from "@calcom/app-store";
-import dayjs from "@calcom/dayjs";
-import { sendNoShowFeeChargedEmail } from "@calcom/emails";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import sendPayload from "@calcom/lib/server/webhooks/sendPayload";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { TRPCError } from "@trpc/server";
 

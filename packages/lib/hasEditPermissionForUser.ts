@@ -1,6 +1,6 @@
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 const ROLES_WITH_EDIT_PERMISSION = [MembershipRole.ADMIN, MembershipRole.OWNER] as MembershipRole[];
 

@@ -1,13 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import logger from "@timely/lib/logger";
+import { trpc } from "@timely/trpc/react";
+import { Button, Dialog, DialogContent, DialogFooter, DialogHeader, showToast } from "@timely/ui";
+import { Clock } from "@timely/ui/components/icon";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import logger from "@calcom/lib/logger";
-import { trpc } from "@calcom/trpc/react";
-import { Button, Dialog, DialogContent, DialogFooter, DialogHeader, showToast } from "@calcom/ui";
-import { Clock } from "@calcom/ui/components/icon";
 
 interface IConfirmDialogWipe {
   isOpenDialog: boolean;

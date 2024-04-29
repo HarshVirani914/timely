@@ -2,13 +2,13 @@ import type {
   DefaultEventLocationType,
   EventLocationTypeFromApp,
   LocationObject,
-} from "@calcom/app-store/locations";
-import { getEventLocationType, getTranslatedLocation } from "@calcom/app-store/locations";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import invertLogoOnDark from "@calcom/lib/invertLogoOnDark";
-import { Tooltip } from "@calcom/ui";
-import { Link } from "@calcom/ui/components/icon";
+} from "@timely/app-store/locations";
+import { getEventLocationType, getTranslatedLocation } from "@timely/app-store/locations";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import invertLogoOnDark from "@timely/lib/invertLogoOnDark";
+import { Tooltip } from "@timely/ui";
+import { Link } from "@timely/ui/components/icon";
 
 const excludeNullValues = (value: unknown) => !!value;
 

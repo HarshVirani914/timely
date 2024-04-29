@@ -1,7 +1,6 @@
 import { WorkflowActions } from "@prisma/client";
-
-import dayjs from "@calcom/dayjs";
-import { TimeFormat } from "@calcom/lib/timeFormat";
+import dayjs from "@timely/dayjs";
+import { TimeFormat } from "@timely/lib/timeFormat";
 
 export const whatsappReminderTemplate = (
   isEditingMode: boolean,

@@ -1,10 +1,9 @@
 import type { Prisma } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
+import dayjs from "@timely/dayjs";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { BookingStatus } from "@timely/prisma/enums";
 import { v4 as uuidv4 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { BookingStatus } from "@calcom/prisma/enums";
 
 const shuffle = (
   booking: any,

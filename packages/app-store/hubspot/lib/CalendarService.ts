@@ -6,12 +6,11 @@ import type {
   SimplePublicObject,
   SimplePublicObjectInput,
 } from "@hubspot/api-client/lib/codegen/crm/objects/meetings";
-
-import { getLocation } from "@calcom/lib/CalEventParser";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
+import { getLocation } from "@timely/lib/CalEventParser";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import type {
   Calendar,
   CalendarEvent,
@@ -19,8 +18,8 @@ import type {
   IntegrationCalendar,
   NewCalendarEventType,
   Person,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import refreshOAuthTokens from "../../_utils/oauth/refreshOAuthTokens";

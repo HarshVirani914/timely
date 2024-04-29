@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 import type { VerticalTabItemProps } from "./VerticalTabItem";
 import VerticalTabItem from "./VerticalTabItem";

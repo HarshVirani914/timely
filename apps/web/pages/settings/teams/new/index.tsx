@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import { CreateANewTeamForm } from "@calcom/features/ee/teams/components";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { WizardLayout } from "@calcom/ui";
+import { CreateANewTeamForm } from "@timely/features/ee/teams/components";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { WizardLayout } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

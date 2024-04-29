@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { truncateOnWord } from "@calcom/lib/text";
+import { truncateOnWord } from "@timely/lib/text";
 
 type RootMetadataRecipe = Readonly<{
   twitterCreator: string;

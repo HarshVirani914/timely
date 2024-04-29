@@ -1,14 +1,10 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import type { Workflow, WorkflowStep, Membership } from "@prisma/client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { CAL_URL } from "@calcom/lib/constants";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import classNames from "@timely/lib/classNames";
+import { CAL_URL } from "@timely/lib/constants";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   ButtonGroup,
@@ -21,8 +17,11 @@ import {
   Badge,
   Avatar,
   ArrowButton,
-} from "@calcom/ui";
-import { Edit2, Link as LinkIcon, MoreHorizontal, Trash2 } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Edit2, Link as LinkIcon, MoreHorizontal, Trash2 } from "@timely/ui/components/icon";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { useOrgBranding } from "../../organizations/context/provider";
 import { subdomainSuffix } from "../../organizations/lib/orgDomains";

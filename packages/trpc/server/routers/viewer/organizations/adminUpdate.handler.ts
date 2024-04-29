@@ -1,10 +1,9 @@
 import type { Prisma } from "@prisma/client";
-
-import { renameDomain } from "@calcom/lib/domainManager/organization";
-import { getMetadataHelpers } from "@calcom/lib/getMetadataHelpers";
-import { HttpError } from "@calcom/lib/http-error";
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { renameDomain } from "@timely/lib/domainManager/organization";
+import { getMetadataHelpers } from "@timely/lib/getMetadataHelpers";
+import { HttpError } from "@timely/lib/http-error";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import type { TAdminUpdate } from "./adminUpdate.schema";

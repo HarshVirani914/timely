@@ -5,7 +5,7 @@
 import { dehydrate, QueryClient } from "@tanstack/query-core";
 import type { DehydratedState, QueryKey } from "@tanstack/react-query";
 
-import type { Maybe, TRPCClientError, TRPCClientErrorLike } from "@calcom/trpc";
+import type { Maybe, TRPCClientError, TRPCClientErrorLike } from "@timely/trpc";
 import {
   callProcedure,
   type AnyProcedure,
@@ -17,7 +17,7 @@ import {
   type inferRouterContext,
   type MaybePromise,
   type ProcedureRouterRecord,
-} from "@calcom/trpc/server";
+} from "@timely/trpc/server";
 
 import { createRecursiveProxy, createFlatProxy } from "@trpc/server/shared";
 

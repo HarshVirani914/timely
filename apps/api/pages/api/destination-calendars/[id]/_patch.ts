@@ -2,11 +2,11 @@ import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 import type { z } from "zod";
 
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import type { PrismaClient } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import type { PrismaClient } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 
 import {
   schemaDestinationCalendarEditBodyParams,

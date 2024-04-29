@@ -1,20 +1,19 @@
+import { getSuccessPageLocationMessage } from "@timely/app-store/locations";
+import dayjs from "@timely/dayjs";
+import { sdkActionManager, useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { Price } from "@timely/features/bookings/components/event-meta/Price";
+import { getPayIcon } from "@timely/features/bookings/components/event-meta/getPayIcon";
+import { APP_NAME, WEBSITE_URL } from "@timely/lib/constants";
+import getPaymentAppData from "@timely/lib/getPaymentAppData";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import useTheme from "@timely/lib/hooks/useTheme";
+import { getIs24hClockFromLocalStorage, isBrowserLocale24h } from "@timely/lib/timeFormat";
+import { localStorage } from "@timely/lib/webstorage";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
-
-import { getSuccessPageLocationMessage } from "@calcom/app-store/locations";
-import dayjs from "@calcom/dayjs";
-import { sdkActionManager, useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { Price } from "@calcom/features/bookings/components/event-meta/Price";
-import { getPayIcon } from "@calcom/features/bookings/components/event-meta/getPayIcon";
-import { APP_NAME, WEBSITE_URL } from "@calcom/lib/constants";
-import getPaymentAppData from "@calcom/lib/getPaymentAppData";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import useTheme from "@calcom/lib/hooks/useTheme";
-import { getIs24hClockFromLocalStorage, isBrowserLocale24h } from "@calcom/lib/timeFormat";
-import { localStorage } from "@calcom/lib/webstorage";
 
 import type { PaymentPageProps } from "../pages/payment";
 
@@ -24,7 +23,7 @@ const StripePaymentComponent = dynamic(() => import("./Payment"), {
 
 const PaypalPaymentComponent = dynamic(
   () =>
-    import("@calcom/app-store/paypal/components/PaypalPaymentComponent").then(
+    import("@timely/app-store/paypal/components/PaypalPaymentComponent").then(
       (m) => m.PaypalPaymentComponent
     ),
   {
@@ -33,7 +32,7 @@ const PaypalPaymentComponent = dynamic(
 );
 
 const AlbyPaymentComponent = dynamic(
-  () => import("@calcom/app-store/alby/components/AlbyPaymentComponent").then((m) => m.AlbyPaymentComponent),
+  () => import("@timely/app-store/alby/components/AlbyPaymentComponent").then((m) => m.AlbyPaymentComponent),
   {
     ssr: false,
   }
@@ -166,7 +165,7 @@ const PaymentPage: FC<PaymentPageProps> = (props) => {
                 {!props.profile.hideBranding && (
                   <div className="text-muted dark:text-inverted mt-4 border-t pt-4 text-center text-xs dark:border-gray-900">
                     <a href={`${WEBSITE_URL}/signup`}>
-                      {t("create_booking_link_with_calcom", { appName: APP_NAME })}
+                      {t("create_booking_link_with_timely", { appName: APP_NAME })}
                     </a>
                   </div>
                 )}

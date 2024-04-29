@@ -1,5 +1,5 @@
-import publicProcedure from "@calcom/trpc/server/procedures/publicProcedure";
-import { router } from "@calcom/trpc/server/trpc";
+import publicProcedure from "@timely/trpc/server/procedures/publicProcedure";
+import { router } from "@timely/trpc/server/trpc";
 
 import { getFeatureFlagMap } from "./utils";
 

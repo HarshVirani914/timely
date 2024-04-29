@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
-  "name": "@calcom/eightxeight",
+  "name": "@timely/eightxeight",
   "version": "0.0.0",
   "main": "./index.ts",
   "dependencies": {
-    "@calcom/lib": "*"
+    "@timely/lib": "*"
   },
   "devDependencies": {
-    "@calcom/types": "*"
+    "@timely/types": "*"
   },
   "description": "The best video conferencing solution for businesses of any size. Fully secure, reliable, packed with features and ridiculously simple to use.\r\r"
 }

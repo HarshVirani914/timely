@@ -1,10 +1,9 @@
 import { Prisma } from "@prisma/client";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { SchedulingType } from "@timely/prisma/enums";
 import type { NextApiRequest } from "next";
 import type { z } from "zod";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { SchedulingType } from "@calcom/prisma/enums";
 
 import type { schemaEventTypeBaseBodyParams } from "~/lib/validations/event-type";
 import { schemaEventTypeEditBodyParams, schemaEventTypeReadPublic } from "~/lib/validations/event-type";
@@ -193,7 +192,7 @@ import checkTeamEventEditPermission from "../_utils/checkTeamEventEditPermission
  *     tags:
  *     - event-types
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/event-types
+ *        url: https://docs.timely/core-features/event-types
  *     responses:
  *       201:
  *         description: OK, eventType edited successfully

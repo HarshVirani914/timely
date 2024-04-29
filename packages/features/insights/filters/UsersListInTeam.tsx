@@ -1,12 +1,12 @@
 import {
   FilterCheckboxField,
   FilterCheckboxFieldsContainer,
-} from "@calcom/features/filters/components/TeamsFilter";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc";
-import { trpc } from "@calcom/trpc";
-import { AnimatedPopover, Avatar } from "@calcom/ui";
+} from "@timely/features/filters/components/TeamsFilter";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc";
+import { trpc } from "@timely/trpc";
+import { AnimatedPopover, Avatar } from "@timely/ui";
 
 import { useFilterContext } from "../context/provider";
 

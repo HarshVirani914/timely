@@ -1,4 +1,4 @@
-import { SkeletonAvatar, SkeletonText } from "@calcom/ui";
+import { SkeletonAvatar, SkeletonText } from "@timely/ui";
 
 function SkeletonLoader() {
   return (

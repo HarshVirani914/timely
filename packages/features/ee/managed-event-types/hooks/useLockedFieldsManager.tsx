@@ -1,13 +1,12 @@
 // eslint-disable-next-line no-restricted-imports
+import type { Prisma } from "@timely/prisma/client";
+import { SchedulingType } from "@timely/prisma/enums";
+import type { _EventTypeModel } from "@timely/prisma/zod/eventtype";
+import { Tooltip } from "@timely/ui";
+import { Lock } from "@timely/ui/components/icon";
 import { get } from "lodash";
 import React from "react";
 import type z from "zod";
-
-import type { Prisma } from "@calcom/prisma/client";
-import { SchedulingType } from "@calcom/prisma/enums";
-import type { _EventTypeModel } from "@calcom/prisma/zod/eventtype";
-import { Tooltip } from "@calcom/ui";
-import { Lock } from "@calcom/ui/components/icon";
 
 export const LockedIndicator = (label: string) => (
   <Tooltip content={<>{label}</>}>

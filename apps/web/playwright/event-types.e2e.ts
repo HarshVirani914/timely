@@ -1,8 +1,8 @@
 import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
 
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { randomString } from "@calcom/lib/random";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { randomString } from "@timely/lib/random";
 
 import { test } from "./lib/fixtures";
 import { testBothFutureAndLegacyRoutes } from "./lib/future-legacy-routes";
@@ -14,7 +14,7 @@ test.describe("Event Types A/B tests", () => {
   test("should point to the /future/event-types page", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -333,7 +333,7 @@ test.describe("Event Types tests", () => {
 
         await page.locator("[data-testid=add-location]").click();
 
-        const testUrl2 = "https://cal.com/ai";
+        const testUrl2 = "https://timely/ai";
         await page.locator(`text="Link meeting"`).last().click();
         await page.locator(`input[name="${locationInputName(1)}"]`).waitFor();
         await page.locator(`input[name="${locationInputName(1)}"]`).fill(testUrl2);

@@ -1,4 +1,4 @@
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 type ShouldVerifyEmailType = {
   ctx: {

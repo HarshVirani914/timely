@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@calcom/prisma";
+import type { PrismaClient } from "@timely/prisma";
 
 import type { AppFlags } from "../config";
 

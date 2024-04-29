@@ -1,8 +1,8 @@
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { List } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { List } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 
 import { AppConnectionItem } from "../components/AppConnectionItem";
 import { StepConnectionLoader } from "../components/StepConnectionLoader";

@@ -1,12 +1,12 @@
-import dayjs from "@calcom/dayjs";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
+import dayjs from "@timely/dayjs";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import {
   WorkflowTriggerEvents,
   WorkflowTemplates,
   WorkflowActions,
   WorkflowMethods,
-} from "@calcom/prisma/enums";
+} from "@timely/prisma/enums";
 
 import * as twilio from "./smsProviders/twilioProvider";
 import type { ScheduleTextReminderArgs, timeUnitLowerCase } from "./smsReminderManager";

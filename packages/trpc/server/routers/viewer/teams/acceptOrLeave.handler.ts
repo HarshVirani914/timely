@@ -1,7 +1,7 @@
-import { closeComUpsertTeamUser } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { closeComUpsertTeamUser } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TAcceptOrLeaveInputSchema } from "./acceptOrLeave.schema";
 

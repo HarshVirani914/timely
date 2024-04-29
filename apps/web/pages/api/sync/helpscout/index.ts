@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import getRawBody from "raw-body";
 import z from "zod";
 
-import { default as webPrisma } from "@calcom/prisma";
+import { default as webPrisma } from "@timely/prisma";
 
 export const config = {
   api: {

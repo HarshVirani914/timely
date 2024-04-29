@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import notEmpty from "@calcom/lib/notEmpty";
-import prisma from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import notEmpty from "@timely/lib/notEmpty";
+import prisma from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 
 const selectedCalendarSelectSchema = z.object({
   integration: z.string(),

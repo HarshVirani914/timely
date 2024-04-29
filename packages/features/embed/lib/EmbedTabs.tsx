@@ -1,12 +1,11 @@
+import type { BookerLayout } from "@timely/features/bookings/Booker/types";
+import { APP_NAME } from "@timely/lib/constants";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { TextArea } from "@timely/ui";
+import { Code, Trello } from "@timely/ui/components/icon";
 import { forwardRef } from "react";
 import type { MutableRefObject } from "react";
-
-import type { BookerLayout } from "@calcom/features/bookings/Booker/types";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { TextArea } from "@calcom/ui";
-import { Code, Trello } from "@calcom/ui/components/icon";
 
 import type { EmbedType, PreviewState, EmbedFramework } from "../types";
 import { Codes, doWeNeedCalOriginProp } from "./EmbedCodes";
@@ -103,10 +102,10 @@ export const tabs = [
             value={`/* First make sure that you have installed the package */
   
   /* If you are using yarn */
-  // yarn add @calcom/embed-react
+  // yarn add @timely/embed-react
   
   /* If you are using npm */
-  // npm install @calcom/embed-react
+  // npm install @timely/embed-react
   ${getEmbedTypeSpecificString({
     embedFramework: "react",
     embedType,
@@ -275,7 +274,7 @@ const getInstructionString = ({
 
 function useGetEmbedSnippetString(namespace: string | null) {
   const bookerUrl = useBookerUrl();
-  // TODO: Import this string from @calcom/embed-snippet
+  // TODO: Import this string from @timely/embed-snippet
   return `(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "${embedLibUrl}", "init");
 Cal("init", ${namespace ? `"${namespace}",` : ""} {origin:"${bookerUrl}"});
 `;

@@ -35,9 +35,9 @@ const updatePackageJson = ({
   appDirPath: string;
 }) => {
   const packageJsonConfig = JSON.parse(fs.readFileSync(`${appDirPath}/package.json`).toString());
-  packageJsonConfig.name = `@calcom/${slug}`;
+  packageJsonConfig.name = `@timely/${slug}`;
   packageJsonConfig.description = appDescription;
-  // packageJsonConfig.description = `@calcom/${appName}`;
+  // packageJsonConfig.description = `@timely/${appName}`;
   fs.writeFileSync(`${appDirPath}/package.json`, JSON.stringify(packageJsonConfig, null, 2));
 };
 

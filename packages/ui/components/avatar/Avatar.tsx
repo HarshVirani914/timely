@@ -1,9 +1,8 @@
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import classNames from "@timely/lib/classNames";
+import { AVATAR_FALLBACK } from "@timely/lib/constants";
 import Link from "next/link";
-
-import classNames from "@calcom/lib/classNames";
-import { AVATAR_FALLBACK } from "@calcom/lib/constants";
 
 import type { Maybe } from "@trpc/server";
 

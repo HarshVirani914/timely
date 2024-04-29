@@ -2,18 +2,18 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 
-import dayjs from "@calcom/dayjs";
-import { DateOverrideInputDialog, DateOverrideList } from "@calcom/features/schedules";
-import Schedule from "@calcom/features/schedules/components/Schedule";
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { availabilityAsString } from "@calcom/lib/availability";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import type { Schedule as ScheduleType, TimeRange, WorkingHours } from "@calcom/types/schedule";
+import dayjs from "@timely/dayjs";
+import { DateOverrideInputDialog, DateOverrideList } from "@timely/features/schedules";
+import Schedule from "@timely/features/schedules/components/Schedule";
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { availabilityAsString } from "@timely/lib/availability";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import type { Schedule as ScheduleType, TimeRange, WorkingHours } from "@timely/types/schedule";
 import {
   Button,
   ConfirmationDialogContent,
@@ -28,8 +28,8 @@ import {
   TimezoneSelect,
   Tooltip,
   VerticalDivider,
-} from "@calcom/ui";
-import { Info, MoreVertical, ArrowLeft, Plus, Trash } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ArrowLeft, Info, MoreVertical, Plus, Trash } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 import { SelectSkeletonLoader } from "@components/availability/SkeletonLoader";
@@ -314,17 +314,6 @@ export default function Availability() {
                       }
                     />
                   </div>
-                  <hr className="border-subtle my-7" />
-                  <div className="rounded-md md:block">
-                    <Skeleton as="h3" className="mb-0 inline-block text-sm font-medium">
-                      {t("something_doesnt_look_right")}
-                    </Skeleton>
-                    <div className="mt-3 flex">
-                      <Skeleton as={Button} href="/availability/troubleshoot" color="secondary">
-                        {t("launch_troubleshooter")}
-                      </Skeleton>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -399,17 +388,6 @@ export default function Availability() {
                     )
                   }
                 />
-              </div>
-              <hr className="border-subtle my-6 mr-8" />
-              <div className="rounded-md">
-                <Skeleton as="h3" className="mb-0 inline-block text-sm font-medium">
-                  {t("something_doesnt_look_right")}
-                </Skeleton>
-                <div className="mt-3 flex">
-                  <Skeleton as={Button} href="/availability/troubleshoot" color="secondary">
-                    {t("launch_troubleshooter")}
-                  </Skeleton>
-                </div>
               </div>
             </div>
           </div>

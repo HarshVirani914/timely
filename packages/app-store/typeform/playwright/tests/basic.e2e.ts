@@ -1,13 +1,12 @@
 import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
-
 import {
   addForm as addRoutingForm,
   addOneFieldAndDescriptionAndSaveForm,
-} from "@calcom/app-store/routing-forms/playwright/tests/testUtils";
-import { CAL_URL } from "@calcom/lib/constants";
-import type { Fixtures } from "@calcom/web/playwright/lib/fixtures";
-import { test } from "@calcom/web/playwright/lib/fixtures";
+} from "@timely/app-store/routing-forms/playwright/tests/testUtils";
+import { CAL_URL } from "@timely/lib/constants";
+import type { Fixtures } from "@timely/web/playwright/lib/fixtures";
+import { test } from "@timely/web/playwright/lib/fixtures";
 
 const installApps = async (page: Page, users: Fixtures["users"]) => {
   const user = await users.create(

@@ -1,18 +1,17 @@
 /* Schedule any workflow reminder that falls within 72 hours for email */
 import client from "@sendgrid/client";
 import sgMail from "@sendgrid/mail";
+import dayjs from "@timely/dayjs";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { SENDER_NAME } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { defaultHandler } from "@timely/lib/server";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import prisma from "@timely/prisma";
+import { WorkflowActions, WorkflowMethods, WorkflowTemplates } from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { v4 as uuidv4 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { SENDER_NAME } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { defaultHandler } from "@calcom/lib/server";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import prisma from "@calcom/prisma";
-import { WorkflowActions, WorkflowMethods, WorkflowTemplates } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
 
 import type { PartialWorkflowReminder } from "../lib/getWorkflowReminders";
 import {

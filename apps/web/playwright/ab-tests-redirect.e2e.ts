@@ -8,7 +8,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/apps/installed/[category]", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -35,7 +35,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/apps/[slug]", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -62,7 +62,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/apps/[slug]/setup", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -89,7 +89,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/apps/categories", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -116,7 +116,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/apps/categories/[category]", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },
@@ -143,7 +143,7 @@ test.describe("apps/ A/B tests", () => {
   test("should point to the /future/bookings/[status]", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },

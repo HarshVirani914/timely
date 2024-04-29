@@ -1,10 +1,9 @@
+import dayjs from "@timely/dayjs";
+import { MINUTES_TO_BOOK } from "@timely/lib/constants";
+import type { PrismaClient } from "@timely/prisma";
 import { serialize } from "cookie";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { v4 as uuid } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { MINUTES_TO_BOOK } from "@calcom/lib/constants";
-import type { PrismaClient } from "@calcom/prisma";
 
 import { TRPCError } from "@trpc/server";
 

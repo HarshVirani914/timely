@@ -4,13 +4,13 @@ import { Prisma as PrismaType } from "@prisma/client";
 import { hashSync as hash } from "bcryptjs";
 import type { API } from "mailhog";
 
-import stripe from "@calcom/features/ee/payments/server/stripe";
-import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@calcom/lib/availability";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { Schedule } from "@calcom/types/schedule";
+import stripe from "@timely/features/ee/payments/server/stripe";
+import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@timely/lib/availability";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { prisma } from "@timely/prisma";
+import { MembershipRole, SchedulingType } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { Schedule } from "@timely/types/schedule";
 
 import { selectFirstAvailableTimeSlotNextMonth, teamEventSlug, teamEventTitle } from "../lib/testUtils";
 import { TimeZoneEnum } from "./types";

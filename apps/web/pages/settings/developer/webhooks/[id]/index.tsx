@@ -1,4 +1,4 @@
-import WebhookEditView from "@calcom/features/webhooks/pages/webhook-edit-view";
+import WebhookEditView from "@timely/features/webhooks/pages/webhook-edit-view";
 
 import type { CalPageWrapper } from "@components/PageWrapper";
 import PageWrapper from "@components/PageWrapper";

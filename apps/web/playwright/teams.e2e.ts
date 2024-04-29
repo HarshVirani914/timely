@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole, SchedulingType } from "@calcom/prisma/enums";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { prisma } from "@timely/prisma";
+import { MembershipRole, SchedulingType } from "@timely/prisma/enums";
 
 import { test } from "./lib/fixtures";
 import {
@@ -454,7 +454,7 @@ test.describe("Teams - Org", () => {
     const teamSlugUpperCase = team.slug?.toUpperCase();
     const teamEventSlugUpperCase = teamEventSlug.toUpperCase();
 
-    // This is the most closest to the actual user flow as org1.cal.com maps to /org/orgSlug
+    // This is the most closest to the actual user flow as org1.timely maps to /org/orgSlug
     await page.goto(`/org/${org.slug}/${teamSlugUpperCase}/${teamEventSlugUpperCase}`);
     await page.waitForSelector("[data-testid=day]");
   });

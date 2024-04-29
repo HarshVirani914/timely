@@ -1,4 +1,12 @@
 import type { Prisma } from "@prisma/client";
+import { appDataSchemas } from "@timely/app-store/apps.schemas.generated";
+import dayjs from "@timely/dayjs";
+import { isPasswordValid } from "@timely/features/auth/lib/isPasswordValid";
+import type { FieldType as FormBuilderFieldType } from "@timely/features/form-builder/schema";
+import { fieldsSchema as formBuilderFieldsSchema } from "@timely/features/form-builder/schema";
+import { isSupportedTimeZone } from "@timely/lib/date-fns";
+import { slugify } from "@timely/lib/slugify";
+import { EventTypeCustomInputType } from "@timely/prisma/enums";
 import type { UnitTypeLongPlural } from "dayjs";
 import z, { ZodNullable, ZodObject, ZodOptional } from "zod";
 
@@ -12,15 +20,6 @@ import type {
   ZodRawShape,
   ZodTypeAny,
 } from "zod";
-
-import { appDataSchemas } from "@calcom/app-store/apps.schemas.generated";
-import dayjs from "@calcom/dayjs";
-import { isPasswordValid } from "@calcom/features/auth/lib/isPasswordValid";
-import type { FieldType as FormBuilderFieldType } from "@calcom/features/form-builder/schema";
-import { fieldsSchema as formBuilderFieldsSchema } from "@calcom/features/form-builder/schema";
-import { isSupportedTimeZone } from "@calcom/lib/date-fns";
-import { slugify } from "@calcom/lib/slugify";
-import { EventTypeCustomInputType } from "@calcom/prisma/enums";
 
 // Let's not import 118kb just to get an enum
 export enum Frequency {
@@ -424,7 +423,7 @@ export const DeploymentTheme = z
     bookingDark: z.string().default("#313131"),
     bookingDarker: z.string().default("#292929"),
     fontName: z.string().default("Cal Sans"),
-    fontSrc: z.string().default("https://cal.com/cal.ttf"),
+    fontSrc: z.string().default("https://timely/cal.ttf"),
   })
   .optional();
 

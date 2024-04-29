@@ -1,10 +1,9 @@
+import { useAppContextWithSchema } from "@timely/app-store/EventTypeAppContext";
+import AppCard from "@timely/app-store/_components/AppCard";
+import type { EventTypeAppCardComponent } from "@timely/app-store/types";
+import { trpc } from "@timely/trpc/react";
+import { Select } from "@timely/ui";
 import { useState, useEffect } from "react";
-
-import { useAppContextWithSchema } from "@calcom/app-store/EventTypeAppContext";
-import AppCard from "@calcom/app-store/_components/AppCard";
-import type { EventTypeAppCardComponent } from "@calcom/app-store/types";
-import { trpc } from "@calcom/trpc/react";
-import { Select } from "@calcom/ui";
 
 import type { appDataSchema } from "../zod";
 
@@ -62,7 +61,7 @@ const EventTypeAppCard: EventTypeAppCardComponent = function EventTypeAppCard({ 
         </div>
         <div className="mt-2">
           Please note that as of now you can only link <span className="italic">one</span> of your projects to
-          cal.com
+          timely
         </div>
       </div>
     </AppCard>

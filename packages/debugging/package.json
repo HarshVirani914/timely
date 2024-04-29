@@ -1,5 +1,5 @@
 {
-  "name": "@calcom/debugging",
+  "name": "@timely/debugging",
   "description": "Debugging utilities",
   "private": true,
   "version": "1.0.0",

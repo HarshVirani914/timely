@@ -1,7 +1,6 @@
+import { trpc } from "@timely/trpc";
+import { SelectField } from "@timely/ui";
 import { useMemo, useEffect, startTransition } from "react";
-
-import { trpc } from "@calcom/trpc";
-import { SelectField } from "@calcom/ui";
 
 import { getQueryParam } from "../../bookings/Booker/utils/query-param";
 import { useTroubleshooterStore } from "../store";

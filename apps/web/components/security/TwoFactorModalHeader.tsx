@@ -1,4 +1,4 @@
-import { Shield } from "@calcom/ui/components/icon";
+import { Shield } from "@timely/ui/components/icon";
 
 const TwoFactorModalHeader = ({ title, description }: { title: string; description: string }) => {
   return (

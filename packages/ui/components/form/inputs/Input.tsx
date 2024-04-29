@@ -1,9 +1,8 @@
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import type { ReactNode } from "react";
 import React, { forwardRef, useCallback, useId, useState } from "react";
 import { useFormContext } from "react-hook-form";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Alert, Input, InputField, Tooltip } from "../../..";
 import { Eye, EyeOff, Search } from "../../icon";

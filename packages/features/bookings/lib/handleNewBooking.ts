@@ -1,32 +1,21 @@
 import type { App, Attendee, DestinationCalendar, EventTypeCustomInput } from "@prisma/client";
 import { Prisma } from "@prisma/client";
-import async from "async";
-import type { IncomingMessage } from "http";
-import { isValidPhoneNumber } from "libphonenumber-js";
-// eslint-disable-next-line no-restricted-imports
-import { cloneDeep } from "lodash";
-import type { NextApiRequest } from "next";
-import short, { uuid } from "short-uuid";
-import type { Logger } from "tslog";
-import { v5 as uuidv5 } from "uuid";
-import z from "zod";
-
-import { getCalendar } from "@calcom/app-store/_utils/getCalendar";
-import { metadata as GoogleMeetMetadata } from "@calcom/app-store/googlevideo/_metadata";
-import type { LocationObject } from "@calcom/app-store/locations";
+import { getCalendar } from "@timely/app-store/_utils/getCalendar";
+import { metadata as GoogleMeetMetadata } from "@timely/app-store/googlevideo/_metadata";
+import type { LocationObject } from "@timely/app-store/locations";
 import {
   getLocationValueForDB,
   MeetLocationType,
   OrganizerDefaultConferencingAppType,
-} from "@calcom/app-store/locations";
-import type { EventTypeAppsList } from "@calcom/app-store/utils";
-import { getAppFromSlug } from "@calcom/app-store/utils";
-import EventManager from "@calcom/core/EventManager";
-import { getEventName } from "@calcom/core/event";
-import { getUserAvailability } from "@calcom/core/getUserAvailability";
-import { deleteMeeting } from "@calcom/core/videoClient";
-import dayjs from "@calcom/dayjs";
-import { scheduleMandatoryReminder } from "@calcom/ee/workflows/lib/reminders/scheduleMandatoryReminder";
+} from "@timely/app-store/locations";
+import type { EventTypeAppsList } from "@timely/app-store/utils";
+import { getAppFromSlug } from "@timely/app-store/utils";
+import EventManager from "@timely/core/EventManager";
+import { getEventName } from "@timely/core/event";
+import { getUserAvailability } from "@timely/core/getUserAvailability";
+import { deleteMeeting } from "@timely/core/videoClient";
+import dayjs from "@timely/dayjs";
+import { scheduleMandatoryReminder } from "@timely/ee/workflows/lib/reminders/scheduleMandatoryReminder";
 import {
   sendAttendeeRequestEmail,
   sendOrganizerRequestEmail,
@@ -37,64 +26,74 @@ import {
   sendRoundRobinScheduledEmails,
   sendScheduledEmails,
   sendScheduledSeatsEmails,
-} from "@calcom/emails";
-import getICalUID from "@calcom/emails/lib/getICalUID";
-import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { handleWebhookTrigger } from "@calcom/features/bookings/lib/handleWebhookTrigger";
-import { isEventTypeLoggingEnabled } from "@calcom/features/bookings/lib/isEventTypeLoggingEnabled";
-import { userOrgQuery } from "@calcom/features/ee/organizations/lib/orgDomains";
+} from "@timely/emails";
+import getICalUID from "@timely/emails/lib/getICalUID";
+import { getBookingFieldsWithSystemFields } from "@timely/features/bookings/lib/getBookingFields";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { handleWebhookTrigger } from "@timely/features/bookings/lib/handleWebhookTrigger";
+import { isEventTypeLoggingEnabled } from "@timely/features/bookings/lib/isEventTypeLoggingEnabled";
+import { userOrgQuery } from "@timely/features/ee/organizations/lib/orgDomains";
 import {
   allowDisablingAttendeeConfirmationEmails,
   allowDisablingHostConfirmationEmails,
-} from "@calcom/features/ee/workflows/lib/allowDisablingStandardEmails";
+} from "@timely/features/ee/workflows/lib/allowDisablingStandardEmails";
 import {
   cancelWorkflowReminders,
   scheduleWorkflowReminders,
-} from "@calcom/features/ee/workflows/lib/reminders/reminderScheduler";
-import { getFullName } from "@calcom/features/form-builder/utils";
-import type { GetSubscriberOptions } from "@calcom/features/webhooks/lib/getWebhooks";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import { cancelScheduledJobs, scheduleTrigger } from "@calcom/features/webhooks/lib/scheduleTrigger";
-import { isPrismaObjOrUndefined, parseRecurringEvent } from "@calcom/lib";
-import { getVideoCallUrlFromCalEvent } from "@calcom/lib/CalEventParser";
-import { getDefaultEvent, getUsernameList } from "@calcom/lib/defaultEvents";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { getBookerBaseUrl } from "@calcom/lib/getBookerUrl/server";
-import getPaymentAppData from "@calcom/lib/getPaymentAppData";
-import { getTeamIdFromEventType } from "@calcom/lib/getTeamIdFromEventType";
-import { HttpError } from "@calcom/lib/http-error";
-import isOutOfBounds, { BookingDateInPastError } from "@calcom/lib/isOutOfBounds";
-import logger from "@calcom/lib/logger";
-import { handlePayment } from "@calcom/lib/payment/handlePayment";
-import { getPiiFreeCalendarEvent, getPiiFreeEventType, getPiiFreeUser } from "@calcom/lib/piiFreeData";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { checkBookingLimits, checkDurationLimits, getLuckyUser } from "@calcom/lib/server";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { slugify } from "@calcom/lib/slugify";
-import { updateWebUser as syncServicesUpdateWebUser } from "@calcom/lib/sync/SyncServiceManager";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import prisma, { userSelect } from "@calcom/prisma";
-import type { BookingReference } from "@calcom/prisma/client";
-import { BookingStatus, SchedulingType, WebhookTriggerEvents } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
+} from "@timely/features/ee/workflows/lib/reminders/reminderScheduler";
+import { getFullName } from "@timely/features/form-builder/utils";
+import type { GetSubscriberOptions } from "@timely/features/webhooks/lib/getWebhooks";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import { cancelScheduledJobs, scheduleTrigger } from "@timely/features/webhooks/lib/scheduleTrigger";
+import { isPrismaObjOrUndefined, parseRecurringEvent } from "@timely/lib";
+import { getVideoCallUrlFromCalEvent } from "@timely/lib/CalEventParser";
+import { getDefaultEvent, getUsernameList } from "@timely/lib/defaultEvents";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { getBookerBaseUrl } from "@timely/lib/getBookerUrl/server";
+import getPaymentAppData from "@timely/lib/getPaymentAppData";
+import { getTeamIdFromEventType } from "@timely/lib/getTeamIdFromEventType";
+import { HttpError } from "@timely/lib/http-error";
+import isOutOfBounds, { BookingDateInPastError } from "@timely/lib/isOutOfBounds";
+import logger from "@timely/lib/logger";
+import { handlePayment } from "@timely/lib/payment/handlePayment";
+import { getPiiFreeCalendarEvent, getPiiFreeEventType, getPiiFreeUser } from "@timely/lib/piiFreeData";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { checkBookingLimits, checkDurationLimits, getLuckyUser } from "@timely/lib/server";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { slugify } from "@timely/lib/slugify";
+import { updateWebUser as syncServicesUpdateWebUser } from "@timely/lib/sync/SyncServiceManager";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import prisma, { userSelect } from "@timely/prisma";
+import type { BookingReference } from "@timely/prisma/client";
+import { BookingStatus, SchedulingType, WebhookTriggerEvents } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 import {
   bookingCreateSchemaLegacyPropsForApi,
   customInputSchema,
   EventTypeMetaDataSchema,
   userMetadata as userMetadataSchema,
-} from "@calcom/prisma/zod-utils";
-import type { BufferedBusyTime } from "@calcom/types/BufferedBusyTime";
+} from "@timely/prisma/zod-utils";
+import type { BufferedBusyTime } from "@timely/types/BufferedBusyTime";
 import type {
   AdditionalInformation,
   AppsStatus,
   CalendarEvent,
   IntervalLimit,
   Person,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { EventResult, PartialReference } from "@calcom/types/EventManager";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { EventResult, PartialReference } from "@timely/types/EventManager";
+import async from "async";
+import type { IncomingMessage } from "http";
+import { isValidPhoneNumber } from "libphonenumber-js";
+// eslint-disable-next-line no-restricted-imports
+import { cloneDeep } from "lodash";
+import type { NextApiRequest } from "next";
+import short, { uuid } from "short-uuid";
+import type { Logger } from "tslog";
+import { v5 as uuidv5 } from "uuid";
+import z from "zod";
 
 import type { EventTypeInfo } from "../../webhooks/lib/sendPayload";
 import getBookingDataSchema from "./getBookingDataSchema";

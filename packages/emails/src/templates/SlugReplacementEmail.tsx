@@ -1,7 +1,6 @@
+import { CAL_URL } from "@timely/lib/constants";
 import type { TFunction } from "next-i18next";
 import { Trans } from "next-i18next";
-
-import { CAL_URL } from "@calcom/lib/constants";
 
 import { BaseEmailHtml, CallToAction } from "../components";
 
@@ -68,7 +67,7 @@ export const SlugReplacementEmail = (
             <br />
             <br />
             Happy scheduling, <br />
-            The Cal.com team
+            The Timely team
           </p>
         </Trans>
         {/*<p style={{ fontWeight: 400, lineHeight: "24px" }}>

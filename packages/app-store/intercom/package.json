@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
-  "name": "@calcom/intercom",
+  "name": "@timely/intercom",
   "version": "0.0.0",
   "main": "./index.ts",
   "dependencies": {
-    "@calcom/lib": "*"
+    "@timely/lib": "*"
   },
   "devDependencies": {
-    "@calcom/types": "*"
+    "@timely/types": "*"
   },
-  "description": "Enhance your scheduling and appointment management experience with the Intercom Integration for Cal.com."
+  "description": "Enhance your scheduling and appointment management experience with the Intercom Integration for Timely."
 }

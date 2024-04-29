@@ -1,14 +1,13 @@
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { trpc } from "@timely/trpc/react";
+import { Button, showToast, TextField } from "@timely/ui";
+import { ArrowRight, Plus, X } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { trpc } from "@calcom/trpc/react";
-import { Button, showToast, TextField } from "@calcom/ui";
-import { ArrowRight, Plus, X } from "@calcom/ui/components/icon";
 
 const querySchema = z.object({
   id: z.string().transform((val) => parseInt(val)),

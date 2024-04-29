@@ -1,5 +1,5 @@
-import { validJson } from "@calcom/lib/jsonUtils";
-import type { AppMeta } from "@calcom/types/App";
+import { validJson } from "@timely/lib/jsonUtils";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -13,10 +13,10 @@ export const metadata = {
   category: "calendar",
   categories: ["calendar"],
   logo: "icon.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   slug: "google-calendar",
-  url: "https://cal.com/",
-  email: "help@cal.com",
+  url: "https://timely/",
+  email: "help@timely",
   dirName: "googlecalendar",
 } as AppMeta;
 

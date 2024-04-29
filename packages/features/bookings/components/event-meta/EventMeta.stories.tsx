@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Examples, Example, VariantsTable, VariantRow } from "@timely/storybook/components";
 import type { PublicEvent } from "bookings/types";
 import type { ComponentProps } from "react";
-
-import { Examples, Example, VariantsTable, VariantRow } from "@calcom/storybook/components";
 
 import { EventDetails } from "./Details";
 import { EventMembers } from "./Members";

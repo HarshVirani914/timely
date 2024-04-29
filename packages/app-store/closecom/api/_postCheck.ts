@@ -1,8 +1,7 @@
+import CloseCom from "@timely/lib/CloseCom";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import CloseCom from "@calcom/lib/CloseCom";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
 
 import checkSession from "../../_utils/auth";
 

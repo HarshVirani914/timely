@@ -17,7 +17,7 @@ const runtimeMock = async (data: Array<any>) => {
       },
     },
   };
-  const mockedLib = (await import("@calcom/trpc/react")) as any;
+  const mockedLib = (await import("@timely/trpc/react")) as any;
   mockedLib.trpc = updatedTrpc;
 };
 const renderCreateButton = (

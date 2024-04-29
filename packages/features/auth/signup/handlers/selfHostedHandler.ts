@@ -1,18 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { checkPremiumUsername } from "@calcom/ee/common/lib/checkPremiumUsername";
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { sendEmailVerification } from "@calcom/features/auth/lib/verifyEmail";
-import { createOrUpdateMemberships } from "@calcom/features/auth/signup/utils/createOrUpdateMemberships";
-import { IS_PREMIUM_USERNAME_ENABLED } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import slugify from "@calcom/lib/slugify";
-import { closeComUpsertTeamUser } from "@calcom/lib/sync/SyncServiceManager";
-import { validateAndGetCorrectedUsernameAndEmail } from "@calcom/lib/validateUsername";
-import prisma from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import { signupSchema } from "@calcom/prisma/zod-utils";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { checkPremiumUsername } from "@timely/ee/common/lib/checkPremiumUsername";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { sendEmailVerification } from "@timely/features/auth/lib/verifyEmail";
+import { createOrUpdateMemberships } from "@timely/features/auth/signup/utils/createOrUpdateMemberships";
+import { IS_PREMIUM_USERNAME_ENABLED } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import slugify from "@timely/lib/slugify";
+import { closeComUpsertTeamUser } from "@timely/lib/sync/SyncServiceManager";
+import { validateAndGetCorrectedUsernameAndEmail } from "@timely/lib/validateUsername";
+import prisma from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
+import { signupSchema, teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { joinAnyChildTeamOnOrgInvite } from "../utils/organization";
 import {
@@ -115,7 +114,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const checkUsername = await checkPremiumUsername(correctedUsername);
       if (checkUsername.premium) {
         res.status(422).json({
-          message: "Sign up from https://cal.com/signup to claim your premium username",
+          message: "Sign up from https://timely/signup to claim your premium username",
         });
         return;
       }

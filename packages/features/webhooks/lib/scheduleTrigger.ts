@@ -1,14 +1,13 @@
 import type { Prisma } from "@prisma/client";
+import { getHumanReadableLocationValue } from "@timely/core/location";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { getTranslation } from "@timely/lib/server";
+import prisma from "@timely/prisma";
+import type { ApiKey } from "@timely/prisma/client";
+import { BookingStatus, WebhookTriggerEvents } from "@timely/prisma/enums";
 import { v4 } from "uuid";
-
-import { getHumanReadableLocationValue } from "@calcom/core/location";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { getTranslation } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
-import type { ApiKey } from "@calcom/prisma/client";
-import { BookingStatus, WebhookTriggerEvents } from "@calcom/prisma/enums";
 
 const log = logger.getSubLogger({ prefix: ["[node-scheduler]"] });
 

@@ -1,9 +1,8 @@
+import { AppStoreLocationType } from "@timely/app-store/locations";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
 import { Trans } from "react-i18next";
-
-import { AppStoreLocationType } from "@calcom/app-store/locations";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import { BaseScheduledEmail } from "./BaseScheduledEmail";
 

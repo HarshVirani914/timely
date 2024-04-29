@@ -1,5 +1,5 @@
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

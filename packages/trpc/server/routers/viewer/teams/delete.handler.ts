@@ -1,10 +1,10 @@
-import { cancelTeamSubscriptionFromStripe } from "@calcom/features/ee/teams/lib/payments";
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { deleteDomain } from "@calcom/lib/domainManager/organization";
-import { isTeamOwner } from "@calcom/lib/server/queries/teams";
-import { closeComDeleteTeam } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { cancelTeamSubscriptionFromStripe } from "@timely/features/ee/teams/lib/payments";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { deleteDomain } from "@timely/lib/domainManager/organization";
+import { isTeamOwner } from "@timely/lib/server/queries/teams";
+import { closeComDeleteTeam } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

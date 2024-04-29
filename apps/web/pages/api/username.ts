@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { checkUsername } from "@calcom/lib/server/checkUsername";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import { checkUsername } from "@timely/lib/server/checkUsername";
 
 type Response = {
   available: boolean;

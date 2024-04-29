@@ -1,14 +1,14 @@
-import type { CloseComFieldOptions, CloseComLead } from "@calcom/lib/CloseCom";
-import CloseCom from "@calcom/lib/CloseCom";
-import { getCloseComContactIds, getCloseComLeadId, getCustomFieldsIds } from "@calcom/lib/CloseComeUtils";
-import logger from "@calcom/lib/logger";
-import type { TeamInfoType } from "@calcom/lib/sync/ISyncService";
-import SyncServiceCore from "@calcom/lib/sync/ISyncService";
-import type { ConsoleUserInfoType, WebUserInfoType } from "@calcom/lib/sync/ISyncService";
-import type ISyncService from "@calcom/lib/sync/ISyncService";
-import { MembershipRole } from "@calcom/prisma/enums";
+import type { CloseComFieldOptions, CloseComLead } from "@timely/lib/CloseCom";
+import CloseCom from "@timely/lib/CloseCom";
+import { getCloseComContactIds, getCloseComLeadId, getCustomFieldsIds } from "@timely/lib/CloseComeUtils";
+import logger from "@timely/lib/logger";
+import type { TeamInfoType } from "@timely/lib/sync/ISyncService";
+import SyncServiceCore from "@timely/lib/sync/ISyncService";
+import type { ConsoleUserInfoType, WebUserInfoType } from "@timely/lib/sync/ISyncService";
+import type ISyncService from "@timely/lib/sync/ISyncService";
+import { MembershipRole } from "@timely/prisma/enums";
 
-// Cal.com Custom Contact Fields
+// Timely Custom Contact Fields
 const calComCustomContactFields: CloseComFieldOptions = [
   // Field name, field type, required?, multiple values?
   ["Username", "text", false, false],
@@ -34,7 +34,7 @@ export default class CloseComService extends SyncServiceCore implements ISyncSer
     role?: string
   ) => {
     this.log.debug("sync:closecom:user", { user });
-    // Get Cal.com Lead
+    // Get Timely Lead
     const leadId = await getCloseComLeadId(this.service, leadInfo);
     this.log.debug("sync:closecom:user:leadId", { leadId });
     // Get Contacts ids: already creates contacts

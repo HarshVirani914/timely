@@ -1,9 +1,8 @@
+import { useSchedule } from "@timely/features/schedules";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { trpc } from "@timely/trpc/react";
 import { usePathname } from "next/navigation";
 import { shallow } from "zustand/shallow";
-
-import { useSchedule } from "@calcom/features/schedules";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { trpc } from "@calcom/trpc/react";
 
 import { useTimePreferences } from "../../lib/timePreferences";
 import { useBookerStore } from "../store";

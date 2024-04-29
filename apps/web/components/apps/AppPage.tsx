@@ -2,16 +2,16 @@ import Link from "next/link";
 import type { IframeHTMLAttributes } from "react";
 import React, { useState } from "react";
 
-import useAddAppMutation from "@calcom/app-store/_utils/useAddAppMutation";
-import { AppDependencyComponent, InstallAppButton } from "@calcom/app-store/components";
-import DisconnectIntegration from "@calcom/features/apps/components/DisconnectIntegration";
-import classNames from "@calcom/lib/classNames";
-import { APP_NAME, COMPANY_NAME, SUPPORT_MAIL_ADDRESS } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { App as AppType } from "@calcom/types/App";
-import { Badge, Button, showToast, SkeletonButton, SkeletonText } from "@calcom/ui";
-import { BookOpen, Check, ExternalLink, File, Flag, Mail, Shield } from "@calcom/ui/components/icon";
+import useAddAppMutation from "@timely/app-store/_utils/useAddAppMutation";
+import { AppDependencyComponent, InstallAppButton } from "@timely/app-store/components";
+import DisconnectIntegration from "@timely/features/apps/components/DisconnectIntegration";
+import classNames from "@timely/lib/classNames";
+import { APP_NAME, COMPANY_NAME, SUPPORT_MAIL_ADDRESS } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { App as AppType } from "@timely/types/App";
+import { Badge, Button, showToast, SkeletonButton, SkeletonText } from "@timely/ui";
+import { BookOpen, Check, ExternalLink, File, Flag, Mail, Shield } from "@timely/ui/components/icon";
 
 import { InstallAppButtonChild } from "./InstallAppButtonChild";
 
@@ -326,7 +326,7 @@ export const AppPage = ({
               </a>
             </li>
           )}
-          {website && (
+          {/* {website && (
             <li>
               <a
                 target="_blank"
@@ -337,8 +337,8 @@ export const AppPage = ({
                 {website.replace("https://", "")}
               </a>
             </li>
-          )}
-          {email && (
+          )} */}
+          {/* {email && (
             <li>
               <a
                 target="_blank"
@@ -350,7 +350,7 @@ export const AppPage = ({
                 {email}
               </a>
             </li>
-          )}
+          )} */}
           {tos && (
             <li>
               <a

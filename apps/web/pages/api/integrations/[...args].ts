@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { Session } from "next-auth";
 
-import getInstalledAppPath from "@calcom/app-store/_utils/getInstalledAppPath";
-import { throwIfNotHaveAdminAccessToTeam } from "@calcom/app-store/_utils/throwIfNotHaveAdminAccessToTeam";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { deriveAppDictKeyFromType } from "@calcom/lib/deriveAppDictKeyFromType";
-import { HttpError } from "@calcom/lib/http-error";
-import prisma from "@calcom/prisma";
-import type { AppDeclarativeHandler, AppHandler } from "@calcom/types/AppHandler";
+import getInstalledAppPath from "@timely/app-store/_utils/getInstalledAppPath";
+import { throwIfNotHaveAdminAccessToTeam } from "@timely/app-store/_utils/throwIfNotHaveAdminAccessToTeam";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { deriveAppDictKeyFromType } from "@timely/lib/deriveAppDictKeyFromType";
+import { HttpError } from "@timely/lib/http-error";
+import prisma from "@timely/prisma";
+import type { AppDeclarativeHandler, AppHandler } from "@timely/types/AppHandler";
 
 const defaultIntegrationAddHandler = async ({
   slug,
@@ -57,7 +57,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const [appName, apiEndpoint] = args;
   try {
     /* Absolute path didn't work */
-    const handlerMap = (await import("@calcom/app-store/apps.server.generated")).apiHandlers;
+    const handlerMap = (await import("@timely/app-store/apps.server.generated")).apiHandlers;
     const handlerKey = deriveAppDictKeyFromType(appName, handlerMap);
     const handlers = await handlerMap[handlerKey as keyof typeof handlerMap];
     if (!handlers) throw new HttpError({ statusCode: 404, message: `No handlers found for ${handlerKey}` });

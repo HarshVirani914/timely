@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import type { TApiKeys } from "@calcom/ee/api-keys/components/ApiKeyListItem";
-import LicenseRequired from "@calcom/ee/common/components/LicenseRequired";
-import ApiKeyDialogForm from "@calcom/features/ee/api-keys/components/ApiKeyDialogForm";
-import ApiKeyListItem from "@calcom/features/ee/api-keys/components/ApiKeyListItem";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import type { TApiKeys } from "@timely/ee/api-keys/components/ApiKeyListItem";
+import LicenseRequired from "@timely/ee/common/components/LicenseRequired";
+import ApiKeyDialogForm from "@timely/features/ee/api-keys/components/ApiKeyDialogForm";
+import ApiKeyListItem from "@timely/features/ee/api-keys/components/ApiKeyListItem";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Dialog,
@@ -16,8 +16,8 @@ import {
   Meta,
   SkeletonContainer,
   SkeletonText,
-} from "@calcom/ui";
-import { Link as LinkIcon, Plus } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Link as LinkIcon, Plus } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

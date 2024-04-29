@@ -1,8 +1,7 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import type { PropsWithChildren, ReactElement } from "react";
 import React from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { AlertCircle, Check } from "../icon";
 import { DialogClose, DialogContent } from "./Dialog";

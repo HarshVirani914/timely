@@ -1,15 +1,14 @@
 import type { Booking } from "@prisma/client";
 import { Prisma } from "@prisma/client";
+import dayjs from "@timely/dayjs";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { getTranslation } from "@timely/lib/server/i18n";
+import prisma from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import prisma from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { CalendarEventClass } from "./class";
 

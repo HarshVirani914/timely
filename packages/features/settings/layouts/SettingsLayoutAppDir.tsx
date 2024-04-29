@@ -1,24 +1,18 @@
 "use client";
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import type { ComponentProps } from "react";
-import React, { Suspense, useEffect, useState } from "react";
-
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { HOSTED_CAL_FEATURES, WEBAPP_URL } from "@calcom/lib/constants";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { IdentityProvider, MembershipRole, UserPermissionRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { VerticalTabItemProps } from "@calcom/ui";
-import { Badge, Button, ErrorBoundary, Skeleton, useMeta, VerticalTabItem } from "@calcom/ui";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { HOSTED_CAL_FEATURES, WEBAPP_URL } from "@timely/lib/constants";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { IdentityProvider, MembershipRole, UserPermissionRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { VerticalTabItemProps } from "@timely/ui";
+import { Badge, Button, ErrorBoundary, Skeleton, useMeta, VerticalTabItem } from "@timely/ui";
 import {
   ArrowLeft,
   ChevronDown,
@@ -32,7 +26,12 @@ import {
   Terminal,
   User,
   Users,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import type { ComponentProps } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const tabs: VerticalTabItemProps[] = [
   {

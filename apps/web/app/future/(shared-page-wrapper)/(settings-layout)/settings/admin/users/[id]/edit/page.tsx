@@ -4,8 +4,8 @@ import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 import { z } from "zod";
 
-import Page from "@calcom/features/ee/users/pages/users-edit-view";
-import prisma from "@calcom/prisma";
+import Page from "@timely/features/ee/users/pages/users-edit-view";
+import prisma from "@timely/prisma";
 
 const userIdSchema = z.object({ id: z.coerce.number() });
 

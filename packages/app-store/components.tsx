@@ -1,18 +1,17 @@
+import useAddAppMutation from "@timely/app-store/_utils/useAddAppMutation";
+import classNames from "@timely/lib/classNames";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { CAL_URL } from "@timely/lib/constants";
+import { deriveAppDictKeyFromType } from "@timely/lib/deriveAppDictKeyFromType";
+import { useHasTeamPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { App } from "@timely/types/App";
+import { AlertCircle, ArrowRight, Check } from "@timely/ui/components/icon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-
-import useAddAppMutation from "@calcom/app-store/_utils/useAddAppMutation";
-import classNames from "@calcom/lib/classNames";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { CAL_URL } from "@calcom/lib/constants";
-import { deriveAppDictKeyFromType } from "@calcom/lib/deriveAppDictKeyFromType";
-import { useHasTeamPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { App } from "@calcom/types/App";
-import { AlertCircle, ArrowRight, Check } from "@calcom/ui/components/icon";
 
 import { InstallAppButtonMap } from "./apps.browser.generated";
 import type { InstallAppButtonProps } from "./types";

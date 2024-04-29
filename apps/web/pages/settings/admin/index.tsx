@@ -1,6 +1,6 @@
 "use client";
 
-import { Meta } from "@calcom/ui";
+import { Meta } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import { getLayout } from "@components/auth/layouts/AdminLayout";

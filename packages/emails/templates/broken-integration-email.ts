@@ -1,9 +1,8 @@
+import { getRichDescription } from "@timely/lib/CalEventParser";
+import { APP_NAME } from "@timely/lib/constants";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import { getRichDescription } from "@calcom/lib/CalEventParser";
-import { APP_NAME } from "@calcom/lib/constants";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { renderEmail } from "..";
 import BaseEmail from "./_base-email";

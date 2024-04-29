@@ -2,13 +2,13 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { localeOptions } from "@calcom/lib/i18n";
-import { nameOfDay } from "@calcom/lib/weekday";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { localeOptions } from "@timely/lib/i18n";
+import { nameOfDay } from "@timely/lib/weekday";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Form,
@@ -19,9 +19,8 @@ import {
   SkeletonButton,
   SkeletonContainer,
   SkeletonText,
-  TimezoneSelect,
-  SettingsToggle,
-} from "@calcom/ui";
+  TimezoneSelect
+} from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -146,27 +145,11 @@ const GeneralView = ({ localeProp, user }: GeneralViewProps) => {
         <Meta title={t("general")} description={t("general_description")} borderInShellHeader={true} />
         <div className="border-subtle border-x border-y-0 px-4 py-8 sm:px-6">
           <Controller
-            name="locale"
-            render={({ field: { value, onChange } }) => (
-              <>
-                <Label className="text-emphasis">
-                  <>{t("language")}</>
-                </Label>
-                <Select<{ label: string; value: string }>
-                  className="capitalize"
-                  options={localeOptions}
-                  value={value}
-                  onChange={onChange}
-                />
-              </>
-            )}
-          />
-          <Controller
             name="timeZone"
             control={formMethods.control}
             render={({ field: { value } }) => (
               <>
-                <Label className="text-emphasis mt-6">
+                <Label className="text-emphasis">
                   <>{t("timezone")}</>
                 </Label>
                 <TimezoneSelect
@@ -226,45 +209,6 @@ const GeneralView = ({ localeProp, user }: GeneralViewProps) => {
           </Button>
         </SectionBottomActions>
       </Form>
-
-      <SettingsToggle
-        toggleSwitchAtTheEnd={true}
-        title={t("dynamic_booking")}
-        description={t("allow_dynamic_booking")}
-        disabled={mutation.isLoading}
-        checked={isAllowDynamicBookingChecked}
-        onCheckedChange={(checked) => {
-          setIsAllowDynamicBookingChecked(checked);
-          mutation.mutate({ allowDynamicBooking: checked });
-        }}
-        switchContainerClassName="mt-6"
-      />
-
-      <SettingsToggle
-        toggleSwitchAtTheEnd={true}
-        title={t("seo_indexing")}
-        description={t("allow_seo_indexing")}
-        disabled={mutation.isLoading}
-        checked={isAllowSEOIndexingChecked}
-        onCheckedChange={(checked) => {
-          setIsAllowSEOIndexingChecked(checked);
-          mutation.mutate({ allowSEOIndexing: checked });
-        }}
-        switchContainerClassName="mt-6"
-      />
-
-      <SettingsToggle
-        toggleSwitchAtTheEnd={true}
-        title={t("monthly_digest_email")}
-        description={t("monthly_digest_email_for_teams")}
-        disabled={mutation.isLoading}
-        checked={isReceiveMonthlyDigestEmailChecked}
-        onCheckedChange={(checked) => {
-          setIsReceiveMonthlyDigestEmailChecked(checked);
-          mutation.mutate({ receiveMonthlyDigestEmail: checked });
-        }}
-        switchContainerClassName="mt-6"
-      />
     </div>
   );
 };

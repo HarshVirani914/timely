@@ -1,6 +1,6 @@
-import { getAppFromLocationValue } from "@calcom/app-store/utils";
-import { prisma } from "@calcom/prisma";
-import { eventTypeLocations as eventTypeLocationsSchema } from "@calcom/prisma/zod-utils";
+import { getAppFromLocationValue } from "@timely/app-store/utils";
+import { prisma } from "@timely/prisma";
+import { eventTypeLocations as eventTypeLocationsSchema } from "@timely/prisma/zod-utils";
 
 import type { TrpcSessionUser } from "../../../trpc";
 

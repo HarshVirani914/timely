@@ -1,8 +1,7 @@
+import getAppKeysFromSlug from "@timely/app-store/_utils/getAppKeysFromSlug";
+import { prisma } from "@timely/prisma";
 import { google } from "googleapis";
 import { z } from "zod";
-
-import getAppKeysFromSlug from "@calcom/app-store/_utils/getAppKeysFromSlug";
-import { prisma } from "@calcom/prisma";
 
 import type { TrpcSessionUser } from "../../../trpc";
 

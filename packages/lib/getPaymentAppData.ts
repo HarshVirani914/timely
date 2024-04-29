@@ -1,9 +1,8 @@
+import { getEventTypeAppData } from "@timely/app-store/_utils/getEventTypeAppData";
+import type { appDataSchemas } from "@timely/app-store/apps.schemas.generated";
+import type { appDataSchema, paymentOptionEnum } from "@timely/app-store/stripepayment/zod";
+import type { EventTypeAppsList } from "@timely/app-store/utils";
 import type { z } from "zod";
-
-import { getEventTypeAppData } from "@calcom/app-store/_utils/getEventTypeAppData";
-import type { appDataSchemas } from "@calcom/app-store/apps.schemas.generated";
-import type { appDataSchema, paymentOptionEnum } from "@calcom/app-store/stripepayment/zod";
-import type { EventTypeAppsList } from "@calcom/app-store/utils";
 
 export default function getPaymentAppData(
   eventType: Parameters<typeof getEventTypeAppData>[0],

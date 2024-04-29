@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Button, SkeletonText } from "@calcom/ui";
-import { MoreHorizontal } from "@calcom/ui/components/icon";
+import { Button, SkeletonText } from "@timely/ui";
+import { MoreHorizontal } from "@timely/ui/components/icon";
 
 import classNames from "@lib/classNames";
 

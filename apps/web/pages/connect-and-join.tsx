@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-import { getQueryParam } from "@calcom/features/bookings/Booker/utils/query-param";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { TRPCClientError } from "@calcom/trpc/react";
-import { Button, EmptyScreen, Alert } from "@calcom/ui";
-import { Zap } from "@calcom/ui/components/icon";
+import { getQueryParam } from "@timely/features/bookings/Booker/utils/query-param";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { TRPCClientError } from "@timely/trpc/react";
+import { Button, EmptyScreen, Alert } from "@timely/ui";
+import { Zap } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

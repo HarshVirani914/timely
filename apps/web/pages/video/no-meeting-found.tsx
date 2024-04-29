@@ -1,8 +1,8 @@
 "use client";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, EmptyScreen, HeadSeo } from "@calcom/ui";
-import { X, ArrowRight } from "@calcom/ui/components/icon";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, EmptyScreen, HeadSeo } from "@timely/ui";
+import { X, ArrowRight } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

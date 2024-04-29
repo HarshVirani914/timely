@@ -1,12 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Alert, Button, EmailField, Form, PasswordField, SelectField, Switch, TextField } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Toaster } from "react-hot-toast";
 import z from "zod";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Alert, Button, EmailField, Form, PasswordField, SelectField, Switch, TextField } from "@calcom/ui";
 
 import { ExchangeAuthentication, ExchangeVersion } from "../../enums";
 

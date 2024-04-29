@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
 import { z } from "zod";
 
-import { getLayout } from "@calcom/features/MainLayoutAppDir";
-import { APP_NAME } from "@calcom/lib/constants";
+import { getLayout } from "@timely/features/MainLayoutAppDir";
+import { APP_NAME } from "@timely/lib/constants";
 
 import PageWrapper from "@components/PageWrapperAppDir";
 

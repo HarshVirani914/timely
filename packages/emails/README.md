@@ -6,14 +6,14 @@
 ## Usage
 
 ```ts
-import { renderEmail } from "@calcom/emails";
+import { renderEmail } from "@timely/emails";
 
 await renderEmail("TeamInviteEmail", {
   language: t,
   from: "teampro@example.com",
   to: "pro@example.com",
   teamName: "Team Pro",
-  joinLink: "https://cal.com",
+  joinLink: "https://timely",
 });
 ```
 

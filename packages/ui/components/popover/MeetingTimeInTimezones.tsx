@@ -1,12 +1,11 @@
 import * as Popover from "@radix-ui/react-popover";
-
 import {
   formatTime,
   isNextDayInTimezone,
   isPreviousDayInTimezone,
   sortByTimezone,
   isSupportedTimeZone,
-} from "@calcom/lib/date-fns";
+} from "@timely/lib/date-fns";
 
 import { Globe } from "../icon";
 

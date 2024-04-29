@@ -1,4 +1,4 @@
-import { HorizontalTabs } from "@calcom/ui";
+import { HorizontalTabs } from "@timely/ui";
 
 import type { getSerializableForm } from "../lib/getSerializableForm";
 

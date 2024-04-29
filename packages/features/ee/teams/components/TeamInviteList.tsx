@@ -1,8 +1,7 @@
+import type { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import { showToast } from "@timely/ui";
 import { useState } from "react";
-
-import type { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import { showToast } from "@calcom/ui";
 
 import TeamInviteListItem from "./TeamInviteListItem";
 

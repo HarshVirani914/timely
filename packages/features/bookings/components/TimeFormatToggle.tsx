@@ -1,6 +1,6 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import { ToggleGroup } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import { ToggleGroup } from "@timely/ui";
 
 import { useTimePreferences } from "../lib";
 

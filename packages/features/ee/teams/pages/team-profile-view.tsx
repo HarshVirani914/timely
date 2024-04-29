@@ -1,26 +1,19 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Prisma } from "@prisma/client";
-import { useSession } from "next-auth/react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useLayoutEffect, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
-
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@calcom/lib/constants";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { getTeamUrlSync } from "@calcom/lib/getBookerUrl/client";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { md } from "@calcom/lib/markdownIt";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import objectKeys from "@calcom/lib/objectKeys";
-import slugify from "@calcom/lib/slugify";
-import turndown from "@calcom/lib/turndownService";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@timely/lib/constants";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { getTeamUrlSync } from "@timely/lib/getBookerUrl/client";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { md } from "@timely/lib/markdownIt";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import objectKeys from "@timely/lib/objectKeys";
+import slugify from "@timely/lib/slugify";
+import turndown from "@timely/lib/turndownService";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Avatar,
   Button,
@@ -39,8 +32,14 @@ import {
   TextField,
   SkeletonAvatar,
   SkeletonButton,
-} from "@calcom/ui";
-import { ExternalLink, Link as LinkIcon, LogOut, Trash2 } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ExternalLink, Link as LinkIcon, LogOut, Trash2 } from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useLayoutEffect, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 

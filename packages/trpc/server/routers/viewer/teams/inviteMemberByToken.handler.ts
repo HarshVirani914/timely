@@ -1,11 +1,10 @@
 import { Prisma } from "@prisma/client";
-
-import { updateQuantitySubscriptionFromStripe } from "@calcom/ee/teams/lib/payments";
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { TRPCError } from "@calcom/trpc/server";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { updateQuantitySubscriptionFromStripe } from "@timely/ee/teams/lib/payments";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import { TRPCError } from "@timely/trpc/server";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TInviteMemberByTokenSchemaInputSchema } from "./inviteMemberByToken.schema";
 

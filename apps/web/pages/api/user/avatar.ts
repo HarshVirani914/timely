@@ -4,11 +4,11 @@ import { z } from "zod";
 import {
   orgDomainConfig,
   whereClauseForOrgWithSlugOrRequestedSlug,
-} from "@calcom/features/ee/organizations/lib/orgDomains";
-import { AVATAR_FALLBACK } from "@calcom/lib/constants";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
+} from "@timely/features/ee/organizations/lib/orgDomains";
+import { AVATAR_FALLBACK } from "@timely/lib/constants";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 
 const log = logger.getSubLogger({ prefix: ["team/[slug]"] });
 const querySchema = z

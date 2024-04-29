@@ -1,12 +1,11 @@
+import dayjs from "@timely/dayjs";
+import { getRichDescription } from "@timely/lib/CalEventParser";
+import { getWhen } from "@timely/lib/CalEventParser";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import type { DateArray, ParticipationStatus, ParticipationRole, EventStatus } from "ics";
 import { createEvent } from "ics";
 import type { TFunction } from "next-i18next";
 import { RRule } from "rrule";
-
-import dayjs from "@calcom/dayjs";
-import { getRichDescription } from "@calcom/lib/CalEventParser";
-import { getWhen } from "@calcom/lib/CalEventParser";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 export enum BookingAction {
   Create = "create",
@@ -69,7 +68,7 @@ const generateIcsString = ({
       .slice(0, 6)
       .map((v, i) => (i === 1 ? v + 1 : v)) as DateArray,
     startInputType: "utc",
-    productId: "calcom/ics",
+    productId: "timely/ics",
     title: event.title,
     description: getTextBody(title, subtitle),
     duration: { minutes: dayjs(event.endTime).diff(dayjs(event.startTime), "minute") },

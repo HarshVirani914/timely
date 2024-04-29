@@ -5,11 +5,11 @@ import React from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { isPasswordValid } from "@calcom/features/auth/lib/isPasswordValid";
-import { WEBSITE_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { EmailField, EmptyScreen, Label, PasswordField, TextField } from "@calcom/ui";
-import { UserCheck } from "@calcom/ui/components/icon";
+import { isPasswordValid } from "@timely/features/auth/lib/isPasswordValid";
+import { WEBSITE_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { EmailField, EmptyScreen, Label, PasswordField, TextField } from "@timely/ui";
+import { UserCheck } from "@timely/ui/components/icon";
 
 export const AdminUserContainer = (props: React.ComponentProps<typeof AdminUser> & { userCount: number }) => {
   const { t } = useLocale();

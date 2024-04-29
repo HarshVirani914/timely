@@ -1,6 +1,6 @@
 import { expect, type Page } from "@playwright/test";
 
-import dayjs from "@calcom/dayjs";
+import dayjs from "@timely/dayjs";
 
 import type { createUsersFixture } from "./users";
 

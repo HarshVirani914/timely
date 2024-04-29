@@ -1,17 +1,17 @@
 import type { GetServerSidePropsContext } from "next";
 import { z } from "zod";
 
-import { Booker } from "@calcom/atoms";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { getBookerWrapperClasses } from "@calcom/features/bookings/Booker/utils/getBookerWrapperClasses";
-import { BookerSeo } from "@calcom/features/bookings/components/BookerSeo";
-import { getBookingForReschedule, getMultipleDurationValue } from "@calcom/features/bookings/lib/get-booking";
-import type { GetBookingType } from "@calcom/features/bookings/lib/get-booking";
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
-import { RedirectType } from "@calcom/prisma/client";
+import { Booker } from "@timely/atoms";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { getBookerWrapperClasses } from "@timely/features/bookings/Booker/utils/getBookerWrapperClasses";
+import { BookerSeo } from "@timely/features/bookings/components/BookerSeo";
+import { getBookingForReschedule, getMultipleDurationValue } from "@timely/features/bookings/lib/get-booking";
+import type { GetBookingType } from "@timely/features/bookings/lib/get-booking";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
+import { RedirectType } from "@timely/prisma/client";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 import type { EmbedProps } from "@lib/withEmbedSsr";

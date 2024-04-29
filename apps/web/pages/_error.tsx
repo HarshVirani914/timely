@@ -7,10 +7,10 @@ import type { ErrorProps } from "next/error";
 import NextError from "next/error";
 import React from "react";
 
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { redactError } from "@calcom/lib/redactError";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { redactError } from "@timely/lib/redactError";
 
 import { ErrorPage } from "@components/error/error-page";
 

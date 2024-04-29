@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 
-import { randomString } from "@calcom/lib/random";
-import { SchedulingType } from "@calcom/prisma/client";
-import type { Schedule, TimeRange } from "@calcom/types/schedule";
+import { randomString } from "@timely/lib/random";
+import { SchedulingType } from "@timely/prisma/client";
+import type { Schedule, TimeRange } from "@timely/types/schedule";
 
 import { test } from "./lib/fixtures";
 import {

@@ -2,8 +2,8 @@ import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
 import { v4 as uuidv4 } from "uuid";
 
-import prisma from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/client";
+import prisma from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/client";
 
 import { test } from "./lib/fixtures";
 import {
@@ -452,8 +452,8 @@ test.describe("BOOKING_RESCHEDULED", async () => {
     bookings,
   }) => {
     const { user, eventType, booking } = await createUserWithSeatedEventAndAttendees({ users, bookings }, [
-      { name: "John First", email: "first+seats@cal.com", timeZone: "Europe/Berlin" },
-      { name: "Jane Second", email: "second+seats@cal.com", timeZone: "Europe/Berlin" },
+      { name: "John First", email: "first+seats@timely", timeZone: "Europe/Berlin" },
+      { name: "Jane Second", email: "second+seats@timely", timeZone: "Europe/Berlin" },
     ]);
 
     await prisma.eventType.update({

@@ -1,5 +1,5 @@
-import { SkeletonText } from "@calcom/ui";
-import { Bell, Link as LinkIcon } from "@calcom/ui/components/icon";
+import { SkeletonText } from "@timely/ui";
+import { Bell, Link as LinkIcon } from "@timely/ui/components/icon";
 
 function SkeletonLoader() {
   return (

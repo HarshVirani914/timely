@@ -1,4 +1,4 @@
-import type { AppMeta } from "@calcom/types/App";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -9,13 +9,13 @@ export const metadata = {
   category: "automation",
   categories: ["automation"],
   logo: "icon.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   slug: "zapier",
   title: "Zapier",
   type: "zapier_automation",
-  url: "https://cal.com/apps/zapier",
+  url: "https://timely/apps/zapier",
   variant: "automation",
-  email: "help@cal.com",
+  email: "help@timely",
   dirName: "zapier",
 } as AppMeta;
 

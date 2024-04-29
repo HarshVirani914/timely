@@ -1,13 +1,12 @@
 import type { Workflow, WorkflowsOnEventTypes, WorkflowStep } from "@prisma/client";
-
 import {
   isSMSAction,
   isTextMessageToAttendeeAction,
   isWhatsappAction,
-} from "@calcom/features/ee/workflows/lib/actionHelperFunctions";
-import { SENDER_NAME } from "@calcom/lib/constants";
-import { WorkflowActions, WorkflowMethods, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+} from "@timely/features/ee/workflows/lib/actionHelperFunctions";
+import { SENDER_NAME } from "@timely/lib/constants";
+import { WorkflowActions, WorkflowMethods, WorkflowTriggerEvents } from "@timely/prisma/enums";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 import { deleteScheduledEmailReminder, scheduleEmailReminder } from "./emailReminderManager";
 import type { ScheduleTextReminderAction } from "./smsReminderManager";

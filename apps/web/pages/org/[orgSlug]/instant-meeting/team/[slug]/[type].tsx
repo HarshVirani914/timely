@@ -1,14 +1,14 @@
 import type { GetServerSidePropsContext } from "next";
 import { z } from "zod";
 
-import { Booker } from "@calcom/atoms";
-import { getBookerWrapperClasses } from "@calcom/features/bookings/Booker/utils/getBookerWrapperClasses";
-import { BookerSeo } from "@calcom/features/bookings/components/BookerSeo";
-import { getMultipleDurationValue } from "@calcom/features/bookings/lib/get-booking";
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
+import { Booker } from "@timely/atoms";
+import { getBookerWrapperClasses } from "@timely/features/bookings/Booker/utils/getBookerWrapperClasses";
+import { BookerSeo } from "@timely/features/bookings/components/BookerSeo";
+import { getMultipleDurationValue } from "@timely/features/bookings/lib/get-booking";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 import type { EmbedProps } from "@lib/withEmbedSsr";

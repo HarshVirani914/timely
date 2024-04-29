@@ -10,17 +10,17 @@ import type { getMockRequestDataForBooking } from "test/utils/bookingScenario/ge
 import { v4 as uuidv4 } from "uuid";
 import "vitest-fetch-mock";
 
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
-import { handleStripePaymentSuccess } from "@calcom/features/ee/payments/api/webhook";
-import { weekdayToWeekIndex, type WeekDays } from "@calcom/lib/date-fns";
-import type { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import type { SchedulingType } from "@calcom/prisma/enums";
-import type { BookingStatus } from "@calcom/prisma/enums";
-import type { AppMeta } from "@calcom/types/App";
-import type { NewCalendarEventType } from "@calcom/types/Calendar";
-import type { EventBusyDate, IntervalLimit } from "@calcom/types/Calendar";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
+import { handleStripePaymentSuccess } from "@timely/features/ee/payments/api/webhook";
+import { weekdayToWeekIndex, type WeekDays } from "@timely/lib/date-fns";
+import type { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import type { SchedulingType } from "@timely/prisma/enums";
+import type { BookingStatus } from "@timely/prisma/enums";
+import type { AppMeta } from "@timely/types/App";
+import type { NewCalendarEventType } from "@timely/types/Calendar";
+import type { EventBusyDate, IntervalLimit } from "@timely/types/Calendar";
 
 import { getMockPaymentService } from "./MockPaymentService";
 

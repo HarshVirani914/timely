@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { createMocks } from "node-mocks-http";
 import { describe, vi, it, expect, afterEach } from "vitest";
 
-import checkLicense from "@calcom/features/ee/common/server/checkLicense";
+import checkLicense from "@timely/features/ee/common/server/checkLicense";
 
 import { isAdminGuard } from "~/lib/utils/isAdmin";
 
@@ -16,7 +16,7 @@ afterEach(() => {
   vi.resetAllMocks();
 });
 
-vi.mock("@calcom/features/ee/common/server/checkLicense", () => {
+vi.mock("@timely/features/ee/common/server/checkLicense", () => {
   return {
     default: vi.fn(),
   };

@@ -1,16 +1,15 @@
+import { classNames } from "@timely/lib";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { AnimatedPopover, Avatar, Divider, Tooltip, VerticalDivider } from "@timely/ui";
+import { Layers, User } from "@timely/ui/components/icon";
 import { useSession } from "next-auth/react";
 import type { ReactNode, InputHTMLAttributes } from "react";
 import { forwardRef } from "react";
-
-import { classNames } from "@calcom/lib";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { AnimatedPopover, Avatar, Divider, Tooltip, VerticalDivider } from "@calcom/ui";
-import { Layers, User } from "@calcom/ui/components/icon";
 
 import { filterQuerySchema } from "../lib/getTeamsFiltersFromQuery";
 

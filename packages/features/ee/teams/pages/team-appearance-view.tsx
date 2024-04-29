@@ -1,18 +1,17 @@
+import BrandColorsForm from "@timely/features/ee/components/BrandColorsForm";
+import { AppearanceSkeletonLoader } from "@timely/features/ee/components/CommonSkeletonLoaders";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { APP_NAME } from "@timely/lib/constants";
+import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { Button, Form, Meta, showToast, SettingsToggle } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
-import BrandColorsForm from "@calcom/features/ee/components/BrandColorsForm";
-import { AppearanceSkeletonLoader } from "@calcom/features/ee/components/CommonSkeletonLoaders";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { APP_NAME } from "@calcom/lib/constants";
-import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { Button, Form, Meta, showToast, SettingsToggle } from "@calcom/ui";
 
 import ThemeLabel from "../../../settings/ThemeLabel";
 import { getLayout } from "../../../settings/layouts/SettingsLayout";

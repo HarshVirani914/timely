@@ -1,7 +1,7 @@
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import { prisma } from "@timely/prisma";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

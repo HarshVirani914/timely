@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import type { DateRange } from "@timely/lib/date-ranges";
 import { describe, it, expect } from "vitest";
-
-import dayjs from "@calcom/dayjs";
-import type { DateRange } from "@calcom/lib/date-ranges";
 
 import { mergeOverlappingDateRanges } from ".";
 

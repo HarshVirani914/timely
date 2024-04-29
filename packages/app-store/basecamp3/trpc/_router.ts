@@ -1,5 +1,5 @@
-import authedProcedure from "@calcom/trpc/server/procedures/authedProcedure";
-import { router } from "@calcom/trpc/server/trpc";
+import authedProcedure from "@timely/trpc/server/procedures/authedProcedure";
+import { router } from "@timely/trpc/server/trpc";
 
 import { ZProjectMutationInputSchema } from "./projectMutation.schema";
 

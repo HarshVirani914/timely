@@ -7,20 +7,20 @@ import { useEffect } from "react";
 import { Controller, useForm, useWatch, useFormContext } from "react-hook-form";
 import { z } from "zod";
 
-import type { EventLocationType, LocationObject } from "@calcom/app-store/locations";
+import type { EventLocationType, LocationObject } from "@timely/app-store/locations";
 import {
   getEventLocationType,
   getHumanReadableLocationValue,
   getMessageForOrganizer,
   LocationType,
   OrganizerDefaultConferencingAppType,
-} from "@calcom/app-store/locations";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { Input } from "@calcom/ui";
-import { Button, Dialog, DialogContent, DialogFooter, Form, PhoneInput } from "@calcom/ui";
-import { MapPin } from "@calcom/ui/components/icon";
+} from "@timely/app-store/locations";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { Input } from "@timely/ui";
+import { Button, Dialog, DialogContent, DialogFooter, Form, PhoneInput } from "@timely/ui";
+import { MapPin } from "@timely/ui/components/icon";
 
 import { QueryCell } from "@lib/QueryCell";
 

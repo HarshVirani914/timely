@@ -7,16 +7,16 @@ import type { UseFormRegisterReturn } from "react-hook-form";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import type { SingleValue } from "react-select";
 
-import { classNames } from "@calcom/lib";
-import type { DurationType } from "@calcom/lib/convertToNewDurationType";
-import convertToNewDurationType from "@calcom/lib/convertToNewDurationType";
-import findDurationType from "@calcom/lib/findDurationType";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { ascendingLimitKeys, intervalLimitKeyToUnit } from "@calcom/lib/intervalLimit";
-import type { PeriodType } from "@calcom/prisma/enums";
-import type { IntervalLimit } from "@calcom/types/Calendar";
-import { Button, DateRangePicker, InputField, Label, Select, SettingsToggle, TextField } from "@calcom/ui";
-import { Plus, Trash2 } from "@calcom/ui/components/icon";
+import { classNames } from "@timely/lib";
+import type { DurationType } from "@timely/lib/convertToNewDurationType";
+import convertToNewDurationType from "@timely/lib/convertToNewDurationType";
+import findDurationType from "@timely/lib/findDurationType";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { ascendingLimitKeys, intervalLimitKeyToUnit } from "@timely/lib/intervalLimit";
+import type { PeriodType } from "@timely/prisma/enums";
+import type { IntervalLimit } from "@timely/types/Calendar";
+import { Button, DateRangePicker, InputField, Label, Select, SettingsToggle, TextField } from "@timely/ui";
+import { Plus, Trash2 } from "@timely/ui/components/icon";
 
 const MinimumBookingNoticeInput = React.forwardRef<
   HTMLInputElement,

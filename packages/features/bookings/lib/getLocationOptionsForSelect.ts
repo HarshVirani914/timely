@@ -1,8 +1,8 @@
-import type { LocationObject } from "@calcom/app-store/locations";
-import { locationKeyToString } from "@calcom/app-store/locations";
-import { getEventLocationType } from "@calcom/app-store/locations";
-import type { useLocale } from "@calcom/lib/hooks/useLocale";
-import notEmpty from "@calcom/lib/notEmpty";
+import type { LocationObject } from "@timely/app-store/locations";
+import { locationKeyToString } from "@timely/app-store/locations";
+import { getEventLocationType } from "@timely/app-store/locations";
+import type { useLocale } from "@timely/lib/hooks/useLocale";
+import notEmpty from "@timely/lib/notEmpty";
 
 export default function getLocationsOptionsForSelect(
   locations: LocationObject[],

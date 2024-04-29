@@ -8,30 +8,30 @@ import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { getEventLocationType } from "@calcom/app-store/locations";
-import { validateCustomEventName } from "@calcom/core/event";
-import type { EventLocationType } from "@calcom/core/location";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import type { ChildrenEventType } from "@calcom/features/eventtypes/components/ChildrenEventTypeSelect";
-import { validateIntervalLimitOrder } from "@calcom/lib";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { HttpError } from "@calcom/lib/http-error";
-import { telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
-import type { Prisma } from "@calcom/prisma/client";
-import type { PeriodType, SchedulingType } from "@calcom/prisma/enums";
+import { getEventLocationType } from "@timely/app-store/locations";
+import { validateCustomEventName } from "@timely/core/event";
+import type { EventLocationType } from "@timely/core/location";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import type { ChildrenEventType } from "@timely/features/eventtypes/components/ChildrenEventTypeSelect";
+import { validateIntervalLimitOrder } from "@timely/lib";
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { HttpError } from "@timely/lib/http-error";
+import { telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import { validateBookerLayouts } from "@timely/lib/validateBookerLayouts";
+import type { Prisma } from "@timely/prisma/client";
+import type { PeriodType, SchedulingType } from "@timely/prisma/enums";
 import type {
   BookerLayoutSettings,
   customInputSchema,
   EventTypeMetaDataSchema,
-} from "@calcom/prisma/zod-utils";
-import { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import type { IntervalLimit, RecurringEvent } from "@calcom/types/Calendar";
-import { Form, showToast } from "@calcom/ui";
+} from "@timely/prisma/zod-utils";
+import { eventTypeBookingFields } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import type { IntervalLimit, RecurringEvent } from "@timely/types/Calendar";
+import { Form, showToast } from "@timely/ui";
 
 import { asStringOrThrow } from "@lib/asStringOrNull";
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
@@ -42,7 +42,7 @@ import { EventTypeSingleLayout } from "@components/eventtype/EventTypeSingleLayo
 
 import { ssrInit } from "@server/lib/ssr";
 
-// These can't really be moved into calcom/ui due to the fact they use infered getserverside props typings;
+// These can't really be moved into timely/ui due to the fact they use infered getserverside props typings;
 const EventSetupTab = dynamic(() =>
   import("@components/eventtype/EventSetupTab").then((mod) => mod.EventSetupTab)
 );
@@ -353,7 +353,7 @@ const EventTypePage = (props: EventTypeSetupProps) => {
                           path: [eventLocationType?.defaultValueVariable ?? "link"],
                           message: t("invalid_url_error_message", {
                             label: eventLocationType.label,
-                            sampleUrl: sampleUrl ?? "https://cal.com",
+                            sampleUrl: sampleUrl ?? "https://timely",
                           }),
                         });
                       }

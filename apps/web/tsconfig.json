@@ -1,5 +1,5 @@
 {
-  "extends": "@calcom/tsconfig/nextjs.json",
+  "extends": "@timely/tsconfig/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -8,7 +8,7 @@
       "@pages/*": ["pages/*"],
       "@lib/*": ["lib/*"],
       "@server/*": ["server/*"],
-      "@prisma/client/*": ["@calcom/prisma/client/*"]
+      "@prisma/client/*": ["@timely/prisma/client/*"]
     },
     "plugins": [
       {

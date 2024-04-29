@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Prisma } from "@prisma/client";
-import type { calendar_v3 } from "googleapis";
-import { google } from "googleapis";
-
-import { MeetLocationType } from "@calcom/app-store/locations";
-import dayjs from "@calcom/dayjs";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { getLocation, getRichDescription } from "@calcom/lib/CalEventParser";
-import type CalendarService from "@calcom/lib/CalendarService";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import prisma from "@calcom/prisma";
+import { MeetLocationType } from "@timely/app-store/locations";
+import dayjs from "@timely/dayjs";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { getLocation, getRichDescription } from "@timely/lib/CalEventParser";
+import type CalendarService from "@timely/lib/CalendarService";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import prisma from "@timely/prisma";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { calendar_v3 } from "googleapis";
+import { google } from "googleapis";
 
 import type { ParseRefreshTokenResponse } from "../../_utils/oauth/parseRefreshTokenResponse";
 import parseRefreshTokenResponse from "../../_utils/oauth/parseRefreshTokenResponse";
@@ -368,7 +367,7 @@ export default class GoogleCalendarService implements Calendar {
       );
       const err = error as GoogleCalError;
       /**
-       *  410 is when an event is already deleted on the Google cal before on cal.com
+       *  410 is when an event is already deleted on the Google cal before on timely
        *  404 is when the event is on a different calendar
        */
       if (err.code === 410) return;

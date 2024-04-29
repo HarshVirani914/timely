@@ -1,6 +1,6 @@
-import { getAvailabilityFromSchedule } from "@calcom/lib/availability";
-import { hasEditPermissionForUserID } from "@calcom/lib/hasEditPermissionForUser";
-import { prisma } from "@calcom/prisma";
+import { getAvailabilityFromSchedule } from "@timely/lib/availability";
+import { hasEditPermissionForUserID } from "@timely/lib/hasEditPermissionForUser";
+import { prisma } from "@timely/prisma";
 
 import { TRPCError } from "@trpc/server";
 

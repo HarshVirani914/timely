@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { performance } from "@calcom/lib/server/perfObserver";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { performance } from "@timely/lib/server/perfObserver";
 
 let isCold = true;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   const prePrismaDate = performance.now();
-  const prisma = (await import("@calcom/prisma")).default;
+  const prisma = (await import("@timely/prisma")).default;
   const preSessionDate = performance.now();
   const session = await getServerSession({ req, res });
   if (!session) return res.status(409).json({ message: "Unauthorized" });

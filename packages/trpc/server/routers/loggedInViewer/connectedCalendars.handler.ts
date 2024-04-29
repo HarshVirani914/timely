@@ -1,10 +1,9 @@
 import type { DestinationCalendar } from "@prisma/client";
-
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { prisma } from "@calcom/prisma";
-import { AppCategories } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { prisma } from "@timely/prisma";
+import { AppCategories } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TConnectedCalendarsInputSchema } from "./connectedCalendars.schema";
 

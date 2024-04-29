@@ -1,13 +1,12 @@
 /* Schedule any workflow reminder that falls within 7 days for SMS */
+import dayjs from "@timely/dayjs";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { defaultHandler } from "@timely/lib/server";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import prisma from "@timely/prisma";
+import { WorkflowActions, WorkflowMethods, WorkflowTemplates } from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import dayjs from "@calcom/dayjs";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { defaultHandler } from "@calcom/lib/server";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import prisma from "@calcom/prisma";
-import { WorkflowActions, WorkflowMethods, WorkflowTemplates } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
 
 import { getSenderId } from "../lib/alphanumericSenderIdSupport";
 import * as twilio from "../lib/reminders/smsProviders/twilioProvider";

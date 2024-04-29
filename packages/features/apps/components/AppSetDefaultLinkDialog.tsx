@@ -1,12 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Dispatch, SetStateAction } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-import type { EventLocationType } from "@calcom/app-store/locations";
-import { getEventLocationType } from "@calcom/app-store/locations";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import type { EventLocationType } from "@timely/app-store/locations";
+import { getEventLocationType } from "@timely/app-store/locations";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   showToast,
   Dialog,
@@ -16,8 +12,11 @@ import {
   DialogFooter,
   Button,
   DialogClose,
-} from "@calcom/ui";
-import { AlertCircle } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { AlertCircle } from "@timely/ui/components/icon";
+import type { Dispatch, SetStateAction } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 type LocationTypeSetLinkDialogFormProps = {
   link?: string;

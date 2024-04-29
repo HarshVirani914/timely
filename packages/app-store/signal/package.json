@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
-  "name": "@calcom/signal",
+  "name": "@timely/signal",
   "version": "0.0.0",
   "main": "./index.ts",
   "description": "Schedule a chat with your guests or have a Signal Video call.",
   "dependencies": {
-    "@calcom/lib": "*"
+    "@timely/lib": "*"
   },
   "devDependencies": {
-    "@calcom/types": "*"
+    "@timely/types": "*"
   }
 }

@@ -1,5 +1,5 @@
-import dayjs from "@calcom/dayjs";
-import type { TimeRange } from "@calcom/types/schedule";
+import dayjs from "@timely/dayjs";
+import type { TimeRange } from "@timely/types/schedule";
 
 // By default starts on Sunday (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
 export function weekdayDates(weekStart = 0, startDate: Date, length = 6) {

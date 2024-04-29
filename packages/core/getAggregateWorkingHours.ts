@@ -1,5 +1,5 @@
-import { SchedulingType } from "@calcom/prisma/enums";
-import type { WorkingHours } from "@calcom/types/schedule";
+import { SchedulingType } from "@timely/prisma/enums";
+import type { WorkingHours } from "@timely/types/schedule";
 
 /**
  * This function gets team members working hours and busy slots,

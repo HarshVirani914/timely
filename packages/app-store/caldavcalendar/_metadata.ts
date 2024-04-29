@@ -1,4 +1,4 @@
-import type { AppMeta } from "@calcom/types/App";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -12,10 +12,10 @@ export const metadata = {
   category: "calendar",
   categories: ["calendar"],
   logo: "icon.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   slug: "caldav-calendar",
-  url: "https://cal.com/",
-  email: "ali@cal.com",
+  url: "https://timely/",
+  email: "ali@timely",
   dirName: "caldavcalendar",
 } as AppMeta;
 

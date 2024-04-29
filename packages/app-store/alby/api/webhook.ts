@@ -1,14 +1,13 @@
+import { albyCredentialKeysSchema } from "@timely/app-store/alby/lib";
+import parseInvoice from "@timely/app-store/alby/lib/parseInvoice";
+import { IS_PRODUCTION } from "@timely/lib/constants";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import { handlePaymentSuccess } from "@timely/lib/payment/handlePaymentSuccess";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 import getRawBody from "raw-body";
 import * as z from "zod";
-
-import { albyCredentialKeysSchema } from "@calcom/app-store/alby/lib";
-import parseInvoice from "@calcom/app-store/alby/lib/parseInvoice";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import { handlePaymentSuccess } from "@calcom/lib/payment/handlePaymentSuccess";
-import prisma from "@calcom/prisma";
 
 export const config = {
   api: {
@@ -42,8 +41,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const { data: parsedPayload } = parse;
 
-    if (parsedPayload.metadata?.payer_data?.appId !== "cal.com") {
-      throw new HttpCode({ statusCode: 204, message: "Payment not for cal.com" });
+    if (parsedPayload.metadata?.payer_data?.appId !== "timely") {
+      throw new HttpCode({ statusCode: 204, message: "Payment not for timely" });
     }
 
     const payment = await prisma.payment.findFirst({

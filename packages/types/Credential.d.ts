@@ -6,7 +6,7 @@ import type { Prisma } from "@prisma/client";
  * Also there may be a better place to save this.
  */
 export type CredentialPayload = Prisma.CredentialGetPayload<{
-  select: typeof import("@calcom/prisma/selects/credential").credentialForCalendarServiceSelect;
+  select: typeof import("@timely/prisma/selects/credential").credentialForCalendarServiceSelect;
 }>;
 
 export type CredentialFrontendPayload = Omit<CredentialPayload, "key"> & {

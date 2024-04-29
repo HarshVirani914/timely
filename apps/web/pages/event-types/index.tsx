@@ -8,26 +8,26 @@ import type { FC } from "react";
 import { memo, useEffect, useState } from "react";
 import { z } from "zod";
 
-import { getLayout } from "@calcom/features/MainLayout";
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import useIntercom from "@calcom/features/ee/support/lib/intercom/useIntercom";
-import { EventTypeEmbedButton, EventTypeEmbedDialog } from "@calcom/features/embed/EventTypeEmbed";
-import { EventTypeDescription } from "@calcom/features/eventtypes/components";
-import CreateEventTypeDialog from "@calcom/features/eventtypes/components/CreateEventTypeDialog";
-import { DuplicateDialog } from "@calcom/features/eventtypes/components/DuplicateDialog";
-import { TeamsFilter } from "@calcom/features/filters/components/TeamsFilter";
-import { getTeamsFiltersFromQuery } from "@calcom/features/filters/lib/getTeamsFiltersFromQuery";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import useMediaQuery from "@calcom/lib/hooks/useMediaQuery";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { HttpError } from "@calcom/lib/http-error";
-import { SchedulingType } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc, TRPCClientError } from "@calcom/trpc/react";
+import { getLayout } from "@timely/features/MainLayout";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import useIntercom from "@timely/features/ee/support/lib/intercom/useIntercom";
+import { EventTypeEmbedButton, EventTypeEmbedDialog } from "@timely/features/embed/EventTypeEmbed";
+import { EventTypeDescription } from "@timely/features/eventtypes/components";
+import CreateEventTypeDialog from "@timely/features/eventtypes/components/CreateEventTypeDialog";
+import { DuplicateDialog } from "@timely/features/eventtypes/components/DuplicateDialog";
+import { TeamsFilter } from "@timely/features/filters/components/TeamsFilter";
+import { getTeamsFiltersFromQuery } from "@timely/features/filters/lib/getTeamsFiltersFromQuery";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import useMediaQuery from "@timely/lib/hooks/useMediaQuery";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { HttpError } from "@timely/lib/http-error";
+import { SchedulingType } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc, TRPCClientError } from "@timely/trpc/react";
 import {
   Alert,
   Avatar,
@@ -53,7 +53,7 @@ import {
   Switch,
   Tooltip,
   ArrowButton,
-} from "@calcom/ui";
+} from "@timely/ui";
 import {
   Clipboard,
   Code,
@@ -66,7 +66,7 @@ import {
   Trash,
   Upload,
   Users,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
 
 import useMeQuery from "@lib/hooks/useMeQuery";
 
@@ -921,7 +921,7 @@ const EventTypesPage = () => {
 
   function closeBanner() {
     setShowProfileBanner(false);
-    document.cookie = `calcom-profile-banner=1;max-age=${60 * 60 * 24 * 90}`; // 3 months
+    document.cookie = `timely-profile-banner=1;max-age=${60 * 60 * 24 * 90}`; // 3 months
     showToast(t("we_wont_show_again"), "success");
   }
 
@@ -934,7 +934,7 @@ const EventTypesPage = () => {
 
   useEffect(() => {
     setShowProfileBanner(
-      !!orgBranding && !document.cookie.includes("calcom-profile-banner=1") && !user?.completedOnboarding
+      !!orgBranding && !document.cookie.includes("timely-profile-banner=1") && !user?.completedOnboarding
     );
   }, [orgBranding, user]);
 

@@ -1,8 +1,7 @@
 import type { Prisma } from "@prisma/client";
-
-import type { CredentialDataWithTeamName } from "@calcom/app-store/utils";
-import getApps from "@calcom/app-store/utils";
-import { prisma } from "@calcom/prisma";
+import type { CredentialDataWithTeamName } from "@timely/app-store/utils";
+import getApps from "@timely/app-store/utils";
+import { prisma } from "@timely/prisma";
 
 type EnabledApp = ReturnType<typeof getApps>[number] & { enabled: boolean };
 

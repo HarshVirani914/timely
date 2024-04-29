@@ -1,7 +1,7 @@
 import type { Session } from "next-auth";
 import type { NextApiRequest as BaseNextApiRequest } from "next/types";
 
-import type { PrismaClient } from "@calcom/prisma";
+import type { PrismaClient } from "@timely/prisma";
 
 export type * from "next/types";
 

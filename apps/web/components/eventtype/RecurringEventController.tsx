@@ -2,12 +2,12 @@ import type { EventTypeSetup, FormValues } from "pages/event-types/[type]";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Frequency } from "@calcom/prisma/zod-utils";
-import type { RecurringEvent } from "@calcom/types/Calendar";
-import { Alert, Select, SettingsToggle, TextField } from "@calcom/ui";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Frequency } from "@timely/prisma/zod-utils";
+import type { RecurringEvent } from "@timely/types/Calendar";
+import { Alert, Select, SettingsToggle, TextField } from "@timely/ui";
 
 type RecurringEventControllerProps = {
   eventType: EventTypeSetup;

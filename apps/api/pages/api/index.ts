@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function CalcomApi(_: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json({ message: "Welcome to Cal.com API - docs are at https://developer.cal.com/api" });
+export default async function TimelyApi(_: NextApiRequest, res: NextApiResponse) {
+  res.status(200).json({ message: "Welcome to Timely API - docs are at https://developer.timely/api" });
 }

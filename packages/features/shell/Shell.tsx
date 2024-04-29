@@ -1,49 +1,47 @@
 import type { User as UserAuth } from "next-auth";
 import { signOut, useSession } from "next-auth/react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from "react";
 import React, { cloneElement, Fragment, useEffect, useMemo, useState } from "react";
 import { Toaster } from "react-hot-toast";
 
-import dayjs from "@calcom/dayjs";
-import { useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import UnconfirmedBookingBadge from "@calcom/features/bookings/UnconfirmedBookingBadge";
+import dayjs from "@timely/dayjs";
+import { useIsEmbed } from "@timely/embed-core/embed-iframe";
+import UnconfirmedBookingBadge from "@timely/features/bookings/UnconfirmedBookingBadge";
 import ImpersonatingBanner, {
   type ImpersonatingBannerProps,
-} from "@calcom/features/ee/impersonation/components/ImpersonatingBanner";
+} from "@timely/features/ee/impersonation/components/ImpersonatingBanner";
 import {
   OrgUpgradeBanner,
   type OrgUpgradeBannerProps,
-} from "@calcom/features/ee/organizations/components/OrgUpgradeBanner";
-import { getOrgFullOrigin } from "@calcom/features/ee/organizations/lib/orgDomains";
-import HelpMenuItem from "@calcom/features/ee/support/components/HelpMenuItem";
-import { TeamsUpgradeBanner, type TeamsUpgradeBannerProps } from "@calcom/features/ee/teams/components";
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { KBarContent, KBarRoot, KBarTrigger } from "@calcom/features/kbar/Kbar";
-import TimezoneChangeDialog from "@calcom/features/settings/TimezoneChangeDialog";
+} from "@timely/features/ee/organizations/components/OrgUpgradeBanner";
+import { getOrgFullOrigin } from "@timely/features/ee/organizations/lib/orgDomains";
+import HelpMenuItem from "@timely/features/ee/support/components/HelpMenuItem";
+import { TeamsUpgradeBanner, type TeamsUpgradeBannerProps } from "@timely/features/ee/teams/components";
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { KBarContent, KBarRoot } from "@timely/features/kbar/Kbar";
+import TimezoneChangeDialog from "@timely/features/settings/TimezoneChangeDialog";
 import AdminPasswordBanner, {
   type AdminPasswordBannerProps,
-} from "@calcom/features/users/components/AdminPasswordBanner";
+} from "@timely/features/users/components/AdminPasswordBanner";
 import CalendarCredentialBanner, {
   type CalendarCredentialBannerProps,
-} from "@calcom/features/users/components/CalendarCredentialBanner";
+} from "@timely/features/users/components/CalendarCredentialBanner";
 import VerifyEmailBanner, {
   type VerifyEmailBannerProps,
-} from "@calcom/features/users/components/VerifyEmailBanner";
-import classNames from "@calcom/lib/classNames";
-import { TOP_BANNER_HEIGHT } from "@calcom/lib/constants";
-import { APP_NAME, DESKTOP_APP_LINK, JOIN_DISCORD, ROADMAP, WEBAPP_URL } from "@calcom/lib/constants";
-import getBrandColours from "@calcom/lib/getBrandColours";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { isKeyInObject } from "@calcom/lib/isKeyInObject";
-import type { User } from "@calcom/prisma/client";
-import { trpc } from "@calcom/trpc/react";
-import useEmailVerifyCheck from "@calcom/trpc/react/hooks/useEmailVerifyCheck";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import type { SVGComponent } from "@calcom/types/SVGComponent";
+} from "@timely/features/users/components/VerifyEmailBanner";
+import classNames from "@timely/lib/classNames";
+import { APP_NAME, TOP_BANNER_HEIGHT, WEBAPP_URL } from "@timely/lib/constants";
+import getBrandColours from "@timely/lib/getBrandColours";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { isKeyInObject } from "@timely/lib/isKeyInObject";
+import type { User } from "@timely/prisma/client";
+import { trpc } from "@timely/trpc/react";
+import useEmailVerifyCheck from "@timely/trpc/react/hooks/useEmailVerifyCheck";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import {
   Avatar,
   Button,
@@ -62,8 +60,8 @@ import {
   showToast,
   SkeletonText,
   Tooltip,
-  useCalcomTheme,
-} from "@calcom/ui";
+  useTimelyTheme,
+} from "@timely/ui";
 import {
   ArrowLeft,
   ArrowRight,
@@ -72,34 +70,19 @@ import {
   ChevronDown,
   Clock,
   Copy,
-  Download,
   ExternalLink,
-  FileText,
   Grid,
-  HelpCircle,
   Link as LinkIcon,
   LogOut,
-  Map,
-  Moon,
   MoreHorizontal,
   Settings,
   User as UserIcon,
-  Users,
   Zap,
-} from "@calcom/ui/components/icon";
-import { Discord } from "@calcom/ui/components/icon/Discord";
-import { IS_VISUAL_REGRESSION_TESTING } from "@calcom/web/constants";
+} from "@timely/ui/components/icon";
+import { IS_VISUAL_REGRESSION_TESTING } from "@timely/web/constants";
 
 import { useOrgBranding } from "../ee/organizations/context/provider";
 import FreshChatProvider from "../ee/support/lib/freshchat/FreshChatProvider";
-import { TeamInviteBadge } from "./TeamInviteBadge";
-
-// need to import without ssr to prevent hydration errors
-const Tips = dynamic(() => import("@calcom/features/tips").then((mod) => mod.Tips), {
-  ssr: false,
-});
-
-/* TODO: Migate this */
 
 export const ONBOARDING_INTRODUCED_AT = dayjs("September 1 2021").toISOString();
 
@@ -319,7 +302,7 @@ const useBrandColors = () => {
     lightVal: user?.brandColor,
     darkVal: user?.darkBrandColor,
   });
-  useCalcomTheme(brandTheme);
+  useTimelyTheme(brandTheme);
 };
 
 const KBarWrapper = ({ children, withKBar = false }: { withKBar: boolean; children: React.ReactNode }) =>
@@ -490,47 +473,6 @@ function UserDropdown({ small }: UserDropdownProps) {
                     {t("my_settings")}
                   </DropdownItem>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <DropdownItem
-                    type="button"
-                    StartIcon={(props) => (
-                      <Moon className={classNames("text-default", props.className)} aria-hidden="true" />
-                    )}
-                    onClick={() => {
-                      mutation.mutate({ away: !user.away });
-                    }}>
-                    {user.away ? t("set_as_free") : t("set_as_away")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <DropdownItem
-                    StartIcon={() => <Discord className="text-default h-4 w-4" />}
-                    target="_blank"
-                    rel="noreferrer"
-                    href={JOIN_DISCORD}>
-                    {t("join_our_discord")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <DropdownItem StartIcon={Map} target="_blank" href={ROADMAP}>
-                    {t("visit_roadmap")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <DropdownItem
-                    type="button"
-                    StartIcon={(props) => <HelpCircle aria-hidden="true" {...props} />}
-                    onClick={() => setHelpOpen(true)}>
-                    {t("help")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="desktop-hidden hidden lg:flex">
-                  <DropdownItem StartIcon={Download} target="_blank" rel="noreferrer" href={DESKTOP_APP_LINK}>
-                    {t("download_desktop_app")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-
                 <DropdownMenuSeparator />
 
                 <DropdownMenuItem>
@@ -594,13 +536,6 @@ const navigation: NavigationItemType[] = [
     icon: Clock,
   },
   {
-    name: "teams",
-    href: "/teams",
-    icon: Users,
-    onlyDesktop: true,
-    badge: <TeamInviteBadge />,
-  },
-  {
     name: "apps",
     href: "/apps",
     icon: Grid,
@@ -636,17 +571,6 @@ const navigation: NavigationItemType[] = [
     icon: MoreHorizontal,
   },
   {
-    name: "Routing Forms",
-    href: "/apps/routing-forms/forms",
-    icon: FileText,
-    isCurrent: ({ pathname }) => pathname?.startsWith("/apps/routing-forms/") ?? false,
-  },
-  {
-    name: "workflows",
-    href: "/workflows",
-    icon: Zap,
-  },
-  {
     name: "insights",
     href: "/insights",
     icon: BarChart,
@@ -679,9 +603,6 @@ const Navigation = () => {
       {desktopNavigationItems.map((item) => (
         <NavigationItem key={item.name} item={item} />
       ))}
-      <div className="text-subtle mt-0.5 lg:hidden">
-        <KBarTrigger />
-      </div>
     </nav>
   );
 };
@@ -931,7 +852,6 @@ function SideBar({ bannersHeight, user }: SideBarProps) {
                   <UserDropdown small />
                 </div>
               )}
-              <KBarTrigger />
             </div>
           </header>
 
@@ -946,7 +866,6 @@ function SideBar({ bannersHeight, user }: SideBarProps) {
         </div>
 
         <div>
-          <Tips />
           {bottomNavItems.map(({ icon: Icon, ...item }, index) => (
             <Tooltip side="right" content={t(item.name)} className="lg:hidden" key={item.name}>
               <ButtonOrLink
@@ -1099,9 +1018,7 @@ function TopNav() {
           <Logo />
         </Link>
         <div className="flex items-center gap-2 self-center">
-          <span className="hover:bg-muted hover:text-emphasis text-default group flex items-center rounded-full text-sm font-medium lg:hidden">
-            <KBarTrigger />
-          </span>
+          <span className="hover:bg-muted hover:text-emphasis text-default group flex items-center rounded-full text-sm font-medium lg:hidden"></span>
           <button className="hover:bg-muted hover:text-subtle text-muted rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
             <span className="sr-only">{t("settings")}</span>
             <Link href="/settings/my-account/profile">

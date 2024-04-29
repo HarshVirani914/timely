@@ -1,8 +1,8 @@
 import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";
 import { schemaWebhookEditBodyParams, schemaWebhookReadPublic } from "~/lib/validations/webhook";
@@ -57,7 +57,7 @@ import { schemaWebhookEditBodyParams, schemaWebhookReadPublic } from "~/lib/vali
  *     tags:
  *     - webhooks
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/webhooks
+ *        url: https://docs.timely/core-features/webhooks
  *     responses:
  *       201:
  *         description: OK, webhook edited successfully

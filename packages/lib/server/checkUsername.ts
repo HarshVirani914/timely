@@ -1,4 +1,4 @@
-import { IS_PREMIUM_USERNAME_ENABLED } from "@calcom/lib/constants";
+import { IS_PREMIUM_USERNAME_ENABLED } from "@timely/lib/constants";
 
 import { checkRegularUsername } from "./checkRegularUsername";
 import { usernameCheck as checkPremiumUsername } from "./username";

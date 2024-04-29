@@ -1,4 +1,4 @@
-import authedProcedure, { authedAdminProcedure } from "@calcom/trpc/server/procedures/authedProcedure";
+import authedProcedure, { authedAdminProcedure } from "@timely/trpc/server/procedures/authedProcedure";
 
 import { router } from "../../../trpc";
 import { ZAddClientInputSchema } from "./addClient.schema";

@@ -14,10 +14,9 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "@timely/lib/classNames";
 import { useState } from "react";
 import { useVirtual } from "react-virtual";
-
-import classNames from "@calcom/lib/classNames";
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../table/TableNew";
 import type { ActionItem } from "./DataTableSelectionBar";

@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 export const Spinner = ({ className }: { className?: string }) => (
   <div

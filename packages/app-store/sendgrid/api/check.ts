@@ -1,8 +1,7 @@
+import Sendgrid from "@timely/lib/Sendgrid";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import Sendgrid from "@calcom/lib/Sendgrid";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
 
 import checkSession from "../../_utils/auth";
 

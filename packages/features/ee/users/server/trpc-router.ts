@@ -1,12 +1,11 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { AVATAR_FALLBACK } from "@timely/lib/constants";
+import { _UserModel as User } from "@timely/prisma/zod";
+import type { inferRouterOutputs } from "@timely/trpc";
+import { TRPCError } from "@timely/trpc";
+import { authedAdminProcedure } from "@timely/trpc/server/procedures/authedProcedure";
+import { router } from "@timely/trpc/server/trpc";
 import { z } from "zod";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { AVATAR_FALLBACK } from "@calcom/lib/constants";
-import { _UserModel as User } from "@calcom/prisma/zod";
-import type { inferRouterOutputs } from "@calcom/trpc";
-import { TRPCError } from "@calcom/trpc";
-import { authedAdminProcedure } from "@calcom/trpc/server/procedures/authedProcedure";
-import { router } from "@calcom/trpc/server/trpc";
 
 export type UserAdminRouter = typeof userAdminRouter;
 export type UserAdminRouterOutputs = inferRouterOutputs<UserAdminRouter>;
@@ -34,7 +33,7 @@ const userBodySchema = User.pick({
 });
 
 /**
- * @deprecated in favour of @calcom/lib/getAvatarUrl
+ * @deprecated in favour of @timely/lib/getAvatarUrl
  */
 /** This helps to prevent reaching the 4MB payload limit by avoiding base64 and instead passing the avatar url */
 export function getAvatarUrlFromUser(user: {

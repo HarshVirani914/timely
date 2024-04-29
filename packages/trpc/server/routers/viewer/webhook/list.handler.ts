@@ -1,7 +1,6 @@
 import type { Prisma } from "@prisma/client";
-
-import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { prisma } from "@timely/prisma";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TListInputSchema } from "./list.schema";
 

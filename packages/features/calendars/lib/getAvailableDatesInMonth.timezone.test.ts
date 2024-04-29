@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import { getAvailableDatesInMonth } from "@timely/features/calendars/lib/getAvailableDatesInMonth";
+import { daysInMonth, yyyymmdd } from "@timely/lib/date-fns";
 import { describe, expect, test, vi } from "vitest";
-
-import dayjs from "@calcom/dayjs";
-import { getAvailableDatesInMonth } from "@calcom/features/calendars/lib/getAvailableDatesInMonth";
-import { daysInMonth, yyyymmdd } from "@calcom/lib/date-fns";
 
 describe("Test Suite: Date Picker", () => {
   describe("Calculates the available dates left in the month", () => {

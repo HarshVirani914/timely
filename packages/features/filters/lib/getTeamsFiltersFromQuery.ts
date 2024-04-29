@@ -1,9 +1,8 @@
 "use client";
 
+import type { RouterOutputs } from "@timely/trpc/react";
 import type { ParsedUrlQuery } from "querystring";
 import { z } from "zod";
-
-import type { RouterOutputs } from "@calcom/trpc/react";
 
 export type IEventTypesFilters = RouterOutputs["viewer"]["eventTypes"]["listWithTeam"];
 export type IEventTypeFilter = IEventTypesFilters[0];

@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { validPassword } from "@calcom/features/auth/lib/validPassword";
-import prisma from "@calcom/prisma";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { validPassword } from "@timely/features/auth/lib/validPassword";
+import prisma from "@timely/prisma";
 
 const passwordResetRequestSchema = z.object({
   password: z.string().refine(validPassword, () => ({

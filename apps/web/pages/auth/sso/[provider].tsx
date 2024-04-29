@@ -3,16 +3,16 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import { getPremiumMonthlyPlanPriceId } from "@calcom/app-store/stripepayment/lib/utils";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import stripe from "@calcom/features/ee/payments/server/stripe";
-import { hostedCal, isSAMLLoginEnabled, samlProductID, samlTenantID } from "@calcom/features/ee/sso/lib/saml";
-import { ssoTenantProduct } from "@calcom/features/ee/sso/lib/sso";
-import { IS_PREMIUM_USERNAME_ENABLED } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { checkUsername } from "@calcom/lib/server/checkUsername";
-import prisma from "@calcom/prisma";
+import { getPremiumMonthlyPlanPriceId } from "@timely/app-store/stripepayment/lib/utils";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import stripe from "@timely/features/ee/payments/server/stripe";
+import { hostedCal, isSAMLLoginEnabled, samlProductID, samlTenantID } from "@timely/features/ee/sso/lib/saml";
+import { ssoTenantProduct } from "@timely/features/ee/sso/lib/sso";
+import { IS_PREMIUM_USERNAME_ENABLED } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { checkUsername } from "@timely/lib/server/checkUsername";
+import prisma from "@timely/prisma";
 
 import { asStringOrNull } from "@lib/asStringOrNull";
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
@@ -172,7 +172,7 @@ const getStripePremiumUsernameUrl = async ({
       },
     ],
     success_url: `${process.env.NEXT_PUBLIC_WEBAPP_URL}${successDestination}&session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: process.env.NEXT_PUBLIC_WEBAPP_URL || "https://app.cal.com",
+    cancel_url: process.env.NEXT_PUBLIC_WEBAPP_URL || "https://app.timely",
     allow_promotion_codes: true,
   });
 

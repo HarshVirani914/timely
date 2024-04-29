@@ -5,16 +5,16 @@ import { usePathname, useRouter } from "next/navigation";
 import { Suspense } from "react";
 import { z } from "zod";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { classNames } from "@calcom/lib";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import prisma from "@calcom/prisma";
-import { trpc } from "@calcom/trpc";
-import { Button, StepCard, Steps } from "@calcom/ui";
-import { Loader } from "@calcom/ui/components/icon";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { classNames } from "@timely/lib";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import prisma from "@timely/prisma";
+import { trpc } from "@timely/trpc";
+import { Button, StepCard, Steps } from "@timely/ui";
+import { Loader } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 import { ConnectedCalendars } from "@components/getting-started/steps-views/ConnectCalendars";

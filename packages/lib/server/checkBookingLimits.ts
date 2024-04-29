@@ -1,7 +1,7 @@
-import dayjs from "@calcom/dayjs";
-import prisma from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import dayjs from "@timely/dayjs";
+import prisma from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 import { getErrorFromUnknown } from "../errors";
 import { HttpError } from "../http-error";

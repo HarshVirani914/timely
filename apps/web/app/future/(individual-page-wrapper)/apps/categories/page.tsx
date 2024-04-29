@@ -3,9 +3,9 @@ import { ssrInit } from "app/_trpc/ssrInit";
 import { _generateMetadata } from "app/_utils";
 import { cookies, headers } from "next/headers";
 
-import { getAppRegistry, getAppRegistryWithCredentials } from "@calcom/app-store/_appRegistry";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { APP_NAME } from "@calcom/lib/constants";
+import { getAppRegistry, getAppRegistryWithCredentials } from "@timely/app-store/_appRegistry";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { APP_NAME } from "@timely/lib/constants";
 
 import PageWrapper from "@components/PageWrapperAppDir";
 

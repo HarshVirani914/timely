@@ -3,11 +3,11 @@ import type { SubmitHandler } from "react-hook-form";
 import { FormProvider } from "react-hook-form";
 import { useForm, useFormContext } from "react-hook-form";
 
-import type { EventNameObjectType } from "@calcom/core/event";
-import { getEventName } from "@calcom/core/event";
-import { validateCustomEventName } from "@calcom/core/event";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Dialog, DialogClose, DialogFooter, DialogContent, TextField } from "@calcom/ui";
+import type { EventNameObjectType } from "@timely/core/event";
+import { getEventName } from "@timely/core/event";
+import { validateCustomEventName } from "@timely/core/event";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Dialog, DialogClose, DialogFooter, DialogContent, TextField } from "@timely/ui";
 
 interface FormValues {
   customEventName: string;

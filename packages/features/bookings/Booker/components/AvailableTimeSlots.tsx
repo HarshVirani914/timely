@@ -1,14 +1,13 @@
+import dayjs from "@timely/dayjs";
+import { useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { AvailableTimes, AvailableTimesSkeleton } from "@timely/features/bookings";
+import { useNonEmptyScheduleDays } from "@timely/features/schedules";
+import { useSlotsForAvailableDates } from "@timely/features/schedules/lib/use-schedule/useSlotsForDate";
+import { classNames } from "@timely/lib";
+import useMediaQuery from "@timely/lib/hooks/useMediaQuery";
+import { BookerLayouts } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc";
 import { useRef, useEffect } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { AvailableTimes, AvailableTimesSkeleton } from "@calcom/features/bookings";
-import { useNonEmptyScheduleDays } from "@calcom/features/schedules";
-import { useSlotsForAvailableDates } from "@calcom/features/schedules/lib/use-schedule/useSlotsForDate";
-import { classNames } from "@calcom/lib";
-import useMediaQuery from "@calcom/lib/hooks/useMediaQuery";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc";
 
 import { AvailableTimesHeader } from "../../components/AvailableTimesHeader";
 import { useBookerStore } from "../store";

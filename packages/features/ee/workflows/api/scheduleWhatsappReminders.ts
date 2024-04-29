@@ -1,11 +1,10 @@
 /* Schedule any workflow reminder that falls within 7 days for WHATSAPP */
+import dayjs from "@timely/dayjs";
+import { defaultHandler } from "@timely/lib/server";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import prisma from "@timely/prisma";
+import { WorkflowActions, WorkflowMethods } from "@timely/prisma/enums";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import dayjs from "@calcom/dayjs";
-import { defaultHandler } from "@calcom/lib/server";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import prisma from "@calcom/prisma";
-import { WorkflowActions, WorkflowMethods } from "@calcom/prisma/enums";
 
 import { getWhatsappTemplateFunction } from "../lib/actionHelperFunctions";
 import * as twilio from "../lib/reminders/smsProviders/twilioProvider";

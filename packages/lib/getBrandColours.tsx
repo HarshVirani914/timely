@@ -1,4 +1,4 @@
-import { useBrandColors } from "@calcom/embed-core/embed-iframe";
+import { useBrandColors } from "@timely/embed-core/embed-iframe";
 
 const BRAND_COLOR = "#292929";
 const DARK_BRAND_COLOR = "#fafafa";

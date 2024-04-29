@@ -1,10 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Dialog, DialogContent, Form, DialogFooter, DialogClose, Button, CheckboxField } from "@timely/ui";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Dialog, DialogContent, Form, DialogFooter, DialogClose, Button, CheckboxField } from "@calcom/ui";
 
 export const BulkUpdateEventSchema = z.object({
   eventTypeIds: z.array(z.number()),

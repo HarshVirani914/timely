@@ -1,7 +1,7 @@
-import type { PrismaClient } from "@calcom/prisma/client";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { TRPCError } from "@calcom/trpc/server";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import type { PrismaClient } from "@timely/prisma/client";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import { TRPCError } from "@timely/trpc/server";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import type { BasecampToken } from "../lib/CalendarService";

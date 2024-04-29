@@ -43,7 +43,7 @@ const workspaces = packagedEmbedTestsOnly
 
       {
         test: {
-          name: "@calcom/closecom",
+          name: "@timely/closecom",
           include: ["packages/app-store/closecom/**/*.{test,spec}.{ts,js}"],
           environment: "jsdom",
           setupFiles: ["packages/app-store/closecom/test/globals.ts"],
@@ -69,7 +69,7 @@ const workspaces = packagedEmbedTestsOnly
       },
       {
         test: {
-          name: "@calcom/packages/lib/hooks",
+          name: "@timely/packages/lib/hooks",
           include: ["packages/lib/hooks/**/*.{test,spec}.{ts,js}"],
           environment: "jsdom",
           setupFiles: [],

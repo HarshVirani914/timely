@@ -1,10 +1,9 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { useTimePreferences } from "@timely/features/bookings/lib";
+import { classNames } from "@timely/lib";
 import { useMemo } from "react";
 import { shallow } from "zustand/shallow";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
-import { classNames } from "@calcom/lib";
 
 import { useCalendarStore } from "../../state/store";
 import type { CalendarAvailableTimeslots } from "../../types/state";

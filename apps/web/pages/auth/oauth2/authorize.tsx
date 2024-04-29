@@ -2,12 +2,12 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-import { APP_NAME } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Avatar, Button, Select } from "@calcom/ui";
-import { Plus, Info } from "@calcom/ui/components/icon";
+import { APP_NAME } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Avatar, Button, Select } from "@timely/ui";
+import { Plus, Info } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

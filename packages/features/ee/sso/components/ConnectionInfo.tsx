@@ -1,7 +1,7 @@
-import type { SSOConnection } from "@calcom/ee/sso/lib/saml";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import type { SSOConnection } from "@timely/ee/sso/lib/saml";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   showToast,
@@ -10,8 +10,8 @@ import {
   Dialog,
   DialogTrigger,
   Label,
-} from "@calcom/ui";
-import { Clipboard } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Clipboard } from "@timely/ui/components/icon";
 
 export default function ConnectionInfo({
   teamId,

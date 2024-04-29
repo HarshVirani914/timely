@@ -1,6 +1,5 @@
+import { classNames } from "@timely/lib";
 import Link from "next/link";
-
-import { classNames } from "@calcom/lib";
 
 import type { BadgeProps } from "../..";
 import { Badge } from "../..";

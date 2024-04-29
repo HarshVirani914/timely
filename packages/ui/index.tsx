@@ -137,7 +137,7 @@ export { default as ImageUploader } from "./components/image-uploader/ImageUploa
 export type { ButtonColor } from "./components/button/Button";
 export { CreateButton, CreateButtonWithTeamsList } from "./components/createButton";
 
-export { useCalcomTheme } from "./styles/useCalcomTheme";
+export { useTimelyTheme } from "./styles/useTimelyTheme";
 export { ScrollableArea } from "./components/scrollable/ScrollableArea";
 export { WizardLayout } from "./layouts/WizardLayout";
 export { DataTable } from "./components/data-table";

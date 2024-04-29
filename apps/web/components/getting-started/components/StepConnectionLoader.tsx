@@ -1,4 +1,4 @@
-import { SkeletonAvatar, SkeletonText, SkeletonButton } from "@calcom/ui";
+import { SkeletonAvatar, SkeletonText, SkeletonButton } from "@timely/ui";
 
 export function StepConnectionLoader() {
   return (

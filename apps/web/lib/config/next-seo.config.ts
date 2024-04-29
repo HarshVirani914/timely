@@ -1,6 +1,6 @@
 import type { DefaultSeoProps, NextSeoProps } from "next-seo";
 
-import { APP_NAME, SEO_IMG_DEFAULT, SEO_IMG_OGIMG } from "@calcom/lib/constants";
+import { APP_NAME, SEO_IMG_DEFAULT, SEO_IMG_OGIMG } from "@timely/lib/constants";
 
 export type HeadSeoProps = {
   title: string;
@@ -31,8 +31,8 @@ export const seoConfig: {
   },
   defaultNextSeo: {
     twitter: {
-      handle: "@calcom",
-      site: "@calcom",
+      handle: "@timely",
+      site: "@timely",
       cardType: "summary_large_image",
     },
   },

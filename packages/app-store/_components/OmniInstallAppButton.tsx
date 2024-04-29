@@ -1,9 +1,9 @@
-import { classNames } from "@calcom/lib";
-import useApp from "@calcom/lib/hooks/useApp";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, showToast } from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+import { classNames } from "@timely/lib";
+import useApp from "@timely/lib/hooks/useApp";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, showToast } from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 
 import useAddAppMutation from "../_utils/useAddAppMutation";
 import { InstallAppButton } from "../components";

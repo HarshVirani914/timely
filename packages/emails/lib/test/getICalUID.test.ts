@@ -1,8 +1,7 @@
+import { APP_NAME } from "@timely/lib/constants";
+import { buildCalendarEvent } from "@timely/lib/test/builder";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import { describe, expect } from "vitest";
-
-import { APP_NAME } from "@calcom/lib/constants";
-import { buildCalendarEvent } from "@calcom/lib/test/builder";
-import { test } from "@calcom/web/test/fixtures/fixtures";
 
 import getICalUID from "../getICalUID";
 

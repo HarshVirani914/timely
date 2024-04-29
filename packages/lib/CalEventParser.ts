@@ -1,8 +1,7 @@
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
 import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
-
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { WEBAPP_URL } from "./constants";
 import getLabelValueMapFromResponses from "./getLabelValueMapFromResponses";
@@ -130,7 +129,7 @@ export const getLocation = (calEvent: CalendarEvent) => {
 };
 
 export const getProviderName = (calEvent: CalendarEvent): string => {
-  // TODO: use getAppName from @calcom/app-store
+  // TODO: use getAppName from @timely/app-store
   if (calEvent.location && calEvent.location.includes("integrations:")) {
     let location = calEvent.location.split(":")[1];
     if (location === "daily") {

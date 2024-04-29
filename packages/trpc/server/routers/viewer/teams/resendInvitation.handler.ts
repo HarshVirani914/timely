@@ -1,8 +1,8 @@
-import { sendTeamInviteEmail } from "@calcom/emails";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { sendTeamInviteEmail } from "@timely/emails";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { prisma } from "@timely/prisma";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { checkPermissions, getTeamOrThrow } from "./inviteMember/utils";
 import type { TResendInvitationInputSchema } from "./resendInvitation.schema";
@@ -36,13 +36,13 @@ export const resendInvitationHandler = async ({ ctx, input }: InviteMemberOption
 
   const inviteTeamOptions = {
     joinLink: `${WEBAPP_URL}/auth/login?callbackUrl=/settings/teams`,
-    isCalcomMember: true,
+    isTimelyMember: true,
   };
 
   if (verificationToken) {
     // Token only exists if user is CAL user but hasn't completed onboarding.
     inviteTeamOptions.joinLink = `${WEBAPP_URL}/signup?token=${verificationToken.token}&callbackUrl=/getting-started`;
-    inviteTeamOptions.isCalcomMember = false;
+    inviteTeamOptions.isTimelyMember = false;
   }
 
   const translation = await getTranslation(input.language ?? "en", "common");

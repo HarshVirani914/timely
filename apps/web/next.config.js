@@ -171,36 +171,36 @@ const nextConfig = {
     ignoreDuringBuilds: !!process.env.CI,
   },
   transpilePackages: [
-    "@calcom/app-store",
-    "@calcom/core",
-    "@calcom/dayjs",
-    "@calcom/emails",
-    "@calcom/embed-core",
-    "@calcom/embed-react",
-    "@calcom/embed-snippet",
-    "@calcom/features",
-    "@calcom/lib",
-    "@calcom/prisma",
-    "@calcom/trpc",
-    "@calcom/ui",
+    "@timely/app-store",
+    "@timely/core",
+    "@timely/dayjs",
+    "@timely/emails",
+    "@timely/embed-core",
+    "@timely/embed-react",
+    "@timely/embed-snippet",
+    "@timely/features",
+    "@timely/lib",
+    "@timely/prisma",
+    "@timely/trpc",
+    "@timely/ui",
     "lucide-react",
   ],
   modularizeImports: {
-    "@calcom/ui/components/icon": {
+    "@timely/ui/components/icon": {
       transform: "lucide-react/dist/esm/icons/{{ kebabCase member }}",
       preventFullImport: true,
     },
-    "@calcom/features/insights/components": {
-      transform: "@calcom/features/insights/components/{{member}}",
+    "@timely/features/insights/components": {
+      transform: "@timely/features/insights/components/{{member}}",
       skipDefaultConversion: true,
       preventFullImport: true,
     },
     lodash: {
       transform: "lodash/{{member}}",
     },
-    // TODO: We need to have all components in `@calcom/ui/components` in order to use this
-    // "@calcom/ui": {
-    //   transform: "@calcom/ui/components/{{member}}",
+    // TODO: We need to have all components in `@timely/ui/components` in order to use this
+    // "@timely/ui": {
+    //   transform: "@timely/ui/components/{{member}}",
     // },
   },
   images: {
@@ -255,7 +255,7 @@ const nextConfig = {
       {
         /**
          * Needed due to the introduction of dotted usernames
-         * @see https://github.com/calcom/cal.com/pull/11706
+         * @see https://github.com/timely/timely/pull/11706
          */
         source: "/embed.js",
         destination: "/embed/embed.js",
@@ -544,7 +544,7 @@ const nextConfig = {
         : []),
     ];
 
-    if (process.env.NEXT_PUBLIC_WEBAPP_URL === "https://app.cal.com") {
+    if (process.env.NEXT_PUBLIC_WEBAPP_URL === "https://app.timely") {
       redirects.push(
         {
           source: "/apps/dailyvideo",

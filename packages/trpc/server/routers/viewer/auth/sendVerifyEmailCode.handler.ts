@@ -1,8 +1,7 @@
+import { sendEmailVerificationByCode } from "@timely/features/auth/lib/verifyEmail";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import getIP from "@timely/lib/getIP";
 import type { NextApiRequest } from "next";
-
-import { sendEmailVerificationByCode } from "@calcom/features/auth/lib/verifyEmail";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import getIP from "@calcom/lib/getIP";
 
 import type { TRPCContext } from "../../../createContext";
 import type { TSendVerifyEmailCodeSchema } from "./sendVerifyEmailCode.schema";

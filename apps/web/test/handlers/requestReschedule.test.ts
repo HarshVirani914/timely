@@ -2,11 +2,11 @@ import type { Request, Response } from "express";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { describe } from "vitest";
 
-import { SchedulingType } from "@calcom/prisma/enums";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { TRequestRescheduleInputSchema } from "@calcom/trpc/server/routers/viewer/bookings/requestReschedule.schema";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
-import { test } from "@calcom/web/test/fixtures/fixtures";
+import { SchedulingType } from "@timely/prisma/enums";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { TRequestRescheduleInputSchema } from "@timely/trpc/server/routers/viewer/bookings/requestReschedule.schema";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import {
   createBookingScenario,
   getGoogleCalendarCredential,
@@ -16,8 +16,8 @@ import {
   getScenarioData,
   getMockBookingAttendee,
   getDate,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
-import { expectBookingRequestRescheduledEmails } from "@calcom/web/test/utils/bookingScenario/expects";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
+import { expectBookingRequestRescheduledEmails } from "@timely/web/test/utils/bookingScenario/expects";
 
 import { getSampleUserInSession } from "../utils/bookingScenario/getSampleUserInSession";
 import { setupAndTeardown } from "../utils/bookingScenario/setupAndTeardown";
@@ -35,7 +35,7 @@ describe("Handler: requestReschedule", () => {
       emails,
     }) => {
       const { requestRescheduleHandler } = await import(
-        "@calcom/trpc/server/routers/viewer/bookings/requestReschedule.handler"
+        "@timely/trpc/server/routers/viewer/bookings/requestReschedule.handler"
       );
       const booker = getBooker({
         email: "booker@example.com",
@@ -140,7 +140,7 @@ describe("Handler: requestReschedule", () => {
       emails,
     }) => {
       const { requestRescheduleHandler } = await import(
-        "@calcom/trpc/server/routers/viewer/bookings/requestReschedule.handler"
+        "@timely/trpc/server/routers/viewer/bookings/requestReschedule.handler"
       );
       const booker = getBooker({
         email: "booker@example.com",

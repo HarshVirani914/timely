@@ -1,6 +1,5 @@
+import { APP_NAME, COMPANY_NAME } from "@timely/lib/constants";
 import type { TFunction } from "next-i18next";
-
-import { APP_NAME, COMPANY_NAME } from "@calcom/lib/constants";
 
 import { renderEmail } from "../";
 import BaseEmail from "./_base-email";
@@ -44,7 +43,7 @@ ${this.verifyAccountInput.language("verify_email_email_body", { appName: APP_NAM
 ${this.verifyAccountInput.language("verify_email_email_link_text")}
 ${this.verifyAccountInput.verificationEmailLink}
 ${this.verifyAccountInput.language("happy_scheduling")} ${this.verifyAccountInput.language(
-      "the_calcom_team",
+      "the_timely_team",
       { companyName: COMPANY_NAME }
     )}
 `.replace(/(<([^>]+)>)/gi, "");

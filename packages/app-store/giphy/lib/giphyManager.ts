@@ -1,4 +1,4 @@
-import { HttpError } from "@calcom/lib/http-error";
+import { HttpError } from "@timely/lib/http-error";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 

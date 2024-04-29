@@ -2,16 +2,16 @@ import type { GetServerSidePropsContext } from "next";
 import type { ChangeEventHandler } from "react";
 import { useState } from "react";
 
-import { getAppRegistry, getAppRegistryWithCredentials } from "@calcom/app-store/_appRegistry";
-import { getLayout } from "@calcom/features/MainLayout";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import getUserAdminTeams from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import type { UserAdminTeams } from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { AppCategories } from "@calcom/prisma/enums";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import type { HorizontalTabItemProps } from "@calcom/ui";
+import { getAppRegistry, getAppRegistryWithCredentials } from "@timely/app-store/_appRegistry";
+import { getLayout } from "@timely/features/MainLayout";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import getUserAdminTeams from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import type { UserAdminTeams } from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { AppCategories } from "@timely/prisma/enums";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import type { HorizontalTabItemProps } from "@timely/ui";
 import {
   AllApps,
   AppStoreCategories,
@@ -19,8 +19,8 @@ import {
   TextField,
   PopularAppsSlider,
   RecentAppsSlider,
-} from "@calcom/ui";
-import { Search } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Search } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 import AppsLayout from "@components/apps/layouts/AppsLayout";

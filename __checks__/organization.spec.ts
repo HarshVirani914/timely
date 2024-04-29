@@ -3,23 +3,23 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Org", () => {
   // Because these pages involve next.config.js rewrites, it's better to test them on production
-  test.describe("Embeds - i.cal.com", () => {
+  test.describe("Embeds - i.timely", () => {
     test("Org Profile Page should be embeddable", async ({ page }) => {
-      const response = await page.goto("https://i.cal.com/embed");
+      const response = await page.goto("https://i.timely/embed");
       expect(response?.status()).toBe(200);
       await page.screenshot({ path: "screenshot.jpg" });
       await expectPageToBeServerSideRendered(page);
     });
 
     test("Org User(Peer) Page should be embeddable", async ({ page }) => {
-      const response = await page.goto("https://i.cal.com/peer/embed");
+      const response = await page.goto("https://i.timely/peer/embed");
       expect(response?.status()).toBe(200);
       await expect(page.locator("text=Peer Richelsen")).toBeVisible();
       await expectPageToBeServerSideRendered(page);
     });
 
     test("Org User Event(peer/meet) Page should be embeddable", async ({ page }) => {
-      const response = await page.goto("https://i.cal.com/peer/meet/embed");
+      const response = await page.goto("https://i.timely/peer/meet/embed");
       expect(response?.status()).toBe(200);
       await expect(page.locator('[data-testid="decrementMonth"]')).toBeVisible();
       await expect(page.locator('[data-testid="incrementMonth"]')).toBeVisible();
@@ -27,14 +27,14 @@ test.describe("Org", () => {
     });
 
     test("Org Team Profile(/sales) page should be embeddable", async ({ page }) => {
-      const response = await page.goto("https://i.cal.com/sales/embed");
+      const response = await page.goto("https://i.timely/sales/embed");
       expect(response?.status()).toBe(200);
-      await expect(page.locator("text=Cal.com Sales")).toBeVisible();
+      await expect(page.locator("text=Timely Sales")).toBeVisible();
       await expectPageToBeServerSideRendered(page);
     });
 
     test("Org Team Event page(/sales/hippa) should be embeddable", async ({ page }) => {
-      const response = await page.goto("https://i.cal.com/sales/hipaa/embed");
+      const response = await page.goto("https://i.timely/sales/hipaa/embed");
       expect(response?.status()).toBe(200);
       await expect(page.locator('[data-testid="decrementMonth"]')).toBeVisible();
       await expect(page.locator('[data-testid="incrementMonth"]')).toBeVisible();
@@ -53,7 +53,7 @@ test.describe("Org", () => {
           name: "Bailey Pumfleet",
         },
       ];
-      const response = await page.goto(`http://i.cal.com/${users[0].username}+${users[1].username}`);
+      const response = await page.goto(`http://i.timely/${users[0].username}+${users[1].username}`);
       expect(response?.status()).toBe(200);
       expect(await page.locator('[data-testid="event-title"]').textContent()).toBe("Dynamic");
 

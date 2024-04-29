@@ -1,16 +1,15 @@
 import type { Workflow } from "@prisma/client";
-
-import { isSMSOrWhatsappAction } from "@calcom/ee/workflows/lib/actionHelperFunctions";
-import { SMS_REMINDER_NUMBER_FIELD } from "@calcom/features/bookings/lib/SystemField";
+import { isSMSOrWhatsappAction } from "@timely/ee/workflows/lib/actionHelperFunctions";
+import { SMS_REMINDER_NUMBER_FIELD } from "@timely/features/bookings/lib/SystemField";
 import {
   getSmsReminderNumberField,
   getSmsReminderNumberSource,
-} from "@calcom/features/bookings/lib/getBookingFields";
-import { removeBookingField, upsertBookingField } from "@calcom/features/eventtypes/lib/bookingFieldsManager";
-import { SENDER_ID, SENDER_NAME } from "@calcom/lib/constants";
-import type { PrismaClient } from "@calcom/prisma";
-import type { WorkflowStep } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
+} from "@timely/features/bookings/lib/getBookingFields";
+import { removeBookingField, upsertBookingField } from "@timely/features/eventtypes/lib/bookingFieldsManager";
+import { SENDER_ID, SENDER_NAME } from "@timely/lib/constants";
+import type { PrismaClient } from "@timely/prisma";
+import type { WorkflowStep } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
 
 export function getSender(
   step: Pick<WorkflowStep, "action" | "sender"> & { senderName: string | null | undefined }

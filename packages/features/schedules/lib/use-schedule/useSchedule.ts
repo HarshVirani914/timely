@@ -1,6 +1,6 @@
-import dayjs from "@calcom/dayjs";
-import { getUsernameList } from "@calcom/lib/defaultEvents";
-import { trpc } from "@calcom/trpc/react";
+import dayjs from "@timely/dayjs";
+import { getUsernameList } from "@timely/lib/defaultEvents";
+import { trpc } from "@timely/trpc/react";
 
 type UseScheduleWithCacheArgs = {
   username?: string | null;

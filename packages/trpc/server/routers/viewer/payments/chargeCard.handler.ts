@@ -1,10 +1,10 @@
-import appStore from "@calcom/app-store";
-import dayjs from "@calcom/dayjs";
-import { sendNoShowFeeChargedEmail } from "@calcom/emails";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import type { PrismaClient } from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService, PaymentApp } from "@calcom/types/PaymentService";
+import appStore from "@timely/app-store";
+import dayjs from "@timely/dayjs";
+import { sendNoShowFeeChargedEmail } from "@timely/emails";
+import { getTranslation } from "@timely/lib/server/i18n";
+import type { PrismaClient } from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService, PaymentApp } from "@timely/types/PaymentService";
 
 import { TRPCError } from "@trpc/server";
 

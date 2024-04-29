@@ -1,12 +1,11 @@
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Alert, Button, ButtonGroup, EmptyScreen, Label, showToast } from "@timely/ui";
+import { EyeOff, Mail, RefreshCcw, UserPlus, Users, Video } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Alert, Button, ButtonGroup, EmptyScreen, Label, showToast } from "@calcom/ui";
-import { EyeOff, Mail, RefreshCcw, UserPlus, Users, Video } from "@calcom/ui/components/icon";
 
 import { UpgradeTip } from "../../../tips";
 import SkeletonLoaderTeamList from "./SkeletonloaderTeamList";
@@ -104,7 +103,7 @@ export function TeamsListing() {
       )}
       <UpgradeTip
         plan="team"
-        title={t("calcom_is_better_with_team", { appName: APP_NAME })}
+        title={t("timely_is_better_with_team", { appName: APP_NAME })}
         description="add_your_team_members"
         features={features}
         background="/tips/teams"
@@ -115,7 +114,7 @@ export function TeamsListing() {
                 <Button color="primary" href={`${WEBAPP_URL}/settings/teams/new`}>
                   {t("create_team")}
                 </Button>
-                <Button color="minimal" href="https://go.cal.com/teams-video" target="_blank">
+                <Button color="minimal" href="https://go.timely/teams-video" target="_blank">
                   {t("learn_more")}
                 </Button>
               </ButtonGroup>

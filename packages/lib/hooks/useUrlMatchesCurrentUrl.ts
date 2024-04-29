@@ -1,8 +1,7 @@
 "use client";
 
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
 import { usePathname } from "next/navigation";
-
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
 
 export const useUrlMatchesCurrentUrl = (url: string) => {
   // I don't know why usePathname ReturnType doesn't include null.

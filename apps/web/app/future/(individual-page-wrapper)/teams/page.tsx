@@ -6,8 +6,8 @@ import { type GetServerSidePropsContext } from "next";
 import { headers, cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { getLayout } from "@calcom/features/MainLayoutAppDir";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
+import { getLayout } from "@timely/features/MainLayoutAppDir";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
 
 import { buildLegacyCtx } from "@lib/buildLegacyCtx";
 

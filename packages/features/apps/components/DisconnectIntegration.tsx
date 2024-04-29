@@ -1,10 +1,9 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { ButtonProps } from "@timely/ui";
+import { Button, ConfirmationDialogContent, Dialog, DialogTrigger, showToast } from "@timely/ui";
+import { Trash } from "@timely/ui/components/icon";
 import { useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { ButtonProps } from "@calcom/ui";
-import { Button, ConfirmationDialogContent, Dialog, DialogTrigger, showToast } from "@calcom/ui";
-import { Trash } from "@calcom/ui/components/icon";
 
 export default function DisconnectIntegration({
   credentialId,

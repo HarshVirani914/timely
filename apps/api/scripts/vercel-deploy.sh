@@ -1,6 +1,6 @@
 # github submodule repo addresses without https:// prefix
 BRANCH_TO_CLONE=""
-SUBMODULE_GITHUB=github.com/calcom/api
+SUBMODULE_GITHUB=github.com/timely/api
 SUBMODULE_PATH=apps/api
 COMMIT=$VERCEL_GIT_COMMIT_SHA
 
@@ -34,7 +34,7 @@ git config --global advice.detachedHead false
 rm -rf ..?* .[!.]* * || true
 
 # checkout the current commit
-git clone $BRANCH_TO_CLONE https://$GITHUB_ACCESS_TOKEN@github.com/calcom/cal.com.git .
+git clone $BRANCH_TO_CLONE https://$GITHUB_ACCESS_TOKEN@github.com/timely/timely.git .
 
 echo "Cloned"
 

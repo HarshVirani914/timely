@@ -1,6 +1,5 @@
+import type { EventBusyDate } from "@timely/types/Calendar";
 import { create } from "zustand";
-
-import type { EventBusyDate } from "@calcom/types/Calendar";
 
 interface IOverlayCalendarStore {
   overlayBusyDates: EventBusyDate[] | undefined;

@@ -1,12 +1,11 @@
+import dayjs from "@timely/dayjs";
+import prisma from "@timely/prisma";
+import type { Credential } from "@timely/prisma/client";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { PartialReference } from "@timely/types/EventManager";
+import type { VideoApiAdapter, VideoCallData } from "@timely/types/VideoApiAdapter";
 import { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import prisma from "@calcom/prisma";
-import type { Credential } from "@calcom/prisma/client";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { PartialReference } from "@calcom/types/EventManager";
-import type { VideoApiAdapter, VideoCallData } from "@calcom/types/VideoApiAdapter";
 
 import refreshOAuthTokens from "../../_utils/oauth/refreshOAuthTokens";
 import { getWebexAppKeys } from "./getWebexAppKeys";
@@ -81,7 +80,7 @@ const webexAuth = (credential: CredentialPayload) => {
 
     if (responseBody.error) {
       if (responseBody.error === "invalid_grant") {
-        return Promise.reject(new Error("Invalid grant for Cal.com webex app"));
+        return Promise.reject(new Error("Invalid grant for Timely webex app"));
       }
     }
     // We check the if the new credentials matches the expected response structure
@@ -195,7 +194,7 @@ const WebexVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter =>
         if (response.error) {
           if (response.error === "invalid_grant") {
             await invalidateCredential(credential.id);
-            return Promise.reject(new Error("Invalid grant for Cal.com webex app"));
+            return Promise.reject(new Error("Invalid grant for Timely webex app"));
           }
         }
 
@@ -224,7 +223,7 @@ const WebexVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter =>
         if (response.error) {
           if (response.error === "invalid_grant") {
             await invalidateCredential(credential.id);
-            return Promise.reject(new Error("Invalid grant for Cal.com webex app"));
+            return Promise.reject(new Error("Invalid grant for Timely webex app"));
           }
         }
         return Promise.resolve();
@@ -245,7 +244,7 @@ const WebexVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter =>
         if (response.error) {
           if (response.error === "invalid_grant") {
             await invalidateCredential(credential.id);
-            return Promise.reject(new Error("Invalid grant for Cal.com webex app"));
+            return Promise.reject(new Error("Invalid grant for Timely webex app"));
           }
         }
 

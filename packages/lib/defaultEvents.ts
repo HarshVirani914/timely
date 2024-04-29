@@ -1,12 +1,11 @@
 import type { Prisma } from "@prisma/client";
-
-import { DailyLocationType } from "@calcom/app-store/locations";
-import slugify from "@calcom/lib/slugify";
-import { PeriodType, SchedulingType } from "@calcom/prisma/enums";
-import type { userSelect } from "@calcom/prisma/selects";
-import type { CustomInputSchema } from "@calcom/prisma/zod-utils";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import type { CredentialPayload } from "@calcom/types/Credential";
+import { DailyLocationType } from "@timely/app-store/locations";
+import slugify from "@timely/lib/slugify";
+import { PeriodType, SchedulingType } from "@timely/prisma/enums";
+import type { userSelect } from "@timely/prisma/selects";
+import type { CustomInputSchema } from "@timely/prisma/zod-utils";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 type User = Prisma.UserGetPayload<typeof userSelect>;
 

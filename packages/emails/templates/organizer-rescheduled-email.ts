@@ -1,4 +1,4 @@
-import { APP_NAME } from "@calcom/lib/constants";
+import { APP_NAME } from "@timely/lib/constants";
 
 import { renderEmail } from "../";
 import generateIcsString from "../lib/generateIcsString";

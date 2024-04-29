@@ -1,10 +1,9 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import { Button, Dialog, DialogContent, DialogFooter, Select } from "@timely/ui";
 import type { SyntheticEvent } from "react";
 import { useMemo, useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import { Button, Dialog, DialogContent, DialogFooter, Select } from "@calcom/ui";
 
 type MembershipRoleOption = {
   label: string;

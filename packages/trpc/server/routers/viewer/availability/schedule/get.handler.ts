@@ -1,9 +1,9 @@
-import dayjs from "@calcom/dayjs";
-import { getWorkingHours } from "@calcom/lib/availability";
-import { yyyymmdd } from "@calcom/lib/date-fns";
-import { hasReadPermissionsForUserId } from "@calcom/lib/hasEditPermissionForUser";
-import { prisma } from "@calcom/prisma";
-import type { TimeRange } from "@calcom/types/schedule";
+import dayjs from "@timely/dayjs";
+import { getWorkingHours } from "@timely/lib/availability";
+import { yyyymmdd } from "@timely/lib/date-fns";
+import { hasReadPermissionsForUserId } from "@timely/lib/hasEditPermissionForUser";
+import { prisma } from "@timely/prisma";
+import type { TimeRange } from "@timely/types/schedule";
 
 import { TRPCError } from "@trpc/server";
 

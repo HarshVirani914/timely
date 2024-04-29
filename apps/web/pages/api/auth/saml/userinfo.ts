@@ -1,9 +1,9 @@
 import type { NextApiRequest } from "next";
 import z from "zod";
 
-import jackson from "@calcom/features/ee/sso/lib/jackson";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
+import jackson from "@timely/features/ee/sso/lib/jackson";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 
 const extractAuthToken = (req: NextApiRequest) => {
   const authHeader = req.headers["authorization"];

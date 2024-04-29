@@ -1,7 +1,6 @@
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import classNames from "@timely/lib/classNames";
 import React from "react";
-
-import classNames from "@calcom/lib/classNames";
 
 export function Tooltip({
   children,

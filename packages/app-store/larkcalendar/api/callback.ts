@@ -1,10 +1,9 @@
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
+import logger from "@timely/lib/logger";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
-
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
-import logger from "@calcom/lib/logger";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";
 import { decodeOAuthState } from "../../_utils/oauth/decodeOAuthState";

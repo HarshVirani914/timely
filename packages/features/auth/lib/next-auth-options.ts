@@ -1,25 +1,24 @@
 import type { Membership, Team, UserPermissionRole } from "@prisma/client";
+import checkLicense from "@timely/features/ee/common/server/checkLicense";
+import ImpersonationProvider from "@timely/features/ee/impersonation/lib/ImpersonationProvider";
+import { getOrgFullOrigin, subdomainSuffix } from "@timely/features/ee/organizations/lib/orgDomains";
+import { clientSecretVerifier, hostedCal, isSAMLLoginEnabled } from "@timely/features/ee/sso/lib/saml";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@timely/lib/constants";
+import { symmetricDecrypt, symmetricEncrypt } from "@timely/lib/crypto";
+import { defaultCookies } from "@timely/lib/default-cookies";
+import { isENVDev } from "@timely/lib/env";
+import { randomString } from "@timely/lib/random";
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
+import { IdentityProvider, MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema, userMetadata } from "@timely/prisma/zod-utils";
 import type { AuthOptions, Session } from "next-auth";
 import { encode } from "next-auth/jwt";
 import type { Provider } from "next-auth/providers";
 import CredentialsProvider from "next-auth/providers/credentials";
 import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
-
-import checkLicense from "@calcom/features/ee/common/server/checkLicense";
-import ImpersonationProvider from "@calcom/features/ee/impersonation/lib/ImpersonationProvider";
-import { getOrgFullOrigin, subdomainSuffix } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { clientSecretVerifier, hostedCal, isSAMLLoginEnabled } from "@calcom/features/ee/sso/lib/saml";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@calcom/lib/constants";
-import { symmetricDecrypt, symmetricEncrypt } from "@calcom/lib/crypto";
-import { defaultCookies } from "@calcom/lib/default-cookies";
-import { isENVDev } from "@calcom/lib/env";
-import { randomString } from "@calcom/lib/random";
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
-import { IdentityProvider, MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema, userMetadata } from "@calcom/prisma/zod-utils";
 
 import { ErrorCode } from "./ErrorCode";
 import { isPasswordValid } from "./isPasswordValid";
@@ -86,7 +85,7 @@ const checkIfUserShouldBelongToOrg = async (idP: IdentityProvider, email: string
 const providers: Provider[] = [
   CredentialsProvider({
     id: "credentials",
-    name: "Cal.com",
+    name: "Timely",
     type: "credentials",
     credentials: {
       email: { label: "Email Address", type: "email", placeholder: "john.doe@example.com" },
@@ -215,7 +214,7 @@ const providers: Provider[] = [
           throw new Error(ErrorCode.InternalServerError);
         }
 
-        const isValidToken = (await import("@calcom/lib/totp")).totpAuthenticatorCheck(
+        const isValidToken = (await import("@timely/lib/totp")).totpAuthenticatorCheck(
           credentials.totpCode,
           secret
         );
@@ -322,7 +321,7 @@ if (isSAMLLoginEnabled) {
           return null;
         }
 
-        const { oauthController } = await (await import("@calcom/features/ee/sso/lib/jackson")).default();
+        const { oauthController } = await (await import("@timely/features/ee/sso/lib/jackson")).default();
 
         // Fetch access token
         const { access_token } = await oauthController.token({
@@ -372,7 +371,7 @@ function isNumber(n: string) {
   return !isNaN(parseFloat(n)) && !isNaN(+n);
 }
 
-const calcomAdapter = CalComAdapter(prisma);
+const timelyAdapter = CalComAdapter(prisma);
 
 const mapIdentityProvider = (providerName: string) => {
   switch (providerName) {
@@ -387,7 +386,7 @@ const mapIdentityProvider = (providerName: string) => {
 export const AUTH_OPTIONS: AuthOptions = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  adapter: calcomAdapter,
+  adapter: timelyAdapter,
   session: {
     strategy: "jwt",
   },
@@ -656,7 +655,7 @@ export const AUTH_OPTIONS: AuthOptions = {
               // If old user without Account entry we link their google account
               if (existingUser.accounts.length === 0) {
                 const linkAccountWithUserData = { ...account, userId: existingUser.id };
-                await calcomAdapter.linkAccount(linkAccountWithUserData);
+                await timelyAdapter.linkAccount(linkAccountWithUserData);
               }
             } catch (error) {
               if (error instanceof Error) {
@@ -796,7 +795,7 @@ export const AUTH_OPTIONS: AuthOptions = {
         });
 
         const linkAccountNewUserData = { ...account, userId: newUser.id };
-        await calcomAdapter.linkAccount(linkAccountNewUserData);
+        await timelyAdapter.linkAccount(linkAccountNewUserData);
 
         if (account.twoFactorEnabled) {
           return loginWithTotp(newUser);

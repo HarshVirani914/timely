@@ -1,18 +1,17 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { useEmbedStyles } from "@timely/embed-core/embed-iframe";
+import { useBookerStore } from "@timely/features/bookings/Booker/store";
+import { getAvailableDatesInMonth } from "@timely/features/calendars/lib/getAvailableDatesInMonth";
+import classNames from "@timely/lib/classNames";
+import { daysInMonth, yyyymmdd } from "@timely/lib/date-fns";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { weekdayNames } from "@timely/lib/weekday";
+import { Button, SkeletonText } from "@timely/ui";
+import { ChevronLeft, ChevronRight } from "@timely/ui/components/icon";
+import { ArrowRight } from "@timely/ui/components/icon";
 import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { useEmbedStyles } from "@calcom/embed-core/embed-iframe";
-import { useBookerStore } from "@calcom/features/bookings/Booker/store";
-import { getAvailableDatesInMonth } from "@calcom/features/calendars/lib/getAvailableDatesInMonth";
-import classNames from "@calcom/lib/classNames";
-import { daysInMonth, yyyymmdd } from "@calcom/lib/date-fns";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { weekdayNames } from "@calcom/lib/weekday";
-import { Button, SkeletonText } from "@calcom/ui";
-import { ChevronLeft, ChevronRight } from "@calcom/ui/components/icon";
-import { ArrowRight } from "@calcom/ui/components/icon";
 
 export type DatePickerProps = {
   /** which day of the week to render the calendar. Usually Sunday (=0) or Monday (=1) - default: Sunday */

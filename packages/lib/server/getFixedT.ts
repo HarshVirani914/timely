@@ -1,8 +1,7 @@
+//@ts-expect-error no type definitions
+import config from "@timely/web/next-i18next.config";
 import i18next from "i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-//@ts-expect-error no type definitions
-import config from "@calcom/web/next-i18next.config";
 
 export const create = async (locale: string, ns: string) => {
   const { _nextI18Next } = await serverSideTranslations(locale, [ns], config);

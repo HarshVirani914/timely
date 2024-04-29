@@ -1,13 +1,12 @@
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import logger from "@timely/lib/logger";
+import { TRPCError } from "@timely/trpc";
+import type { AppGetServerSidePropsContext, AppPrisma } from "@timely/types/AppGetServerSideProps";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
 import Head from "next/head";
 import { stringify } from "querystring";
 import z from "zod";
-
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import logger from "@calcom/lib/logger";
-import { TRPCError } from "@calcom/trpc";
-import type { AppGetServerSidePropsContext, AppPrisma } from "@calcom/types/AppGetServerSideProps";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
 
 import getFieldIdentifier from "../../lib/getFieldIdentifier";
 import { getSerializableForm } from "../../lib/getSerializableForm";
@@ -20,7 +19,7 @@ export default function Router({ form, message }: inferSSRProps<typeof getServer
   return (
     <>
       <Head>
-        <title>{form.name} | Cal.com Forms</title>
+        <title>{form.name} | Timely Forms</title>
       </Head>
       <div className="mx-auto my-0 max-w-3xl md:my-24">
         <div className="w-full max-w-4xl ltr:mr-2 rtl:ml-2">
@@ -88,10 +87,10 @@ export const getServerSideProps = async function getServerSideProps(
     throw new Error("No matching route could be found");
   }
 
-  const { createContext } = await import("@calcom/trpc/server/createContext");
+  const { createContext } = await import("@timely/trpc/server/createContext");
   const ctx = await createContext(context);
 
-  const { default: trpcRouter } = await import("@calcom/app-store/routing-forms/trpc/_router");
+  const { default: trpcRouter } = await import("@timely/app-store/routing-forms/trpc/_router");
   const caller = trpcRouter.createCaller(ctx);
   const { v4: uuidv4 } = await import("uuid");
   try {

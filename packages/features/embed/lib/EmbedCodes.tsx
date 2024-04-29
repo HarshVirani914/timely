@@ -1,4 +1,4 @@
-import { CAL_URL, IS_SELF_HOSTED, WEBAPP_URL } from "@calcom/lib/constants";
+import { CAL_URL, IS_SELF_HOSTED, WEBAPP_URL } from "@timely/lib/constants";
 
 import type { PreviewState } from "../types";
 import { embedLibUrl } from "./constants";
@@ -6,7 +6,7 @@ import { getApiName } from "./getApiName";
 import { getDimension } from "./getDimension";
 
 export const doWeNeedCalOriginProp = (embedCalOrigin: string) => {
-  // If we are self hosted, calOrigin won't be app.cal.com so we need to pass it
+  // If we are self hosted, calOrigin won't be app.timely so we need to pass it
   // If we are not self hosted but it's still different from WEBAPP_URL and CAL_URL, we need to pass it -> It happens for organization booking URL at the moment
   return IS_SELF_HOSTED || (embedCalOrigin !== WEBAPP_URL && embedCalOrigin !== CAL_URL);
 };
@@ -31,7 +31,7 @@ export const Codes = {
       const height = getDimension(previewState.inline.height);
       const namespaceProp = `${namespace ? `namespace="${namespace}"` : ""}`;
       return code`
-  import Cal, { getCalApi } from "@calcom/embed-react";
+  import Cal, { getCalApi } from "@timely/embed-react";
   import { useEffect } from "react";
   export default function MyApp() {
 	useEffect(()=>{
@@ -59,7 +59,7 @@ export const Codes = {
       namespace: string;
     }) => {
       return code`
-  import { getCalApi } from "@calcom/embed-react";
+  import { getCalApi } from "@timely/embed-react";
   import { useEffect } from "react";
   export default function MyApp() {
 	useEffect(()=>{
@@ -85,7 +85,7 @@ export const Codes = {
       namespace: string;
     }) => {
       return code`
-  import { getCalApi } from "@calcom/embed-react";
+  import { getCalApi } from "@timely/embed-react";
   import { useEffect } from "react";
   export default function MyApp() {
 	useEffect(()=>{

@@ -1,11 +1,10 @@
 import type { Workflow, WorkflowsOnEventTypes, WorkflowStep } from "@prisma/client";
-
-import type { getEventTypesFromDB } from "@calcom/features/bookings/lib/handleNewBooking";
-import { scheduleEmailReminder } from "@calcom/features/ee/workflows/lib/reminders/emailReminderManager";
-import type { BookingInfo } from "@calcom/features/ee/workflows/lib/reminders/smsReminderManager";
-import type { getDefaultEvent } from "@calcom/lib/defaultEvents";
-import logger from "@calcom/lib/logger";
-import { WorkflowTriggerEvents, TimeUnit, WorkflowActions, WorkflowTemplates } from "@calcom/prisma/enums";
+import type { getEventTypesFromDB } from "@timely/features/bookings/lib/handleNewBooking";
+import { scheduleEmailReminder } from "@timely/features/ee/workflows/lib/reminders/emailReminderManager";
+import type { BookingInfo } from "@timely/features/ee/workflows/lib/reminders/smsReminderManager";
+import type { getDefaultEvent } from "@timely/lib/defaultEvents";
+import logger from "@timely/lib/logger";
+import { WorkflowTriggerEvents, TimeUnit, WorkflowActions, WorkflowTemplates } from "@timely/prisma/enums";
 
 const log = logger.getSubLogger({ prefix: ["[scheduleMandatoryReminder]"] });
 

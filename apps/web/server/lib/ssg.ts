@@ -2,13 +2,13 @@ import type { GetStaticPropsContext } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import superjson from "superjson";
 
-import { CALCOM_VERSION } from "@calcom/lib/constants";
-import prisma, { readonlyPrisma } from "@calcom/prisma";
-import { createProxySSGHelpers } from "@calcom/trpc/react/ssg";
-import { appRouter } from "@calcom/trpc/server/routers/_app";
+import { CALCOM_VERSION } from "@timely/lib/constants";
+import prisma, { readonlyPrisma } from "@timely/prisma";
+import { createProxySSGHelpers } from "@timely/trpc/react/ssg";
+import { appRouter } from "@timely/trpc/server/routers/_app";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { i18n } = require("@calcom/config/next-i18next.config");
+const { i18n } = require("@timely/config/next-i18next.config");
 
 /**
  * Initialize static site rendering tRPC helpers.

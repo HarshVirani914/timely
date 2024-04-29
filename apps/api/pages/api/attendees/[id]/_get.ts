@@ -1,6 +1,5 @@
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
 
 import { schemaAttendeeReadPublic } from "~/lib/validations/attendee";
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";

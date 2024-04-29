@@ -1,10 +1,9 @@
+import { useBookerStore } from "@timely/features/bookings/Booker/store";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Badge } from "@timely/ui";
 import type { TFunction } from "next-i18next";
 import { useEffect } from "react";
-
-import { useBookerStore } from "@calcom/features/bookings/Booker/store";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Badge } from "@calcom/ui";
 
 import type { PublicEvent } from "../../types";
 

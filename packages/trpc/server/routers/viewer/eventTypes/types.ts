@@ -1,8 +1,7 @@
+import { _DestinationCalendarModel, _EventTypeModel } from "@timely/prisma/zod";
+import { customInputSchema, EventTypeMetaDataSchema, stringOrNumber } from "@timely/prisma/zod-utils";
+import { eventTypeBookingFields } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { _DestinationCalendarModel, _EventTypeModel } from "@calcom/prisma/zod";
-import { customInputSchema, EventTypeMetaDataSchema, stringOrNumber } from "@calcom/prisma/zod-utils";
-import { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
 
 export const EventTypeUpdateInput = _EventTypeModel
   /** Optional fields */

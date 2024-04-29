@@ -1,13 +1,13 @@
-import dayjs from "@calcom/dayjs";
-import { SENDER_ID } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import type { TimeFormat } from "@calcom/lib/timeFormat";
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { WorkflowTemplates, WorkflowActions, WorkflowMethods } from "@calcom/prisma/enums";
-import { WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { CalEventResponses, RecurringEvent } from "@calcom/types/Calendar";
+import dayjs from "@timely/dayjs";
+import { SENDER_ID } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import type { TimeFormat } from "@timely/lib/timeFormat";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { WorkflowTemplates, WorkflowActions, WorkflowMethods } from "@timely/prisma/enums";
+import { WorkflowTriggerEvents } from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
+import type { CalEventResponses, RecurringEvent } from "@timely/types/Calendar";
 
 import { getSenderId } from "../alphanumericSenderIdSupport";
 import type { ScheduleReminderArgs } from "./emailReminderManager";

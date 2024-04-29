@@ -1,9 +1,8 @@
+import dayjs from "@timely/dayjs";
+import { formatPrice } from "@timely/lib/price";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import dayjs from "@calcom/dayjs";
-import { formatPrice } from "@calcom/lib/price";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import {
   BaseEmailHtml,

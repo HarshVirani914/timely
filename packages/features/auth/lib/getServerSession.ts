@@ -1,11 +1,10 @@
+import checkLicense from "@timely/features/ee/common/server/checkLicense";
+import { CAL_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 import { LRUCache } from "lru-cache";
 import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next";
 import type { AuthOptions, Session } from "next-auth";
 import { getToken } from "next-auth/jwt";
-
-import checkLicense from "@calcom/features/ee/common/server/checkLicense";
-import { CAL_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
 
 /**
  * Stores the session in memory using the stringified token as the key.

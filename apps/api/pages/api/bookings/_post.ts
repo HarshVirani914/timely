@@ -1,7 +1,6 @@
+import handleNewBooking from "@timely/features/bookings/lib/handleNewBooking";
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import handleNewBooking from "@calcom/features/bookings/lib/handleNewBooking";
-import { defaultResponder } from "@calcom/lib/server";
 
 /**
  * @swagger
@@ -111,7 +110,7 @@ import { defaultResponder } from "@calcom/lib/server";
  *                     "name": "Hello Hello",
  *                     "email": "hello@gmail.com",
  *                     "metadata": {},
- *                     "location": "Calcom HQ",
+ *                     "location": "Timely HQ",
  *                   },
  *                   "timeZone": "Europe/London",
  *                   "language": "en",

@@ -1,6 +1,6 @@
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { prisma } from "@calcom/prisma";
-import type { CredentialPayload } from "@calcom/types/Credential";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { prisma } from "@timely/prisma";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 import type { BasecampToken } from "./CalendarService";
 import { getBasecampKeys } from "./getBasecampKeys";

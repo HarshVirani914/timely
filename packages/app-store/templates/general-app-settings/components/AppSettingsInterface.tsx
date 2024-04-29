@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, TextField } from "@timely/ui";
 import { useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, TextField } from "@calcom/ui";
 
 export default function AppSettings() {
   const { t } = useLocale();

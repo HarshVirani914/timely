@@ -1,6 +1,6 @@
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import type { WorkingHours, TimeRange as DateOverride } from "@calcom/types/schedule";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import type { WorkingHours, TimeRange as DateOverride } from "@timely/types/schedule";
 
 import { getWorkingHours } from "./availability";
 import { getTimeZone } from "./date-fns";
@@ -123,11 +123,11 @@ function buildSlots({
   };
   for (const item of Object.values(slotsTimeFrameAvailable)) {
     /*
-     * @calcom/web:dev: 2022-11-06T00:00:00-04:00
-     * @calcom/web:dev: 2022-11-06T01:00:00-04:00
-     * @calcom/web:dev: 2022-11-06T01:00:00-04:00 <-- note there is no offset change, but we did lose an hour.
-     * @calcom/web:dev: 2022-11-06T02:00:00-04:00
-     * @calcom/web:dev: 2022-11-06T03:00:00-04:00
+     * @timely/web:dev: 2022-11-06T00:00:00-04:00
+     * @timely/web:dev: 2022-11-06T01:00:00-04:00
+     * @timely/web:dev: 2022-11-06T01:00:00-04:00 <-- note there is no offset change, but we did lose an hour.
+     * @timely/web:dev: 2022-11-06T02:00:00-04:00
+     * @timely/web:dev: 2022-11-06T03:00:00-04:00
      * ...
      */
     slots.push({

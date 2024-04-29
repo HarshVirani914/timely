@@ -1,25 +1,24 @@
 import client from "@sendgrid/client";
 import type { MailData } from "@sendgrid/helpers/classes/mail";
 import sgMail from "@sendgrid/mail";
-import { createEvent } from "ics";
-import type { ParticipationStatus } from "ics";
-import type { DateArray } from "ics";
-import { RRule } from "rrule";
-import { v4 as uuidv4 } from "uuid";
-
-import dayjs from "@calcom/dayjs";
-import { preprocessNameFieldDataWithVariant } from "@calcom/features/form-builder/utils";
-import { SENDER_NAME } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
-import type { TimeUnit } from "@calcom/prisma/enums";
+import dayjs from "@timely/dayjs";
+import { preprocessNameFieldDataWithVariant } from "@timely/features/form-builder/utils";
+import { SENDER_NAME } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
+import type { TimeUnit } from "@timely/prisma/enums";
 import {
   WorkflowActions,
   WorkflowMethods,
   WorkflowTemplates,
   WorkflowTriggerEvents,
-} from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
+} from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
+import { createEvent } from "ics";
+import type { ParticipationStatus } from "ics";
+import type { DateArray } from "ics";
+import { RRule } from "rrule";
+import { v4 as uuidv4 } from "uuid";
 
 import type { AttendeeInBookingInfo, BookingInfo, timeUnitLowerCase } from "./smsReminderManager";
 import type { VariablesType } from "./templates/customTemplate";

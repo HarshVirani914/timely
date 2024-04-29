@@ -1,12 +1,9 @@
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-
-import classNames from "@calcom/lib/classNames";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { WebhooksByViewer } from "@calcom/trpc/server/routers/viewer/webhook/getByViewer.handler";
+import classNames from "@timely/lib/classNames";
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { WebhooksByViewer } from "@timely/trpc/server/routers/viewer/webhook/getByViewer.handler";
 import {
   Avatar,
   CreateButtonWithTeamsList,
@@ -14,8 +11,10 @@ import {
   Meta,
   SkeletonContainer,
   SkeletonText,
-} from "@calcom/ui";
-import { Link as LinkIcon } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Link as LinkIcon } from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 import { getLayout } from "../../settings/layouts/SettingsLayout";
 import { WebhookListItem } from "../components";

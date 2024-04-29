@@ -3,9 +3,9 @@ import { expect } from "@playwright/test";
 import type { createUsersFixture } from "playwright/fixtures/users";
 import { uuid } from "short-uuid";
 
-import prisma from "@calcom/prisma";
-import { WebhookTriggerEvents } from "@calcom/prisma/enums";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import prisma from "@timely/prisma";
+import { WebhookTriggerEvents } from "@timely/prisma/enums";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 import { test } from "./lib/fixtures";
 import { createHttpServer, selectFirstAvailableTimeSlotNextMonth } from "./lib/testUtils";

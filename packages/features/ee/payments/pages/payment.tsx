@@ -1,11 +1,10 @@
 import type { Payment } from "@prisma/client";
+import prisma from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
 import type { GetServerSidePropsContext } from "next";
 import { z } from "zod";
-
-import prisma from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
 
 import { ssrInit } from "../../../../../apps/web/server/lib/ssr";
 

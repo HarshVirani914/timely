@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Skeleton } from "@timely/ui";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Skeleton } from "@calcom/ui";
 
 import { CalendarToggleContainer } from "./CalendarToggleContainer";
 import { EventScheduleItem } from "./EventScheduleItem";

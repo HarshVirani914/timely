@@ -1,8 +1,7 @@
 import type { Page, Frame } from "@playwright/test";
 import { test, expect } from "@playwright/test";
-
 // eslint-disable-next-line no-restricted-imports
-import prisma from "@calcom/prisma";
+import prisma from "@timely/prisma";
 
 export function todo(title: string) {
   // eslint-disable-next-line @typescript-eslint/no-empty-function, playwright/no-skipped-test

@@ -1,15 +1,14 @@
 import type { ColumnDef } from "@tanstack/react-table";
+import dayjs from "@timely/dayjs";
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import type { DateRange } from "@timely/lib/date-ranges";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc";
+import { Button, ButtonGroup, DataTable } from "@timely/ui";
+import { UserAvatar } from "@timely/web/components/ui/avatar/UserAvatar";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useMemo, useRef, useCallback, useEffect, useState } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import type { DateRange } from "@calcom/lib/date-ranges";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc";
-import { Button, ButtonGroup, DataTable } from "@calcom/ui";
-import { UserAvatar } from "@calcom/web/components/ui/avatar/UserAvatar";
 
 import { UpgradeTip } from "../../tips/UpgradeTip";
 import { TBContext, createTimezoneBuddyStore } from "../store";
@@ -34,7 +33,7 @@ function UpgradeTeamTip() {
   return (
     <UpgradeTip
       plan="team"
-      title={t("calcom_is_better_with_team", { appName: APP_NAME }) as string}
+      title={t("timely_is_better_with_team", { appName: APP_NAME }) as string}
       description="add_your_team_members"
       background="/tips/teams"
       features={[]}
@@ -44,7 +43,7 @@ function UpgradeTeamTip() {
             <Button color="primary" href={`${WEBAPP_URL}/settings/teams/new`}>
               {t("create_team")}
             </Button>
-            <Button color="minimal" href="https://go.cal.com/teams-video" target="_blank">
+            <Button color="minimal" href="https://go.timely/teams-video" target="_blank">
               {t("learn_more")}
             </Button>
           </ButtonGroup>

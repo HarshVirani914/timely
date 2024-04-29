@@ -1,13 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Form, showToast, TextField } from "@timely/ui";
+import { Check, X } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Toaster } from "react-hot-toast";
 import z from "zod";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Form, showToast, TextField } from "@calcom/ui";
-import { Check, X } from "@calcom/ui/components/icon";
 
 const formSchema = z.object({
   api_key: z.string(),

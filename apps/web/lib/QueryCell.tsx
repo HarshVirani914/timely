@@ -7,12 +7,12 @@ import type {
 } from "@tanstack/react-query";
 import type { ReactNode } from "react";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { TRPCClientErrorLike } from "@calcom/trpc/client";
-import type { DecorateProcedure } from "@calcom/trpc/react/shared";
-import type { AnyQueryProcedure, inferProcedureInput, inferProcedureOutput } from "@calcom/trpc/server";
-import type { AppRouter } from "@calcom/trpc/server/routers/_app";
-import { Alert, Loader } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { TRPCClientErrorLike } from "@timely/trpc/client";
+import type { DecorateProcedure } from "@timely/trpc/react/shared";
+import type { AnyQueryProcedure, inferProcedureInput, inferProcedureOutput } from "@timely/trpc/server";
+import type { AppRouter } from "@timely/trpc/server/routers/_app";
+import { Alert, Loader } from "@timely/ui";
 
 import type { UseTRPCQueryOptions } from "@trpc/react-query/shared";
 

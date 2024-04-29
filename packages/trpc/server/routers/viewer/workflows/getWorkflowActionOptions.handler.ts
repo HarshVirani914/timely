@@ -1,8 +1,8 @@
-import { getWorkflowActionOptions } from "@calcom/features/ee/workflows/lib/getOptions";
-import { IS_SELF_HOSTED } from "@calcom/lib/constants";
-import hasKeyInMetadata from "@calcom/lib/hasKeyInMetadata";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getWorkflowActionOptions } from "@timely/features/ee/workflows/lib/getOptions";
+import { IS_SELF_HOSTED } from "@timely/lib/constants";
+import hasKeyInMetadata from "@timely/lib/hasKeyInMetadata";
+import { getTranslation } from "@timely/lib/server/i18n";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { hasTeamPlanHandler } from "../teams/hasTeamPlan.handler";
 

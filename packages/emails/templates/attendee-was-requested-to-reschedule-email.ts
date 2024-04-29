@@ -1,6 +1,6 @@
-import { getManageLink } from "@calcom/lib/CalEventParser";
-import { APP_NAME } from "@calcom/lib/constants";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import { getManageLink } from "@timely/lib/CalEventParser";
+import { APP_NAME } from "@timely/lib/constants";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 import { renderEmail } from "..";
 import generateIcsString from "../lib/generateIcsString";

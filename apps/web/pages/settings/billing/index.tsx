@@ -1,12 +1,12 @@
 import { usePathname } from "next/navigation";
 
-import { useIntercom } from "@calcom/features/ee/support/lib/intercom/useIntercom";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { classNames } from "@calcom/lib";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Meta } from "@calcom/ui";
-import { ExternalLink } from "@calcom/ui/components/icon";
+import { useIntercom } from "@timely/features/ee/support/lib/intercom/useIntercom";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { classNames } from "@timely/lib";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Meta } from "@timely/ui";
+import { ExternalLink } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

@@ -1,5 +1,5 @@
-import { createDefaultInstallation } from "@calcom/app-store/_utils/installation";
-import type { AppDeclarativeHandler } from "@calcom/types/AppHandler";
+import { createDefaultInstallation } from "@timely/app-store/_utils/installation";
+import type { AppDeclarativeHandler } from "@timely/types/AppHandler";
 
 import appConfig from "../config.json";
 

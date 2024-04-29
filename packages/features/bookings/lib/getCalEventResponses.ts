@@ -1,11 +1,10 @@
 import type { EventType, Prisma } from "@prisma/client";
+import { SystemField } from "@timely/features/bookings/lib/SystemField";
+import type { bookingResponsesDbSchema } from "@timely/features/bookings/lib/getBookingResponsesSchema";
+import { getBookingWithResponses } from "@timely/lib/getBooking";
+import { eventTypeBookingFields } from "@timely/prisma/zod-utils";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type z from "zod";
-
-import { SystemField } from "@calcom/features/bookings/lib/SystemField";
-import type { bookingResponsesDbSchema } from "@calcom/features/bookings/lib/getBookingResponsesSchema";
-import { getBookingWithResponses } from "@calcom/lib/getBooking";
-import { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 export const getCalEventResponses = ({
   bookingFields,
@@ -43,7 +42,7 @@ export const getCalEventResponses = ({
       const label = field.label || field.defaultLabel;
       if (!label) {
         //TODO: This error must be thrown while saving event-type as well so that such an event-type can't be saved
-        throw new Error('Missing label for booking field "' + field.name + '"');
+        throw new Error(`Missing label for booking field "${field.name}"`);
       }
 
       // If the guests field is hidden (disableGuests is set on the event type) don't try and infer guests from attendees list

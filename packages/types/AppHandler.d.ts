@@ -1,7 +1,6 @@
+import type { Credential } from "@timely/prisma/client";
 import type { NextApiHandler } from "next";
 import type { Session } from "next-auth";
-
-import type { Credential } from "@calcom/prisma/client";
 
 export type AppDeclarativeHandler = {
   appType: string;

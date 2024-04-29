@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 import {
   getOrgDomainConfigFromHostname,
   subdomainSuffix,
-} from "@calcom/features/ee/organizations/lib/orgDomains";
-import { DOCS_URL, IS_CALCOM, JOIN_DISCORD, WEBSITE_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HeadSeo } from "@calcom/ui";
-import { BookOpen, Check, ChevronRight, FileText, Shield } from "@calcom/ui/components/icon";
-import { Discord } from "@calcom/ui/components/icon/Discord";
+} from "@timely/features/ee/organizations/lib/orgDomains";
+import { DOCS_URL, IS_CALCOM, JOIN_DISCORD, WEBSITE_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HeadSeo } from "@timely/ui";
+import { BookOpen, Check, ChevronRight, FileText, Shield } from "@timely/ui/components/icon";
+import { Discord } from "@timely/ui/components/icon/Discord";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -138,7 +138,7 @@ export default function Custom404() {
       />
       <div className="bg-default min-h-screen px-4" data-testid="404-page">
         <main className="mx-auto max-w-xl pb-6 pt-16 sm:pt-24">
-          {isSignup && process.env.NEXT_PUBLIC_WEBAPP_URL !== "https://app.cal.com" ? (
+          {isSignup && process.env.NEXT_PUBLIC_WEBAPP_URL !== "https://app.timely" ? (
             <div>
               <div>
                 <p className="text-emphasis text-sm font-semibold uppercase tracking-wide">
@@ -147,7 +147,7 @@ export default function Custom404() {
                 <h1 className="font-cal text-emphasis mt-2 text-3xl font-extrabold">
                   {t("signup_requires")}
                 </h1>
-                <p className="mt-4">{t("signup_requires_description", { companyName: "Cal.com" })}</p>
+                <p className="mt-4">{t("signup_requires_description", { companyName: "Timely" })}</p>
               </div>
               <div className="mt-12">
                 <h2 className="text-subtle text-sm font-semibold uppercase tracking-wide">
@@ -156,7 +156,7 @@ export default function Custom404() {
                 <ul role="list" className="mt-4">
                   <li className="border-2 border-green-500 px-4 py-2">
                     <a
-                      href="https://console.cal.com"
+                      href="https://console.timely"
                       className="relative flex items-start space-x-4 py-6 rtl:space-x-reverse">
                       <div className="flex-shrink-0">
                         <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-50">
@@ -184,7 +184,7 @@ export default function Custom404() {
                 <ul role="list" className="border-subtle divide-subtle divide-y">
                   <li className="px-4 py-2">
                     <Link
-                      href="https://cal.com/self-hosting/installation"
+                      href="https://timely/self-hosting/installation"
                       className="relative flex items-start space-x-4 py-6 rtl:space-x-reverse">
                       <div className="flex-shrink-0">
                         <span className="bg-muted flex h-12 w-12 items-center justify-center rounded-lg">

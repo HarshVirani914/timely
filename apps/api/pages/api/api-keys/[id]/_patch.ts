@@ -1,6 +1,5 @@
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
 
 import { apiKeyEditBodySchema, apiKeyPublicSchema } from "~/lib/validations/api-key";
 import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";

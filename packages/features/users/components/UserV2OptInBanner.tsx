@@ -1,10 +1,10 @@
-import { APP_NAME } from "@calcom/lib/constants";
+import { APP_NAME } from "@timely/lib/constants";
 
 function UserV2OptInBanner() {
   // Only show on client-side
   if (typeof document === "undefined") return null;
 
-  const hasV2OptInCookie = document.cookie.includes("calcom-v2-early-access=1");
+  const hasV2OptInCookie = document.cookie.includes("timely-v2-early-access=1");
 
   if (hasV2OptInCookie)
     return (

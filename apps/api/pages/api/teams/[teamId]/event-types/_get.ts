@@ -2,7 +2,7 @@ import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 import { z } from "zod";
 
-import { defaultResponder } from "@calcom/lib/server";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaEventTypeReadPublic } from "~/lib/validations/event-type";
 
@@ -31,7 +31,7 @@ const querySchema = z.object({
  *     tags:
  *     - event-types
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/event-types
+ *        url: https://docs.timely/core-features/event-types
  *     responses:
  *       200:
  *         description: OK

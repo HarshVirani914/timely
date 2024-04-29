@@ -1,7 +1,6 @@
+import { classNames } from "@timely/lib";
 import type { CSSProperties, PropsWithChildren } from "react";
 import React, { useRef, useEffect, useState } from "react";
-
-import { classNames } from "@calcom/lib";
 
 const ScrollableArea = ({ children, className }: PropsWithChildren<{ className?: string }>) => {
   const scrollableRef = useRef<HTMLDivElement>(null);

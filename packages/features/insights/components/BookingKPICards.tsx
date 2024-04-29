@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { SkeletonContainer, SkeletonText } from "@timely/ui";
 import { Grid } from "@tremor/react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { SkeletonContainer, SkeletonText } from "@calcom/ui";
 
 import { useFilterContext } from "../context/provider";
 import { CardInsights } from "./Card";

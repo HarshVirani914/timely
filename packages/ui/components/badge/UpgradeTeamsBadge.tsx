@@ -1,7 +1,6 @@
+import { useHasPaidPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import Link from "next/link";
-
-import { useHasPaidPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Tooltip } from "../tooltip";
 import { Badge } from "./Badge";

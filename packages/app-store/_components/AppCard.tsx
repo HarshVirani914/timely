@@ -1,12 +1,11 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { useAppContextWithSchema } from "@timely/app-store/EventTypeAppContext";
+import { classNames } from "@timely/lib";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { Switch, Badge, Avatar, Button } from "@timely/ui";
+import { Settings } from "@timely/ui/components/icon";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-
-import { useAppContextWithSchema } from "@calcom/app-store/EventTypeAppContext";
-import { classNames } from "@calcom/lib";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { Switch, Badge, Avatar, Button } from "@calcom/ui";
-import { Settings } from "@calcom/ui/components/icon";
 
 import type { CredentialOwner } from "../types";
 import OmniInstallAppButton from "./OmniInstallAppButton";

@@ -1,7 +1,6 @@
+import { CONSOLE_URL } from "@timely/lib/constants";
+import { customPrisma } from "@timely/prisma";
 import type { NextMiddleware } from "next-api-middleware";
-
-import { CONSOLE_URL } from "@calcom/lib/constants";
-import { customPrisma } from "@calcom/prisma";
 
 const LOCAL_CONSOLE_URL = process.env.NEXT_PUBLIC_CONSOLE_URL || CONSOLE_URL;
 
@@ -10,7 +9,7 @@ export const customPrismaClient: NextMiddleware = async (req, res, next) => {
   const {
     query: { key },
   } = req;
-  // If no custom api Id is provided, attach to request the regular cal.com prisma client.
+  // If no custom api Id is provided, attach to request the regular timely prisma client.
   if (!key) {
     req.prisma = customPrisma();
     await next();

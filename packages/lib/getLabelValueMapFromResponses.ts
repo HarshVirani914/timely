@@ -1,7 +1,6 @@
+import type { bookingResponse } from "@timely/features/bookings/lib/getBookingResponsesSchema";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type z from "zod";
-
-import type { bookingResponse } from "@calcom/features/bookings/lib/getBookingResponsesSchema";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 export default function getLabelValueMapFromResponses(calEvent: CalendarEvent) {
   const { customInputs, userFieldsResponses } = calEvent;

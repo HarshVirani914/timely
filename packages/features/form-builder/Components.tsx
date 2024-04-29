@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import type { z } from "zod";
-
-import Widgets from "@calcom/app-store/routing-forms/components/react-awesome-query-builder/widgets";
+import Widgets from "@timely/app-store/routing-forms/components/react-awesome-query-builder/widgets";
 import type {
   TextLikeComponentProps,
   SelectLikeComponentProps,
-} from "@calcom/app-store/routing-forms/components/react-awesome-query-builder/widgets";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+} from "@timely/app-store/routing-forms/components/react-awesome-query-builder/widgets";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import {
   PhoneInput,
   AddressInput,
@@ -18,9 +15,11 @@ import {
   Tooltip,
   InputField,
   CheckboxField,
-} from "@calcom/ui";
-import { UserPlus, X } from "@calcom/ui/components/icon";
-import InfoBadge from "@calcom/web/components/ui/InfoBadge";
+} from "@timely/ui";
+import { UserPlus, X } from "@timely/ui/components/icon";
+import InfoBadge from "@timely/web/components/ui/InfoBadge";
+import { useEffect } from "react";
+import type { z } from "zod";
 
 import { ComponentForField } from "./FormBuilderField";
 import { propsTypes } from "./propsTypes";

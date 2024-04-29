@@ -1,5 +1,5 @@
-import { validJson } from "@calcom/lib/jsonUtils";
-import type { AppMeta } from "@calcom/types/App";
+import { validJson } from "@timely/lib/jsonUtils";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -14,10 +14,10 @@ export const metadata = {
   title: "Google Meet",
   variant: "conferencing",
   logo: "logo.webp",
-  publisher: "Cal.com",
-  url: "https://cal.com/",
+  publisher: "Timely",
+  url: "https://timely/",
   isGlobal: false,
-  email: "help@cal.com",
+  email: "help@timely",
   appData: {
     location: {
       linkType: "dynamic",

@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 interface TableProps {
   children: React.ReactNode;

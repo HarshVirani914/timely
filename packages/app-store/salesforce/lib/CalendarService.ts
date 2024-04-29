@@ -1,21 +1,20 @@
-import type { TokenResponse } from "jsforce";
-import jsforce from "jsforce";
-import { RRule } from "rrule";
-import { z } from "zod";
-
-import { getLocation } from "@calcom/lib/CalEventParser";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { prisma } from "@calcom/prisma";
+import { getLocation } from "@timely/lib/CalEventParser";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { prisma } from "@timely/prisma";
 import type {
   Calendar,
   CalendarEvent,
   IntegrationCalendar,
   NewCalendarEventType,
   Person,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { TokenResponse } from "jsforce";
+import jsforce from "jsforce";
+import { RRule } from "rrule";
+import { z } from "zod";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import type { ParseRefreshTokenResponse } from "../../_utils/oauth/parseRefreshTokenResponse";

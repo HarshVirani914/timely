@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-restricted-imports
+import { getRichDescription } from "@timely/lib/CalEventParser";
+import { APP_NAME } from "@timely/lib/constants";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import { cloneDeep } from "lodash";
 import type { TFunction } from "next-i18next";
-
-import { getRichDescription } from "@calcom/lib/CalEventParser";
-import { APP_NAME } from "@calcom/lib/constants";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import { renderEmail } from "../";
 import generateIcsString from "../lib/generateIcsString";

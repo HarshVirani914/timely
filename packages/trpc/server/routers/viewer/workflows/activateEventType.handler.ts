@@ -1,20 +1,20 @@
 import {
   deleteScheduledEmailReminder,
   scheduleEmailReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/emailReminderManager";
+} from "@timely/features/ee/workflows/lib/reminders/emailReminderManager";
 import {
   deleteScheduledSMSReminder,
   scheduleSMSReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/smsReminderManager";
+} from "@timely/features/ee/workflows/lib/reminders/smsReminderManager";
 import {
   deleteScheduledWhatsappReminder,
   scheduleWhatsappReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/whatsappReminderManager";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import { prisma } from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/client";
-import { MembershipRole, WorkflowActions, WorkflowMethods } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+} from "@timely/features/ee/workflows/lib/reminders/whatsappReminderManager";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import { prisma } from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/client";
+import { MembershipRole, WorkflowActions, WorkflowMethods } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

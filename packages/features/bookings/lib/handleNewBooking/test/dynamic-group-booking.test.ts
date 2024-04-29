@@ -1,7 +1,6 @@
+import { test } from "@timely/web/test/fixtures/fixtures";
+import { setupAndTeardown } from "@timely/web/test/utils/bookingScenario/setupAndTeardown";
 import { describe } from "vitest";
-
-import { test } from "@calcom/web/test/fixtures/fixtures";
-import { setupAndTeardown } from "@calcom/web/test/utils/bookingScenario/setupAndTeardown";
 
 describe("handleNewBooking", () => {
   setupAndTeardown();

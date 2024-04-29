@@ -1,13 +1,12 @@
+import dayjs from "@timely/dayjs";
+import prisma from "@timely/prisma";
+import type { Credential } from "@timely/prisma/client";
+import { Frequency } from "@timely/prisma/zod-utils";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { PartialReference } from "@timely/types/EventManager";
+import type { VideoApiAdapter, VideoCallData } from "@timely/types/VideoApiAdapter";
 import { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import prisma from "@calcom/prisma";
-import type { Credential } from "@calcom/prisma/client";
-import { Frequency } from "@calcom/prisma/zod-utils";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { PartialReference } from "@calcom/types/EventManager";
-import type { VideoApiAdapter, VideoCallData } from "@calcom/types/VideoApiAdapter";
 
 import type { ParseRefreshTokenResponse } from "../../_utils/oauth/parseRefreshTokenResponse";
 import parseRefreshTokenResponse from "../../_utils/oauth/parseRefreshTokenResponse";
@@ -100,7 +99,7 @@ const zoomAuth = (credential: CredentialPayload) => {
 
     if (responseBody.error) {
       if (responseBody.error === "invalid_grant") {
-        return Promise.reject(new Error("Invalid grant for Cal.com zoom app"));
+        return Promise.reject(new Error("Invalid grant for Timely zoom app"));
       }
     }
     // We check the if the new credentials matches the expected response structure
@@ -271,7 +270,7 @@ const ZoomVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter => 
         if (response.error) {
           if (response.error === "invalid_grant") {
             await invalidateCredential(credential.id);
-            return Promise.reject(new Error("Invalid grant for Cal.com zoom app"));
+            return Promise.reject(new Error("Invalid grant for Timely zoom app"));
           }
         }
 

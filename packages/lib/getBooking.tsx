@@ -1,9 +1,8 @@
 import type { Prisma } from "@prisma/client";
+import { bookingResponsesDbSchema } from "@timely/features/bookings/lib/getBookingResponsesSchema";
+import slugify from "@timely/lib/slugify";
+import type { PrismaClient } from "@timely/prisma";
 import type { z } from "zod";
-
-import { bookingResponsesDbSchema } from "@calcom/features/bookings/lib/getBookingResponsesSchema";
-import slugify from "@calcom/lib/slugify";
-import type { PrismaClient } from "@calcom/prisma";
 
 type BookingSelect = {
   description: true;

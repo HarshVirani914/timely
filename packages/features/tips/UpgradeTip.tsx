@@ -1,9 +1,8 @@
+import { classNames } from "@timely/lib";
+import { useHasTeamPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
 import type { ReactNode } from "react";
-
-import { classNames } from "@calcom/lib";
-import { useHasTeamPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
 
 export function UpgradeTip({
   dark,

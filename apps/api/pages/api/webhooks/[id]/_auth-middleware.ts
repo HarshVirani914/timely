@@ -1,6 +1,6 @@
 import type { NextApiRequest } from "next";
 
-import { HttpError } from "@calcom/lib/http-error";
+import { HttpError } from "@timely/lib/http-error";
 
 import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";
 

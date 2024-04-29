@@ -1,6 +1,5 @@
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { Info } from "./Info";
 

@@ -1,6 +1,5 @@
+import { classNames } from "@timely/lib";
 import { Card } from "@tremor/react";
-
-import { classNames } from "@calcom/lib";
 
 interface ICardProps {
   children: React.ReactNode;

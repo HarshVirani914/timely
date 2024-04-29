@@ -1,14 +1,14 @@
-import EventManager from "@calcom/core/EventManager";
-import dayjs from "@calcom/dayjs";
-import { sendLocationChangeEmails } from "@calcom/emails";
-import { parseRecurringEvent } from "@calcom/lib";
-import logger from "@calcom/lib/logger";
-import { getTranslation } from "@calcom/lib/server";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import { prisma } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { AdditionalInformation, CalendarEvent } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+import EventManager from "@timely/core/EventManager";
+import dayjs from "@timely/dayjs";
+import { sendLocationChangeEmails } from "@timely/emails";
+import { parseRecurringEvent } from "@timely/lib";
+import logger from "@timely/lib/logger";
+import { getTranslation } from "@timely/lib/server";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import { prisma } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import type { AdditionalInformation, CalendarEvent } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 import { TRPCError } from "@trpc/server";
 

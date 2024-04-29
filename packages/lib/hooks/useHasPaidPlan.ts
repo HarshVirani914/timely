@@ -1,4 +1,4 @@
-import { trpc } from "@calcom/trpc/react";
+import { trpc } from "@timely/trpc/react";
 
 import { IS_SELF_HOSTED } from "../constants";
 import hasKeyInMetadata from "../hasKeyInMetadata";

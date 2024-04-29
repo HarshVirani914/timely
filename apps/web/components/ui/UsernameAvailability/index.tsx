@@ -3,11 +3,11 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import { CAL_URL, IS_SELF_HOSTED } from "@calcom/lib/constants";
-import type { TRPCClientErrorLike } from "@calcom/trpc/client";
-import { trpc } from "@calcom/trpc/react";
-import type { AppRouter } from "@calcom/trpc/server/routers/_app";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import { CAL_URL, IS_SELF_HOSTED } from "@timely/lib/constants";
+import type { TRPCClientErrorLike } from "@timely/trpc/client";
+import { trpc } from "@timely/trpc/react";
+import type { AppRouter } from "@timely/trpc/server/routers/_app";
 
 import useRouterQuery from "@lib/hooks/useRouterQuery";
 

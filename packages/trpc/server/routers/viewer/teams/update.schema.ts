@@ -1,6 +1,5 @@
+import slugify from "@timely/lib/slugify";
 import { z } from "zod";
-
-import slugify from "@calcom/lib/slugify";
 
 export const ZUpdateInputSchema = z.object({
   id: z.number(),

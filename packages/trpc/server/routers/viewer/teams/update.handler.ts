@@ -1,10 +1,9 @@
 import type { Prisma } from "@prisma/client";
-
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { isTeamAdmin } from "@calcom/lib/server/queries/teams";
-import { closeComUpdateTeam } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { isTeamAdmin } from "@timely/lib/server/queries/teams";
+import { closeComUpdateTeam } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

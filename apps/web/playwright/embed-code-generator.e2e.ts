@@ -3,9 +3,9 @@ import { expect } from "@playwright/test";
 import { Linter } from "eslint";
 import { parse } from "node-html-parser";
 
-import { getOrgFullOrigin } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { EMBED_LIB_URL, WEBAPP_URL } from "@calcom/lib/constants";
-import { MembershipRole } from "@calcom/prisma/client";
+import { getOrgFullOrigin } from "@timely/features/ee/organizations/lib/orgDomains";
+import { EMBED_LIB_URL, WEBAPP_URL } from "@timely/lib/constants";
+import { MembershipRole } from "@timely/prisma/client";
 
 import { test } from "./lib/fixtures";
 

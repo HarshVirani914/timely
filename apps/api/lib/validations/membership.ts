@@ -1,8 +1,7 @@
+import { MembershipRole } from "@timely/prisma/enums";
+import { _MembershipModel as Membership, _TeamModel } from "@timely/prisma/zod";
+import { stringOrNumber } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { MembershipRole } from "@calcom/prisma/enums";
-import { _MembershipModel as Membership, _TeamModel } from "@calcom/prisma/zod";
-import { stringOrNumber } from "@calcom/prisma/zod-utils";
 
 import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";

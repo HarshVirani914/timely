@@ -1,8 +1,7 @@
+import prisma from "@timely/prisma";
+import type { OAuthTokenPayload } from "@timely/web/pages/api/auth/oauth/token";
 import jwt from "jsonwebtoken";
 import type { NextApiRequest } from "next";
-
-import prisma from "@calcom/prisma";
-import type { OAuthTokenPayload } from "@calcom/web/pages/api/auth/oauth/token";
 
 export default async function isAuthorized(req: NextApiRequest, requiredScopes: string[] = []) {
   const token = req.headers.authorization?.split(" ")[1] || "";

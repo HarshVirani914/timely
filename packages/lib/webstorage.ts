@@ -6,7 +6,7 @@
 export const localStorage = {
   getItem(key: string) {
     try {
-      // eslint-disable-next-line @calcom/eslint/avoid-web-storage
+      // eslint-disable-next-line @timely/eslint/avoid-web-storage
       return window.localStorage.getItem(key);
     } catch (e) {
       // In case storage is restricted. Possible reasons
@@ -16,7 +16,7 @@ export const localStorage = {
   },
   setItem(key: string, value: string) {
     try {
-      // eslint-disable-next-line @calcom/eslint/avoid-web-storage
+      // eslint-disable-next-line @timely/eslint/avoid-web-storage
       window.localStorage.setItem(key, value);
     } catch (e) {
       // In case storage is restricted. Possible reasons
@@ -27,7 +27,7 @@ export const localStorage = {
   },
   removeItem: (key: string) => {
     try {
-      // eslint-disable-next-line @calcom/eslint/avoid-web-storage
+      // eslint-disable-next-line @timely/eslint/avoid-web-storage
       window.localStorage.removeItem(key);
     } catch (e) {
       return;

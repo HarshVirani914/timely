@@ -1,7 +1,6 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
 
 import { getStripeCustomerIdFromUserId } from "../lib/customer";
 import stripe from "../lib/server";

@@ -2,11 +2,11 @@ import matchers from "@testing-library/jest-dom/matchers";
 import { cleanup } from "@testing-library/react";
 import { afterEach, expect, vi } from "vitest";
 
-vi.mock("@calcom/lib/OgImages", async () => {
+vi.mock("@timely/lib/OgImages", async () => {
   return {};
 });
 
-vi.mock("@calcom/lib/hooks/useLocale", () => ({
+vi.mock("@timely/lib/hooks/useLocale", () => ({
   useLocale: () => {
     return {
       t: (str: string) => str,

@@ -1,4 +1,4 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 
 import { Tooltip } from "../tooltip";
 import { Badge } from "./Badge";
@@ -8,7 +8,7 @@ export const UpgradeOrgsBadge = function UpgradeOrgsBadge() {
 
   return (
     <Tooltip content={t("orgs_upgrade_to_enable_feature")}>
-      <a href="https://cal.com/enterprise" target="_blank">
+      <a href="https://timely/enterprise" target="_blank">
         <Badge variant="gray">{t("upgrade")}</Badge>
       </a>
     </Tooltip>

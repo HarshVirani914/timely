@@ -1,7 +1,7 @@
 import type { GetServerSidePropsContext } from "next";
 
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import prisma from "@calcom/prisma";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import prisma from "@timely/prisma";
 
 import PageWrapper from "@components/PageWrapper";
 

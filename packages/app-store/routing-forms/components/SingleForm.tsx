@@ -1,20 +1,15 @@
 import type { App_RoutingForms_Form, Team } from "@prisma/client";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import type { UseFormReturn } from "react-hook-form";
-import { Controller, useFormContext } from "react-hook-form";
-
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import useApp from "@calcom/lib/hooks/useApp";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { ShellMain } from "@timely/features/shell/Shell";
+import useApp from "@timely/lib/hooks/useApp";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import type {
   AppGetServerSidePropsContext,
   AppPrisma,
   AppSsrInit,
   AppUser,
-} from "@calcom/types/AppGetServerSideProps";
+} from "@timely/types/AppGetServerSideProps";
 import {
   Alert,
   Badge,
@@ -34,7 +29,7 @@ import {
   TextField,
   Tooltip,
   VerticalDivider,
-} from "@calcom/ui";
+} from "@timely/ui";
 import {
   ExternalLink,
   Link as LinkIcon,
@@ -42,7 +37,11 @@ import {
   Code,
   Trash,
   MessageCircle,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import type { UseFormReturn } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 
 import { RoutingPages } from "../lib/RoutingPages";
 import { getSerializableForm } from "../lib/getSerializableForm";

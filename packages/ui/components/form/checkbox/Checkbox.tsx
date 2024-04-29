@@ -1,10 +1,9 @@
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { useId } from "@radix-ui/react-id";
+import classNames from "@timely/lib/classNames";
 import { Check } from "lucide-react";
 import type { InputHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
-
-import classNames from "@calcom/lib/classNames";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label?: React.ReactNode;

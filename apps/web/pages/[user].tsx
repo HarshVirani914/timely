@@ -10,25 +10,25 @@ import {
   useEmbedNonStylesConfig,
   useEmbedStyles,
   useIsEmbed,
-} from "@calcom/embed-core/embed-iframe";
-import OrganizationMemberAvatar from "@calcom/features/ee/organizations/components/OrganizationMemberAvatar";
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { EventTypeDescriptionLazy as EventTypeDescription } from "@calcom/features/eventtypes/components";
-import EmptyPage from "@calcom/features/eventtypes/components/EmptyPage";
-import { getUsernameList } from "@calcom/lib/defaultEvents";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import useTheme from "@calcom/lib/hooks/useTheme";
-import logger from "@calcom/lib/logger";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import { stripMarkdown } from "@calcom/lib/stripMarkdown";
-import prisma from "@calcom/prisma";
-import { RedirectType, type EventType, type User } from "@calcom/prisma/client";
-import { baseEventTypeSelect } from "@calcom/prisma/selects";
-import { EventTypeMetaDataSchema, teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { HeadSeo, UnpublishedEntity } from "@calcom/ui";
-import { Verified, ArrowRight } from "@calcom/ui/components/icon";
+} from "@timely/embed-core/embed-iframe";
+import OrganizationMemberAvatar from "@timely/features/ee/organizations/components/OrganizationMemberAvatar";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import { EventTypeDescriptionLazy as EventTypeDescription } from "@timely/features/eventtypes/components";
+import EmptyPage from "@timely/features/eventtypes/components/EmptyPage";
+import { getUsernameList } from "@timely/lib/defaultEvents";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import useTheme from "@timely/lib/hooks/useTheme";
+import logger from "@timely/lib/logger";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import { stripMarkdown } from "@timely/lib/stripMarkdown";
+import prisma from "@timely/prisma";
+import { RedirectType, type EventType, type User } from "@timely/prisma/client";
+import { baseEventTypeSelect } from "@timely/prisma/selects";
+import { EventTypeMetaDataSchema, teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { HeadSeo, UnpublishedEntity } from "@timely/ui";
+import { Verified, ArrowRight } from "@timely/ui/components/icon";
 
 import type { EmbedProps } from "@lib/withEmbedSsr";
 

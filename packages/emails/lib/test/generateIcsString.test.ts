@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import { describe, expect } from "vitest";
-
-import dayjs from "@calcom/dayjs";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import { test } from "@calcom/web/test/fixtures/fixtures";
 
 import { buildCalendarEvent, buildPerson } from "../../../lib/test/builder";
 import generateIcsString from "../generateIcsString";

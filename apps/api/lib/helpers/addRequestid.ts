@@ -3,7 +3,7 @@ import type { NextMiddleware } from "next-api-middleware";
 
 export const addRequestId: NextMiddleware = async (_req, res, next) => {
   // Apply header with unique ID to every request
-  res.setHeader("Calcom-Response-ID", nanoid());
+  res.setHeader("Timely-Response-ID", nanoid());
   // Add all headers here instead of next.config.js as it is throwing error( Cannot set headers after they are sent to the client) for OPTIONS method
   // It is known to happen only in Dev Mode.
   res.setHeader("Access-Control-Allow-Credentials", "true");

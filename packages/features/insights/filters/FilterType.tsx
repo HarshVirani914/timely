@@ -1,5 +1,5 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { SVGComponent } from "@calcom/types/SVGComponent";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import {
   Dropdown,
   DropdownMenuContent,
@@ -7,8 +7,8 @@ import {
   DropdownItem,
   DropdownMenuTrigger,
   Tooltip,
-} from "@calcom/ui";
-import { Plus, Link, User, Check } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus, Link, User, Check } from "@timely/ui/components/icon";
 
 import { useFilterContext } from "../context/provider";
 

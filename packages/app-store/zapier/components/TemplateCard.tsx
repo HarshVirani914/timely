@@ -1,4 +1,4 @@
-import { Button } from "@calcom/ui";
+import { Button } from "@timely/ui";
 
 import type { Template } from "./AppSettingsInterface";
 

@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Dialog, DialogClose, DialogContent, DialogFooter } from "@timely/ui";
 import { signIn, useSession } from "next-auth/react";
 import type { Dispatch } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Dialog, DialogClose, DialogContent, DialogFooter } from "@calcom/ui";
 
 import type { Action, State } from "./UserListTable";
 

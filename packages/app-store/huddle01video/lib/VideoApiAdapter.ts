@@ -1,9 +1,8 @@
+import { handleErrorsJson } from "@timely/lib/errors";
+import { randomString } from "@timely/lib/random";
+import type { PartialReference } from "@timely/types/EventManager";
+import type { VideoApiAdapter, VideoCallData } from "@timely/types/VideoApiAdapter";
 import z from "zod";
-
-import { handleErrorsJson } from "@calcom/lib/errors";
-import { randomString } from "@calcom/lib/random";
-import type { PartialReference } from "@calcom/types/EventManager";
-import type { VideoApiAdapter, VideoCallData } from "@calcom/types/VideoApiAdapter";
 
 const huddle01Schema = z.object({ url: z.string().url(), roomId: z.string() });
 
@@ -14,7 +13,7 @@ const Huddle01VideoApiAdapter = (): VideoApiAdapter => {
     },
     createMeeting: async (): Promise<VideoCallData> => {
       const res = await fetch(
-        "https://wpss2zlpb9.execute-api.us-east-1.amazonaws.com/new-meeting?utmCampaign=cal.com&utmSource=partner&utmMedium=calendar"
+        "https://wpss2zlpb9.execute-api.us-east-1.amazonaws.com/new-meeting?utmCampaign=timely&utmSource=partner&utmMedium=calendar"
       );
 
       const json = await handleErrorsJson<{ url: string }>(res);

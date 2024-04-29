@@ -1,14 +1,11 @@
-import { useRouter } from "next/navigation";
-import { Controller, useForm } from "react-hook-form";
-
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { nameOfDay } from "@calcom/lib/weekday";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { nameOfDay } from "@timely/lib/weekday";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Form,
@@ -20,7 +17,9 @@ import {
   SkeletonContainer,
   SkeletonText,
   TimezoneSelect,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
 
 const SkeletonLoader = ({ title, description }: { title: string; description: string }) => {
   return (

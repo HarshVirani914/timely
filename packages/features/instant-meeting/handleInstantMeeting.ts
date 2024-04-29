@@ -1,27 +1,26 @@
 import { Prisma } from "@prisma/client";
-import { randomBytes } from "crypto";
-import type { NextApiRequest } from "next";
-import short from "short-uuid";
-import { v5 as uuidv5 } from "uuid";
-
-import { createInstantMeetingWithCalVideo } from "@calcom/core/videoClient";
-import dayjs from "@calcom/dayjs";
-import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
+import { createInstantMeetingWithCalVideo } from "@timely/core/videoClient";
+import dayjs from "@timely/dayjs";
+import { getBookingFieldsWithSystemFields } from "@timely/features/bookings/lib/getBookingFields";
 import {
   getEventTypesFromDB,
   getBookingData,
   getCustomInputsResponses,
-} from "@calcom/features/bookings/lib/handleNewBooking";
-import { getFullName } from "@calcom/features/form-builder/utils";
-import type { GetSubscriberOptions } from "@calcom/features/webhooks/lib/getWebhooks";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import { sendGenericWebhookPayload } from "@calcom/features/webhooks/lib/sendPayload";
-import { isPrismaObjOrUndefined } from "@calcom/lib";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { getTranslation } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
-import { BookingStatus, WebhookTriggerEvents } from "@calcom/prisma/enums";
+} from "@timely/features/bookings/lib/handleNewBooking";
+import { getFullName } from "@timely/features/form-builder/utils";
+import type { GetSubscriberOptions } from "@timely/features/webhooks/lib/getWebhooks";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import { sendGenericWebhookPayload } from "@timely/features/webhooks/lib/sendPayload";
+import { isPrismaObjOrUndefined } from "@timely/lib";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { getTranslation } from "@timely/lib/server";
+import prisma from "@timely/prisma";
+import { BookingStatus, WebhookTriggerEvents } from "@timely/prisma/enums";
+import { randomBytes } from "crypto";
+import type { NextApiRequest } from "next";
+import short from "short-uuid";
+import { v5 as uuidv5 } from "uuid";
 
 const handleInstantMeetingWebhookTrigger = async (args: {
   subscriberOptions: GetSubscriberOptions;

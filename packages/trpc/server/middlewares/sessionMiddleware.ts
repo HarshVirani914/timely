@@ -1,9 +1,8 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema, userMetadata } from "@timely/prisma/zod-utils";
 import type { Session } from "next-auth";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema, userMetadata } from "@calcom/prisma/zod-utils";
 
 import type { Maybe } from "@trpc/server";
 import { TRPCError } from "@trpc/server";
@@ -123,7 +122,7 @@ export type UserFromSession = Awaited<ReturnType<typeof getUserFromSession>>;
 
 const getSession = async (ctx: TRPCContextInner) => {
   const { req, res } = ctx;
-  const { getServerSession } = await import("@calcom/features/auth/lib/getServerSession");
+  const { getServerSession } = await import("@timely/features/auth/lib/getServerSession");
   return req ? await getServerSession({ req, res }) : null;
 };
 

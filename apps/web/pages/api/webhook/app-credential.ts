@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import z from "zod";
 
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
-import { APP_CREDENTIAL_SHARING_ENABLED } from "@calcom/lib/constants";
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import prisma from "@calcom/prisma";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
+import { APP_CREDENTIAL_SHARING_ENABLED } from "@timely/lib/constants";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import prisma from "@timely/prisma";
 
 const appCredentialWebhookRequestBodySchema = z.object({
-  // UserId of the cal.com user
+  // UserId of the timely user
   userId: z.number().int(),
   appSlug: z.string(),
   // Keys should be AES256 encrypted with the CALCOM_APP_CREDENTIAL_ENCRYPTION_KEY
@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (
-    req.headers[process.env.CALCOM_WEBHOOK_HEADER_NAME || "calcom-webhook-secret"] !==
+    req.headers[process.env.CALCOM_WEBHOOK_HEADER_NAME || "timely-webhook-secret"] !==
     process.env.CALCOM_WEBHOOK_SECRET
   ) {
     return res.status(403).json({ message: "Invalid webhook secret" });

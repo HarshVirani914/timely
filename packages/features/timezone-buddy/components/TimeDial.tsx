@@ -1,10 +1,9 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { classNames } from "@timely/lib";
+import type { DateRange } from "@timely/lib/date-ranges";
 import { useContext } from "react";
 import { useStore } from "zustand";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { classNames } from "@calcom/lib";
-import type { DateRange } from "@calcom/lib/date-ranges";
 
 import { DAY_CELL_WIDTH } from "../constants";
 import { TBContext } from "../store";

@@ -1,10 +1,9 @@
 "use client";
 
+import { getParserWithGeneric } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc/react";
+import { Meta, showToast } from "@timely/ui";
 import { usePathname, useRouter } from "next/navigation";
-
-import { getParserWithGeneric } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import { Meta, showToast } from "@calcom/ui";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 import LicenseRequired from "../../common/components/LicenseRequired";

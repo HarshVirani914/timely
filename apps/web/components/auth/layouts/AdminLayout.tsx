@@ -3,10 +3,10 @@ import { usePathname, useRouter } from "next/navigation";
 import type { ComponentProps } from "react";
 import React, { useEffect } from "react";
 
-import SettingsLayout from "@calcom/features/settings/layouts/SettingsLayout";
-import type Shell from "@calcom/features/shell/Shell";
-import { UserPermissionRole } from "@calcom/prisma/enums";
-import { ErrorBoundary } from "@calcom/ui";
+import SettingsLayout from "@timely/features/settings/layouts/SettingsLayout";
+import type Shell from "@timely/features/shell/Shell";
+import { UserPermissionRole } from "@timely/prisma/enums";
+import { ErrorBoundary } from "@timely/ui";
 
 export default function AdminLayout({
   children,

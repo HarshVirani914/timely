@@ -1,7 +1,7 @@
-import dayjs from "@calcom/dayjs";
-import { APP_NAME } from "@calcom/lib/constants";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import { WorkflowActions } from "@calcom/prisma/enums";
+import dayjs from "@timely/dayjs";
+import { APP_NAME } from "@timely/lib/constants";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import { WorkflowActions } from "@timely/prisma/enums";
 
 const emailReminderTemplate = (
   isEditingMode: boolean,

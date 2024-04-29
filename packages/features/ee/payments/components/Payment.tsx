@@ -2,16 +2,15 @@ import type { Payment } from "@prisma/client";
 import type { EventType } from "@prisma/client";
 import { Elements, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import type { StripeElementLocale } from "@stripe/stripe-js";
+import getStripe from "@timely/app-store/stripepayment/lib/client";
+import { getBookingRedirectExtraParams, useBookingSuccessRedirect } from "@timely/lib/bookingSuccessRedirect";
+import { CAL_URL } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, CheckboxField } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import type { SyntheticEvent } from "react";
 import { useEffect, useState } from "react";
-
-import getStripe from "@calcom/app-store/stripepayment/lib/client";
-import { getBookingRedirectExtraParams, useBookingSuccessRedirect } from "@calcom/lib/bookingSuccessRedirect";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, CheckboxField } from "@calcom/ui";
 
 import type { PaymentPageProps } from "../pages/payment";
 

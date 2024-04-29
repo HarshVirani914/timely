@@ -1,8 +1,7 @@
+import { CONSOLE_URL } from "@timely/lib/constants";
+import type { PrismaClient } from "@timely/prisma";
 import cache from "memory-cache";
 import { z } from "zod";
-
-import { CONSOLE_URL } from "@calcom/lib/constants";
-import type { PrismaClient } from "@calcom/prisma";
 
 const CACHING_TIME = 86400000; // 24 hours in milliseconds
 

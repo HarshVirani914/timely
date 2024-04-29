@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 export function Divider({ className, ...props }: JSX.IntrinsicElements["hr"]) {
   className = classNames("border-subtle my-1", className);

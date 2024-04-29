@@ -1,10 +1,9 @@
 import type { AppCategories, Prisma } from "@prisma/client";
-
-import appStore from "@calcom/app-store";
-import type { EventTypeAppsList } from "@calcom/app-store/utils";
-import type { CompleteEventType } from "@calcom/prisma/zod";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService, PaymentApp } from "@calcom/types/PaymentService";
+import appStore from "@timely/app-store";
+import type { EventTypeAppsList } from "@timely/app-store/utils";
+import type { CompleteEventType } from "@timely/prisma/zod";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService, PaymentApp } from "@timely/types/PaymentService";
 
 const handlePayment = async (
   evt: CalendarEvent,

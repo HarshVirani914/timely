@@ -1,8 +1,7 @@
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { verifyPassword } from "@timely/features/auth/lib/verifyPassword";
+import { prisma } from "@timely/prisma";
 import { createHash } from "crypto";
-
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { verifyPassword } from "@calcom/features/auth/lib/verifyPassword";
-import { prisma } from "@calcom/prisma";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,7 +1,7 @@
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import Shell from "@calcom/features/shell/Shell";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HeadSeo } from "@calcom/ui";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import Shell from "@timely/features/shell/Shell";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HeadSeo } from "@timely/ui";
 
 import type { AppPageProps } from "./AppPage";
 import { AppPage } from "./AppPage";

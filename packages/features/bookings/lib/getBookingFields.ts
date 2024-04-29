@@ -1,18 +1,17 @@
 import type { EventTypeCustomInput, EventType, Prisma, Workflow } from "@prisma/client";
-import type { z } from "zod";
-
-import { SMS_REMINDER_NUMBER_FIELD } from "@calcom/features/bookings/lib/SystemField";
-import { fieldsThatSupportLabelAsSafeHtml } from "@calcom/features/form-builder/fieldsThatSupportLabelAsSafeHtml";
-import { getFieldIdentifier } from "@calcom/features/form-builder/utils/getFieldIdentifier";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import slugify from "@calcom/lib/slugify";
-import { EventTypeCustomInputType } from "@calcom/prisma/enums";
+import { SMS_REMINDER_NUMBER_FIELD } from "@timely/features/bookings/lib/SystemField";
+import { fieldsThatSupportLabelAsSafeHtml } from "@timely/features/form-builder/fieldsThatSupportLabelAsSafeHtml";
+import { getFieldIdentifier } from "@timely/features/form-builder/utils/getFieldIdentifier";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import slugify from "@timely/lib/slugify";
+import { EventTypeCustomInputType } from "@timely/prisma/enums";
 import {
   BookingFieldTypeEnum,
   customInputSchema,
   eventTypeBookingFields,
   EventTypeMetaDataSchema,
-} from "@calcom/prisma/zod-utils";
+} from "@timely/prisma/zod-utils";
+import type { z } from "zod";
 
 type Fields = z.infer<typeof eventTypeBookingFields>;
 

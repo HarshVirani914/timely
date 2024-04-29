@@ -1,10 +1,7 @@
-import axios from "axios";
-import qs from "qs";
-
-import { getLocation } from "@calcom/lib/CalEventParser";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
+import { getLocation } from "@timely/lib/CalEventParser";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import type {
   Calendar,
   CalendarEvent,
@@ -12,8 +9,10 @@ import type {
   IntegrationCalendar,
   NewCalendarEventType,
   Person,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import axios from "axios";
+import qs from "qs";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import refreshOAuthTokens from "../../_utils/oauth/refreshOAuthTokens";

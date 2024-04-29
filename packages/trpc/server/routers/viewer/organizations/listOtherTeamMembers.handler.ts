@@ -1,8 +1,7 @@
 import type { Prisma } from "@prisma/client";
+import { getBookerBaseUrlSync } from "@timely/lib/getBookerUrl/client";
+import { prisma } from "@timely/prisma";
 import z from "zod";
-
-import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
-import { prisma } from "@calcom/prisma";
 
 import type { TrpcSessionUser } from "../../../trpc";
 

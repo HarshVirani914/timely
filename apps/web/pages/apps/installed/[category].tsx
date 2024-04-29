@@ -3,14 +3,14 @@
 import { useReducer } from "react";
 import { z } from "zod";
 
-import DisconnectIntegrationModal from "@calcom/features/apps/components/DisconnectIntegrationModal";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { AppCategories } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { AppGetServerSidePropsContext } from "@calcom/types/AppGetServerSideProps";
-import { Button, EmptyScreen, AppSkeletonLoader as SkeletonLoader, ShellSubHeading } from "@calcom/ui";
-import type { LucideIcon } from "@calcom/ui/components/icon";
+import DisconnectIntegrationModal from "@timely/features/apps/components/DisconnectIntegrationModal";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { AppCategories } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { AppGetServerSidePropsContext } from "@timely/types/AppGetServerSideProps";
+import { Button, EmptyScreen, AppSkeletonLoader as SkeletonLoader, ShellSubHeading } from "@timely/ui";
+import type { LucideIcon } from "@timely/ui/components/icon";
 import {
   BarChart,
   Calendar,
@@ -21,7 +21,7 @@ import {
   Plus,
   Share2,
   Video,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
 
 import { QueryCell } from "@lib/QueryCell";
 

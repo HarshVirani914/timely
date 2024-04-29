@@ -3,15 +3,15 @@ import type { FormEvent } from "react";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import OrganizationMemberAvatar from "@calcom/features/ee/organizations/components/OrganizationMemberAvatar";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { md } from "@calcom/lib/markdownIt";
-import { telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import turndown from "@calcom/lib/turndownService";
-import { trpc } from "@calcom/trpc/react";
-import type { Ensure } from "@calcom/types/utils";
-import { Button, Editor, ImageUploader, Label, showToast } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
+import OrganizationMemberAvatar from "@timely/features/ee/organizations/components/OrganizationMemberAvatar";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { md } from "@timely/lib/markdownIt";
+import { telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import turndown from "@timely/lib/turndownService";
+import { trpc } from "@timely/trpc/react";
+import type { Ensure } from "@timely/types/utils";
+import { Button, Editor, ImageUploader, Label, showToast } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 
 type FormData = {
   bio: string;

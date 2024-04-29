@@ -1,8 +1,7 @@
 import type { DialogProps } from "@radix-ui/react-dialog";
+import { classNames } from "@timely/lib";
 import { Command as CommandPrimitive } from "cmdk";
 import * as React from "react";
-
-import { classNames } from "@calcom/lib";
 
 import { Dialog, DialogContent } from "../dialog";
 

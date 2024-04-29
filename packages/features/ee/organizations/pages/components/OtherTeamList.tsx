@@ -1,8 +1,7 @@
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { showToast } from "@timely/ui";
 import { useState } from "react";
-
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { showToast } from "@calcom/ui";
 
 import OtherTeamListItem from "./OtherTeamListItem";
 

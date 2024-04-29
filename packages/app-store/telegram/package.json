@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
-  "name": "@calcom/telegram",
+  "name": "@timely/telegram",
   "version": "0.0.0",
   "main": "./index.ts",
   "description": "Schedule a chat with your guests or have a Telegram Video call.",
   "dependencies": {
-    "@calcom/lib": "*"
+    "@timely/lib": "*"
   },
   "devDependencies": {
-    "@calcom/types": "*"
+    "@timely/types": "*"
   }
 }

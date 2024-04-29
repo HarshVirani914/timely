@@ -1,9 +1,8 @@
+import findValidApiKey from "@timely/features/ee/api-keys/lib/findValidApiKey";
+import { deleteSubscription } from "@timely/features/webhooks/lib/scheduleTrigger";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest, NextApiResponse } from "next";
 import z from "zod";
-
-import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
-import { deleteSubscription } from "@calcom/features/webhooks/lib/scheduleTrigger";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
 
 const querySchema = z.object({
   apiKey: z.string(),

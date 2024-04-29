@@ -1,10 +1,9 @@
-import { z } from "zod";
-
 import {
   bookingCreateSchemaLegacyPropsForApi,
   bookingCreateBodySchemaForApi,
   extendedBookingCreateBody,
-} from "@calcom/prisma/zod-utils";
+} from "@timely/prisma/zod-utils";
+import { z } from "zod";
 
 import getBookingResponsesSchema from "./getBookingResponsesSchema";
 import type { getEventTypesFromDB } from "./handleNewBooking";

@@ -1,11 +1,10 @@
+import { HOSTED_CAL_FEATURES } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { trpc } from "@timely/trpc/react";
+import { AppSkeletonLoader as SkeletonLoader, Meta } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-
-import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { trpc } from "@calcom/trpc/react";
-import { AppSkeletonLoader as SkeletonLoader, Meta } from "@calcom/ui";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 import SSOConfiguration from "../components/SSOConfiguration";

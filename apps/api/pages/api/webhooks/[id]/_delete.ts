@@ -1,6 +1,6 @@
 import type { NextApiRequest } from "next";
 
-import { defaultResponder } from "@calcom/lib/server";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";
 
@@ -26,7 +26,7 @@ import { schemaQueryIdAsString } from "~/lib/validations/shared/queryIdString";
  *     tags:
  *     - webhooks
  *     externalDocs:
- *        url: https://docs.cal.com/core-features/webhooks
+ *        url: https://docs.timely/core-features/webhooks
  *     responses:
  *       201:
  *         description: OK, hook removed successfully

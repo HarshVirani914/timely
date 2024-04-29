@@ -7,10 +7,10 @@ import { notFound } from "next/navigation";
 import path from "path";
 import { z } from "zod";
 
-import { getAppWithMetadata } from "@calcom/app-store/_appRegistry";
-import { getAppAssetFullPath } from "@calcom/app-store/getAppAssetFullPath";
-import { APP_NAME, IS_PRODUCTION } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
+import { getAppWithMetadata } from "@timely/app-store/_appRegistry";
+import { getAppAssetFullPath } from "@timely/app-store/getAppAssetFullPath";
+import { APP_NAME, IS_PRODUCTION } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 
 const sourceSchema = z.object({
   content: z.string(),

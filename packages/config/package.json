@@ -1,5 +1,5 @@
 {
-  "name": "@calcom/config",
+  "name": "@timely/config",
   "sideEffects": false,
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "prettier-preset.js"
   ],
   "dependencies": {
-    "@calcom/eslint-plugin-eslint": "*",
+    "@timely/eslint-plugin-eslint": "*",
     "eslint-config-next": "^13.2.1",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-turbo": "^0.0.7",

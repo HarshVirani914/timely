@@ -1,4 +1,4 @@
-import { TimeFormat } from "@calcom/lib/timeFormat";
+import { TimeFormat } from "@timely/lib/timeFormat";
 
 interface EventFromToTime {
   date: string;

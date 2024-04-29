@@ -1,4 +1,4 @@
-import OrgProfileView from "@calcom/features/ee/organizations/pages/settings/profile";
+import OrgProfileView from "@timely/features/ee/organizations/pages/settings/profile";
 
 import type { CalPageWrapper } from "@components/PageWrapper";
 import PageWrapper from "@components/PageWrapper";

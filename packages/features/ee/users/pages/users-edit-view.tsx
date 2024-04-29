@@ -1,13 +1,12 @@
 "use client";
 
+import NoSSR from "@timely/core/components/NoSSR";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { getParserWithGeneric } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc/react";
+import { Meta, showToast } from "@timely/ui";
 import { usePathname, useRouter } from "next/navigation";
 import { z } from "zod";
-
-import NoSSR from "@calcom/core/components/NoSSR";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { getParserWithGeneric } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import { Meta, showToast } from "@calcom/ui";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 import LicenseRequired from "../../common/components/LicenseRequired";

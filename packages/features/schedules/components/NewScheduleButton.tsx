@@ -1,9 +1,6 @@
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Dialog,
@@ -14,8 +11,10 @@ import {
   Form,
   InputField,
   showToast,
-} from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 
 export function NewScheduleButton({
   name = "new-schedule",

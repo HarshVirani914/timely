@@ -1,6 +1,6 @@
 import { expect, it, beforeAll, vi } from "vitest";
 
-import { getAggregateWorkingHours } from "@calcom/core/getAggregateWorkingHours";
+import { getAggregateWorkingHours } from "@timely/core/getAggregateWorkingHours";
 
 beforeAll(() => {
   vi.setSystemTime(new Date("2021-06-20T11:59:59Z"));

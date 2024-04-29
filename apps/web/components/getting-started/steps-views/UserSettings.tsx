@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import dayjs from "@calcom/dayjs";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
-import { FULL_NAME_LENGTH_MAX_LIMIT } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import { trpc } from "@calcom/trpc/react";
-import { Button, TimezoneSelect, Input } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
+import dayjs from "@timely/dayjs";
+import { useTimePreferences } from "@timely/features/bookings/lib";
+import { FULL_NAME_LENGTH_MAX_LIMIT } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import { trpc } from "@timely/trpc/react";
+import { Button, TimezoneSelect, Input } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 
 import { UsernameAvailabilityField } from "@components/ui/UsernameAvailability";
 

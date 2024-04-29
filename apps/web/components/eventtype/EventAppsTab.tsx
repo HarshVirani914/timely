@@ -3,15 +3,15 @@ import Link from "next/link";
 import type { EventTypeSetupProps, FormValues } from "pages/event-types/[type]";
 import { useFormContext } from "react-hook-form";
 
-import type { GetAppData, SetAppData } from "@calcom/app-store/EventTypeAppContext";
-import { EventTypeAppCard } from "@calcom/app-store/_components/EventTypeAppCardInterface";
-import type { EventTypeAppCardComponentProps } from "@calcom/app-store/types";
-import type { EventTypeAppsList } from "@calcom/app-store/utils";
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, EmptyScreen, Alert } from "@calcom/ui";
-import { Grid, Lock } from "@calcom/ui/components/icon";
+import type { GetAppData, SetAppData } from "@timely/app-store/EventTypeAppContext";
+import { EventTypeAppCard } from "@timely/app-store/_components/EventTypeAppCardInterface";
+import type { EventTypeAppCardComponentProps } from "@timely/app-store/types";
+import type { EventTypeAppsList } from "@timely/app-store/utils";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, EmptyScreen, Alert } from "@timely/ui";
+import { Grid, Lock } from "@timely/ui/components/icon";
 
 export type EventType = Pick<EventTypeSetupProps, "eventType">["eventType"] &
   EventTypeAppCardComponentProps["eventType"];

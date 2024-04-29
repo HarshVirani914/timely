@@ -2,9 +2,9 @@ import prismaMock from "../../../../tests/libs/__mocks__/prismaMock";
 
 import { describe, expect, it } from "vitest";
 
-import dayjs from "@calcom/dayjs";
-import { validateIntervalLimitOrder } from "@calcom/lib";
-import { checkDurationLimit, checkDurationLimits } from "@calcom/lib/server";
+import dayjs from "@timely/dayjs";
+import { validateIntervalLimitOrder } from "@timely/lib";
+import { checkDurationLimit, checkDurationLimits } from "@timely/lib/server";
 
 type MockData = {
   id: number;

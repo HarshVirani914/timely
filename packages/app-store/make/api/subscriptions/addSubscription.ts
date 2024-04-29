@@ -1,8 +1,7 @@
+import findValidApiKey from "@timely/features/ee/api-keys/lib/findValidApiKey";
+import { addSubscription } from "@timely/features/webhooks/lib/scheduleTrigger";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import findValidApiKey from "@calcom/features/ee/api-keys/lib/findValidApiKey";
-import { addSubscription } from "@calcom/features/webhooks/lib/scheduleTrigger";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const apiKey = req.query.apiKey as string;

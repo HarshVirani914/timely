@@ -1,6 +1,5 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
 import type Stripe from "stripe";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
 
 import { getStripeCustomerIdFromUserId, stripe } from "./stripe";
 

@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import type z from "zod";
 
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import { Input, SettingsToggle, RadioField, Select } from "@calcom/ui";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import { Input, SettingsToggle, RadioField, Select } from "@timely/ui";
 
 type RequiresConfirmationControllerProps = {
   metadata: z.infer<typeof EventTypeMetaDataSchema>;

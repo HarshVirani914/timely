@@ -1,10 +1,9 @@
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import type { AppPrisma, AppSsrInit, AppUser } from "@timely/types/AppGetServerSideProps";
 import type { GetServerSidePropsContext } from "next";
 import type { AppProps as NextAppProps } from "next/app";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import type { AppPrisma, AppSsrInit, AppUser } from "@calcom/types/AppGetServerSideProps";
 
 import type { AppProps } from "@lib/app-providers";
 

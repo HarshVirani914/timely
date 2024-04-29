@@ -1,4 +1,4 @@
-import { SchedulingType } from "@calcom/prisma/enums";
+import { SchedulingType } from "@timely/prisma/enums";
 import { z } from "zod";
 import * as imports from "../../zod-utils";
 // TODO: figure out why EventTypeModel is being called even if it's not imported here, causing a circular dependency

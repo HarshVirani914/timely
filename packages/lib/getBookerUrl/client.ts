@@ -1,4 +1,4 @@
-import { getOrgFullOrigin } from "@calcom/ee/organizations/lib/orgDomains";
+import { getOrgFullOrigin } from "@timely/ee/organizations/lib/orgDomains";
 
 export const getBookerBaseUrlSync = (
   orgSlug: string | null,

@@ -1,30 +1,29 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { WorkflowStep } from "@prisma/client";
-import { isValidPhoneNumber } from "libphonenumber-js";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { SENDER_ID } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { HttpError } from "@calcom/lib/http-error";
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { SENDER_ID } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { HttpError } from "@timely/lib/http-error";
 import {
   MembershipRole,
   TimeUnit,
   WorkflowActions,
   WorkflowTemplates,
   WorkflowTriggerEvents,
-} from "@calcom/prisma/enums";
-import { stringOrNumber } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import type { MultiSelectCheckboxesOptionType as Option } from "@calcom/ui";
-import { Alert, Badge, Button, Form, showToast } from "@calcom/ui";
+} from "@timely/prisma/enums";
+import { stringOrNumber } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc/react";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import type { MultiSelectCheckboxesOptionType as Option } from "@timely/ui";
+import { Alert, Badge, Button, Form, showToast } from "@timely/ui";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import LicenseRequired from "../../common/components/LicenseRequired";
 import SkeletonLoader from "../components/SkeletonLoaderEdit";

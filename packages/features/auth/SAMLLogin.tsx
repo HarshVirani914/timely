@@ -1,13 +1,12 @@
+import { HOSTED_CAL_FEATURES } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button } from "@timely/ui";
+import { Lock } from "@timely/ui/components/icon";
 import { signIn } from "next-auth/react";
 import type { Dispatch, SetStateAction } from "react";
 import { useFormContext } from "react-hook-form";
 import z from "zod";
-
-import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button } from "@calcom/ui";
-import { Lock } from "@calcom/ui/components/icon";
 
 interface Props {
   samlTenantID: string;

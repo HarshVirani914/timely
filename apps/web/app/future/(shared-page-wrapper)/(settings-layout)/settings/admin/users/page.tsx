@@ -1,6 +1,6 @@
 import { _generateMetadata } from "app/_utils";
 
-import Page from "@calcom/features/ee/users/pages/users-listing-view";
+import Page from "@timely/features/ee/users/pages/users-listing-view";
 
 export const generateMetadata = async () =>
   await _generateMetadata(

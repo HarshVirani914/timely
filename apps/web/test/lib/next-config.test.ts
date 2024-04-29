@@ -35,33 +35,33 @@ describe("next.config.js - Org Rewrite", () => {
     new RegExp(`^(?<orgSlug>${subdomainRegExp})\\.(?!vercel\.app).*`);
 
   describe("Host matching based on NEXT_PUBLIC_WEBAPP_URL", () => {
-    it("https://app.cal.com", () => {
-      const subdomainRegExp = getSubdomainRegExp("https://app.cal.com");
-      expect(orgHostRegExp(subdomainRegExp).exec("app.cal.com")).toEqual(null);
-      expect(orgHostRegExp(subdomainRegExp).exec("company.app.cal.com")?.groups?.orgSlug).toEqual("company");
-      expect(orgHostRegExp(subdomainRegExp).exec("org.cal.com")?.groups?.orgSlug).toEqual("org");
+    it("https://app.timely", () => {
+      const subdomainRegExp = getSubdomainRegExp("https://app.timely");
+      expect(orgHostRegExp(subdomainRegExp).exec("app.timely")).toEqual(null);
+      expect(orgHostRegExp(subdomainRegExp).exec("company.app.timely")?.groups?.orgSlug).toEqual("company");
+      expect(orgHostRegExp(subdomainRegExp).exec("org.timely")?.groups?.orgSlug).toEqual("org");
 
       expect(orgHostRegExp(subdomainRegExp).exec("localhost:3000")).toEqual(null);
     });
 
-    it("app.cal.com", () => {
-      const subdomainRegExp = getSubdomainRegExp("app.cal.com");
-      expect(orgHostRegExp(subdomainRegExp).exec("app.cal.com")).toEqual(null);
-      expect(orgHostRegExp(subdomainRegExp).exec("company.app.cal.com")?.groups?.orgSlug).toEqual("company");
+    it("app.timely", () => {
+      const subdomainRegExp = getSubdomainRegExp("app.timely");
+      expect(orgHostRegExp(subdomainRegExp).exec("app.timely")).toEqual(null);
+      expect(orgHostRegExp(subdomainRegExp).exec("company.app.timely")?.groups?.orgSlug).toEqual("company");
     });
 
-    it("https://calcom.app.company.com", () => {
-      const subdomainRegExp = getSubdomainRegExp("https://calcom.app.company.com");
-      expect(orgHostRegExp(subdomainRegExp).exec("calcom.app.company.com")).toEqual(null);
-      expect(orgHostRegExp(subdomainRegExp).exec("acme.calcom.app.company.com")?.groups?.orgSlug).toEqual(
+    it("https://timely.app.company.com", () => {
+      const subdomainRegExp = getSubdomainRegExp("https://timely.app.company.com");
+      expect(orgHostRegExp(subdomainRegExp).exec("timely.app.company.com")).toEqual(null);
+      expect(orgHostRegExp(subdomainRegExp).exec("acme.timely.app.company.com")?.groups?.orgSlug).toEqual(
         "acme"
       );
     });
 
-    it("https://calcom.example.com", () => {
-      const subdomainRegExp = getSubdomainRegExp("https://calcom.example.com");
-      expect(orgHostRegExp(subdomainRegExp).exec("calcom.example.com")).toEqual(null);
-      expect(orgHostRegExp(subdomainRegExp).exec("acme.calcom.example.com")?.groups?.orgSlug).toEqual("acme");
+    it("https://timely.example.com", () => {
+      const subdomainRegExp = getSubdomainRegExp("https://timely.example.com");
+      expect(orgHostRegExp(subdomainRegExp).exec("timely.example.com")).toEqual(null);
+      expect(orgHostRegExp(subdomainRegExp).exec("acme.timely.example.com")?.groups?.orgSlug).toEqual("acme");
       // The following also matches which causes anything other than the domain in NEXT_PUBLIC_WEBAPP_URL to give 404
       expect(orgHostRegExp(subdomainRegExp).exec("some-other.company.com")?.groups?.orgSlug).toEqual(
         "some-other"

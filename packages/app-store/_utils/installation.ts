@@ -1,7 +1,6 @@
 import type { Prisma } from "@prisma/client";
-
-import { HttpError } from "@calcom/lib/http-error";
-import prisma from "@calcom/prisma";
+import { HttpError } from "@timely/lib/http-error";
+import prisma from "@timely/prisma";
 
 export async function checkInstalled(slug: string, userId: number) {
   const alreadyInstalled = await prisma.credential.findFirst({

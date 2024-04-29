@@ -1,8 +1,8 @@
-import { isOrganisationAdmin, isOrganisationOwner } from "@calcom/lib/server/queries/organisations";
-import { resizeBase64Image } from "@calcom/lib/server/resizeBase64Image";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { isOrganisationAdmin, isOrganisationOwner } from "@timely/lib/server/queries/organisations";
+import { resizeBase64Image } from "@timely/lib/server/resizeBase64Image";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

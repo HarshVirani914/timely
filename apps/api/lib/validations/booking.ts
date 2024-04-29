@@ -1,7 +1,6 @@
+import { _BookingModel as Booking, _AttendeeModel, _UserModel, _PaymentModel } from "@timely/prisma/zod";
+import { extendedBookingCreateBody, iso8601 } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { _BookingModel as Booking, _AttendeeModel, _UserModel, _PaymentModel } from "@calcom/prisma/zod";
-import { extendedBookingCreateBody, iso8601 } from "@calcom/prisma/zod-utils";
 
 import { schemaQueryUserId } from "./shared/queryUserId";
 

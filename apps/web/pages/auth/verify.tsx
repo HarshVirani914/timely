@@ -6,13 +6,13 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import z from "zod";
 
-import { classNames } from "@calcom/lib";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { trpc } from "@calcom/trpc/react";
-import { Button, showToast } from "@calcom/ui";
-import { AlertTriangle, ExternalLink, MailOpen } from "@calcom/ui/components/icon";
+import { classNames } from "@timely/lib";
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { trpc } from "@timely/trpc/react";
+import { Button, showToast } from "@timely/ui";
+import { AlertTriangle, ExternalLink, MailOpen } from "@timely/ui/components/icon";
 
 import Loader from "@components/Loader";
 import PageWrapper from "@components/PageWrapper";
@@ -22,7 +22,7 @@ async function sendVerificationLogin(email: string, username: string) {
     email: email.toLowerCase(),
     username: username.toLowerCase(),
     redirect: false,
-    callbackUrl: WEBAPP_URL || "https://app.cal.com",
+    callbackUrl: WEBAPP_URL || "https://app.timely",
   })
     .then(() => {
       showToast("Verification email sent", "success");

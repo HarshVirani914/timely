@@ -1,8 +1,6 @@
-import { usePathname, useRouter } from "next/navigation";
-
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { ButtonColor } from "@calcom/ui";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { ButtonColor } from "@timely/ui";
 import {
   Avatar,
   Button,
@@ -12,8 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
+import { usePathname, useRouter } from "next/navigation";
 
 export interface Option {
   teamId: number | null | undefined; // if undefined, then it's a profile

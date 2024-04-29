@@ -1,6 +1,6 @@
-import logger from "@calcom/lib/logger";
-import type { PrismaClient } from "@calcom/prisma";
-import { TRPCError } from "@calcom/trpc/server";
+import logger from "@timely/lib/logger";
+import type { PrismaClient } from "@timely/prisma";
+import { TRPCError } from "@timely/trpc/server";
 
 import { jsonLogicToPrisma } from "../jsonLogicToPrisma";
 import { getSerializableForm } from "../lib/getSerializableForm";

@@ -1,7 +1,6 @@
+import { HttpError } from "@timely/lib/http-error";
 import type { NextApiRequest } from "next";
 import type { z } from "zod";
-
-import { HttpError } from "@calcom/lib/http-error";
 
 import type { schemaEventTypeBaseBodyParams } from "~/lib/validations/event-type";
 

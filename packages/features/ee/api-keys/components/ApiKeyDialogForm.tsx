@@ -1,13 +1,12 @@
+import dayjs from "@timely/dayjs";
+import type { TApiKeys } from "@timely/ee/api-keys/components/ApiKeyListItem";
+import LicenseRequired from "@timely/ee/common/components/LicenseRequired";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, DialogFooter, Form, showToast, Switch, TextField, Tooltip, SelectField } from "@timely/ui";
+import { Clipboard } from "@timely/ui/components/icon";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-
-import dayjs from "@calcom/dayjs";
-import type { TApiKeys } from "@calcom/ee/api-keys/components/ApiKeyListItem";
-import LicenseRequired from "@calcom/ee/common/components/LicenseRequired";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, DialogFooter, Form, showToast, Switch, TextField, Tooltip, SelectField } from "@calcom/ui";
-import { Clipboard } from "@calcom/ui/components/icon";
 
 export default function ApiKeyDialogForm({
   defaultValues,

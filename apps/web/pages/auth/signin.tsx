@@ -1,8 +1,8 @@
 import type { GetServerSidePropsContext } from "next";
 import { getProviders, signIn, getCsrfToken } from "next-auth/react";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { Button } from "@calcom/ui";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { Button } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

@@ -1,9 +1,9 @@
-import { deleteStripeCustomer } from "@calcom/app-store/stripepayment/lib/customer";
-import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
-import { deleteWebUser as syncServicesDeleteWebUser } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { deleteStripeCustomer } from "@timely/app-store/stripepayment/lib/customer";
+import { ErrorCode } from "@timely/features/auth/lib/ErrorCode";
+import { deleteWebUser as syncServicesDeleteWebUser } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 type DeleteMeWithoutPasswordOptions = {
   ctx: {

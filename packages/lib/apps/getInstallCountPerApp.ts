@@ -1,6 +1,5 @@
+import prisma from "@timely/prisma";
 import { z } from "zod";
-
-import prisma from "@calcom/prisma";
 
 const getInstallCountPerApp = async () => {
   const mostPopularApps = z.array(z.object({ appId: z.string(), installCount: z.number() })).parse(

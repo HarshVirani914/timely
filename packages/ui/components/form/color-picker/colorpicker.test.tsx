@@ -7,7 +7,7 @@ import type { ButtonProps } from "../../button";
 import { Button } from "../../button";
 import ColorPicker from "./colorpicker";
 
-vi.mock("@calcom/ui", async () => {
+vi.mock("@timely/ui", async () => {
   return { Button: ({ tooltip, ...rest }: ButtonProps) => <Button {...rest}>{tooltip}</Button> };
 });
 

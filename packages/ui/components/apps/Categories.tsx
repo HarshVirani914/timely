@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import Image from "next/image";
 import Link from "next/link";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { ArrowRight } from "../icon";
 import { SkeletonText } from "../skeleton";

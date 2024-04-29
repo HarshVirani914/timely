@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { VariantRow, VariantsTable } from "@calcom/storybook/components";
+import { VariantRow, VariantsTable } from "@timely/storybook/components";
 
 import { Tooltip } from "./Tooltip";
 

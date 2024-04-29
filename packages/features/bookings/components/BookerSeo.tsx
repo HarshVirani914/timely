@@ -1,7 +1,7 @@
-import type { GetBookingType } from "@calcom/features/bookings/lib/get-booking";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { HeadSeo } from "@calcom/ui";
+import type { GetBookingType } from "@timely/features/bookings/lib/get-booking";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { HeadSeo } from "@timely/ui";
 
 interface BookerSeoProps {
   username: string;

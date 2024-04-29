@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Dialog, DialogTrigger, ConfirmationDialogContent, Button, showToast } from "@timely/ui";
 import { BanIcon } from "lucide-react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Dialog, DialogTrigger, ConfirmationDialogContent, Button, showToast } from "@calcom/ui";
 
 import type { User } from "../UserListTable";
 

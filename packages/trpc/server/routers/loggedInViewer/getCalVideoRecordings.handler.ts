@@ -1,5 +1,5 @@
-import { getRecordingsOfCalVideoByRoomName } from "@calcom/core/videoClient";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getRecordingsOfCalVideoByRoomName } from "@timely/core/videoClient";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

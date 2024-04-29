@@ -1,10 +1,9 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Avatar, Select } from "@timely/ui";
+import { X } from "@timely/ui/components/icon";
 import type { Props } from "react-select";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Avatar, Select } from "@calcom/ui";
-import { X } from "@calcom/ui/components/icon";
 
 export type CheckedSelectOption = {
   avatar: string;

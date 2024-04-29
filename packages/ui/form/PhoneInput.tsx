@@ -1,10 +1,9 @@
+import { classNames } from "@timely/lib";
+import { trpc } from "@timely/trpc/react";
 import { isSupportedCountry } from "libphonenumber-js";
 import { useState, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-
-import { classNames } from "@calcom/lib";
-import { trpc } from "@calcom/trpc/react";
 
 export type PhoneInputProps = {
   value?: string;

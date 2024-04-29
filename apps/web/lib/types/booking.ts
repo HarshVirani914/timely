@@ -1,3 +1,3 @@
 export type BookingResponse = Awaited<
-  ReturnType<typeof import("@calcom/features/bookings/lib/handleNewBooking").default>
+  ReturnType<typeof import("@timely/features/bookings/lib/handleNewBooking").default>
 >;

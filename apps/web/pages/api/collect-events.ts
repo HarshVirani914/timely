@@ -1,6 +1,6 @@
 import { collectApiHandler } from "next-collect/server";
 
-import { extendEventData, nextCollectBasicSettings } from "@calcom/lib/telemetry";
+import { extendEventData, nextCollectBasicSettings } from "@timely/lib/telemetry";
 
 export default collectApiHandler({
   ...nextCollectBasicSettings,

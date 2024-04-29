@@ -1,9 +1,8 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Dialog, ConfirmationDialogContent, showToast } from "@timely/ui";
 import { useSession } from "next-auth/react";
 import type { Dispatch } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Dialog, ConfirmationDialogContent, showToast } from "@calcom/ui";
 
 import type { State, Action } from "./UserListTable";
 

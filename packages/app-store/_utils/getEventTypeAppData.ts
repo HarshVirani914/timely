@@ -1,7 +1,6 @@
+import type { EventTypeModel } from "@timely/prisma/zod";
+import type { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 import type { z } from "zod";
-
-import type { EventTypeModel } from "@calcom/prisma/zod";
-import type { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
 
 export type EventTypeApps = NonNullable<NonNullable<z.infer<typeof EventTypeMetaDataSchema>>["apps"]>;
 export type EventTypeAppsList = keyof EventTypeApps;

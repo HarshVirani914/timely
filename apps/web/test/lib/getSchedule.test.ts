@@ -4,10 +4,10 @@ import prismock from "../../../../tests/libs/__mocks__/prisma";
 import { diff } from "jest-diff";
 import { describe, expect, vi, beforeEach, afterEach, test } from "vitest";
 
-import dayjs from "@calcom/dayjs";
-import type { BookingStatus } from "@calcom/prisma/enums";
-import type { Slot } from "@calcom/trpc/server/routers/viewer/slots/types";
-import { getAvailableSlots as getSchedule } from "@calcom/trpc/server/routers/viewer/slots/util";
+import dayjs from "@timely/dayjs";
+import type { BookingStatus } from "@timely/prisma/enums";
+import type { Slot } from "@timely/trpc/server/routers/viewer/slots/types";
+import { getAvailableSlots as getSchedule } from "@timely/trpc/server/routers/viewer/slots/util";
 
 import {
   getDate,
@@ -15,7 +15,7 @@ import {
   createBookingScenario,
 } from "../utils/bookingScenario/bookingScenario";
 
-vi.mock("@calcom/lib/constants", () => ({
+vi.mock("@timely/lib/constants", () => ({
   IS_PRODUCTION: true,
   WEBAPP_URL: "http://localhost:3000",
 }));

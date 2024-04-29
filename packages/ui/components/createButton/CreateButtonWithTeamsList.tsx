@@ -1,4 +1,4 @@
-import { trpc } from "@calcom/trpc/react";
+import { trpc } from "@timely/trpc/react";
 
 import type { CreateBtnProps } from "./CreateButton";
 import { CreateButton } from "./CreateButton";

@@ -1,6 +1,6 @@
-import type { DialogProps } from "@calcom/ui";
-import { Button } from "@calcom/ui";
-import { Dialog, DialogClose, DialogContent, DialogFooter } from "@calcom/ui";
+import type { DialogProps } from "@timely/ui";
+import { Button } from "@timely/ui";
+import { Dialog, DialogClose, DialogContent, DialogFooter } from "@timely/ui";
 
 import useAddAppMutation from "../../_utils/useAddAppMutation";
 

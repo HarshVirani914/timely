@@ -1,20 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Prisma } from "@prisma/client";
-import { LinkIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useState, useLayoutEffect } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
-
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { subdomainSuffix } from "@calcom/features/ee/organizations/lib/orgDomains";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { md } from "@calcom/lib/markdownIt";
-import turndown from "@calcom/lib/turndownService";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { subdomainSuffix } from "@timely/features/ee/organizations/lib/orgDomains";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { md } from "@timely/lib/markdownIt";
+import turndown from "@timely/lib/turndownService";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
 import {
   Avatar,
   Button,
@@ -30,7 +24,12 @@ import {
   SkeletonButton,
   SkeletonContainer,
   SkeletonText,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { LinkIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState, useLayoutEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { getLayout } from "../../../../settings/layouts/SettingsLayout";
 import { useOrgBranding } from "../../../organizations/context/provider";

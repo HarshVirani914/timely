@@ -1,19 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { UseMutationResult } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
-import { useSession } from "next-auth/react";
-import type { TFunction } from "next-i18next";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import type { FieldError } from "react-hook-form";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-import type { EventLocationType } from "@calcom/app-store/locations";
-import { createPaymentLink } from "@calcom/app-store/stripepayment/lib/client";
-import dayjs from "@calcom/dayjs";
-import { updateQueryParam, getQueryParam } from "@calcom/features/bookings/Booker/utils/query-param";
-import { VerifyCodeDialog } from "@calcom/features/bookings/components/VerifyCodeDialog";
+import type { EventLocationType } from "@timely/app-store/locations";
+import { createPaymentLink } from "@timely/app-store/stripepayment/lib/client";
+import dayjs from "@timely/dayjs";
+import { updateQueryParam, getQueryParam } from "@timely/features/bookings/Booker/utils/query-param";
+import { VerifyCodeDialog } from "@timely/features/bookings/components/VerifyCodeDialog";
 import {
   createBooking,
   createRecurringBooking,
@@ -21,21 +13,28 @@ import {
   mapRecurringBookingToMutationInput,
   useTimePreferences,
   createInstantBooking,
-} from "@calcom/features/bookings/lib";
+} from "@timely/features/bookings/lib";
 import getBookingResponsesSchema, {
   getBookingResponsesPartialSchema,
-} from "@calcom/features/bookings/lib/getBookingResponsesSchema";
-import { Spinner } from "@calcom/features/calendars/weeklyview/components/spinner/Spinner";
-import { getFullName } from "@calcom/features/form-builder/utils";
-import { useBookingSuccessRedirect } from "@calcom/lib/bookingSuccessRedirect";
-import { MINUTES_TO_BOOK } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc";
-import { Dialog, DialogContent } from "@calcom/ui";
-import { Alert, Button, EmptyScreen, Form, showToast } from "@calcom/ui";
-import { Calendar } from "@calcom/ui/components/icon";
+} from "@timely/features/bookings/lib/getBookingResponsesSchema";
+import { Spinner } from "@timely/features/calendars/weeklyview/components/spinner/Spinner";
+import { getFullName } from "@timely/features/form-builder/utils";
+import { useBookingSuccessRedirect } from "@timely/lib/bookingSuccessRedirect";
+import { MINUTES_TO_BOOK } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc";
+import { Dialog, DialogContent } from "@timely/ui";
+import { Alert, Button, EmptyScreen, Form, showToast } from "@timely/ui";
+import { Calendar } from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import type { TFunction } from "next-i18next";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import type { FieldError } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { useBookerStore } from "../../store";
 import { useSlotReservationId } from "../../useSlotReservationId";

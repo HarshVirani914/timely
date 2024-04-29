@@ -7,7 +7,7 @@ import {
   CustomArgsTable,
   VariantsTable,
   VariantRow,
-} from "@calcom/storybook/components";
+} from "@timely/storybook/components";
 
 import Logo from "./Logo";
 
@@ -17,7 +17,7 @@ import Logo from "./Logo";
 
 ## Definition
 
-Main Cal.com brand logo
+Main Timely brand logo
 
 <CustomArgsTable of={Logo} />
 
@@ -25,13 +25,13 @@ Main Cal.com brand logo
 
 <Examples>
   <Example title="Default">
-    <Logo src={"https://app.cal.com/api/logo"} />
+    <Logo src={"https://app.timely/api/logo"} />
   </Example>
   <Example title="Small">
-    <Logo src={"https://app.cal.com/api/logo"} small />
+    <Logo src={"https://app.timely/api/logo"} small />
   </Example>
   <Example title="As an Icon">
-    <Logo src={"https://app.cal.com/api/logo"} icon />
+    <Logo src={"https://app.timely/api/logo"} icon />
   </Example>
 </Examples>
 
@@ -40,7 +40,7 @@ Main Cal.com brand logo
     name="Logo"
     args={{
       icon: false,
-      src: "https://app.cal.com/api/logo",
+      src: "https://app.timely/api/logo",
       small: false,
     }}>
     {(args) => (

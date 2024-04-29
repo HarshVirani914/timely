@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 
-import dayjs from "@calcom/dayjs";
-import prisma from "@calcom/prisma";
-import { WorkflowMethods } from "@calcom/prisma/enums";
+import dayjs from "@timely/dayjs";
+import prisma from "@timely/prisma";
+import { WorkflowMethods } from "@timely/prisma/enums";
 
 import { test } from "./lib/fixtures";
 import { selectSecondAvailableTimeSlotNextMonth, todo } from "./lib/testUtils";

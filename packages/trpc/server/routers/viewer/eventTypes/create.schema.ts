@@ -1,6 +1,5 @@
+import { createEventTypeInput } from "@timely/prisma/zod/custom/eventtype";
 import type { z } from "zod";
-
-import { createEventTypeInput } from "@calcom/prisma/zod/custom/eventtype";
 
 export const ZCreateInputSchema = createEventTypeInput;
 

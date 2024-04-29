@@ -1,16 +1,15 @@
 import type { User } from "@prisma/client";
 import { Prisma } from "@prisma/client";
-
-import type { LocationObject } from "@calcom/app-store/locations";
-import { privacyFilteredLocations } from "@calcom/app-store/locations";
-import { getAppFromSlug } from "@calcom/app-store/utils";
-import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { isRecurringEvent, parseRecurringEvent } from "@calcom/lib";
-import { getDefaultEvent, getUsernameList } from "@calcom/lib/defaultEvents";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import type { PrismaClient } from "@calcom/prisma";
-import type { BookerLayoutSettings } from "@calcom/prisma/zod-utils";
+import type { LocationObject } from "@timely/app-store/locations";
+import { privacyFilteredLocations } from "@timely/app-store/locations";
+import { getAppFromSlug } from "@timely/app-store/utils";
+import { getBookingFieldsWithSystemFields } from "@timely/features/bookings/lib/getBookingFields";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import { isRecurringEvent, parseRecurringEvent } from "@timely/lib";
+import { getDefaultEvent, getUsernameList } from "@timely/lib/defaultEvents";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import type { PrismaClient } from "@timely/prisma";
+import type { BookerLayoutSettings } from "@timely/prisma/zod-utils";
 import {
   bookerLayoutOptions,
   EventTypeMetaDataSchema,
@@ -19,7 +18,7 @@ import {
   bookerLayouts as bookerLayoutsSchema,
   BookerLayouts,
   teamMetadataSchema,
-} from "@calcom/prisma/zod-utils";
+} from "@timely/prisma/zod-utils";
 
 const publicEventSelect = Prisma.validator<Prisma.EventTypeSelect>()({
   id: true,

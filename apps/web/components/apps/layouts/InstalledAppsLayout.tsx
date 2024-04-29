@@ -1,8 +1,8 @@
 import type { ComponentProps } from "react";
 import React from "react";
 
-import AppCategoryNavigation from "@calcom/app-store/_components/AppCategoryNavigation";
-import Shell from "@calcom/features/shell/Shell";
+import AppCategoryNavigation from "@timely/app-store/_components/AppCategoryNavigation";
+import Shell from "@timely/features/shell/Shell";
 
 export default function InstalledAppsLayout({
   children,

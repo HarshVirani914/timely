@@ -1,31 +1,22 @@
 import { Collapsible, CollapsibleContent } from "@radix-ui/react-collapsible";
-import classNames from "classnames";
-import { useSession } from "next-auth/react";
-import { usePathname, useRouter } from "next/navigation";
-import type { RefObject } from "react";
-import { createRef, useRef, useState } from "react";
-import type { ControlProps } from "react-select";
-import { components } from "react-select";
-import { shallow } from "zustand/shallow";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { AvailableTimesHeader } from "@calcom/features/bookings";
-import { AvailableTimes } from "@calcom/features/bookings";
-import { useBookerStore, useInitializeBookerStore } from "@calcom/features/bookings/Booker/store";
-import { useEvent, useScheduleForEvent } from "@calcom/features/bookings/Booker/utils/event";
-import { useTimePreferences } from "@calcom/features/bookings/lib/timePreferences";
-import DatePicker from "@calcom/features/calendars/DatePicker";
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { useNonEmptyScheduleDays } from "@calcom/features/schedules";
-import { useSlotsForDate } from "@calcom/features/schedules/lib/use-schedule/useSlotsForDate";
-import { APP_NAME, CAL_URL } from "@calcom/lib/constants";
-import { weekdayToWeekIndex } from "@calcom/lib/date-fns";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { AvailableTimesHeader } from "@timely/features/bookings";
+import { AvailableTimes } from "@timely/features/bookings";
+import { useBookerStore, useInitializeBookerStore } from "@timely/features/bookings/Booker/store";
+import { useEvent, useScheduleForEvent } from "@timely/features/bookings/Booker/utils/event";
+import { useTimePreferences } from "@timely/features/bookings/lib/timePreferences";
+import DatePicker from "@timely/features/calendars/DatePicker";
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { useNonEmptyScheduleDays } from "@timely/features/schedules";
+import { useSlotsForDate } from "@timely/features/schedules/lib/use-schedule/useSlotsForDate";
+import { APP_NAME, CAL_URL } from "@timely/lib/constants";
+import { weekdayToWeekIndex } from "@timely/lib/date-fns";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { BookerLayouts } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   ColorPicker,
@@ -40,8 +31,16 @@ import {
   Switch,
   TextField,
   TimezoneSelect,
-} from "@calcom/ui";
-import { ArrowLeft, Sun } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ArrowLeft, Sun } from "@timely/ui/components/icon";
+import classNames from "classnames";
+import { useSession } from "next-auth/react";
+import { usePathname, useRouter } from "next/navigation";
+import type { RefObject } from "react";
+import { createRef, useRef, useState } from "react";
+import type { ControlProps } from "react-select";
+import { components } from "react-select";
+import { shallow } from "zustand/shallow";
 
 import { getDimension } from "./lib/getDimension";
 import type { EmbedTabs, EmbedType, EmbedTypes, PreviewState } from "./types";
@@ -484,7 +483,7 @@ const EmailEmbedPreview = ({
             }}>
             <span>{t("powered_by")}</span>{" "}
             <b style={{ color: "black" }}>
-              <span> Cal.com</span>
+              <span> Timely</span>
             </b>
           </div>
         </div>

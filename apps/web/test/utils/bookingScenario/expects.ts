@@ -7,14 +7,14 @@ import ical from "node-ical";
 import { expect, vi } from "vitest";
 import "vitest-fetch-mock";
 
-import dayjs from "@calcom/dayjs";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { AppsStatus } from "@calcom/types/Calendar";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { Fixtures } from "@calcom/web/test/fixtures/fixtures";
+import dayjs from "@timely/dayjs";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { AppsStatus } from "@timely/types/Calendar";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { Fixtures } from "@timely/web/test/fixtures/fixtures";
 
 import type { InputEventType, getOrganizer } from "./bookingScenario";
 import { DEFAULT_TIMEZONE_BOOKER } from "./getMockRequestDataForBooking";

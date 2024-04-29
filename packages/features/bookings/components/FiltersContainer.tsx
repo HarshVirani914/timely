@@ -1,10 +1,9 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-
-import { PeopleFilter } from "@calcom/features/bookings/components/PeopleFilter";
-import { useFilterQuery } from "@calcom/features/bookings/lib/useFilterQuery";
-import { TeamsFilter } from "@calcom/features/filters/components/TeamsFilter";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Tooltip, Button } from "@calcom/ui";
+import { PeopleFilter } from "@timely/features/bookings/components/PeopleFilter";
+import { useFilterQuery } from "@timely/features/bookings/lib/useFilterQuery";
+import { TeamsFilter } from "@timely/features/filters/components/TeamsFilter";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Tooltip, Button } from "@timely/ui";
 
 import { EventTypeFilter } from "./EventTypeFilter";
 

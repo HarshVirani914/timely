@@ -1,19 +1,18 @@
+import BookingPageTagManager from "@timely/app-store/BookingPageTagManager";
+import dayjs from "@timely/dayjs";
+import { useEmbedType, useEmbedUiConfig, useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { useNonEmptyScheduleDays } from "@timely/features/schedules";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import useMediaQuery from "@timely/lib/hooks/useMediaQuery";
+import { BookerLayouts, defaultBookerLayoutSettings } from "@timely/prisma/zod-utils";
+import { AvatarGroup, Button } from "@timely/ui";
 import { LazyMotion, m, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import StickyBox from "react-sticky-box";
 import { shallow } from "zustand/shallow";
-
-import BookingPageTagManager from "@calcom/app-store/BookingPageTagManager";
-import dayjs from "@calcom/dayjs";
-import { useEmbedType, useEmbedUiConfig, useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { useNonEmptyScheduleDays } from "@calcom/features/schedules";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import useMediaQuery from "@calcom/lib/hooks/useMediaQuery";
-import { BookerLayouts, defaultBookerLayoutSettings } from "@calcom/prisma/zod-utils";
-import { AvatarGroup, Button } from "@calcom/ui";
 
 import { AvailableTimeSlots } from "./components/AvailableTimeSlots";
 import { BookEventForm } from "./components/BookEventForm";
@@ -32,8 +31,8 @@ import { getQueryParam } from "./utils/query-param";
 import { useBrandColors } from "./utils/use-brand-colors";
 
 const loadFramerFeatures = () => import("./framer-features").then((res) => res.default);
-const PoweredBy = dynamic(() => import("@calcom/ee/components/PoweredBy"));
-const UnpublishedEntity = dynamic(() => import("@calcom/ui").then((mod) => mod.UnpublishedEntity));
+const PoweredBy = dynamic(() => import("@timely/ee/components/PoweredBy"));
+const UnpublishedEntity = dynamic(() => import("@timely/ui").then((mod) => mod.UnpublishedEntity));
 const DatePicker = dynamic(() => import("./components/DatePicker").then((mod) => mod.DatePicker), {
   ssr: false,
 });
@@ -397,17 +396,17 @@ export const InstantBooking = () => {
             className="relative"
             items={[
               {
-                image: "https://cal.com/stakeholder/peer.jpg",
+                image: "https://timely/stakeholder/peer.jpg",
                 alt: "Peer",
                 title: "Peer Richelsen",
               },
               {
-                image: "https://cal.com/stakeholder/bailey.jpg",
+                image: "https://timely/stakeholder/bailey.jpg",
                 alt: "Bailey",
                 title: "Bailey Pumfleet",
               },
               {
-                image: "https://cal.com/stakeholder/alex-van-andel.jpg",
+                image: "https://timely/stakeholder/alex-van-andel.jpg",
                 alt: "Alex",
                 title: "Alex Van Andel",
               },

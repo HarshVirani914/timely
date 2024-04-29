@@ -30,7 +30,7 @@ export default class DisabledAppEmail extends BaseEmail {
 
   protected async getNodeMailerPayload(): Promise<Record<string, unknown>> {
     return {
-      from: `Cal.com <${this.getMailerOptions().from}>`,
+      from: `Timely <${this.getMailerOptions().from}>`,
       to: this.email,
       subject:
         this.title && this.eventTypeId

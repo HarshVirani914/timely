@@ -1,10 +1,9 @@
+import type { SSOConnection } from "@timely/ee/sso/lib/saml";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, DialogFooter, Form, showToast, TextArea, Dialog, DialogContent } from "@timely/ui";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-
-import type { SSOConnection } from "@calcom/ee/sso/lib/saml";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, DialogFooter, Form, showToast, TextArea, Dialog, DialogContent } from "@calcom/ui";
 
 interface FormValues {
   metadata: string;

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import useDigitInput from "react-digit-input";
 import { useFormContext } from "react-hook-form";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Label, Input } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Label, Input } from "@timely/ui";
 
 export default function TwoFactor({ center = true, autoFocus = true }) {
   const [value, onChange] = useState("");

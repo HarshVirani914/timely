@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Meta, Form, Button, TextField, showToast, Tooltip, ImageUploader, Avatar } from "@calcom/ui";
-import { Clipboard } from "@calcom/ui/components/icon";
-import { Plus } from "@calcom/ui/components/icon";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Meta, Form, Button, TextField, showToast, Tooltip, ImageUploader, Avatar } from "@timely/ui";
+import { Clipboard } from "@timely/ui/components/icon";
+import { Plus } from "@timely/ui/components/icon";
 
 type FormValues = {
   name: string;

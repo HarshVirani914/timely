@@ -1,6 +1,6 @@
-import { getLocationGroupedOptions } from "@calcom/app-store/server";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getLocationGroupedOptions } from "@timely/app-store/server";
+import { getTranslation } from "@timely/lib/server/i18n";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TLocationOptionsInputSchema } from "./locationOptions.schema";
 

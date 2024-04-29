@@ -1,9 +1,8 @@
 import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
-
-import type { Fixtures } from "@calcom/web/playwright/lib/fixtures";
-import { test } from "@calcom/web/playwright/lib/fixtures";
-import { NotFoundPageText, gotoRoutingLink } from "@calcom/web/playwright/lib/testUtils";
+import type { Fixtures } from "@timely/web/playwright/lib/fixtures";
+import { test } from "@timely/web/playwright/lib/fixtures";
+import { NotFoundPageText, gotoRoutingLink } from "@timely/web/playwright/lib/testUtils";
 
 import {
   addForm,

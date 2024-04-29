@@ -1,7 +1,6 @@
 import type { Payment, Prisma, Booking, PaymentOption } from "@prisma/client";
-
-import type { PaymentService } from "@calcom/app-store/paypal/lib/PaymentService";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import type { PaymentService } from "@timely/app-store/paypal/lib/PaymentService";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 export interface PaymentApp {
   lib?: {

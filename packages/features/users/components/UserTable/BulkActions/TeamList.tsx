@@ -1,10 +1,7 @@
 import type { Table } from "@tanstack/react-table";
-import { Users, Check } from "lucide-react";
-import { useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
 import {
   Command,
   CommandInput,
@@ -17,7 +14,9 @@ import {
   PopoverContent,
   PopoverTrigger,
   showToast,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { Users, Check } from "lucide-react";
+import { useState } from "react";
 
 import type { User } from "../UserListTable";
 

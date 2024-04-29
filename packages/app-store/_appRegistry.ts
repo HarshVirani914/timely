@@ -1,11 +1,11 @@
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
-import { getAppFromSlug } from "@calcom/app-store/utils";
-import type { UserAdminTeams } from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import getInstallCountPerApp from "@calcom/lib/apps/getInstallCountPerApp";
-import prisma, { safeAppSelect, safeCredentialSelect } from "@calcom/prisma";
-import { userMetadata } from "@calcom/prisma/zod-utils";
-import type { AppFrontendPayload as App } from "@calcom/types/App";
-import type { CredentialFrontendPayload as Credential } from "@calcom/types/Credential";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
+import { getAppFromSlug } from "@timely/app-store/utils";
+import type { UserAdminTeams } from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import getInstallCountPerApp from "@timely/lib/apps/getInstallCountPerApp";
+import prisma, { safeAppSelect, safeCredentialSelect } from "@timely/prisma";
+import { userMetadata } from "@timely/prisma/zod-utils";
+import type { AppFrontendPayload as App } from "@timely/types/App";
+import type { CredentialFrontendPayload as Credential } from "@timely/types/Credential";
 
 /**
  * Get App metdata either using dirName or slug

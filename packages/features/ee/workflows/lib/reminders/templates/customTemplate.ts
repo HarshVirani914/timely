@@ -1,9 +1,9 @@
-import { guessEventLocationType } from "@calcom/app-store/locations";
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalEventResponses } from "@calcom/types/Calendar";
+import { guessEventLocationType } from "@timely/app-store/locations";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalEventResponses } from "@timely/types/Calendar";
 
 export type VariablesType = {
   eventName?: string;

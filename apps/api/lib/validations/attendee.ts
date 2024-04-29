@@ -1,6 +1,5 @@
+import { _AttendeeModel as Attendee } from "@timely/prisma/zod";
 import { z } from "zod";
-
-import { _AttendeeModel as Attendee } from "@calcom/prisma/zod";
 
 import { timeZone } from "~/lib/validations/shared/timeZone";
 

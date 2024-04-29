@@ -1,7 +1,7 @@
-import type { App_RoutingForms_Form } from "@calcom/prisma/client";
+import type { App_RoutingForms_Form } from "@timely/prisma/client";
 
 export default async function getConnectedForms(
-  prisma: typeof import("@calcom/prisma").default,
+  prisma: typeof import("@timely/prisma").default,
   form: Pick<App_RoutingForms_Form, "id" | "userId">
 ) {
   return await prisma.app_RoutingForms_Form.findMany({

@@ -1,5 +1,5 @@
-import type { PrismaClient } from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
+import type { PrismaClient } from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
 
 import type { TInstantBookingInputSchema } from "./getInstantBookingLocation.schema";
 

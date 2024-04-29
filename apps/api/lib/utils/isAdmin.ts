@@ -1,6 +1,5 @@
+import { UserPermissionRole } from "@timely/prisma/enums";
 import type { NextApiRequest } from "next";
-
-import { UserPermissionRole } from "@calcom/prisma/enums";
 
 export const isAdminGuard = async (req: NextApiRequest) => {
   const { userId, prisma } = req;

@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Tooltip } from "@timely/ui";
 import { Flex, Text, Metric, BadgeDelta } from "@tremor/react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Tooltip } from "@calcom/ui";
 
 import { calculateDeltaType, colors, valueFormatter } from "../lib";
 import { CardInsights } from "./Card";

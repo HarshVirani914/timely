@@ -1,7 +1,6 @@
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import { z } from "zod";
-
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
 
 import { LARK_HOST, getAppKeys, isExpired } from "../common";
 

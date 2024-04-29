@@ -1,9 +1,9 @@
-import type { TFormSchema } from "@calcom/app-store/routing-forms/trpc/forms.schema";
-import { hasFilter } from "@calcom/features/filters/lib/hasFilter";
-import { prisma } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { entries } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import type { TFormSchema } from "@timely/app-store/routing-forms/trpc/forms.schema";
+import { hasFilter } from "@timely/features/filters/lib/hasFilter";
+import { prisma } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { entries } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

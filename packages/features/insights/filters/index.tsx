@@ -1,7 +1,7 @@
-import { useFilterContext } from "@calcom/features/insights/context/provider";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Tooltip } from "@calcom/ui";
-import { X } from "@calcom/ui/components/icon";
+import { useFilterContext } from "@timely/features/insights/context/provider";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Tooltip } from "@timely/ui";
+import { X } from "@timely/ui/components/icon";
 
 import { DateSelect } from "./DateSelect";
 import { Download } from "./Download/index";

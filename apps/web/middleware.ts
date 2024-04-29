@@ -3,8 +3,8 @@ import { collectEvents } from "next-collect/server";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { extendEventData, nextCollectBasicSettings } from "@calcom/lib/telemetry";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { extendEventData, nextCollectBasicSettings } from "@timely/lib/telemetry";
 
 import { csp } from "@lib/csp";
 

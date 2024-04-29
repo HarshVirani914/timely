@@ -1,8 +1,7 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
+import { entityPrismaWhereClause } from "@timely/lib/entityPermissionUtils";
+import { RoutingFormSettings } from "@timely/prisma/zod-utils";
 import type { z } from "zod";
-
-import { entityPrismaWhereClause } from "@calcom/lib/entityPermissionUtils";
-import { RoutingFormSettings } from "@calcom/prisma/zod-utils";
 
 import type { SerializableForm } from "../types/types";
 import type { zodRoutesView, zodFieldsView } from "../zod";
@@ -21,7 +20,7 @@ export async function getSerializableForm<TForm extends App_RoutingForms_Form>({
   form: TForm;
   withDeletedFields?: boolean;
 }) {
-  const prisma = (await import("@calcom/prisma")).default;
+  const prisma = (await import("@timely/prisma")).default;
   const routesParsed = zodRoutes.safeParse(form.routes);
   if (!routesParsed.success) {
     throw new Error("Error parsing routes");

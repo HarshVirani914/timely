@@ -2,8 +2,8 @@ import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 import { z } from "zod";
 
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaSchedulePublic } from "~/lib/validations/schedule";
 import { schemaQuerySingleOrMultipleUserIds } from "~/lib/validations/shared/queryUserId";

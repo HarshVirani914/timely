@@ -1,19 +1,13 @@
 import type { WorkflowStep } from "@prisma/client";
-import type { Dispatch, SetStateAction } from "react";
-import { useRef, useState, useEffect } from "react";
-import type { UseFormReturn } from "react-hook-form";
-import { Controller } from "react-hook-form";
-import "react-phone-number-input/style.css";
-
-import { classNames } from "@calcom/lib";
-import { SENDER_ID, SENDER_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import { WorkflowTemplates, TimeUnit, WorkflowActions } from "@calcom/prisma/enums";
-import { WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
+import { classNames } from "@timely/lib";
+import { SENDER_ID, SENDER_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import { WorkflowTemplates, TimeUnit, WorkflowActions } from "@timely/prisma/enums";
+import { WorkflowTriggerEvents } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
 import {
   Badge,
   Button,
@@ -38,8 +32,13 @@ import {
   AddVariablesDropdown,
   Input,
   Tooltip,
-} from "@calcom/ui";
-import { ArrowDown, MoreHorizontal, Trash2, HelpCircle, Info } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ArrowDown, MoreHorizontal, Trash2, HelpCircle, Info } from "@timely/ui/components/icon";
+import type { Dispatch, SetStateAction } from "react";
+import { useRef, useState, useEffect } from "react";
+import type { UseFormReturn } from "react-hook-form";
+import { Controller } from "react-hook-form";
+import "react-phone-number-input/style.css";
 
 import {
   isAttendeeAction,

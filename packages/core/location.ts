@@ -1,1 +1,1 @@
-export * from "@calcom/app-store/locations";
+export * from "@timely/app-store/locations";

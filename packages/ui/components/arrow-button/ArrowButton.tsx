@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowDown } from "@calcom/ui/components/icon";
+import { ArrowUp, ArrowDown } from "@timely/ui/components/icon";
 
 export type ArrowButtonProps = {
   arrowDirection: "up" | "down";

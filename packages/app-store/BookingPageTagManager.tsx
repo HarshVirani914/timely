@@ -1,7 +1,6 @@
+import { getEventTypeAppData } from "@timely/app-store/_utils/getEventTypeAppData";
+import { appStoreMetadata } from "@timely/app-store/bookerAppsMetaData";
 import Script from "next/script";
-
-import { getEventTypeAppData } from "@calcom/app-store/_utils/getEventTypeAppData";
-import { appStoreMetadata } from "@calcom/app-store/bookerAppsMetaData";
 
 import type { appDataSchemas } from "./apps.schemas.generated";
 

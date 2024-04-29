@@ -3,10 +3,10 @@ import prismaMock from "../../../../tests/libs/__mocks__/prismaMock";
 import type { EventType } from "@prisma/client";
 import { describe, expect, it, vi } from "vitest";
 
-import updateChildrenEventTypes from "@calcom/features/ee/managed-event-types/lib/handleChildrenEventTypes";
-import { buildEventType } from "@calcom/lib/test/builder";
-import type { Prisma } from "@calcom/prisma/client";
-import type { CompleteEventType, CompleteWorkflowsOnEventTypes } from "@calcom/prisma/zod";
+import updateChildrenEventTypes from "@timely/features/ee/managed-event-types/lib/handleChildrenEventTypes";
+import { buildEventType } from "@timely/lib/test/builder";
+import type { Prisma } from "@timely/prisma/client";
+import type { CompleteEventType, CompleteWorkflowsOnEventTypes } from "@timely/prisma/zod";
 
 const mockFindFirstEventType = (data?: Partial<CompleteEventType>) => {
   const eventType = buildEventType(data as Partial<EventType>);
@@ -14,13 +14,13 @@ const mockFindFirstEventType = (data?: Partial<CompleteEventType>) => {
   return eventType;
 };
 
-vi.mock("@calcom/emails/email-manager", () => {
+vi.mock("@timely/emails/email-manager", () => {
   return {
     sendSlugReplacementEmail: () => ({}),
   };
 });
 
-vi.mock("@calcom/lib/server/i18n", () => {
+vi.mock("@timely/lib/server/i18n", () => {
   return {
     getTranslation: (key: string) => key,
   };

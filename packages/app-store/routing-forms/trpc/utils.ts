@@ -1,10 +1,9 @@
 import type { App_RoutingForms_Form, User } from "@prisma/client";
-
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import { sendGenericWebhookPayload } from "@calcom/features/webhooks/lib/sendPayload";
-import logger from "@calcom/lib/logger";
-import { WebhookTriggerEvents } from "@calcom/prisma/client";
-import type { Ensure } from "@calcom/types/utils";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import { sendGenericWebhookPayload } from "@timely/features/webhooks/lib/sendPayload";
+import logger from "@timely/lib/logger";
+import { WebhookTriggerEvents } from "@timely/prisma/client";
+import type { Ensure } from "@timely/types/utils";
 
 import type { OrderedResponses } from "../types/types";
 import type { Response, SerializableForm } from "../types/types";

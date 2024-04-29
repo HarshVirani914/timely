@@ -1,6 +1,6 @@
-import type { PrismaClient } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import type { PrismaClient } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

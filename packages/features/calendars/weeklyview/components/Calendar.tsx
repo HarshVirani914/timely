@@ -1,7 +1,6 @@
+import { useTimePreferences } from "@timely/features/bookings/lib/timePreferences";
+import { classNames } from "@timely/lib";
 import React, { useEffect, useMemo, useRef } from "react";
-
-import { useTimePreferences } from "@calcom/features/bookings/lib/timePreferences";
-import { classNames } from "@calcom/lib";
 
 import { useCalendarStore } from "../state/store";
 import "../styles/styles.css";

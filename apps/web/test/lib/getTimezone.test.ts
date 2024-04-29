@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-import { filterByCities, addCitiesToDropdown, handleOptionLabel } from "@calcom/lib/timezone";
+import { filterByCities, addCitiesToDropdown, handleOptionLabel } from "@timely/lib/timezone";
 
 const cityData = [
   {

@@ -1,17 +1,13 @@
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-import InviteLinkSettingsModal from "@calcom/ee/teams/components/InviteLinkSettingsModal";
-import MemberInvitationModal from "@calcom/ee/teams/components/MemberInvitationModal";
-import classNames from "@calcom/lib/classNames";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { getTeamUrlSync } from "@calcom/lib/getBookerUrl/client";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import InviteLinkSettingsModal from "@timely/ee/teams/components/InviteLinkSettingsModal";
+import MemberInvitationModal from "@timely/ee/teams/components/MemberInvitationModal";
+import classNames from "@timely/lib/classNames";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { getTeamUrlSync } from "@timely/lib/getBookerUrl/client";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Avatar,
   Badge,
@@ -28,7 +24,7 @@ import {
   DropdownMenuTrigger,
   showToast,
   Tooltip,
-} from "@calcom/ui";
+} from "@timely/ui";
 import {
   Check,
   Edit2,
@@ -40,7 +36,10 @@ import {
   Send,
   Trash,
   X,
-} from "@calcom/ui/components/icon";
+} from "@timely/ui/components/icon";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { useOrgBranding } from "../../organizations/context/provider";
 import { TeamRole } from "./TeamPill";

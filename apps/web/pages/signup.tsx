@@ -10,26 +10,26 @@ import { useForm, useFormContext } from "react-hook-form";
 import { Toaster } from "react-hot-toast";
 import { z } from "zod";
 
-import getStripe from "@calcom/app-store/stripepayment/lib/client";
-import { getPremiumPlanPriceValue } from "@calcom/app-store/stripepayment/lib/utils";
-import { getOrgUsernameFromEmail } from "@calcom/features/auth/signup/utils/getOrgUsernameFromEmail";
-import { checkPremiumUsername } from "@calcom/features/ee/common/lib/checkPremiumUsername";
-import { getOrgFullOrigin } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { isSAMLLoginEnabled } from "@calcom/features/ee/sso/lib/saml";
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { classNames } from "@calcom/lib";
-import { APP_NAME, IS_CALCOM, IS_SELF_HOSTED, WEBAPP_URL, WEBSITE_URL } from "@calcom/lib/constants";
-import { fetchUsername } from "@calcom/lib/fetchUsername";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useDebounce } from "@calcom/lib/hooks/useDebounce";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import slugify from "@calcom/lib/slugify";
-import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { signupSchema as apiSignupSchema } from "@calcom/prisma/zod-utils";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { Button, HeadSeo, PasswordField, TextField, Form, Alert, showToast } from "@calcom/ui";
+import getStripe from "@timely/app-store/stripepayment/lib/client";
+import { getPremiumPlanPriceValue } from "@timely/app-store/stripepayment/lib/utils";
+import { getOrgUsernameFromEmail } from "@timely/features/auth/signup/utils/getOrgUsernameFromEmail";
+import { checkPremiumUsername } from "@timely/features/ee/common/lib/checkPremiumUsername";
+import { getOrgFullOrigin } from "@timely/features/ee/organizations/lib/orgDomains";
+import { isSAMLLoginEnabled } from "@timely/features/ee/sso/lib/saml";
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { classNames } from "@timely/lib";
+import { APP_NAME, IS_CALCOM, IS_SELF_HOSTED, WEBAPP_URL, WEBSITE_URL } from "@timely/lib/constants";
+import { fetchUsername } from "@timely/lib/fetchUsername";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useDebounce } from "@timely/lib/hooks/useDebounce";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import slugify from "@timely/lib/slugify";
+import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { signupSchema as apiSignupSchema } from "@timely/prisma/zod-utils";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { Button, HeadSeo, PasswordField, TextField, Form, Alert, showToast } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -260,13 +260,13 @@ export default function Signup({
           )}
           <div className="flex flex-col gap-2">
             <h1 className="font-cal text-[28px] leading-none ">
-              {IS_CALCOM ? t("create_your_calcom_account") : t("create_your_account")}
+              {IS_CALCOM ? t("create_your_timely_account") : t("create_your_account")}
             </h1>
             {IS_CALCOM ? (
               <p className="text-subtle text-base font-medium leading-5">{t("cal_signup_description")}</p>
             ) : (
               <p className="text-subtle text-base font-medium leading-5">
-                {t("calcom_explained", {
+                {t("timely_explained", {
                   appName: APP_NAME,
                 })}
               </p>
@@ -526,7 +526,7 @@ const querySchema = z.object({
 });
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  const prisma = await import("@calcom/prisma").then((mod) => mod.default);
+  const prisma = await import("@timely/prisma").then((mod) => mod.default);
   const flags = await getFeatureFlagMap(prisma);
   const ssr = await ssrInit(ctx);
   const token = z.string().optional().parse(ctx.query.token);

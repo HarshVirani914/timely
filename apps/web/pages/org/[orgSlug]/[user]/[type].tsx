@@ -1,9 +1,9 @@
 import type { GetServerSidePropsContext } from "next";
 import z from "zod";
 
-import { getSlugOrRequestedSlug } from "@calcom/features/ee/organizations/lib/orgDomains";
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
+import { getSlugOrRequestedSlug } from "@timely/features/ee/organizations/lib/orgDomains";
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
 
 import PageWrapper from "@components/PageWrapper";
 

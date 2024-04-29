@@ -1,9 +1,8 @@
 import type { Webhook } from "@prisma/client";
+import { getHumanReadableLocationValue } from "@timely/app-store/locations";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import { createHmac } from "crypto";
 import { compile } from "handlebars";
-
-import { getHumanReadableLocationValue } from "@calcom/app-store/locations";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 type ContentType = "application/json" | "application/x-www-form-urlencoded";
 

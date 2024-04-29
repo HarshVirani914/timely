@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Fragment } from "react";
 
-import { InstallAppButton } from "@calcom/app-store/components";
-import DisconnectIntegration from "@calcom/features/apps/components/DisconnectIntegration";
-import { CalendarSwitch } from "@calcom/features/calendars/CalendarSwitch";
-import DestinationCalendarSelector from "@calcom/features/calendars/DestinationCalendarSelector";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { InstallAppButton } from "@timely/app-store/components";
+import DisconnectIntegration from "@timely/features/apps/components/DisconnectIntegration";
+import { CalendarSwitch } from "@timely/features/calendars/CalendarSwitch";
+import DestinationCalendarSelector from "@timely/features/calendars/DestinationCalendarSelector";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Button,
@@ -15,8 +15,8 @@ import {
   AppSkeletonLoader as SkeletonLoader,
   ShellSubHeading,
   Label,
-} from "@calcom/ui";
-import { Calendar } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Calendar } from "@timely/ui/components/icon";
 
 import { QueryCell } from "@lib/QueryCell";
 

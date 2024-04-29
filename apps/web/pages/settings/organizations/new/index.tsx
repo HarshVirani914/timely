@@ -1,10 +1,10 @@
 import type { GetServerSidePropsContext } from "next";
 
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { CreateANewOrganizationForm } from "@calcom/features/ee/organizations/components";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { WizardLayout, Meta } from "@calcom/ui";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { CreateANewOrganizationForm } from "@timely/features/ee/organizations/components";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { WizardLayout, Meta } from "@timely/ui";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 
@@ -28,7 +28,7 @@ const LayoutWrapper = (page: React.ReactElement) => {
 };
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const prisma = await import("@calcom/prisma").then((mod) => mod.default);
+  const prisma = await import("@timely/prisma").then((mod) => mod.default);
   const flags = await getFeatureFlagMap(prisma);
   // Check if organizations are enabled
   if (flags["organizations"] !== true) {

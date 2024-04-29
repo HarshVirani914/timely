@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 
-import { randomString } from "@calcom/lib/random";
-import prisma from "@calcom/prisma";
+import { randomString } from "@timely/lib/random";
+import prisma from "@timely/prisma";
 
 import { test } from "./lib/fixtures";
 

@@ -139,7 +139,7 @@ describe("withEmbedSsr", () => {
       it("should add layout and embed params from the current query when destination URL is HTTPS", async () => {
         const withEmbedGetSsr = withEmbedSsr(
           getServerSidePropsFnGenerator({
-            redirectUrl: "https://calcom.cal.local/owner",
+            redirectUrl: "https://timely.cal.local/owner",
           })
         );
 
@@ -154,7 +154,7 @@ describe("withEmbedSsr", () => {
 
         expect(ret).toEqual({
           redirect: {
-            destination: "https://calcom.cal.local/owner/embed?layout=week_view&embed=namespace1",
+            destination: "https://timely.cal.local/owner/embed?layout=week_view&embed=namespace1",
             permanent: false,
           },
         });
@@ -162,7 +162,7 @@ describe("withEmbedSsr", () => {
       it("should add layout and embed params from the current query when destination URL is HTTP", async () => {
         const withEmbedGetSsr = withEmbedSsr(
           getServerSidePropsFnGenerator({
-            redirectUrl: "http://calcom.cal.local/owner",
+            redirectUrl: "http://timely.cal.local/owner",
           })
         );
 
@@ -177,7 +177,7 @@ describe("withEmbedSsr", () => {
 
         expect(ret).toEqual({
           redirect: {
-            destination: "http://calcom.cal.local/owner/embed?layout=week_view&embed=namespace1",
+            destination: "http://timely.cal.local/owner/embed?layout=week_view&embed=namespace1",
             permanent: false,
           },
         });
@@ -185,7 +185,7 @@ describe("withEmbedSsr", () => {
       it("should correctly identify a URL as non absolute URL if protocol is missing", async () => {
         const withEmbedGetSsr = withEmbedSsr(
           getServerSidePropsFnGenerator({
-            redirectUrl: "httpcalcom.cal.local/owner",
+            redirectUrl: "httptimely.cal.local/owner",
           })
         );
 
@@ -201,7 +201,7 @@ describe("withEmbedSsr", () => {
         expect(ret).toEqual({
           redirect: {
             // FIXME: Note that it is adding a / in the beginning of the path, which might be fine for now, but could be an issue
-            destination: "/httpcalcom.cal.local/owner/embed?layout=week_view&embed=namespace1",
+            destination: "/httptimely.cal.local/owner/embed?layout=week_view&embed=namespace1",
             permanent: false,
           },
         });

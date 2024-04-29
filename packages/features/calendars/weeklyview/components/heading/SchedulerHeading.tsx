@@ -1,6 +1,6 @@
-import dayjs from "@calcom/dayjs";
-import { Button, ButtonGroup } from "@calcom/ui";
-import { ChevronLeft, ChevronRight } from "@calcom/ui/components/icon";
+import dayjs from "@timely/dayjs";
+import { Button, ButtonGroup } from "@timely/ui";
+import { ChevronLeft, ChevronRight } from "@timely/ui/components/icon";
 
 import { useCalendarStore } from "../../state/store";
 

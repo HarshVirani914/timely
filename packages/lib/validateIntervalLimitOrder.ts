@@ -1,4 +1,4 @@
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 import { ascendingLimitKeys } from "./intervalLimit";
 

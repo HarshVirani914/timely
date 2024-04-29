@@ -1,12 +1,11 @@
 import { expect } from "@playwright/test";
 import type { Page } from "@playwright/test";
-
-import dayjs from "@calcom/dayjs";
-import { APP_CREDENTIAL_SHARING_ENABLED } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { test } from "@calcom/web/playwright/lib/fixtures";
-import { selectSecondAvailableTimeSlotNextMonth } from "@calcom/web/playwright/lib/testUtils";
+import dayjs from "@timely/dayjs";
+import { APP_CREDENTIAL_SHARING_ENABLED } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { test } from "@timely/web/playwright/lib/fixtures";
+import { selectSecondAvailableTimeSlotNextMonth } from "@timely/web/playwright/lib/testUtils";
 
 import metadata from "../_metadata";
 import GoogleCalendarService from "../lib/CalendarService";

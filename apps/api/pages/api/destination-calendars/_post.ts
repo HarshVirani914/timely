@@ -1,9 +1,9 @@
 import type { NextApiRequest } from "next";
 
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 
 import {
   schemaDestinationCalendarReadPublic,

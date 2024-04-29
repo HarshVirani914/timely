@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Badge,
   Meta,
@@ -11,7 +11,7 @@ import {
   SkeletonText,
   Alert,
   SettingsToggle,
-} from "@calcom/ui";
+} from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import DisableTwoFactorModal from "@components/settings/DisableTwoFactorModal";

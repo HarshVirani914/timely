@@ -1,8 +1,8 @@
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import type { GetSubscriberOptions } from "@calcom/features/webhooks/lib/getWebhooks";
-import type { WebhookDataType } from "@calcom/features/webhooks/lib/sendPayload";
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import logger from "@calcom/lib/logger";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import type { GetSubscriberOptions } from "@timely/features/webhooks/lib/getWebhooks";
+import type { WebhookDataType } from "@timely/features/webhooks/lib/sendPayload";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import logger from "@timely/lib/logger";
 
 export async function handleWebhookTrigger(args: {
   subscriberOptions: GetSubscriberOptions;

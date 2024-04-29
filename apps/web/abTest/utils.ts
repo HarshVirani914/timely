@@ -1,4 +1,4 @@
-import { AB_TEST_BUCKET_PROBABILITY } from "@calcom/lib/constants";
+import { AB_TEST_BUCKET_PROBABILITY } from "@timely/lib/constants";
 
 const cryptoRandom = () => {
   return crypto.getRandomValues(new Uint8Array(1))[0] / 0xff;

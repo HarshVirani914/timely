@@ -1,13 +1,12 @@
+import dayjs from "@timely/dayjs";
+// TODO: Use browser locale, implement Intl in Dayjs maybe?
+import "@timely/dayjs/locales";
+import { getEveryFreqFor } from "@timely/lib/recurringStrings";
+import type { TimeFormat } from "@timely/lib/timeFormat";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
+import type { RecurringEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
 import { RRule } from "rrule";
-
-import dayjs from "@calcom/dayjs";
-// TODO: Use browser locale, implement Intl in Dayjs maybe?
-import "@calcom/dayjs/locales";
-import { getEveryFreqFor } from "@calcom/lib/recurringStrings";
-import type { TimeFormat } from "@calcom/lib/timeFormat";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
-import type { RecurringEvent } from "@calcom/types/Calendar";
 
 import { Info } from "./Info";
 

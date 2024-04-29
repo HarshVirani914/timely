@@ -1,7 +1,7 @@
-import { Troubleshooter } from "@calcom/features/troubleshooter/Troubleshooter";
-import { getLayout } from "@calcom/features/troubleshooter/layout";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HeadSeo } from "@calcom/ui";
+import { Troubleshooter } from "@timely/features/troubleshooter/Troubleshooter";
+import { getLayout } from "@timely/features/troubleshooter/layout";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HeadSeo } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

@@ -1,6 +1,5 @@
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
 
 import { schemaAvailabilityReadPublic } from "~/lib/validations/availability";
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";
@@ -27,7 +26,7 @@ import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransform
  *     tags:
  *     - availabilities
  *     externalDocs:
- *        url: https://docs.cal.com/availability
+ *        url: https://docs.timely/availability
  *     responses:
  *       200:
  *         description: OK

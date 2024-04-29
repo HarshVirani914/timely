@@ -1,10 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
-import { noop } from "lodash";
-import { Controller, useForm } from "react-hook-form";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { localeOptions } from "@calcom/lib/i18n";
-import { nameOfDay } from "@calcom/lib/weekday";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { localeOptions } from "@timely/lib/i18n";
+import { nameOfDay } from "@timely/lib/weekday";
 import {
   Avatar,
   Button,
@@ -15,7 +12,9 @@ import {
   Select,
   TextField,
   TimezoneSelect,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { noop } from "lodash";
+import { Controller, useForm } from "react-hook-form";
 
 import type { UserAdminRouterOutputs } from "../server/trpc-router";
 

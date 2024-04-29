@@ -1,11 +1,10 @@
+import { symmetricEncrypt } from "@timely/lib/crypto";
+import logger from "@timely/lib/logger";
+import { defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import { SoapFaultDetails } from "ews-javascript-api";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
-
-import { symmetricEncrypt } from "@calcom/lib/crypto";
-import logger from "@calcom/lib/logger";
-import { defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import checkSession from "../../_utils/auth";
 import { ExchangeAuthentication, ExchangeVersion } from "../enums";

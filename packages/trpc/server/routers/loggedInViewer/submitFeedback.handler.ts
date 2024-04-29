@@ -1,7 +1,7 @@
-import dayjs from "@calcom/dayjs";
-import { sendFeedbackEmail } from "@calcom/emails";
-import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import dayjs from "@timely/dayjs";
+import { sendFeedbackEmail } from "@timely/emails";
+import { prisma } from "@timely/prisma";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TSubmitFeedbackInputSchema } from "./submitFeedback.schema";
 

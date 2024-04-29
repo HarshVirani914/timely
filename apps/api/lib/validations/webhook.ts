@@ -1,7 +1,6 @@
+import { WEBHOOK_TRIGGER_EVENTS } from "@timely/features/webhooks/lib/constants";
+import { _WebhookModel as Webhook } from "@timely/prisma/zod";
 import { z } from "zod";
-
-import { WEBHOOK_TRIGGER_EVENTS } from "@calcom/features/webhooks/lib/constants";
-import { _WebhookModel as Webhook } from "@calcom/prisma/zod";
 
 const schemaWebhookBaseBodyParams = Webhook.pick({
   userId: true,

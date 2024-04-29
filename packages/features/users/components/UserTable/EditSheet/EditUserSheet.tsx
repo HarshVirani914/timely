@@ -1,11 +1,10 @@
+import { useOrgBranding } from "@timely/ee/organizations/context/provider";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Sheet, SheetContent, SheetFooter, Avatar, Skeleton, Loader, Label } from "@timely/ui";
 import type { Dispatch } from "react";
 import { shallow } from "zustand/shallow";
-
-import { useOrgBranding } from "@calcom/ee/organizations/context/provider";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Sheet, SheetContent, SheetFooter, Avatar, Skeleton, Loader, Label } from "@calcom/ui";
 
 import type { State, Action } from "../UserListTable";
 import { DisplayInfo } from "./DisplayInfo";

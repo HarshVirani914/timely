@@ -1,5 +1,5 @@
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import { getTeamWithMembers } from "@calcom/lib/server/queries/teams";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import { getTeamWithMembers } from "@timely/lib/server/queries/teams";
 
 import { TRPCError } from "@trpc/server";
 

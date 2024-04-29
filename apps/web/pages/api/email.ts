@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { renderEmail } from "@calcom/emails";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-import { getTranslation } from "@calcom/lib/server/i18n";
+import { renderEmail } from "@timely/emails";
+import { IS_PRODUCTION } from "@timely/lib/constants";
+import { getTranslation } from "@timely/lib/server/i18n";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (IS_PRODUCTION) return res.write("Only for development purposes"), res.end();

@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import { TimeFormat, detectBrowserTimeFormat, setIs24hClockInLocalStorage } from "@timely/lib/timeFormat";
+import { localStorage } from "@timely/lib/webstorage";
 import { create } from "zustand";
-
-import dayjs from "@calcom/dayjs";
-import { TimeFormat, detectBrowserTimeFormat, setIs24hClockInLocalStorage } from "@calcom/lib/timeFormat";
-import { localStorage } from "@calcom/lib/webstorage";
 
 type TimePreferencesStore = {
   timeFormat: TimeFormat.TWELVE_HOUR | TimeFormat.TWENTY_FOUR_HOUR;

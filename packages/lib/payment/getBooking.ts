@@ -1,12 +1,12 @@
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { isPrismaObjOrUndefined, parseRecurringEvent } from "@calcom/lib";
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import { bookingMinimalSelect, prisma } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { isPrismaObjOrUndefined, parseRecurringEvent } from "@timely/lib";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import { bookingMinimalSelect, prisma } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 async function getEventType(id: number) {
   return prisma.eventType.findUnique({

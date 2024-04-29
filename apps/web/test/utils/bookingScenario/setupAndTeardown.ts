@@ -3,7 +3,7 @@ import { beforeEach, afterEach } from "vitest";
 import {
   enableEmailFeature,
   mockNoTranslations,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
 
 export function setupAndTeardown() {
   beforeEach(() => {

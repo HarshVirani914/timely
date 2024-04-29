@@ -1,5 +1,5 @@
-import { prisma } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
+import { prisma } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import type { TListMembersSchema } from "./listPaginated.schema";

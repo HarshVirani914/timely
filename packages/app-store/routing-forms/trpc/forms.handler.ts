@@ -1,10 +1,10 @@
-import { hasFilter } from "@calcom/features/filters/lib/hasFilter";
-import { entityPrismaWhereClause, canEditEntity } from "@calcom/lib/entityPermissionUtils";
-import logger from "@calcom/lib/logger";
-import type { PrismaClient } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { entries } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { hasFilter } from "@timely/features/filters/lib/hasFilter";
+import { entityPrismaWhereClause, canEditEntity } from "@timely/lib/entityPermissionUtils";
+import logger from "@timely/lib/logger";
+import type { PrismaClient } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { entries } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { getSerializableForm } from "../lib/getSerializableForm";
 import type { TFormSchema } from "./forms.schema";

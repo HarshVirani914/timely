@@ -1,7 +1,6 @@
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import React, { forwardRef, useId, useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Skeleton } from "../../..";
 import { X } from "../../icon";

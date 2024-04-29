@@ -2,15 +2,15 @@
 
 import type { GetServerSidePropsContext } from "next";
 
-import { getLayout } from "@calcom/features/MainLayout";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { TeamsListing } from "@calcom/features/ee/teams/components";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button } from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+import { getLayout } from "@timely/features/MainLayout";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { TeamsListing } from "@timely/features/ee/teams/components";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button } from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

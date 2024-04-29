@@ -1,6 +1,5 @@
+import dayjs from "@timely/dayjs";
 import { create } from "zustand";
-
-import dayjs from "@calcom/dayjs";
 
 import type {
   CalendarComponentProps,

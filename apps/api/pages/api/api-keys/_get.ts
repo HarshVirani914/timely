@@ -1,8 +1,8 @@
 import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 
-import { defaultResponder } from "@calcom/lib/server";
-import type { Ensure } from "@calcom/types/utils";
+import { defaultResponder } from "@timely/lib/server";
+import type { Ensure } from "@timely/types/utils";
 
 import { apiKeyPublicSchema } from "~/lib/validations/api-key";
 import { schemaQuerySingleOrMultipleUserIds } from "~/lib/validations/shared/queryUserId";

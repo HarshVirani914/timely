@@ -1,7 +1,6 @@
+import { HttpError } from "@timely/lib/http-error";
+import { safeStringify } from "@timely/lib/safeStringify";
 import z from "zod";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { safeStringify } from "@calcom/lib/safeStringify";
 
 import logger from "../../logger";
 

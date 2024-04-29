@@ -1,8 +1,7 @@
 import type { Prisma } from "@prisma/client";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
 
 import { initVitalClient, vitalEnv } from "../lib/client";
 
@@ -13,8 +12,8 @@ import { initVitalClient, vitalEnv } from "../lib/client";
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Get user id
-  const calcomUserId = req.session?.user?.id;
-  if (!calcomUserId) {
+  const timelyUserId = req.session?.user?.id;
+  if (!timelyUserId) {
     return res.status(401).json({ message: "You must be logged in to do this" });
   }
 
@@ -26,9 +25,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Create a user on vital
   let userVital;
   try {
-    userVital = await vitalClient.User.create(`cal_${calcomUserId}`);
+    userVital = await vitalClient.User.create(`cal_${timelyUserId}`);
   } catch (e) {
-    userVital = await vitalClient.User.resolve(`cal_${calcomUserId}`);
+    userVital = await vitalClient.User.resolve(`cal_${timelyUserId}`);
   }
 
   try {
@@ -37,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         data: {
           type: "vital_other",
           key: { userVitalId: userVital.user_id } as unknown as Prisma.InputJsonObject,
-          userId: calcomUserId,
+          userId: timelyUserId,
           appId: "vital-automation",
         },
       });

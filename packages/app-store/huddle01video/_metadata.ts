@@ -1,5 +1,5 @@
-import { randomString } from "@calcom/lib/random";
-import type { AppMeta } from "@calcom/types/App";
+import { randomString } from "@timely/lib/random";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 

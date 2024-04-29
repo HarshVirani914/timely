@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 export function getBookerWrapperClasses({ isEmbed }: { isEmbed: boolean }) {
   // We don't want any margins for Embed. Any margin needed should be added by Embed user.

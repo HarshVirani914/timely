@@ -2,10 +2,10 @@ import type { GetServerSidePropsContext } from "next";
 import { URLSearchParams } from "url";
 import { z } from "zod";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { getDefaultEvent } from "@calcom/lib/defaultEvents";
-import { maybeGetBookingUidFromSeat } from "@calcom/lib/server/maybeGetBookingUidFromSeat";
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { getDefaultEvent } from "@timely/lib/defaultEvents";
+import { maybeGetBookingUidFromSeat } from "@timely/lib/server/maybeGetBookingUidFromSeat";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
 
 export default function Type() {
   // Just redirect to the schedule page to reschedule it.

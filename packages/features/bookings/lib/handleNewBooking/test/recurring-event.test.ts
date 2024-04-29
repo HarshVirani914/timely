@@ -1,11 +1,8 @@
-import { v4 as uuidv4 } from "uuid";
-import { describe, expect } from "vitest";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import logger from "@calcom/lib/logger";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { test } from "@calcom/web/test/fixtures/fixtures";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import logger from "@timely/lib/logger";
+import { BookingStatus } from "@timely/prisma/enums";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import {
   createBookingScenario,
   getGoogleCalendarCredential,
@@ -16,17 +13,19 @@ import {
   mockSuccessfulVideoMeetingCreation,
   mockCalendarToHaveNoBusySlots,
   getDate,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
-import { createMockNextJsRequest } from "@calcom/web/test/utils/bookingScenario/createMockNextJsRequest";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
+import { createMockNextJsRequest } from "@timely/web/test/utils/bookingScenario/createMockNextJsRequest";
 import {
   expectWorkflowToBeTriggered,
   expectSuccessfulBookingCreationEmails,
   expectBookingToBeInDatabase,
   expectBookingCreatedWebhookToHaveBeenFired,
   expectSuccessfulCalendarEventCreationInCalendar,
-} from "@calcom/web/test/utils/bookingScenario/expects";
-import { getMockRequestDataForBooking } from "@calcom/web/test/utils/bookingScenario/getMockRequestDataForBooking";
-import { setupAndTeardown } from "@calcom/web/test/utils/bookingScenario/setupAndTeardown";
+} from "@timely/web/test/utils/bookingScenario/expects";
+import { getMockRequestDataForBooking } from "@timely/web/test/utils/bookingScenario/getMockRequestDataForBooking";
+import { setupAndTeardown } from "@timely/web/test/utils/bookingScenario/setupAndTeardown";
+import { v4 as uuidv4 } from "uuid";
+import { describe, expect } from "vitest";
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -48,7 +47,7 @@ describe("handleNewBooking", () => {
         3. Should trigger BOOKING_CREATED webhook for every booking
     `,
       async ({ emails }) => {
-        const handleRecurringEventBooking = (await import("@calcom/web/pages/api/book/recurring-event"))
+        const handleRecurringEventBooking = (await import("@timely/web/pages/api/book/recurring-event"))
           .handleRecurringEventBooking;
         const booker = getBooker({
           email: "booker@example.com",
@@ -197,7 +196,7 @@ describe("handleNewBooking", () => {
             organizer,
             location: "integrations:daily",
             subscriberUrl: "http://my-webhook.example.com",
-            //FIXME: All recurring bookings seem to have the same URL. https://github.com/calcom/cal.com/issues/11955
+            //FIXME: All recurring bookings seem to have the same URL. https://github.com/timely/timely/issues/11955
             videoCallUrl: `${WEBAPP_URL}/video/${createdBookings[0].uid}`,
           });
         }
@@ -253,7 +252,7 @@ describe("handleNewBooking", () => {
     test(
       `should fail recurring booking if second slot is already booked`,
       async ({}) => {
-        const handleRecurringEventBooking = (await import("@calcom/web/pages/api/book/recurring-event"))
+        const handleRecurringEventBooking = (await import("@timely/web/pages/api/book/recurring-event"))
           .handleRecurringEventBooking;
         const booker = getBooker({
           email: "booker@example.com",
@@ -385,7 +384,7 @@ describe("handleNewBooking", () => {
       async ({ emails }) => {
         const recurringCountInRequest = 4;
 
-        const handleRecurringEventBooking = (await import("@calcom/web/pages/api/book/recurring-event"))
+        const handleRecurringEventBooking = (await import("@timely/web/pages/api/book/recurring-event"))
           .handleRecurringEventBooking;
         const booker = getBooker({
           email: "booker@example.com",
@@ -600,7 +599,7 @@ describe("handleNewBooking", () => {
       async ({ emails }) => {
         const recurringCountInRequest = 4;
 
-        const handleRecurringEventBooking = (await import("@calcom/web/pages/api/book/recurring-event"))
+        const handleRecurringEventBooking = (await import("@timely/web/pages/api/book/recurring-event"))
           .handleRecurringEventBooking;
         const booker = getBooker({
           email: "booker@example.com",

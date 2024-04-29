@@ -1,14 +1,13 @@
+import { paypalCredentialKeysSchema } from "@timely/app-store/paypal/lib";
+import Paypal from "@timely/app-store/paypal/lib/Paypal";
+import { IS_PRODUCTION } from "@timely/lib/constants";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import { handlePaymentSuccess } from "@timely/lib/payment/handlePaymentSuccess";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 import getRawBody from "raw-body";
 import * as z from "zod";
-
-import { paypalCredentialKeysSchema } from "@calcom/app-store/paypal/lib";
-import Paypal from "@calcom/app-store/paypal/lib/Paypal";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import { handlePaymentSuccess } from "@calcom/lib/payment/handlePaymentSuccess";
-import prisma from "@calcom/prisma";
 
 export const config = {
   api: {

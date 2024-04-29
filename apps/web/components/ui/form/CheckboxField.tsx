@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
 
-import classNames from "@calcom/lib/classNames";
+import classNames from "@timely/lib/classNames";
 
 import InfoBadge from "@components/ui/InfoBadge";
 

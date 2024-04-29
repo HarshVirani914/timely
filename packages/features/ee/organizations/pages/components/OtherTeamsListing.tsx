@@ -1,9 +1,8 @@
+import SkeletonLoaderTeamList from "@timely/ee/teams/components/SkeletonloaderTeamList";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Alert, EmptyScreen } from "@timely/ui";
 import { useState } from "react";
-
-import SkeletonLoaderTeamList from "@calcom/ee/teams/components/SkeletonloaderTeamList";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Alert, EmptyScreen } from "@calcom/ui";
 
 import OtherTeamList from "./OtherTeamList";
 

@@ -1,18 +1,17 @@
+import { SENDER_ID, SENDER_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { WorkflowTemplates } from "@timely/prisma/enums";
+import type { WorkflowActions } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { MultiSelectCheckboxesOptionType as Option } from "@timely/ui";
+import { Button, Label, MultiSelectCheckboxes, TextField } from "@timely/ui";
+import { ArrowDown, Trash2 } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import type { Dispatch, SetStateAction } from "react";
 import { useMemo, useState } from "react";
 import type { UseFormReturn } from "react-hook-form";
 import { Controller } from "react-hook-form";
-
-import { SENDER_ID, SENDER_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { WorkflowTemplates } from "@calcom/prisma/enums";
-import type { WorkflowActions } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { MultiSelectCheckboxesOptionType as Option } from "@calcom/ui";
-import { Button, Label, MultiSelectCheckboxes, TextField } from "@calcom/ui";
-import { ArrowDown, Trash2 } from "@calcom/ui/components/icon";
 
 import { isSMSAction, isWhatsappAction } from "../lib/actionHelperFunctions";
 import type { FormValues } from "../pages/workflow";

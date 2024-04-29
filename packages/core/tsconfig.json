@@ -1,5 +1,5 @@
 {
-  "extends": "@calcom/tsconfig/base.json",
+  "extends": "@timely/tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es5",

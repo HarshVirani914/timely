@@ -1,16 +1,15 @@
 import * as RadioGroup from "@radix-ui/react-radio-group";
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { BookerLayouts, defaultBookerLayoutSettings } from "@timely/prisma/zod-utils";
+import { bookerLayoutOptions, type BookerLayoutSettings } from "@timely/prisma/zod-utils";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import { Label, CheckboxField, Button } from "@timely/ui";
 import { Trans } from "next-i18next";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { BookerLayouts, defaultBookerLayoutSettings } from "@calcom/prisma/zod-utils";
-import { bookerLayoutOptions, type BookerLayoutSettings } from "@calcom/prisma/zod-utils";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import { Label, CheckboxField, Button } from "@calcom/ui";
 
 import SectionBottomActions from "./SectionBottomActions";
 

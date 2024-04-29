@@ -1,12 +1,11 @@
+import type { AppImageProps, MeetingImageProps } from "@timely/lib/OgImages";
+import { constructAppImage, constructGenericImage, constructMeetingImage } from "@timely/lib/OgImages";
+import { APP_NAME, WEBSITE_URL, IS_CALCOM } from "@timely/lib/constants";
+import { seoConfig, getSeoImage, buildCanonical } from "@timely/lib/next-seo.config";
+import { truncateOnWord } from "@timely/lib/text";
 import type { NextSeoProps } from "next-seo";
 import { NextSeo } from "next-seo";
 import { usePathname } from "next/navigation";
-
-import type { AppImageProps, MeetingImageProps } from "@calcom/lib/OgImages";
-import { constructAppImage, constructGenericImage, constructMeetingImage } from "@calcom/lib/OgImages";
-import { APP_NAME, WEBSITE_URL, IS_CALCOM } from "@calcom/lib/constants";
-import { seoConfig, getSeoImage, buildCanonical } from "@calcom/lib/next-seo.config";
-import { truncateOnWord } from "@calcom/lib/text";
 
 export type HeadSeoProps = {
   title: string;
@@ -71,10 +70,10 @@ export const HeadSeo = (props: HeadSeoProps): JSX.Element => {
   const path = usePathname();
   // The below code sets the defaultUrl for our canonical tags
   // Get the router's path
-  const selfHostedOrigin = WEBSITE_URL || "https://cal.com";
-  // Set the default URL to either the current URL (if self-hosted) or https://cal.com canonical URL
+  const selfHostedOrigin = WEBSITE_URL || "https://timely";
+  // Set the default URL to either the current URL (if self-hosted) or https://timely canonical URL
   const defaultUrl = IS_CALCOM
-    ? buildCanonical({ path, origin: "https://cal.com" })
+    ? buildCanonical({ path, origin: "https://timely" })
     : buildCanonical({ path, origin: selfHostedOrigin });
 
   const {

@@ -1,15 +1,14 @@
 import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
-
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { bookFirstEvent } from "@calcom/web/playwright/lib/testUtils";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { bookFirstEvent } from "@timely/web/playwright/lib/testUtils";
 
 import metadata from "../_metadata";
 import GoogleCalendarService from "../lib/CalendarService";
 
 /**
- * Creates the booking on Cal.com and makes the GCal call to fetch the event.
+ * Creates the booking on Timely and makes the GCal call to fetch the event.
  * Ends on the booking success page
  * @param page
  *

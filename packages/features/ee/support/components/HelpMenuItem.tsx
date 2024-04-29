@@ -1,11 +1,10 @@
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, showToast, TextArea } from "@timely/ui";
+import { ExternalLink, AlertTriangle } from "@timely/ui/components/icon";
 import { useState } from "react";
 import { useChat } from "react-live-chat-loader";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, showToast, TextArea } from "@calcom/ui";
-import { ExternalLink, AlertTriangle } from "@calcom/ui/components/icon";
 
 import { useFreshChat } from "../lib/freshchat/FreshChatProvider";
 import { isFreshChatEnabled } from "../lib/freshchat/FreshChatScript";
@@ -50,7 +49,7 @@ export default function HelpMenuItem({ onHelpItemSelect }: HelpMenuItemProps) {
         <p className="text-subtle mb-1 px-5">{t("resources").toUpperCase()}</p>
         <a
           onClick={() => onHelpItemSelect()}
-          href="https://cal.com/docs/"
+          href="https://timely/docs/"
           target="_blank"
           className="hover:bg-subtle hover:text-emphasis text-default flex w-full px-5 py-2 pr-4 text-sm font-medium"
           rel="noreferrer">
@@ -205,7 +204,7 @@ export default function HelpMenuItem({ onHelpItemSelect }: HelpMenuItemProps) {
         <a
           onClick={() => onHelpItemSelect()}
           className="hover:text-emphasis text-defualt font-medium underline"
-          href="https://cal.com/docs"
+          href="https://timely/docs"
           target="_blank"
           rel="noreferrer">
           {t("browse_our_docs")}

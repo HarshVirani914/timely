@@ -1,5 +1,5 @@
-import { ssoTenantProduct } from "@calcom/features/ee/sso/lib/sso";
-import type { PrismaClient } from "@calcom/prisma";
+import { ssoTenantProduct } from "@timely/features/ee/sso/lib/sso";
+import type { PrismaClient } from "@timely/prisma";
 
 import type { TSamlTenantProductInputSchema } from "./samlTenantProduct.schema";
 

@@ -1,11 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { showToast, Switch } from "@timely/ui";
+import { ArrowLeft, RotateCw } from "@timely/ui/components/icon";
 import { useState } from "react";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { showToast, Switch } from "@calcom/ui";
-import { ArrowLeft, RotateCw } from "@calcom/ui/components/icon";
 
 interface ICalendarSwitchProps {
   title: string;

@@ -1,6 +1,5 @@
+import { WEBSITE_URL } from "@timely/lib/constants";
 import { stringify } from "querystring";
-
-import { WEBSITE_URL } from "@calcom/lib/constants";
 
 export type Maybe<T> = T | undefined | null;
 

@@ -1,8 +1,7 @@
+import { guessEventLocationType } from "@timely/app-store/locations";
+import { getVideoCallUrlFromCalEvent } from "@timely/lib/CalEventParser";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { TFunction } from "next-i18next";
-
-import { guessEventLocationType } from "@calcom/app-store/locations";
-import { getVideoCallUrlFromCalEvent } from "@calcom/lib/CalEventParser";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { Info } from "./Info";
 

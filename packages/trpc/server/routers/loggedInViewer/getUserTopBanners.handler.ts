@@ -1,7 +1,7 @@
-import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
-import { prisma } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getCalendarCredentials, getConnectedCalendars } from "@timely/core/CalendarManager";
+import { prisma } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { checkIfOrgNeedsUpgradeHandler } from "../viewer/organizations/checkIfOrgNeedsUpgrade.handler";
 import { getUpgradeableHandler } from "../viewer/teams/getUpgradeable.handler";

@@ -1,6 +1,6 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
 
-const createRule = ESLintUtils.RuleCreator((name) => `https://developer.cal.com/eslint/rule/${name}`);
+const createRule = ESLintUtils.RuleCreator((name) => `https://developer.timely/eslint/rule/${name}`);
 
 const rule = createRule({
   create(context) {
@@ -14,7 +14,7 @@ const rule = createRule({
                 node: item,
                 loc: node.loc,
                 messageId: "dayjs-moved",
-                fix: (fixer) => fixer.replaceText(node, "import dayjs from '@calcom/dayjs'"),
+                fix: (fixer) => fixer.replaceText(node, "import dayjs from '@timely/dayjs'"),
               });
             }
             return null;
@@ -30,7 +30,7 @@ const rule = createRule({
       recommended: "warn",
     },
     messages: {
-      "dayjs-moved": `Import dayjs from '@calcom/daysjs' to avoid plugin conflicts.`,
+      "dayjs-moved": `Import dayjs from '@timely/daysjs' to avoid plugin conflicts.`,
     },
     type: "suggestion",
     schema: [],

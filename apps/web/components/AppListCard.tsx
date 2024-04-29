@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 
-import type { CredentialOwner } from "@calcom/app-store/types";
-import classNames from "@calcom/lib/classNames";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { Badge, ListItemText, Avatar } from "@calcom/ui";
-import { AlertCircle } from "@calcom/ui/components/icon";
+import type { CredentialOwner } from "@timely/app-store/types";
+import classNames from "@timely/lib/classNames";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { Badge, ListItemText, Avatar } from "@timely/ui";
+import { AlertCircle } from "@timely/ui/components/icon";
 
 type ShouldHighlight =
   | {

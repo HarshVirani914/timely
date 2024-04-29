@@ -1,6 +1,5 @@
 import type { AppCategories, Prisma } from "@prisma/client";
-
-import type { Tag } from "@calcom/app-store/types";
+import type { Tag } from "@timely/app-store/types";
 
 type CommonProperties = {
   default?: false;
@@ -107,7 +106,7 @@ export interface App {
   url: string;
   /** Optional documentation website URL */
   docsUrl?: string;
-  /** Wether if the app is verified by Cal.com or not */
+  /** Wether if the app is verified by Timely or not */
   verified?: boolean;
   /** Wether the app should appear in the trending section of the app store */
   trending?: boolean;

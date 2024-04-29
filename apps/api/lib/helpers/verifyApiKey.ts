@@ -1,8 +1,7 @@
+import { hashAPIKey } from "@timely/features/ee/api-keys/lib/apiKeys";
+import checkLicense from "@timely/features/ee/common/server/checkLicense";
+import { IS_PRODUCTION } from "@timely/lib/constants";
 import type { NextMiddleware } from "next-api-middleware";
-
-import { hashAPIKey } from "@calcom/features/ee/api-keys/lib/apiKeys";
-import checkLicense from "@calcom/features/ee/common/server/checkLicense";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
 
 import { isAdminGuard } from "../utils/isAdmin";
 

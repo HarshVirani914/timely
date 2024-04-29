@@ -1,9 +1,6 @@
-import { ExternalLink, MoreHorizontal, Edit2, UserX, Lock, SendIcon } from "lucide-react";
-import { useSession } from "next-auth/react";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   ButtonGroup,
   Tooltip,
@@ -15,7 +12,9 @@ import {
   DropdownItem,
   DropdownMenuSeparator,
   showToast,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { ExternalLink, MoreHorizontal, Edit2, UserX, Lock, SendIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 import type { Action } from "./UserListTable";
 import type { User } from "./UserListTable";

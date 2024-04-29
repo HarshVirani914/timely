@@ -4,13 +4,13 @@ import { Prisma } from "@prisma/client";
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Link from "next/link";
 
-import { getAppRegistry } from "@calcom/app-store/_appRegistry";
-import Shell from "@calcom/features/shell/Shell";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import prisma from "@calcom/prisma";
-import { AppCategories } from "@calcom/prisma/enums";
-import { AppCard, SkeletonText } from "@calcom/ui";
+import { getAppRegistry } from "@timely/app-store/_appRegistry";
+import Shell from "@timely/features/shell/Shell";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import prisma from "@timely/prisma";
+import { AppCategories } from "@timely/prisma/enums";
+import { AppCard, SkeletonText } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

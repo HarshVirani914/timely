@@ -1,6 +1,6 @@
-import { deleteDomain } from "@calcom/lib/domainManager/organization";
-import logger from "@calcom/lib/logger";
-import { prisma } from "@calcom/prisma";
+import { deleteDomain } from "@timely/lib/domainManager/organization";
+import logger from "@timely/lib/logger";
+import { prisma } from "@timely/prisma";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,11 +1,11 @@
-import { updateQuantitySubscriptionFromStripe } from "@calcom/features/ee/teams/lib/payments";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { isOrganisationOwner } from "@calcom/lib/server/queries/organisations";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { updateQuantitySubscriptionFromStripe } from "@timely/features/ee/teams/lib/payments";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { isOrganisationOwner } from "@timely/lib/server/queries/organisations";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

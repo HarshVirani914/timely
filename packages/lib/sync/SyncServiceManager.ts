@@ -1,5 +1,5 @@
-import logger from "@calcom/lib/logger";
-import type { MembershipRole } from "@calcom/prisma/enums";
+import logger from "@timely/lib/logger";
+import type { MembershipRole } from "@timely/prisma/enums";
 
 import { safeStringify } from "../safeStringify";
 import type { ConsoleUserInfoType, TeamInfoType, WebUserInfoType } from "./ISyncService";

@@ -3,8 +3,8 @@ import type { Booking, Prisma } from "@prisma/client";
 import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
 
-import _dayjs from "@calcom/dayjs";
-import { prisma } from "@calcom/prisma";
+import _dayjs from "@timely/dayjs";
+import { prisma } from "@timely/prisma";
 
 const translator = short();
 
@@ -62,7 +62,7 @@ export const createBookingsFixture = (page: Page) => {
           rescheduled,
           paid,
           status,
-          iCalUID: `${uid}@cal.com`,
+          iCalUID: `${uid}@timely`,
         },
       });
       const bookingFixture = createBookingFixture(booking, store.page);

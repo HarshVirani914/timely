@@ -1,4 +1,4 @@
-import type { AppDeclarativeHandler } from "@calcom/types/AppHandler";
+import type { AppDeclarativeHandler } from "@timely/types/AppHandler";
 
 import { createDefaultInstallation } from "../../_utils/installation";
 import appConfig from "../config.json";
@@ -11,7 +11,7 @@ const handler: AppDeclarativeHandler = {
   handlerType: "add",
   redirect: {
     newTab: true,
-    url: "https://cal.com/blog/cal-plus-vimcal",
+    url: "https://timely/blog/cal-plus-vimcal",
   },
   createCredential: ({ appType, user, slug, teamId }) =>
     createDefaultInstallation({ appType, userId: user.id, slug, key: {}, teamId }),

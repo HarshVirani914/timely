@@ -1,5 +1,5 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { EmptyScreen, Avatar } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { EmptyScreen, Avatar } from "@timely/ui";
 
 export type UnpublishedEntityProps = {
   teamSlug?: string | null;

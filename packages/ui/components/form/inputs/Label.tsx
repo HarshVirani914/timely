@@ -1,4 +1,4 @@
-import { classNames } from "@calcom/lib";
+import { classNames } from "@timely/lib";
 
 export function Label(props: JSX.IntrinsicElements["label"]) {
   const { className, ...restProps } = props;

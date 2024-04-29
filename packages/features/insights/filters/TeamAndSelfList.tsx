@@ -1,15 +1,14 @@
-import { useSession } from "next-auth/react";
-import { useEffect } from "react";
-
 import {
   FilterCheckboxField,
   FilterCheckboxFieldsContainer,
-} from "@calcom/features/filters/components/TeamsFilter";
-import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { AnimatedPopover, Avatar, Divider } from "@calcom/ui";
-import { Layers, User } from "@calcom/ui/components/icon";
+} from "@timely/features/filters/components/TeamsFilter";
+import { getPlaceholderAvatar } from "@timely/lib/defaultAvatarImage";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { AnimatedPopover, Avatar, Divider } from "@timely/ui";
+import { Layers, User } from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 
 import { useFilterContext } from "../context/provider";
 
@@ -84,7 +83,7 @@ export const TeamAndSelfList = () => {
   return (
     <AnimatedPopover text={text}>
       <FilterCheckboxFieldsContainer>
-        {isSuccess && data?.length > 0 && data[0].isOrg && (
+        {/* {isSuccess && data?.length > 0 && data[0].isOrg && (
           <FilterCheckboxField
             id="all"
             icon={<Layers className="h-4 w-4" />}
@@ -137,7 +136,7 @@ export const TeamAndSelfList = () => {
             }
           />
         ))}
-        <Divider />
+        <Divider /> */}
 
         <FilterCheckboxField
           id="yours"

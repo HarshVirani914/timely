@@ -1,9 +1,8 @@
+import { prisma } from "@timely/prisma";
+import type { Team, User } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import type z from "zod";
-
-import { prisma } from "@calcom/prisma";
-import type { Team, User } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 export const createOrUpdateMemberships = async ({
   teamMetadata,

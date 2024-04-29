@@ -3,7 +3,7 @@ import type { NextApiRequest } from "next";
 import type { SatoriOptions } from "satori";
 import { z } from "zod";
 
-import { Meeting, App, Generic } from "@calcom/lib/OgImages";
+import { Meeting, App, Generic } from "@timely/lib/OgImages";
 
 const calFont = fetch(new URL("../../../../public/fonts/cal.ttf", import.meta.url)).then((res) =>
   res.arrayBuffer()

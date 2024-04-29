@@ -1,7 +1,6 @@
+import { MAX_NB_INVITES } from "@timely/lib/constants";
+import { MembershipRole } from "@timely/prisma/enums";
 import { z } from "zod";
-
-import { MAX_NB_INVITES } from "@calcom/lib/constants";
-import { MembershipRole } from "@calcom/prisma/enums";
 
 export const ZInviteMemberInputSchema = z.object({
   teamId: z.number(),

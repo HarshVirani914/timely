@@ -1,5 +1,5 @@
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
 
 import { useOverlayCalendarStore } from "../Booker/components/OverlayCalendar/store";
 

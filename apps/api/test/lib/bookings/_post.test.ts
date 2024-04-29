@@ -6,18 +6,18 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { createMocks } from "node-mocks-http";
 import { describe, expect, test, vi } from "vitest";
 
-import dayjs from "@calcom/dayjs";
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import { buildBooking, buildEventType, buildWebhook } from "@calcom/lib/test/builder";
-import prisma from "@calcom/prisma";
+import dayjs from "@timely/dayjs";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import { buildBooking, buildEventType, buildWebhook } from "@timely/lib/test/builder";
+import prisma from "@timely/prisma";
 
 import handler from "../../../pages/api/bookings/_post";
 
 type CustomNextApiRequest = NextApiRequest & Request;
 type CustomNextApiResponse = NextApiResponse & Response;
-vi.mock("@calcom/features/webhooks/lib/sendPayload");
-vi.mock("@calcom/lib/server/i18n", () => {
+vi.mock("@timely/features/webhooks/lib/sendPayload");
+vi.mock("@timely/lib/server/i18n", () => {
   return {
     getTranslation: (key: string) => key,
   };
@@ -131,7 +131,7 @@ describe.skipIf(true)("POST /api/bookings", () => {
           end: dayjs().add(1, "day").format(),
           eventTypeId: 2,
           email: "test@example.com",
-          location: "Cal.com Video",
+          location: "Timely Video",
           timeZone: "America/Montevideo",
           language: "en",
           customInputs: [],
@@ -166,7 +166,7 @@ describe.skipIf(true)("POST /api/bookings", () => {
             end: dayjs().add(1, "day").format(),
             eventTypeId: 2,
             email: "test@example.com",
-            location: "Cal.com Video",
+            location: "Timely Video",
             timeZone: "America/Montevideo",
             language: "en",
             customInputs: [],

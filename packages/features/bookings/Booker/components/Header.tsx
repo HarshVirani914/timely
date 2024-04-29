@@ -1,14 +1,13 @@
+import dayjs from "@timely/dayjs";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { BookerLayouts } from "@timely/prisma/zod-utils";
+import { Button, ButtonGroup, ToggleGroup, Tooltip } from "@timely/ui";
+import { Calendar, Columns, Grid } from "@timely/ui/components/icon";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useCallback, useMemo } from "react";
 import { shallow } from "zustand/shallow";
-
-import dayjs from "@calcom/dayjs";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
-import { Button, ButtonGroup, ToggleGroup, Tooltip } from "@calcom/ui";
-import { Calendar, Columns, Grid } from "@calcom/ui/components/icon";
 
 import { TimeFormatToggle } from "../../components/TimeFormatToggle";
 import { useBookerStore } from "../store";

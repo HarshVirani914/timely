@@ -1,12 +1,12 @@
 import type { AppProps as NextAppProps } from "next/app";
 
-import { AddNewOrgAdminsForm } from "@calcom/features/ee/organizations/components";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Meta, WizardLayout } from "@calcom/ui";
+import { AddNewOrgAdminsForm } from "@timely/features/ee/organizations/components";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Meta, WizardLayout } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
-export { getServerSideProps } from "@calcom/features/ee/organizations/pages/organization";
+export { getServerSideProps } from "@timely/features/ee/organizations/pages/organization";
 
 const OnboardTeamMembersPage = () => {
   const { t } = useLocale();

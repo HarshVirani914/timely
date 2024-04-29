@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import { useTimePreferences } from "@timely/features/bookings/lib";
 import { useEffect, useState, useRef } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
 
 import { useCalendarStore } from "../../state/store";
 

@@ -1,11 +1,10 @@
+import { WEBAPP_URL_FOR_OAUTH, CAL_URL } from "@timely/lib/constants";
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { WEBAPP_URL_FOR_OAUTH, CAL_URL } from "@calcom/lib/constants";
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";

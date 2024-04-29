@@ -1,5 +1,5 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Badge, Button, Switch } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Badge, Button, Switch } from "@timely/ui";
 
 import { TroubleshooterListItemContainer } from "./TroubleshooterListItemContainer";
 

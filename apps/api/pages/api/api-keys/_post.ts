@@ -1,10 +1,9 @@
 import type { Prisma } from "@prisma/client";
+import { generateUniqueAPIKey } from "@timely/features/ee/api-keys/lib/apiKeys";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
 import { v4 } from "uuid";
-
-import { generateUniqueAPIKey } from "@calcom/features/ee/api-keys/lib/apiKeys";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
 
 import { apiKeyCreateBodySchema, apiKeyPublicSchema } from "~/lib/validations/api-key";
 

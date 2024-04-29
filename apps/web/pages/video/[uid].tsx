@@ -6,16 +6,16 @@ import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 
-import dayjs from "@calcom/dayjs";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import classNames from "@calcom/lib/classNames";
-import { APP_NAME, SEO_IMG_OGIMG_VIDEO, WEBSITE_URL } from "@calcom/lib/constants";
-import { formatToLocalizedDate, formatToLocalizedTime } from "@calcom/lib/date-fns";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { ChevronRight } from "@calcom/ui/components/icon";
+import dayjs from "@timely/dayjs";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import classNames from "@timely/lib/classNames";
+import { APP_NAME, SEO_IMG_OGIMG_VIDEO, WEBSITE_URL } from "@timely/lib/constants";
+import { formatToLocalizedDate, formatToLocalizedTime } from "@timely/lib/date-fns";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { ChevronRight } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

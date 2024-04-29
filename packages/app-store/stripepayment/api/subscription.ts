@@ -1,11 +1,10 @@
+import { getPremiumMonthlyPlanPriceId } from "@timely/app-store/stripepayment/lib/utils";
+import { checkPremiumUsername } from "@timely/features/ee/common/lib/checkPremiumUsername";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
-
-import { getPremiumMonthlyPlanPriceId } from "@calcom/app-store/stripepayment/lib/utils";
-import { checkPremiumUsername } from "@calcom/features/ee/common/lib/checkPremiumUsername";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
 
 import { getStripeCustomerIdFromUserId } from "../lib/customer";
 import stripe from "../lib/server";

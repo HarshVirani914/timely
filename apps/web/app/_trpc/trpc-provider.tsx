@@ -4,11 +4,11 @@ import { trpc } from "app/_trpc/client";
 import { useState } from "react";
 import superjson from "superjson";
 
-import { httpBatchLink } from "@calcom/trpc/client/links/httpBatchLink";
-import { httpLink } from "@calcom/trpc/client/links/httpLink";
-import { loggerLink } from "@calcom/trpc/client/links/loggerLink";
-import { splitLink } from "@calcom/trpc/client/links/splitLink";
-import { ENDPOINTS } from "@calcom/trpc/react/shared";
+import { httpBatchLink } from "@timely/trpc/client/links/httpBatchLink";
+import { httpLink } from "@timely/trpc/client/links/httpLink";
+import { loggerLink } from "@timely/trpc/client/links/loggerLink";
+import { splitLink } from "@timely/trpc/client/links/splitLink";
+import { ENDPOINTS } from "@timely/trpc/react/shared";
 
 export type Endpoint = (typeof ENDPOINTS)[number];
 

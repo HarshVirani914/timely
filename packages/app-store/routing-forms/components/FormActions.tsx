@@ -1,20 +1,14 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
-import { usePathname, useRouter } from "next/navigation";
-import { createContext, forwardRef, useContext, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { v4 as uuidv4 } from "uuid";
-import { z } from "zod";
-
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import { RoutingFormEmbedButton, RoutingFormEmbedDialog } from "@calcom/features/embed/RoutingFormEmbed";
-import { classNames } from "@calcom/lib";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import slugify from "@calcom/lib/slugify";
-import { trpc } from "@calcom/trpc/react";
-import type { ButtonProps } from "@calcom/ui";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import { RoutingFormEmbedButton, RoutingFormEmbedDialog } from "@timely/features/embed/RoutingFormEmbed";
+import { classNames } from "@timely/lib";
+import { CAL_URL } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import slugify from "@timely/lib/slugify";
+import { trpc } from "@timely/trpc/react";
+import type { ButtonProps } from "@timely/ui";
 import {
   Button,
   ConfirmationDialogContent,
@@ -32,8 +26,13 @@ import {
   Switch,
   TextAreaField,
   TextField,
-} from "@calcom/ui";
-import { MoreHorizontal } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { MoreHorizontal } from "@timely/ui/components/icon";
+import { usePathname, useRouter } from "next/navigation";
+import { createContext, forwardRef, useContext, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { v4 as uuidv4 } from "uuid";
+import { z } from "zod";
 
 import getFieldIdentifier from "../lib/getFieldIdentifier";
 import type { SerializableForm } from "../types/types";

@@ -1,6 +1,6 @@
-import dayjs from "@calcom/dayjs";
-import { TimeFormat } from "@calcom/lib/timeFormat";
-import { WorkflowActions } from "@calcom/prisma/enums";
+import dayjs from "@timely/dayjs";
+import { TimeFormat } from "@timely/lib/timeFormat";
+import { WorkflowActions } from "@timely/prisma/enums";
 
 const smsReminderTemplate = (
   isEditingMode: boolean,

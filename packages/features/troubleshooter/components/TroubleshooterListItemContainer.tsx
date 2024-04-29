@@ -1,6 +1,5 @@
+import classNames from "@timely/lib/classNames";
 import type { PropsWithChildren } from "react";
-
-import classNames from "@calcom/lib/classNames";
 
 interface TroubleshooterListItemContainerProps {
   title: string;

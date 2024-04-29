@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import handleNewBooking from "@calcom/features/bookings/lib/handleNewBooking";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import getIP from "@calcom/lib/getIP";
-import { defaultResponder } from "@calcom/lib/server";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import handleNewBooking from "@timely/features/bookings/lib/handleNewBooking";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import getIP from "@timely/lib/getIP";
+import { defaultResponder } from "@timely/lib/server";
 
 async function handler(req: NextApiRequest & { userId?: number }, res: NextApiResponse) {
   const userIp = getIP(req);

@@ -1,7 +1,6 @@
+import type dayjs from "@timely/dayjs";
+import { useTimePreferences } from "@timely/features/bookings/lib";
 import { useId } from "react";
-
-import type dayjs from "@calcom/dayjs";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
 
 export const HorizontalLines = ({
   hours,

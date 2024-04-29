@@ -1,17 +1,16 @@
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { isTextMessageToAttendeeAction } from "@timely/features/ee/workflows/lib/actionHelperFunctions";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { WorkflowActions } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { Button, EmptyScreen, showToast, Switch, Tooltip, Alert } from "@timely/ui";
+import { ExternalLink, Zap, Lock, Info } from "@timely/ui/components/icon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { isTextMessageToAttendeeAction } from "@calcom/features/ee/workflows/lib/actionHelperFunctions";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { WorkflowActions } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { Button, EmptyScreen, showToast, Switch, Tooltip, Alert } from "@calcom/ui";
-import { ExternalLink, Zap, Lock, Info } from "@calcom/ui/components/icon";
 
 import LicenseRequired from "../../common/components/LicenseRequired";
 import { getActionIcon } from "../lib/getActionIcon";

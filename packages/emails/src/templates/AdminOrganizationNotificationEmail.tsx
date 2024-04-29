@@ -1,6 +1,5 @@
+import { APP_NAME, WEBAPP_URL } from "@timely/lib/constants";
 import { Trans, type TFunction } from "next-i18next";
-
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
 
 import { BaseEmailHtml, CallToAction } from "../components";
 

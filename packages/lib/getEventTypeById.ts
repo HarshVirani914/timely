@@ -1,17 +1,16 @@
 import { Prisma } from "@prisma/client";
-
-import { getLocationGroupedOptions } from "@calcom/app-store/server";
-import type { StripeData } from "@calcom/app-store/stripepayment/lib/server";
-import { getEventTypeAppData } from "@calcom/app-store/utils";
-import type { LocationObject } from "@calcom/core/location";
-import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
-import { parseBookingLimit, parseDurationLimit, parseRecurringEvent } from "@calcom/lib";
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import type { PrismaClient } from "@calcom/prisma";
-import type { Credential } from "@calcom/prisma/client";
-import { SchedulingType, MembershipRole } from "@calcom/prisma/enums";
-import { customInputSchema, EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
+import { getLocationGroupedOptions } from "@timely/app-store/server";
+import type { StripeData } from "@timely/app-store/stripepayment/lib/server";
+import { getEventTypeAppData } from "@timely/app-store/utils";
+import type { LocationObject } from "@timely/core/location";
+import { getBookingFieldsWithSystemFields } from "@timely/features/bookings/lib/getBookingFields";
+import { parseBookingLimit, parseDurationLimit, parseRecurringEvent } from "@timely/lib";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import { getTranslation } from "@timely/lib/server/i18n";
+import type { PrismaClient } from "@timely/prisma";
+import type { Credential } from "@timely/prisma/client";
+import { SchedulingType, MembershipRole } from "@timely/prisma/enums";
+import { customInputSchema, EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

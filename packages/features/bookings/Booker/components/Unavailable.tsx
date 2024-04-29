@@ -1,4 +1,4 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 
 const UnAvailableMessage = ({ children, title }: { children: React.ReactNode; title: string }) => (
   <div className="mx-auto w-full max-w-2xl">

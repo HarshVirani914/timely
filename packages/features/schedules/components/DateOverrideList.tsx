@@ -1,10 +1,9 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import type { TimeRange, WorkingHours } from "@timely/types/schedule";
+import { Button, DialogTrigger, Tooltip } from "@timely/ui";
+import { Edit2, Trash2 } from "@timely/ui/components/icon";
 import type { UseFieldArrayRemove } from "react-hook-form";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import type { TimeRange, WorkingHours } from "@calcom/types/schedule";
-import { Button, DialogTrigger, Tooltip } from "@calcom/ui";
-import { Edit2, Trash2 } from "@calcom/ui/components/icon";
 
 import DateOverrideInputDialog from "./DateOverrideInputDialog";
 

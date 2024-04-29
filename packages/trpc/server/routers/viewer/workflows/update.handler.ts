@@ -1,28 +1,27 @@
 import type { Prisma } from "@prisma/client";
-
 import {
   isSMSOrWhatsappAction,
   isTextMessageToAttendeeAction,
   isTextMessageToSpecificNumber,
-} from "@calcom/features/ee/workflows/lib/actionHelperFunctions";
+} from "@timely/features/ee/workflows/lib/actionHelperFunctions";
 import {
   deleteScheduledEmailReminder,
   scheduleEmailReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/emailReminderManager";
+} from "@timely/features/ee/workflows/lib/reminders/emailReminderManager";
 import {
   deleteScheduledSMSReminder,
   scheduleSMSReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/smsReminderManager";
+} from "@timely/features/ee/workflows/lib/reminders/smsReminderManager";
 import {
   deleteScheduledWhatsappReminder,
   scheduleWhatsappReminder,
-} from "@calcom/features/ee/workflows/lib/reminders/whatsappReminderManager";
-import { IS_SELF_HOSTED } from "@calcom/lib/constants";
-import hasKeyInMetadata from "@calcom/lib/hasKeyInMetadata";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import type { PrismaClient } from "@calcom/prisma";
-import { BookingStatus, WorkflowActions, WorkflowMethods, WorkflowTriggerEvents } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+} from "@timely/features/ee/workflows/lib/reminders/whatsappReminderManager";
+import { IS_SELF_HOSTED } from "@timely/lib/constants";
+import hasKeyInMetadata from "@timely/lib/hasKeyInMetadata";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import type { PrismaClient } from "@timely/prisma";
+import { BookingStatus, WorkflowActions, WorkflowMethods, WorkflowTriggerEvents } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

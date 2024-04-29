@@ -1,14 +1,13 @@
 import type { Prisma } from "@prisma/client";
-
-import EventManager from "@calcom/core/EventManager";
-import { sendScheduledEmails } from "@calcom/emails";
-import { doesBookingRequireConfirmation } from "@calcom/features/bookings/lib/doesBookingRequireConfirmation";
-import { handleBookingRequested } from "@calcom/features/bookings/lib/handleBookingRequested";
-import { handleConfirmation } from "@calcom/features/bookings/lib/handleConfirmation";
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import { getBooking } from "@calcom/lib/payment/getBooking";
-import prisma from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
+import EventManager from "@timely/core/EventManager";
+import { sendScheduledEmails } from "@timely/emails";
+import { doesBookingRequireConfirmation } from "@timely/features/bookings/lib/doesBookingRequireConfirmation";
+import { handleBookingRequested } from "@timely/features/bookings/lib/handleBookingRequested";
+import { handleConfirmation } from "@timely/features/bookings/lib/handleConfirmation";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import { getBooking } from "@timely/lib/payment/getBooking";
+import prisma from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
 
 import logger from "../logger";
 

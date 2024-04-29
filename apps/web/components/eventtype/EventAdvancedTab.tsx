@@ -7,23 +7,23 @@ import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
 import type { z } from "zod";
 
-import type { EventNameObjectType } from "@calcom/core/event";
-import { getEventName } from "@calcom/core/event";
-import getLocationsOptionsForSelect from "@calcom/features/bookings/lib/getLocationOptionsForSelect";
-import DestinationCalendarSelector from "@calcom/features/calendars/DestinationCalendarSelector";
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import type { EventNameObjectType } from "@timely/core/event";
+import { getEventName } from "@timely/core/event";
+import getLocationsOptionsForSelect from "@timely/features/bookings/lib/getLocationOptionsForSelect";
+import DestinationCalendarSelector from "@timely/features/calendars/DestinationCalendarSelector";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
 import {
   allowDisablingAttendeeConfirmationEmails,
   allowDisablingHostConfirmationEmails,
-} from "@calcom/features/ee/workflows/lib/allowDisablingStandardEmails";
-import { FormBuilder } from "@calcom/features/form-builder/FormBuilder";
-import type { EditableSchema } from "@calcom/features/form-builder/schema";
-import { BookerLayoutSelector } from "@calcom/features/settings/BookerLayoutSelector";
-import { classNames } from "@calcom/lib";
-import { APP_NAME, CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { Prisma } from "@calcom/prisma/client";
-import { trpc } from "@calcom/trpc/react";
+} from "@timely/features/ee/workflows/lib/allowDisablingStandardEmails";
+import { FormBuilder } from "@timely/features/form-builder/FormBuilder";
+import type { EditableSchema } from "@timely/features/form-builder/schema";
+import { BookerLayoutSelector } from "@timely/features/settings/BookerLayoutSelector";
+import { classNames } from "@timely/lib";
+import { APP_NAME, CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { Prisma } from "@timely/prisma/client";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Button,
@@ -33,9 +33,9 @@ import {
   showToast,
   TextField,
   Tooltip,
-} from "@calcom/ui";
-import { Copy, Edit, Info } from "@calcom/ui/components/icon";
-import { IS_VISUAL_REGRESSION_TESTING } from "@calcom/web/constants";
+} from "@timely/ui";
+import { Copy, Edit, Info } from "@timely/ui/components/icon";
+import { IS_VISUAL_REGRESSION_TESTING } from "@timely/web/constants";
 
 import RequiresConfirmationController from "./RequiresConfirmationController";
 
@@ -304,7 +304,7 @@ export const EventAdvancedTab = ({ eventType, team }: Pick<EventTypeSetupProps, 
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://cal.com/docs/core-features/event-types/single-use-private-links">
+            href="https://timely/docs/core-features/event-types/single-use-private-links">
             <Info className="ml-1.5 h-4 w-4 cursor-pointer" />
           </a>
         }

@@ -3,27 +3,27 @@ import type { TFunction } from "next-i18next";
 import { Trans } from "next-i18next";
 import { useRouter } from "next/navigation";
 import type { EventTypeSetupProps, FormValues } from "pages/event-types/[type]";
-import { useMemo, useState, Suspense } from "react";
+import { Suspense, useMemo, useState } from "react";
 import type { UseFormReturn } from "react-hook-form";
 
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { EventTypeEmbedButton, EventTypeEmbedDialog } from "@calcom/features/embed/EventTypeEmbed";
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { trpc, TRPCClientError } from "@calcom/trpc/react";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { EventTypeEmbedButton, EventTypeEmbedDialog } from "@timely/features/embed/EventTypeEmbed";
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { SchedulingType } from "@timely/prisma/enums";
+import { trpc, TRPCClientError } from "@timely/trpc/react";
 import {
   Button,
   ButtonGroup,
   ConfirmationDialogContent,
   Dialog,
-  DropdownMenuSeparator,
   Dropdown,
+  DropdownItem,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
   HorizontalTabs,
   Label,
@@ -33,22 +33,22 @@ import {
   Tooltip,
   VerticalDivider,
   VerticalTabs,
-} from "@calcom/ui";
+} from "@timely/ui";
 import {
-  Link as LinkIcon,
   Calendar,
   Clock,
-  Sliders,
-  Repeat,
-  Grid,
-  Zap,
-  Users,
-  ExternalLink,
   Code,
-  Trash,
-  MoreHorizontal,
+  ExternalLink,
+  Grid,
+  Link as LinkIcon,
   Loader,
-} from "@calcom/ui/components/icon";
+  MoreHorizontal,
+  Repeat,
+  Sliders,
+  Trash,
+  Users,
+  Zap,
+} from "@timely/ui/components/icon";
 
 import type { AvailabilityOption } from "@components/eventtype/EventAvailabilityTab";
 
@@ -112,12 +112,6 @@ function getNavigation(props: {
       //TODO: Handle proper translation with count handling
       info: `${installedAppsNumber} apps, ${enabledAppsNumber} ${t("active")}`,
     },
-    {
-      name: "workflows",
-      href: `/event-types/${eventType.id}?tabName=workflows`,
-      icon: Zap,
-      info: `${enabledWorkflowsNumber} ${t("active")}`,
-    },
   ];
 }
 
@@ -178,8 +172,8 @@ function EventTypeSingleLayout({
       eventType,
       enabledAppsNumber,
       installedAppsNumber,
-      enabledWorkflowsNumber,
       availability,
+      enabledWorkflowsNumber,
     });
 
     navigation.splice(1, 0, {
@@ -235,7 +229,6 @@ function EventTypeSingleLayout({
     eventType,
     enabledAppsNumber,
     installedAppsNumber,
-    enabledWorkflowsNumber,
     availability,
     isManagedEventType,
     isChildrenManagedEventType,

@@ -1,6 +1,6 @@
-import type { Membership, Team } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import type { Membership, Team } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 export const enum ENTITY_PERMISSION_LEVEL {
   NONE,
@@ -55,7 +55,7 @@ export function getEntityPermissionLevel(
 }
 
 async function getMembership(teamId: number | null, userId: number) {
-  const { prisma } = await import("@calcom/prisma");
+  const { prisma } = await import("@timely/prisma");
 
   const team = teamId
     ? await prisma.team.findFirst({

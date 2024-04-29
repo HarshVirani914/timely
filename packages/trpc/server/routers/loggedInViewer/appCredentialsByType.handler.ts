@@ -1,6 +1,6 @@
-import getUserAdminTeams from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import { prisma } from "@calcom/prisma";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import getUserAdminTeams from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import { prisma } from "@timely/prisma";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import type { TAppCredentialsByTypeInputSchema } from "./appCredentialsByType.schema";
 

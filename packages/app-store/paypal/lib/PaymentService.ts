@@ -1,15 +1,14 @@
 import type { Booking, Payment, PaymentOption, Prisma } from "@prisma/client";
+import Paypal from "@timely/app-store/paypal/lib/Paypal";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import prisma from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService } from "@timely/types/PaymentService";
 import { v4 as uuidv4 } from "uuid";
 import z from "zod";
-
-import Paypal from "@calcom/app-store/paypal/lib/Paypal";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import prisma from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService } from "@calcom/types/PaymentService";
 
 import { paymentOptionEnum } from "../zod";
 

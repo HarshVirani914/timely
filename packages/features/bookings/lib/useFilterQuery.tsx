@@ -1,6 +1,5 @@
+import { queryNumberArray, useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
 import z from "zod";
-
-import { queryNumberArray, useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
 
 // TODO: Move this to zod utils
 export const filterQuerySchema = z.object({

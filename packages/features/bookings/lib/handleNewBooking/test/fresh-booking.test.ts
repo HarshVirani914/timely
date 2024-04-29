@@ -7,16 +7,12 @@
  *
  * They don't intend to test what the apps logic should do, but rather test if the apps are called with the correct data. For testing that, once should write tests within each app.
  */
-import type { Request, Response } from "express";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { describe, expect } from "vitest";
-
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import { resetTestEmails } from "@calcom/lib/testEmails";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { test } from "@calcom/web/test/fixtures/fixtures";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import { resetTestEmails } from "@timely/lib/testEmails";
+import { BookingStatus } from "@timely/prisma/enums";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import {
   createBookingScenario,
   getDate,
@@ -38,8 +34,8 @@ import {
   mockCalendarToCrashOnCreateEvent,
   mockVideoAppToCrashOnCreateMeeting,
   BookingLocations,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
-import { createMockNextJsRequest } from "@calcom/web/test/utils/bookingScenario/createMockNextJsRequest";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
+import { createMockNextJsRequest } from "@timely/web/test/utils/bookingScenario/createMockNextJsRequest";
 import {
   expectWorkflowToBeTriggered,
   expectSuccessfulBookingCreationEmails,
@@ -52,10 +48,13 @@ import {
   expectBrokenIntegrationEmails,
   expectSuccessfulCalendarEventCreationInCalendar,
   expectICalUIDAsString,
-} from "@calcom/web/test/utils/bookingScenario/expects";
-import { getMockRequestDataForBooking } from "@calcom/web/test/utils/bookingScenario/getMockRequestDataForBooking";
-import { setupAndTeardown } from "@calcom/web/test/utils/bookingScenario/setupAndTeardown";
-import { testWithAndWithoutOrg } from "@calcom/web/test/utils/bookingScenario/test";
+} from "@timely/web/test/utils/bookingScenario/expects";
+import { getMockRequestDataForBooking } from "@timely/web/test/utils/bookingScenario/getMockRequestDataForBooking";
+import { setupAndTeardown } from "@timely/web/test/utils/bookingScenario/setupAndTeardown";
+import { testWithAndWithoutOrg } from "@timely/web/test/utils/bookingScenario/test";
+import type { Request, Response } from "express";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { describe, expect } from "vitest";
 
 export type CustomNextApiRequest = NextApiRequest & Request;
 
@@ -75,7 +74,7 @@ describe("handleNewBooking", () => {
           3. Should trigger BOOKING_CREATED webhook
     `,
       async ({ emails, org }) => {
-        const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+        const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
         const booker = getBooker({
           email: "booker@example.com",
           name: "Booker",
@@ -236,7 +235,7 @@ describe("handleNewBooking", () => {
           3. Should trigger BOOKING_CREATED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -352,7 +351,7 @@ describe("handleNewBooking", () => {
           expectSuccessfulCalendarEventCreationInCalendar(calendarMock, {
             videoCallUrl: "http://mock-dailyvideo.example.com/meeting-1",
             // We won't be sending evt.destinationCalendar in this case.
-            // Google Calendar in this case fallbacks to the "primary" calendar - https://github.com/calcom/cal.com/blob/7d5dad7fea78ff24dddbe44f1da5d7e08e1ff568/packages/app-store/googlecalendar/lib/CalendarService.ts#L217
+            // Google Calendar in this case fallbacks to the "primary" calendar - https://github.com/timely/timely/blob/7d5dad7fea78ff24dddbe44f1da5d7e08e1ff568/packages/app-store/googlecalendar/lib/CalendarService.ts#L217
             // Not sure if it's the correct behaviour. Right now, it isn't possible to have an organizer with connected calendar but no destination calendar - As soon as the Google Calendar app is installed, a destination calendar is created.
             calendarId: null,
           });
@@ -387,7 +386,7 @@ describe("handleNewBooking", () => {
           3. Should trigger BOOKING_CREATED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -533,7 +532,7 @@ describe("handleNewBooking", () => {
       test(
         `an error in creating a calendar event should not stop the booking creation - Current behaviour is wrong as the booking is created but no-one is notified of it`,
         async ({}) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -644,7 +643,7 @@ describe("handleNewBooking", () => {
       test(
         "If destination calendar has no credential ID due to some reason, it should create the event in first connected calendar instead",
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -799,7 +798,7 @@ describe("handleNewBooking", () => {
       test(
         "If destination calendar is there for Google Calendar but there are no Google Calendar credentials but there is an Apple Calendar credential connected, it should create the event in Apple Calendar",
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -946,7 +945,7 @@ describe("handleNewBooking", () => {
       test(
         `should create a successful booking with Zoom if used`,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",
@@ -1034,7 +1033,7 @@ describe("handleNewBooking", () => {
       test(
         `Booking should still be created if booking with Zoom errors`,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",
@@ -1115,9 +1114,9 @@ describe("handleNewBooking", () => {
       "Availability Check during booking",
       () => {
         test(
-          `should fail a booking if there is already a Cal.com booking overlapping the time`,
+          `should fail a booking if there is already a Timely booking overlapping the time`,
           async ({}) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
 
             const booker = getBooker({
               email: "booker@example.com",
@@ -1191,7 +1190,7 @@ describe("handleNewBooking", () => {
         test(
           `should fail a booking if there is already a booking in the organizer's selectedCalendars(Single Calendar) with the overlapping time`,
           async () => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const organizerId = 101;
             const booker = getBooker({
               email: "booker@example.com",
@@ -1286,7 +1285,7 @@ describe("handleNewBooking", () => {
             3. Should trigger BOOKING_REQUESTED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",
@@ -1403,7 +1402,7 @@ describe("handleNewBooking", () => {
         3. Should trigger BOOKING_REQUESTED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",
@@ -1516,7 +1515,7 @@ describe("handleNewBooking", () => {
             3. Should trigger BOOKING_CREATED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -1641,7 +1640,7 @@ describe("handleNewBooking", () => {
             3. Should trigger BOOKING_REQUESTED webhook
     `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",
@@ -1753,7 +1752,7 @@ describe("handleNewBooking", () => {
     test(
       `if booking with Cal Video(Daily Video) fails, booking creation fails with uncaught error`,
       async ({}) => {
-        const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+        const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
         const booker = getBooker({
           email: "booker@example.org",
           name: "Booker",
@@ -1822,7 +1821,7 @@ describe("handleNewBooking", () => {
       3. Should trigger BOOKING_CREATED webhook
     `,
       async ({ emails }) => {
-        const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+        const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
         const booker = getBooker({
           email: "booker@example.com",
           name: "Booker",
@@ -1934,7 +1933,7 @@ describe("handleNewBooking", () => {
             4. Once payment is successful, should trigger BOOKING_CREATED webhook
       `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -2079,7 +2078,7 @@ describe("handleNewBooking", () => {
             5. Booking should still stay in pending state
       `,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const subscriberUrl = "http://my-webhook.example.com";
           const booker = getBooker({
             email: "booker@example.com",

@@ -1,18 +1,17 @@
-import z from "zod";
-
-import type { CloseComFieldOptions } from "@calcom/lib/CloseCom";
-import CloseCom from "@calcom/lib/CloseCom";
-import { getCustomActivityTypeInstanceData } from "@calcom/lib/CloseComeUtils";
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import logger from "@calcom/lib/logger";
+import type { CloseComFieldOptions } from "@timely/lib/CloseCom";
+import CloseCom from "@timely/lib/CloseCom";
+import { getCustomActivityTypeInstanceData } from "@timely/lib/CloseComeUtils";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import logger from "@timely/lib/logger";
 import type {
   Calendar,
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import z from "zod";
 
 const apiKeySchema = z.object({
   encrypted: z.string(),
@@ -20,7 +19,7 @@ const apiKeySchema = z.object({
 
 const CALENDSO_ENCRYPTION_KEY = process.env.CALENDSO_ENCRYPTION_KEY || "";
 
-// Cal.com Custom Activity Fields
+// Timely Custom Activity Fields
 const calComCustomActivityFields: CloseComFieldOptions = [
   // Field name, field type, required?, multiple values?
   ["Attendees", "contact", false, true],
@@ -49,7 +48,7 @@ const calComCustomActivityFields: CloseComFieldOptions = [
  * Contact creation
  * Every contact in Close.com need to belong to a Lead. When creating a contact in
  * Close.com as part of this integration, a new generic Lead will be created in order
- * to assign every contact created by this process, and it is named "From Cal.com"
+ * to assign every contact created by this process, and it is named "From Timely"
  */
 export default class CloseComCalendarService implements Calendar {
   private integrationName = "";

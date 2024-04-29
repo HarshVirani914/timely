@@ -1,9 +1,8 @@
+import { HOSTED_CAL_FEATURES } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Meta } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-
-import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Meta } from "@calcom/ui";
 
 import { getLayout } from "../../../settings/layouts/SettingsLayout";
 import SSOConfiguration from "../components/SSOConfiguration";

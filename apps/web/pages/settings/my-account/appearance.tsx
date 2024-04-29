@@ -2,32 +2,30 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import type { z } from "zod";
 
-import { BookerLayoutSelector } from "@calcom/features/settings/BookerLayoutSelector";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import ThemeLabel from "@calcom/features/settings/ThemeLabel";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { APP_NAME } from "@calcom/lib/constants";
-import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@calcom/lib/constants";
-import { checkWCAGContrastColor } from "@calcom/lib/getBrandColours";
-import { useHasPaidPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { validateBookerLayouts } from "@calcom/lib/validateBookerLayouts";
-import type { userMetadata } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
+import { BookerLayoutSelector } from "@timely/features/settings/BookerLayoutSelector";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import ThemeLabel from "@timely/features/settings/ThemeLabel";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { DEFAULT_DARK_BRAND_COLOR, DEFAULT_LIGHT_BRAND_COLOR } from "@timely/lib/constants";
+import { checkWCAGContrastColor } from "@timely/lib/getBrandColours";
+import { useHasPaidPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { validateBookerLayouts } from "@timely/lib/validateBookerLayouts";
+import type { userMetadata } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Button,
   ColorPicker,
   Form,
   Meta,
+  SettingsToggle,
   showToast,
   SkeletonButton,
   SkeletonContainer,
-  SkeletonText,
-  SettingsToggle,
-  UpgradeTeamsBadge,
-} from "@calcom/ui";
+  SkeletonText
+} from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -306,20 +304,6 @@ const AppearanceView = ({
         onClick={() => window.open(`${WEBAPP_URL}/${user.username}/${user.eventTypes[0].title}`, "_blank")}>
         Preview
       </Button> */}
-
-      <SettingsToggle
-        toggleSwitchAtTheEnd={true}
-        title={t("disable_cal_branding", { appName: APP_NAME })}
-        disabled={!hasPaidPlan || mutation?.isLoading}
-        description={t("removes_cal_branding", { appName: APP_NAME })}
-        checked={hasPaidPlan ? hideBrandingValue : false}
-        Badge={<UpgradeTeamsBadge />}
-        onCheckedChange={(checked) => {
-          setHideBrandingValue(checked);
-          mutation.mutate({ hideBranding: checked });
-        }}
-        switchContainerClassName="mt-6"
-      />
     </div>
   );
 };

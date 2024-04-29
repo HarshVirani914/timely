@@ -1,6 +1,5 @@
+import { APP_NAME } from "@timely/lib/constants";
 import type { TFunction } from "next-i18next";
-
-import { APP_NAME } from "@calcom/lib/constants";
 
 import { renderEmail } from "..";
 import BaseEmail from "./_base-email";

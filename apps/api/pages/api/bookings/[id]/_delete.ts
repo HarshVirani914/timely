@@ -1,8 +1,7 @@
+import handleCancelBooking from "@timely/features/bookings/lib/handleCancelBooking";
+import { defaultResponder } from "@timely/lib/server";
+import { schemaBookingCancelParams } from "@timely/prisma/zod-utils";
 import type { NextApiRequest } from "next";
-
-import handleCancelBooking from "@calcom/features/bookings/lib/handleCancelBooking";
-import { defaultResponder } from "@calcom/lib/server";
-import { schemaBookingCancelParams } from "@calcom/prisma/zod-utils";
 
 import { schemaQueryIdParseInt } from "~/lib/validations/shared/queryIdTransformParseInt";
 

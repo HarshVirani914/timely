@@ -1,9 +1,8 @@
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, ButtonGroup } from "@timely/ui";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, ButtonGroup } from "@calcom/ui";
 
 import { useTroubleshooterStore } from "../store";
 

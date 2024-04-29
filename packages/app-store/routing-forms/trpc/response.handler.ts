@@ -1,8 +1,7 @@
 import { Prisma } from "@prisma/client";
+import type { PrismaClient } from "@timely/prisma";
+import { TRPCError } from "@timely/trpc/server";
 import { z } from "zod";
-
-import type { PrismaClient } from "@calcom/prisma";
-import { TRPCError } from "@calcom/trpc/server";
 
 import { getSerializableForm } from "../lib/getSerializableForm";
 import type { Response } from "../types/types";

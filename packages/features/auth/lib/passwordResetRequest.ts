@@ -1,9 +1,8 @@
 import type { User } from "@prisma/client";
-
-import dayjs from "@calcom/dayjs";
-import { sendPasswordResetEmail } from "@calcom/emails";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import prisma from "@calcom/prisma";
+import dayjs from "@timely/dayjs";
+import { sendPasswordResetEmail } from "@timely/emails";
+import { getTranslation } from "@timely/lib/server/i18n";
+import prisma from "@timely/prisma";
 
 export const PASSWORD_RESET_EXPIRY_HOURS = 6;
 

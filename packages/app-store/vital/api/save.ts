@@ -1,9 +1,8 @@
 import type { Prisma } from "@prisma/client";
+import prisma from "@timely/prisma";
+import { vitalSettingsUpdateSchema } from "@timely/prisma/zod-utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { ZodError } from "zod";
-
-import prisma from "@calcom/prisma";
-import { vitalSettingsUpdateSchema } from "@calcom/prisma/zod-utils";
 
 export type VitalSettingsResponse = {
   connected: boolean;

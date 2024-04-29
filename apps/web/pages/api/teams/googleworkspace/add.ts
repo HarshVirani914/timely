@@ -1,8 +1,8 @@
 import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import getAppKeysFromSlug from "@calcom/app-store/_utils/getAppKeysFromSlug";
-import { WEBAPP_URL } from "@calcom/lib/constants";
+import getAppKeysFromSlug from "@timely/app-store/_utils/getAppKeysFromSlug";
+import { WEBAPP_URL } from "@timely/lib/constants";
 
 const scopes = [
   "https://www.googleapis.com/auth/admin.directory.user.readonly",

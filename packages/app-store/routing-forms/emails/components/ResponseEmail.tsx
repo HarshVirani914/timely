@@ -1,7 +1,6 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
-
-import { BaseEmailHtml, Info } from "@calcom/emails/src/components";
-import { WEBAPP_URL } from "@calcom/lib/constants";
+import { BaseEmailHtml, Info } from "@timely/emails/src/components";
+import { WEBAPP_URL } from "@timely/lib/constants";
 
 import type { OrderedResponses } from "../../types/types";
 

@@ -1,6 +1,5 @@
 import type { User } from "@prisma/client";
-
-import prisma from "@calcom/prisma";
+import prisma from "@timely/prisma";
 
 async function leastRecentlyBookedUser<T extends Pick<User, "id" | "email">>({
   availableUsers,

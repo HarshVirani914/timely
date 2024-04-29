@@ -1,10 +1,9 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { Card, showToast } from "@timely/ui";
+import { UserPlus, Users, Edit } from "@timely/ui/components/icon";
 import { useState } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { Card, showToast } from "@calcom/ui";
-import { UserPlus, Users, Edit } from "@calcom/ui/components/icon";
 
 import TeamListItem from "./TeamListItem";
 

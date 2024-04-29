@@ -1,12 +1,11 @@
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import { trpc } from "@timely/trpc";
+import { Button, showToast, Tooltip } from "@timely/ui";
 import { UsersIcon, XIcon } from "lucide-react";
 import type { PropsWithChildren } from "react";
 import { useState } from "react";
-
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import { trpc } from "@calcom/trpc";
-import { Button, showToast, Tooltip } from "@calcom/ui";
 
 const GoogleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

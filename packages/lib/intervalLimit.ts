@@ -1,4 +1,4 @@
-import type { IntervalLimit, IntervalLimitUnit } from "@calcom/types/Calendar";
+import type { IntervalLimit, IntervalLimitUnit } from "@timely/types/Calendar";
 
 export const ascendingLimitKeys: (keyof IntervalLimit)[] = ["PER_DAY", "PER_WEEK", "PER_MONTH", "PER_YEAR"];
 

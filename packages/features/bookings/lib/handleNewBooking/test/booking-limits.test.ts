@@ -2,15 +2,13 @@
  * These integration tests aim to cover difficult-to-test edge cases
  * Standard cases are currently handled in e2e tests only
  *
- * see: https://github.com/calcom/cal.com/pull/10480
- *      https://github.com/calcom/cal.com/pull/10968
+ * see: https://github.com/timely/timely/pull/10480
+ *      https://github.com/timely/timely/pull/10968
  */
 import prismock from "../../../../../../tests/libs/__mocks__/prisma";
 
-import { describe, expect, vi } from "vitest";
-
-import { BookingStatus } from "@calcom/prisma/enums";
-import { test } from "@calcom/web/test/fixtures/fixtures";
+import { BookingStatus } from "@timely/prisma/enums";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import {
   TestData,
   createBookingScenario,
@@ -19,11 +17,12 @@ import {
   getNextMonthNotStartingOnWeekStart,
   getOrganizer,
   getScenarioData,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
-import { createMockNextJsRequest } from "@calcom/web/test/utils/bookingScenario/createMockNextJsRequest";
-import { expectBookingToBeInDatabase } from "@calcom/web/test/utils/bookingScenario/expects";
-import { getMockRequestDataForBooking } from "@calcom/web/test/utils/bookingScenario/getMockRequestDataForBooking";
-import { setupAndTeardown } from "@calcom/web/test/utils/bookingScenario/setupAndTeardown";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
+import { createMockNextJsRequest } from "@timely/web/test/utils/bookingScenario/createMockNextJsRequest";
+import { expectBookingToBeInDatabase } from "@timely/web/test/utils/bookingScenario/expects";
+import { getMockRequestDataForBooking } from "@timely/web/test/utils/bookingScenario/getMockRequestDataForBooking";
+import { setupAndTeardown } from "@timely/web/test/utils/bookingScenario/setupAndTeardown";
+import { describe, expect, vi } from "vitest";
 
 // Local test runs sometime gets too slow
 const timeout = process.env.CI ? 5000 : 20000;
@@ -44,7 +43,7 @@ describe("handleNewBooking", () => {
             2. following year without bookings: should create a booking in the database
         `,
         async ({}) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
 
           const booker = getBooker({
             email: "booker@example.com",
@@ -165,7 +164,7 @@ describe("handleNewBooking", () => {
             2. following year without bookings: should create a booking in the database
         `,
         async ({}) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
 
           const booker = getBooker({
             email: "booker@example.com",
@@ -295,7 +294,7 @@ describe("handleNewBooking", () => {
       test.skipIf([todayDate, tomorrowDate].includes("01"))(
         `should fail a booking if exceeds booking limits with bookings in the past`,
         async ({}) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
 
           const booker = getBooker({
             email: "booker@example.com",
@@ -376,7 +375,7 @@ describe("handleNewBooking", () => {
       test(
         `should fail a booking if exceeds booking limits with bookings in week across two months`,
         async ({}) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
 
           const booker = getBooker({
             email: "booker@example.com",

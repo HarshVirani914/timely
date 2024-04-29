@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import { MembershipRole, UserPermissionRole } from "@calcom/prisma/enums";
-import { createContext } from "@calcom/trpc/server/createContext";
-import { viewerTeamsRouter } from "@calcom/trpc/server/routers/viewer/teams/_router";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import { MembershipRole, UserPermissionRole } from "@timely/prisma/enums";
+import { createContext } from "@timely/trpc/server/createContext";
+import { viewerTeamsRouter } from "@timely/trpc/server/routers/viewer/teams/_router";
 
 import { TRPCError } from "@trpc/server";
 import { getHTTPStatusCodeFromError } from "@trpc/server/http";

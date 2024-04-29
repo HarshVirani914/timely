@@ -1,18 +1,16 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useRouter, usePathname } from "next/navigation";
+import { getLayout } from "@timely/features/MainLayout";
+import { NewScheduleButton, ScheduleListItem } from "@timely/features/schedules";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { EmptyScreen, showToast } from "@timely/ui";
+import { Clock } from "@timely/ui/components/icon";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
-
-import { getLayout } from "@calcom/features/MainLayout";
-import { NewScheduleButton, ScheduleListItem } from "@calcom/features/schedules";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { AvailabilitySliderTable } from "@calcom/features/timezone-buddy/components/AvailabilitySliderTable";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { EmptyScreen, showToast, ToggleGroup } from "@calcom/ui";
-import { Clock } from "@calcom/ui/components/icon";
 
 import { withQuery } from "@lib/QueryCell";
 
@@ -155,29 +153,10 @@ export default function AvailabilityPage() {
         subtitle={t("configure_availability")}
         CTA={
           <div className="flex gap-2">
-            <ToggleGroup
-              className="hidden md:block"
-              defaultValue={searchParams?.get("type") ?? "mine"}
-              onValueChange={(value) => {
-                if (!value) return;
-                router.push(`${pathname}?${createQueryString("type", value)}`);
-              }}
-              options={[
-                { value: "mine", label: t("my_availability") },
-                { value: "team", label: t("team_availability") },
-              ]}
-            />
             <NewScheduleButton />
           </div>
         }>
-        {searchParams?.get("type") === "team" ? (
-          <AvailabilitySliderTable />
-        ) : (
-          <WithQuery
-            success={({ data }) => <AvailabilityList {...data} />}
-            customLoader={<SkeletonLoader />}
-          />
-        )}
+        <WithQuery success={({ data }) => <AvailabilityList {...data} />} customLoader={<SkeletonLoader />} />
       </ShellMain>
     </div>
   );

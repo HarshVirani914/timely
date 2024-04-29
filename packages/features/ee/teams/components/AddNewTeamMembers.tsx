@@ -1,21 +1,20 @@
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import InviteLinkSettingsModal from "@timely/features/ee/teams/components/InviteLinkSettingsModal";
+import MemberInvitationModal from "@timely/features/ee/teams/components/MemberInvitationModal";
+import { classNames } from "@timely/lib";
+import { APP_NAME } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTelemetry, telemetryEventTypes } from "@timely/lib/telemetry";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { Badge, Button, showToast, SkeletonButton, SkeletonContainer, SkeletonText } from "@timely/ui";
+import { ArrowRight, Plus, Trash2 } from "@timely/ui/components/icon";
+import { UserAvatar } from "@timely/web/components/ui/avatar/UserAvatar";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import InviteLinkSettingsModal from "@calcom/features/ee/teams/components/InviteLinkSettingsModal";
-import MemberInvitationModal from "@calcom/features/ee/teams/components/MemberInvitationModal";
-import { classNames } from "@calcom/lib";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTelemetry, telemetryEventTypes } from "@calcom/lib/telemetry";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { Badge, Button, showToast, SkeletonButton, SkeletonContainer, SkeletonText } from "@calcom/ui";
-import { ArrowRight, Plus, Trash2 } from "@calcom/ui/components/icon";
-import { UserAvatar } from "@calcom/web/components/ui/avatar/UserAvatar";
 
 type TeamMember = RouterOutputs["viewer"]["teams"]["get"]["members"][number];
 

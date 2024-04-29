@@ -1,6 +1,5 @@
+import { _ReminderMailModel as ReminderMail } from "@timely/prisma/zod";
 import { z } from "zod";
-
-import { _ReminderMailModel as ReminderMail } from "@calcom/prisma/zod";
 
 export const schemaReminderMailBaseBodyParams = ReminderMail.omit({ id: true }).partial();
 

@@ -1,3 +1,9 @@
+import Shell from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { Button } from "@timely/ui";
 import React, { useCallback, useRef, useState } from "react";
 import type {
   BuilderProps,
@@ -7,13 +13,6 @@ import type {
   JsonTree,
 } from "react-awesome-query-builder";
 import { Builder, Query, Utils as QbUtils } from "react-awesome-query-builder";
-
-import Shell from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { Button } from "@calcom/ui";
 
 import { useInViewObserver } from "@lib/hooks/useInViewObserver";
 

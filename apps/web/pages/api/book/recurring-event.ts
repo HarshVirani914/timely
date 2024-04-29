@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import handleNewBooking from "@calcom/features/bookings/lib/handleNewBooking";
-import type { BookingResponse, RecurringBookingCreateBody } from "@calcom/features/bookings/types";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import getIP from "@calcom/lib/getIP";
-import { defaultResponder } from "@calcom/lib/server";
-import type { AppsStatus } from "@calcom/types/Calendar";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import handleNewBooking from "@timely/features/bookings/lib/handleNewBooking";
+import type { BookingResponse, RecurringBookingCreateBody } from "@timely/features/bookings/types";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import getIP from "@timely/lib/getIP";
+import { defaultResponder } from "@timely/lib/server";
+import type { AppsStatus } from "@timely/types/Calendar";
 
 // @TODO: Didn't look at the contents of this function in order to not break old booking page.
 

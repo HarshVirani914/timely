@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { StorybookTrpcProvider } from "@timely/ui";
 import type { ComponentProps } from "react";
-
-import { StorybookTrpcProvider } from "@calcom/ui";
 
 import { VerifyCodeDialog } from "./VerifyCodeDialog";
 

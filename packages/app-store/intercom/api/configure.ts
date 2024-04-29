@@ -1,7 +1,6 @@
+import { CAL_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { CAL_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
 
 import type {
   NewCanvas,
@@ -27,13 +26,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const input: InputComponent = {
     type: "input",
     id: "submit_booking_url",
-    label: "Enter your Cal.com link",
-    placeholder: "https://cal.com/valentinchmara/30min",
+    label: "Enter your Timely link",
+    placeholder: "https://timely/valentinchmara/30min",
     save_state: "unsaved",
     action: {
       type: "submit",
     },
-    aria_label: "Enter your Cal.com link",
+    aria_label: "Enter your Timely link",
   };
 
   const defaultCanvasData: NewCanvas = {
@@ -118,7 +117,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const text: TextComponent = {
     type: "text",
-    text: "Or choose another Cal.com link:",
+    text: "Or choose another Timely link:",
     style: "muted",
     align: "left",
   };

@@ -1,6 +1,5 @@
+import { logP } from "@timely/lib/perf";
 import { z } from "zod";
-
-import { logP } from "@calcom/lib/perf";
 
 import authedProcedure from "../../../procedures/authedProcedure";
 import { router } from "../../../trpc";

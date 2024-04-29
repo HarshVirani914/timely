@@ -1,12 +1,11 @@
 // @TODO: turn this into a more generic component that has the same Props API as MUI https://mui.com/material-ui/react-card/
+import classNames from "@timely/lib/classNames";
+import { ArrowRight } from "@timely/ui/components/icon";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import React from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { ArrowRight } from "@calcom/ui/components/icon";
 
 import { Button } from "../button";
 

@@ -1,7 +1,6 @@
+import { addSubscription } from "@timely/features/webhooks/lib/scheduleTrigger";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { addSubscription } from "@calcom/features/webhooks/lib/scheduleTrigger";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
 
 import { validateAccountOrApiKey } from "../../lib/validateAccountOrApiKey";
 

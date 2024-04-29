@@ -1,18 +1,14 @@
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-
-import useAddAppMutation from "@calcom/app-store/_utils/useAddAppMutation";
-import { InstallAppButton } from "@calcom/app-store/components";
-import { doesAppSupportTeamInstall } from "@calcom/app-store/utils";
-import { Spinner } from "@calcom/features/calendars/weeklyview/components/spinner/Spinner";
-import type { UserAdminTeams } from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import classNames from "@calcom/lib/classNames";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { AppFrontendPayload as App } from "@calcom/types/App";
-import type { CredentialFrontendPayload as Credential } from "@calcom/types/Credential";
-import type { ButtonProps } from "@calcom/ui";
+import useAddAppMutation from "@timely/app-store/_utils/useAddAppMutation";
+import { InstallAppButton } from "@timely/app-store/components";
+import { doesAppSupportTeamInstall } from "@timely/app-store/utils";
+import { Spinner } from "@timely/features/calendars/weeklyview/components/spinner/Spinner";
+import type { UserAdminTeams } from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import classNames from "@timely/lib/classNames";
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { AppFrontendPayload as App } from "@timely/types/App";
+import type { CredentialFrontendPayload as Credential } from "@timely/types/Credential";
+import type { ButtonProps } from "@timely/ui";
 import {
   Dropdown,
   DropdownMenuTrigger,
@@ -22,7 +18,10 @@ import {
   DropdownItem,
   Avatar,
   Badge,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { Button } from "../button";
 import { Plus } from "../icon";

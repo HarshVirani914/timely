@@ -1,8 +1,6 @@
-import classNames from "classnames";
-
-import TeamPill, { TeamRole } from "@calcom/ee/teams/components/TeamPill";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
+import TeamPill, { TeamRole } from "@timely/ee/teams/components/TeamPill";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
 import {
   Button,
   ButtonGroup,
@@ -12,8 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   Tooltip,
-} from "@calcom/ui";
-import { ExternalLink, MoreHorizontal } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ExternalLink, MoreHorizontal } from "@timely/ui/components/icon";
+import classNames from "classnames";
 
 import { UserAvatar } from "@components/ui/avatar/UserAvatar";
 

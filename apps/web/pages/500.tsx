@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import { APP_NAME } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, showToast } from "@calcom/ui";
-import { Copy } from "@calcom/ui/components/icon";
+import { APP_NAME } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, showToast } from "@timely/ui";
+import { Copy } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -43,7 +43,7 @@ export default function Error500() {
             </pre>
           </div>
         )}
-        <Button href="mailto:support@cal.com">{t("contact_support")}</Button>
+        <Button href="mailto:support@timely">{t("contact_support")}</Button>
         <Button color="secondary" href="javascript:history.back()" className="ml-2">
           {t("go_back")}
         </Button>

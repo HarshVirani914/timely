@@ -1,8 +1,8 @@
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Dialog,
@@ -11,8 +11,8 @@ import {
   DialogFooter,
   DialogHeader,
   showToast,
-} from "@calcom/ui";
-import { CreditCard, AlertTriangle } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { CreditCard, AlertTriangle } from "@timely/ui/components/icon";
 
 interface IRescheduleDialog {
   isOpenDialog: boolean;

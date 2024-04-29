@@ -1,6 +1,5 @@
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 export const ZUpdateInputSchema = z.object({
   name: z.string().optional(),

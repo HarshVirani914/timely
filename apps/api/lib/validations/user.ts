@@ -1,8 +1,7 @@
+import { checkUsername } from "@timely/lib/server/checkUsername";
+import { _UserModel as User } from "@timely/prisma/zod";
+import { iso8601 } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { checkUsername } from "@calcom/lib/server/checkUsername";
-import { _UserModel as User } from "@calcom/prisma/zod";
-import { iso8601 } from "@calcom/prisma/zod-utils";
 
 import { isValidBase64Image } from "~/lib/utils/isValidBase64Image";
 import { timeZone } from "~/lib/validations/shared/timeZone";

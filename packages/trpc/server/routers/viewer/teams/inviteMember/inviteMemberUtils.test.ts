@@ -1,8 +1,7 @@
+import { isTeamAdmin } from "@timely/lib/server/queries";
+import { isOrganisationAdmin } from "@timely/lib/server/queries/organisations";
+import { MembershipRole } from "@timely/prisma/enums";
 import { describe, it, vi, expect } from "vitest";
-
-import { isTeamAdmin } from "@calcom/lib/server/queries";
-import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
-import { MembershipRole } from "@calcom/prisma/enums";
 
 import { TRPCError } from "@trpc/server";
 
@@ -18,13 +17,13 @@ import {
   checkInputEmailIsValid,
 } from "./utils";
 
-vi.mock("@calcom/lib/server/queries", () => {
+vi.mock("@timely/lib/server/queries", () => {
   return {
     isTeamAdmin: vi.fn(),
   };
 });
 
-vi.mock("@calcom/lib/server/queries/organisations", () => {
+vi.mock("@timely/lib/server/queries/organisations", () => {
   return {
     isOrganisationAdmin: vi.fn(),
   };
@@ -312,7 +311,7 @@ describe("Invite Member Utils", () => {
       expect(() => validateInviteeEligibility(inviteeWithOrg, teamWithOrg, isOrg)).toThrow(TRPCError);
     });
 
-    it("should throw a TRPCError with code FORBIDDEN if the invitee already exists in Cal.com and is being invited to an organization", () => {
+    it("should throw a TRPCError with code FORBIDDEN if the invitee already exists in Timely and is being invited to an organization", () => {
       const isOrg = true;
       expect(() => validateInviteeEligibility(invitee, mockedTeam, isOrg)).toThrow(TRPCError);
     });

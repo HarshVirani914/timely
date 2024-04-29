@@ -2,12 +2,12 @@ import { google } from "googleapis";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import getAppKeysFromSlug from "@calcom/app-store/_utils/getAppKeysFromSlug";
-import { throwIfNotHaveAdminAccessToTeam } from "@calcom/app-store/_utils/throwIfNotHaveAdminAccessToTeam";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
-import prisma from "@calcom/prisma";
+import getAppKeysFromSlug from "@timely/app-store/_utils/getAppKeysFromSlug";
+import { throwIfNotHaveAdminAccessToTeam } from "@timely/app-store/_utils/throwIfNotHaveAdminAccessToTeam";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
+import prisma from "@timely/prisma";
 
 const stateSchema = z.object({
   teamId: z.string(),

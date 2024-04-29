@@ -111,7 +111,7 @@ test.describe("Organization", () => {
         page,
         emails,
         `rick@${orgDomain}.com`,
-        `${orgName}'s admin invited you to join the organization ${orgName} on Cal.com`
+        `${orgName}'s admin invited you to join the organization ${orgName} on Timely`
       );
 
       // Waiting to be in next step URL

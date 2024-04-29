@@ -1,16 +1,15 @@
-import { useState } from "react";
-
-import { useFilterQuery } from "@calcom/features/bookings/lib/useFilterQuery";
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
+import { useFilterQuery } from "@timely/features/bookings/lib/useFilterQuery";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
 import {
   FilterCheckboxFieldsContainer,
   FilterCheckboxField,
-} from "@calcom/features/filters/components/TeamsFilter";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { AnimatedPopover, Avatar, Divider, FilterSearchField } from "@calcom/ui";
-import { User } from "@calcom/ui/components/icon";
+} from "@timely/features/filters/components/TeamsFilter";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { AnimatedPopover, Avatar, Divider, FilterSearchField } from "@timely/ui";
+import { User } from "@timely/ui/components/icon";
+import { useState } from "react";
 
 export const PeopleFilter = () => {
   const { t } = useLocale();

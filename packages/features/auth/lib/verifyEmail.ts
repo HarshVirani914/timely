@@ -1,13 +1,12 @@
+import { sendEmailVerificationCode, sendEmailVerificationLink } from "@timely/emails/email-manager";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { prisma } from "@timely/prisma";
 import { randomBytes, createHash } from "crypto";
 import { totp } from "otplib";
-
-import { sendEmailVerificationCode, sendEmailVerificationLink } from "@calcom/emails/email-manager";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { prisma } from "@calcom/prisma";
 
 const log = logger.getSubLogger({ prefix: [`[[Auth] `] });
 

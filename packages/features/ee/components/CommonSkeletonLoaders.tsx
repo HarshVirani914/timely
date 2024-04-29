@@ -1,5 +1,5 @@
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { Meta, SkeletonButton, SkeletonContainer, SkeletonText } from "@calcom/ui";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { Meta, SkeletonButton, SkeletonContainer, SkeletonText } from "@timely/ui";
 
 export const AppearanceSkeletonLoader = ({ title, description }: { title: string; description: string }) => {
   return (

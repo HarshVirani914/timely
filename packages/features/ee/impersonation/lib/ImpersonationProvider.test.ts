@@ -1,7 +1,6 @@
+import { UserPermissionRole } from "@timely/prisma/enums";
 import type { Session } from "next-auth";
 import { describe, expect, it } from "vitest";
-
-import { UserPermissionRole } from "@calcom/prisma/enums";
 
 import {
   parseTeamId,

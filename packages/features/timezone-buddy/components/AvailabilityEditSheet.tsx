@@ -1,12 +1,10 @@
-import { useForm, useFieldArray } from "react-hook-form";
-
-import dayjs from "@calcom/dayjs";
-import { DateOverrideInputDialog, DateOverrideList } from "@calcom/features/schedules";
-import Schedule from "@calcom/features/schedules/components/Schedule";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
-import type { Schedule as ScheduleType, TimeRange, WorkingHours } from "@calcom/types/schedule";
+import dayjs from "@timely/dayjs";
+import { DateOverrideInputDialog, DateOverrideList } from "@timely/features/schedules";
+import Schedule from "@timely/features/schedules/components/Schedule";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
+import type { Schedule as ScheduleType, TimeRange, WorkingHours } from "@timely/types/schedule";
 import {
   Button,
   Form,
@@ -18,8 +16,9 @@ import {
   TimezoneSelect,
   showToast,
   Alert,
-} from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
+import { useForm, useFieldArray } from "react-hook-form";
 
 import type { SliderUser } from "./AvailabilitySliderTable";
 

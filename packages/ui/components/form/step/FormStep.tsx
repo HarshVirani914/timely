@@ -1,6 +1,5 @@
+import classNames from "@timely/lib/classNames";
 import React from "react";
-
-import classNames from "@calcom/lib/classNames";
 
 type Props = {
   steps: number;

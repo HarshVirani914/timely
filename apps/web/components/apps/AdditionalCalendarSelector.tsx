@@ -1,8 +1,8 @@
 import type { FunctionComponent, SVGProps } from "react";
 
-import { InstallAppButton } from "@calcom/app-store/components";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { InstallAppButton } from "@timely/app-store/components";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Dropdown,
@@ -10,8 +10,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuItem,
   DropdownItem,
-} from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 
 import { QueryCell } from "@lib/QueryCell";
 

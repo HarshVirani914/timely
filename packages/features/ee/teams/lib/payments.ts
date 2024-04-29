@@ -1,11 +1,10 @@
+import { getStripeCustomerIdFromUserId } from "@timely/app-store/stripepayment/lib/customer";
+import stripe from "@timely/app-store/stripepayment/lib/server";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { ORGANIZATION_MIN_SEATS } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { getStripeCustomerIdFromUserId } from "@calcom/app-store/stripepayment/lib/customer";
-import stripe from "@calcom/app-store/stripepayment/lib/server";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { ORGANIZATION_MIN_SEATS } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
 
 const teamPaymentMetadataSchema = z.object({
   paymentId: z.string(),

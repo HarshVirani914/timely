@@ -2,12 +2,12 @@
 
 import type { NextPageContext } from "next";
 
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { detectBrowserTimeFormat } from "@calcom/lib/timeFormat";
-import prisma, { bookingMinimalSelect } from "@calcom/prisma";
-import { Button, HeadSeo } from "@calcom/ui";
-import { ArrowRight, Calendar, X } from "@calcom/ui/components/icon";
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { detectBrowserTimeFormat } from "@timely/lib/timeFormat";
+import prisma, { bookingMinimalSelect } from "@timely/prisma";
+import { Button, HeadSeo } from "@timely/ui";
+import { ArrowRight, Calendar, X } from "@timely/ui/components/icon";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 

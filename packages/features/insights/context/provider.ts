@@ -1,6 +1,5 @@
+import type { Dayjs } from "@timely/dayjs";
 import * as React from "react";
-
-import type { Dayjs } from "@calcom/dayjs";
 
 interface IFilter {
   dateRange: [Dayjs, Dayjs, null | string];

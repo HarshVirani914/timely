@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import Script from "next/script";
 import type { ReactNode } from "react";
 
-import "@calcom/embed-core/src/embed-iframe";
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
+import "@timely/embed-core/src/embed-iframe";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
 
 import type { AppProps } from "@lib/app-providers-app-dir";
 import AppProviders from "@lib/app-providers-app-dir";

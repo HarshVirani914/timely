@@ -1,7 +1,6 @@
 import * as hubspot from "@hubspot/api-client";
+import { WEBAPP_URL } from "@timely/lib/constants";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import { encodeOAuthState } from "../../_utils/oauth/encodeOAuthState";

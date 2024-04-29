@@ -1,11 +1,10 @@
+import type { Dayjs } from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import getSlots from "@timely/lib/slots";
+import { trpc } from "@timely/trpc/react";
 import classNames from "classnames";
 import React from "react";
 import type { ITimezone } from "react-timezone-select";
-
-import type { Dayjs } from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import getSlots from "@calcom/lib/slots";
-import { trpc } from "@calcom/trpc/react";
 
 import SkeletonLoader from "./SkeletonLoaderAvailabilityTimes";
 

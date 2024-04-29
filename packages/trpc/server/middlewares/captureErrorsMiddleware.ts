@@ -1,6 +1,5 @@
 import * as Sentry from "@sentry/nextjs";
-
-import { redactError } from "@calcom/lib/redactError";
+import { redactError } from "@timely/lib/redactError";
 
 import { middleware } from "../trpc";
 

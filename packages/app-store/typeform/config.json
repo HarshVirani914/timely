@@ -4,11 +4,11 @@
   "slug": "typeform",
   "type": "typeform_other",
   "logo": "icon-dark.svg",
-  "url": "https://cal.com/",
+  "url": "https://timely/",
   "variant": "other",
   "categories": ["automation"],
-  "publisher": "Cal.com, Inc.",
-  "email": "help@cal.com",
+  "publisher": "Timely, Inc.",
+  "email": "help@timely",
   "description": "Adds a link to copy Typeform Redirect URL",
   "__createdUsingCli": true
 }

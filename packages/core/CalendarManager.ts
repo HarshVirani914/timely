@@ -1,23 +1,22 @@
 import type { SelectedCalendar } from "@prisma/client";
-// eslint-disable-next-line no-restricted-imports
-import { sortBy } from "lodash";
-
-import { getCalendar } from "@calcom/app-store/_utils/getCalendar";
-import getApps from "@calcom/app-store/utils";
-import dayjs from "@calcom/dayjs";
-import { getUid } from "@calcom/lib/CalEventParser";
-import logger from "@calcom/lib/logger";
-import { getPiiFreeCalendarEvent, getPiiFreeCredential } from "@calcom/lib/piiFreeData";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { performance } from "@calcom/lib/server/perfObserver";
+import { getCalendar } from "@timely/app-store/_utils/getCalendar";
+import getApps from "@timely/app-store/utils";
+import dayjs from "@timely/dayjs";
+import { getUid } from "@timely/lib/CalEventParser";
+import logger from "@timely/lib/logger";
+import { getPiiFreeCalendarEvent, getPiiFreeCredential } from "@timely/lib/piiFreeData";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { performance } from "@timely/lib/server/perfObserver";
 import type {
   CalendarEvent,
   EventBusyDate,
   IntegrationCalendar,
   NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { EventResult } from "@calcom/types/EventManager";
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { EventResult } from "@timely/types/EventManager";
+// eslint-disable-next-line no-restricted-imports
+import { sortBy } from "lodash";
 
 import getCalendarsEvents from "./getCalendarsEvents";
 
@@ -81,7 +80,7 @@ export const getConnectedCalendars = async (
             },
           };
         }
-        // HACK https://github.com/calcom/cal.com/pull/7644/files#r1131508414
+        // HACK https://github.com/timely/timely/pull/7644/files#r1131508414
         if (destinationCalendar && !Object.isFrozen(destinationCalendar)) {
           destinationCalendar.primaryEmail = primary.email;
           destinationCalendar.integrationTitle = integration.title;
@@ -261,7 +260,7 @@ export const createEvent = async (
             safeStringify({ error, calEvent: getPiiFreeCalendarEvent(calEvent) })
           );
           // @TODO: This code will be off till we can investigate an error with it
-          //https://github.com/calcom/cal.com/issues/3949
+          //https://github.com/timely/timely/issues/3949
           // await sendBrokenIntegrationEmail(calEvent, "calendar");
           return undefined;
         })
@@ -335,7 +334,7 @@ export const updateEvent = async (
           })
           .catch(async (e: { calError: string }) => {
             // @TODO: This code will be off till we can investigate an error with it
-            // @see https://github.com/calcom/cal.com/issues/3949
+            // @see https://github.com/timely/timely/issues/3949
             // await sendBrokenIntegrationEmail(calEvent, "calendar");
             log.error(
               "updateEvent failed",

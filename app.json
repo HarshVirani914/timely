@@ -1,8 +1,8 @@
 {
-  "name": "Cal.com",
-  "description": "Open Source Scheduling",
-  "repository": "https://github.com/calcom/cal.com",
-  "logo": "https://cal.com/android-chrome-512x512.png",
+  "name": "Timely",
+  "description": "Scheduling App",
+  "repository": "https://github.com/timely/timely",
+  "logo": "https://timely/android-chrome-512x512.png",
   "keywords": ["react", "typescript", "node", "nextjs", "prisma", "postgres", "trpc"],
   "addons": [
     {

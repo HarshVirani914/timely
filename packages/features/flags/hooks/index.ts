@@ -1,5 +1,5 @@
-import type { AppFlags } from "@calcom/features/flags/config";
-import { trpc } from "@calcom/trpc/react";
+import type { AppFlags } from "@timely/features/flags/config";
+import { trpc } from "@timely/trpc/react";
 
 export function useFlags() {
   const query = trpc.viewer.features.map.useQuery(undefined, {

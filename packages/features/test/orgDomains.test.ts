@@ -1,12 +1,11 @@
+import { getOrgSlug, getOrgDomainConfigFromHostname } from "@timely/features/ee/organizations/lib/orgDomains";
+import * as constants from "@timely/lib/constants";
 import { describe, expect, it } from "vitest";
 
-import { getOrgSlug, getOrgDomainConfigFromHostname } from "@calcom/features/ee/organizations/lib/orgDomains";
-import * as constants from "@calcom/lib/constants";
-
-function setupEnvs({ WEBAPP_URL = "https://app.cal.com" } = {}) {
+function setupEnvs({ WEBAPP_URL = "https://app.timely" } = {}) {
   Object.defineProperty(constants, "WEBAPP_URL", { value: WEBAPP_URL });
   Object.defineProperty(constants, "ALLOWED_HOSTNAMES", {
-    value: ["cal.com", "cal.dev", "cal-staging.com", "cal.community", "cal.local:3000", "localhost:3000"],
+    value: ["timely", "cal.dev", "cal-staging.com", "timelymunity", "cal.local:3000", "localhost:3000"],
   });
   Object.defineProperty(constants, "RESERVED_SUBDOMAINS", {
     value: [
@@ -38,7 +37,7 @@ describe("Org Domains Utils", () => {
   describe("getOrgDomainConfigFromHostname", () => {
     it("should return a valid org domain", () => {
       setupEnvs();
-      expect(getOrgDomainConfigFromHostname({ hostname: "acme.cal.com" })).toEqual({
+      expect(getOrgDomainConfigFromHostname({ hostname: "acme.timely" })).toEqual({
         currentOrgDomain: "acme",
         isValidOrgDomain: true,
       });
@@ -46,7 +45,7 @@ describe("Org Domains Utils", () => {
 
     it("should return a non valid org domain", () => {
       setupEnvs();
-      expect(getOrgDomainConfigFromHostname({ hostname: "app.cal.com" })).toEqual({
+      expect(getOrgDomainConfigFromHostname({ hostname: "app.timely" })).toEqual({
         currentOrgDomain: null,
         isValidOrgDomain: false,
       });
@@ -64,7 +63,7 @@ describe("Org Domains Utils", () => {
   describe("getOrgSlug", () => {
     it("should handle a prod web app url with a prod subdomain hostname", () => {
       setupEnvs();
-      expect(getOrgSlug("acme.cal.com")).toEqual("acme");
+      expect(getOrgSlug("acme.timely")).toEqual("acme");
     });
 
     it("should handle a prod web app url with a staging subdomain hostname", () => {
@@ -79,7 +78,7 @@ describe("Org Domains Utils", () => {
 
     it("should handle a local web app with port url with a non-local subdomain hostname", () => {
       setupEnvs({ WEBAPP_URL: "http://app.cal.local:3000" });
-      expect(getOrgSlug("acme.cal.com:3000")).toEqual(null);
+      expect(getOrgSlug("acme.timely:3000")).toEqual(null);
     });
   });
 });

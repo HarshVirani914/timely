@@ -1,19 +1,18 @@
+import appStore from "@timely/app-store";
+import { getDailyAppKeys } from "@timely/app-store/dailyvideo/lib/getDailyAppKeys";
+import { sendBrokenIntegrationEmail } from "@timely/emails";
+import { getUid } from "@timely/lib/CalEventParser";
+import logger from "@timely/lib/logger";
+import { getPiiFreeCalendarEvent, getPiiFreeCredential } from "@timely/lib/piiFreeData";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { prisma } from "@timely/prisma";
+import type { GetRecordingsResponseSchema } from "@timely/prisma/zod-utils";
+import type { CalendarEvent, EventBusyDate } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { EventResult, PartialReference } from "@timely/types/EventManager";
+import type { VideoApiAdapter, VideoApiAdapterFactory, VideoCallData } from "@timely/types/VideoApiAdapter";
 import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
-
-import appStore from "@calcom/app-store";
-import { getDailyAppKeys } from "@calcom/app-store/dailyvideo/lib/getDailyAppKeys";
-import { sendBrokenIntegrationEmail } from "@calcom/emails";
-import { getUid } from "@calcom/lib/CalEventParser";
-import logger from "@calcom/lib/logger";
-import { getPiiFreeCalendarEvent, getPiiFreeCredential } from "@calcom/lib/piiFreeData";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { prisma } from "@calcom/prisma";
-import type { GetRecordingsResponseSchema } from "@calcom/prisma/zod-utils";
-import type { CalendarEvent, EventBusyDate } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { EventResult, PartialReference } from "@calcom/types/EventManager";
-import type { VideoApiAdapter, VideoApiAdapterFactory, VideoCallData } from "@calcom/types/VideoApiAdapter";
 
 const log = logger.getSubLogger({ prefix: ["[lib] videoClient"] });
 
@@ -181,7 +180,7 @@ const deleteMeeting = async (credential: CredentialPayload | null, uid: string):
   return Promise.resolve({});
 };
 
-// @TODO: This is a temporary solution to create a meeting with cal.com video as fallback url
+// @TODO: This is a temporary solution to create a meeting with timely video as fallback url
 const createMeetingWithCalVideo = async (calEvent: CalendarEvent) => {
   let dailyAppKeys: Awaited<ReturnType<typeof getDailyAppKeys>>;
   try {

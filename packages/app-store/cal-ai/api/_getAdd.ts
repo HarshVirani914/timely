@@ -1,6 +1,5 @@
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
 
 import checkSession from "../../_utils/auth";
 import { withPaidAppRedirect } from "../../_utils/paid-apps";

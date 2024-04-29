@@ -1,16 +1,15 @@
-import { useSession } from "next-auth/react";
-import { Fragment, useState } from "react";
-
 import {
   FilterCheckboxFieldsContainer,
   FilterCheckboxField,
-} from "@calcom/features/filters/components/TeamsFilter";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { AnimatedPopover } from "@calcom/ui";
-import { Divider } from "@calcom/ui";
-import { Link } from "@calcom/ui/components/icon";
+} from "@timely/features/filters/components/TeamsFilter";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { AnimatedPopover } from "@timely/ui";
+import { Divider } from "@timely/ui";
+import { Link } from "@timely/ui/components/icon";
+import { useSession } from "next-auth/react";
+import { Fragment, useState } from "react";
 
 import { groupBy } from "../groupBy";
 import { useFilterQuery } from "../lib/useFilterQuery";

@@ -1,10 +1,10 @@
-import { getRequestedSlugError } from "@calcom/app-store/stripepayment/lib/team-billing";
-import { purchaseTeamSubscription } from "@calcom/features/ee/teams/lib/payments";
-import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@calcom/lib/constants";
-import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
-import { closeComUpdateTeam } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import { getRequestedSlugError } from "@timely/app-store/stripepayment/lib/team-billing";
+import { purchaseTeamSubscription } from "@timely/features/ee/teams/lib/payments";
+import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@timely/lib/constants";
+import { isOrganisationAdmin } from "@timely/lib/server/queries/organisations";
+import { closeComUpdateTeam } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

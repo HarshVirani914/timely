@@ -1,7 +1,7 @@
 {
-  "name": "@calcom/core",
+  "name": "@timely/core",
   "sideEffects": false,
-  "description": "Cal.com core functionality",
+  "description": "Timely core functionality",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -10,15 +10,15 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
-    "@calcom/app-store": "*",
-    "@calcom/dayjs": "*",
-    "@calcom/lib": "*",
+    "@timely/app-store": "*",
+    "@timely/dayjs": "*",
+    "@timely/lib": "*",
     "ical.js": "^1.4.0",
     "ics": "^2.37.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@calcom/tsconfig": "*",
-    "@calcom/types": "*"
+    "@timely/tsconfig": "*",
+    "@timely/types": "*"
   }
 }

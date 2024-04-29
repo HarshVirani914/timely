@@ -1,14 +1,10 @@
-import type { Request, Response } from "express";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { describe, expect } from "vitest";
-
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { test } from "@calcom/web/test/fixtures/fixtures";
-import { createOrganization } from "@calcom/web/test/utils/bookingScenario/bookingScenario";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import { SchedulingType } from "@timely/prisma/enums";
+import { BookingStatus } from "@timely/prisma/enums";
+import { test } from "@timely/web/test/fixtures/fixtures";
+import { createOrganization } from "@timely/web/test/utils/bookingScenario/bookingScenario";
 import {
   createBookingScenario,
   getGoogleCalendarCredential,
@@ -23,8 +19,8 @@ import {
   getExpectedCalEventForBookingRequest,
   BookingLocations,
   getZoomAppCredential,
-} from "@calcom/web/test/utils/bookingScenario/bookingScenario";
-import { createMockNextJsRequest } from "@calcom/web/test/utils/bookingScenario/createMockNextJsRequest";
+} from "@timely/web/test/utils/bookingScenario/bookingScenario";
+import { createMockNextJsRequest } from "@timely/web/test/utils/bookingScenario/createMockNextJsRequest";
 import {
   expectWorkflowToBeTriggered,
   expectSuccessfulBookingCreationEmails,
@@ -32,9 +28,12 @@ import {
   expectBookingCreatedWebhookToHaveBeenFired,
   expectSuccessfulCalendarEventCreationInCalendar,
   expectSuccessfulVideoMeetingCreation,
-} from "@calcom/web/test/utils/bookingScenario/expects";
-import { getMockRequestDataForBooking } from "@calcom/web/test/utils/bookingScenario/getMockRequestDataForBooking";
-import { setupAndTeardown } from "@calcom/web/test/utils/bookingScenario/setupAndTeardown";
+} from "@timely/web/test/utils/bookingScenario/expects";
+import { getMockRequestDataForBooking } from "@timely/web/test/utils/bookingScenario/getMockRequestDataForBooking";
+import { setupAndTeardown } from "@timely/web/test/utils/bookingScenario/setupAndTeardown";
+import type { Request, Response } from "express";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { describe, expect } from "vitest";
 
 export type CustomNextApiRequest = NextApiRequest & Request;
 
@@ -52,7 +51,7 @@ describe("handleNewBooking", () => {
           - Destination calendars for event-type and non-first hosts are used to create calendar events
         `,
           async ({ emails }) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const booker = getBooker({
               email: "booker@example.com",
               name: "Booker",
@@ -238,7 +237,7 @@ describe("handleNewBooking", () => {
         test(
           `rejects a booking when even one of the hosts is busy`,
           async ({}) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const booker = getBooker({
               email: "booker@example.com",
               name: "Booker",
@@ -367,7 +366,7 @@ describe("handleNewBooking", () => {
           - Destination calendars for event-type and non-first hosts are used to create calendar events
         `,
           async ({ emails }) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const booker = getBooker({
               email: "booker@example.com",
               name: "Booker",
@@ -553,7 +552,7 @@ describe("handleNewBooking", () => {
         test(
           `rejects a booking when the timeslot isn't within the common schedule`,
           async ({}) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const booker = getBooker({
               email: "booker@example.com",
               name: "Booker",
@@ -677,7 +676,7 @@ describe("handleNewBooking", () => {
       test(
         `When Cal Video is the location, it uses global instance credentials and createMeeting is called for it`,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -873,7 +872,7 @@ describe("handleNewBooking", () => {
       test(
         `When Zoom is the location, it uses credentials of the first host and createMeeting is called for it.`,
         async ({ emails }) => {
-          const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+          const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
           const booker = getBooker({
             email: "booker@example.com",
             name: "Booker",
@@ -1094,7 +1093,7 @@ describe("handleNewBooking", () => {
           - Reschedule and Cancel link in email are not of the org domain because the team is not part of any org
         `,
           async ({ emails }) => {
-            const handleNewBooking = (await import("@calcom/features/bookings/lib/handleNewBooking")).default;
+            const handleNewBooking = (await import("@timely/features/bookings/lib/handleNewBooking")).default;
             const org = await createOrganization({
               name: "Test Org",
               slug: "testorg",

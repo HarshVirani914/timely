@@ -1,13 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { useEffect, useState } from "react";
-import type { UseFormReturn } from "react-hook-form";
-import { useWatch } from "react-hook-form";
-import { Controller, useFieldArray } from "react-hook-form";
-import { v4 as uuidv4 } from "uuid";
-
-import Shell from "@calcom/features/shell/Shell";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import Shell from "@timely/features/shell/Shell";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import {
   BooleanToggleGroupField,
   Button,
@@ -17,8 +11,13 @@ import {
   SelectField,
   Skeleton,
   TextField,
-} from "@calcom/ui";
-import { Plus, FileText, X, ArrowUp, ArrowDown } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus, FileText, X, ArrowUp, ArrowDown } from "@timely/ui/components/icon";
+import { useEffect, useState } from "react";
+import type { UseFormReturn } from "react-hook-form";
+import { useWatch } from "react-hook-form";
+import { Controller, useFieldArray } from "react-hook-form";
+import { v4 as uuidv4 } from "uuid";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 

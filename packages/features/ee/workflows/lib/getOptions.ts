@@ -1,6 +1,5 @@
+import { WorkflowActions } from "@timely/prisma/enums";
 import type { TFunction } from "next-i18next";
-
-import { WorkflowActions } from "@calcom/prisma/enums";
 
 import {
   isTextMessageToAttendeeAction,

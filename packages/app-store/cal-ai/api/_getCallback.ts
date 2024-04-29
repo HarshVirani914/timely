@@ -1,8 +1,7 @@
+import { defaultResponder } from "@timely/lib/server";
+import { createContext } from "@timely/trpc/server/createContext";
+import { apiKeysRouter } from "@timely/trpc/server/routers/viewer/apiKeys/_router";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { defaultResponder } from "@calcom/lib/server";
-import { createContext } from "@calcom/trpc/server/createContext";
-import { apiKeysRouter } from "@calcom/trpc/server/routers/viewer/apiKeys/_router";
 
 import checkSession from "../../_utils/auth";
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";

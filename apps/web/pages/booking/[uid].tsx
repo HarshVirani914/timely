@@ -1,4 +1,45 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
+import BookingPageTagManager from "@timely/app-store/BookingPageTagManager";
+import type { getEventLocationValue } from "@timely/app-store/locations";
+import { getSuccessPageLocationMessage, guessEventLocationType } from "@timely/app-store/locations";
+import { getEventTypeAppData } from "@timely/app-store/utils";
+import { getEventName } from "@timely/core/event";
+import type { ConfigType } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import {
+  sdkActionManager,
+  useEmbedNonStylesConfig,
+  useIsBackgroundTransparent,
+  useIsEmbed,
+} from "@timely/embed-core/embed-iframe";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { Price } from "@timely/features/bookings/components/event-meta/Price";
+import { SMS_REMINDER_NUMBER_FIELD, SystemField } from "@timely/features/bookings/lib/SystemField";
+import { getBookingWithResponses } from "@timely/features/bookings/lib/get-booking";
+import { getBookingFieldsWithSystemFields } from "@timely/features/bookings/lib/getBookingFields";
+import { parseRecurringEvent } from "@timely/lib";
+import { APP_NAME } from "@timely/lib/constants";
+import {
+  formatToLocalizedDate,
+  formatToLocalizedTime,
+  formatToLocalizedTimezone,
+} from "@timely/lib/date-fns";
+import { getDefaultEvent } from "@timely/lib/defaultEvents";
+import useGetBrandingColours from "@timely/lib/getBrandColours";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import useTheme from "@timely/lib/hooks/useTheme";
+import { getEveryFreqFor } from "@timely/lib/recurringStrings";
+import { maybeGetBookingUidFromSeat } from "@timely/lib/server/maybeGetBookingUidFromSeat";
+import { getIs24hClockFromLocalStorage, isBrowserLocale24h } from "@timely/lib/timeFormat";
+import { localStorage } from "@timely/lib/webstorage";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { BookingStatus } from "@timely/prisma/enums";
+import { bookingMetadataSchema, customInputSchema, EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import { Alert, Badge, Button, EmailInput, HeadSeo, useTimelyTheme } from "@timely/ui";
+import { AlertCircle, Calendar, Check, ChevronLeft, ExternalLink, X } from "@timely/ui/components/icon";
 import classNames from "classnames";
 import { createEvent } from "ics";
 import type { GetServerSidePropsContext } from "next";
@@ -8,48 +49,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { RRule } from "rrule";
 import { z } from "zod";
-
-import BookingPageTagManager from "@calcom/app-store/BookingPageTagManager";
-import type { getEventLocationValue } from "@calcom/app-store/locations";
-import { getSuccessPageLocationMessage, guessEventLocationType } from "@calcom/app-store/locations";
-import { getEventTypeAppData } from "@calcom/app-store/utils";
-import { getEventName } from "@calcom/core/event";
-import type { ConfigType } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import {
-  sdkActionManager,
-  useEmbedNonStylesConfig,
-  useIsBackgroundTransparent,
-  useIsEmbed,
-} from "@calcom/embed-core/embed-iframe";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { Price } from "@calcom/features/bookings/components/event-meta/Price";
-import { SMS_REMINDER_NUMBER_FIELD, SystemField } from "@calcom/features/bookings/lib/SystemField";
-import { getBookingWithResponses } from "@calcom/features/bookings/lib/get-booking";
-import { getBookingFieldsWithSystemFields } from "@calcom/features/bookings/lib/getBookingFields";
-import { parseRecurringEvent } from "@calcom/lib";
-import { APP_NAME } from "@calcom/lib/constants";
-import {
-  formatToLocalizedDate,
-  formatToLocalizedTime,
-  formatToLocalizedTimezone,
-} from "@calcom/lib/date-fns";
-import { getDefaultEvent } from "@calcom/lib/defaultEvents";
-import useGetBrandingColours from "@calcom/lib/getBrandColours";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import useTheme from "@calcom/lib/hooks/useTheme";
-import { getEveryFreqFor } from "@calcom/lib/recurringStrings";
-import { maybeGetBookingUidFromSeat } from "@calcom/lib/server/maybeGetBookingUidFromSeat";
-import { getIs24hClockFromLocalStorage, isBrowserLocale24h } from "@calcom/lib/timeFormat";
-import { localStorage } from "@calcom/lib/webstorage";
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { bookingMetadataSchema, customInputSchema, EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import { Alert, Badge, Button, EmailInput, HeadSeo, useCalcomTheme } from "@calcom/ui";
-import { AlertCircle, Calendar, Check, ChevronLeft, ExternalLink, X } from "@calcom/ui/components/icon";
 
 import { timeZone } from "@lib/clock";
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
@@ -71,7 +70,7 @@ const useBrandColors = ({
     lightVal: brandColor,
     darkVal: darkBrandColor,
   });
-  useCalcomTheme(brandTheme);
+  useTimelyTheme(brandTheme);
 };
 
 type SuccessProps = inferSSRProps<typeof getServerSideProps>;
@@ -770,8 +769,8 @@ export default function Success(props: SuccessProps) {
                   <>
                     <hr className="border-subtle mt-8" />
                     <div className="text-default pt-8 text-center text-xs">
-                      <a href="https://cal.com/signup">
-                        {t("create_booking_link_with_calcom", { appName: APP_NAME })}
+                      <a href="https://timely/signup">
+                        {t("create_booking_link_with_timely", { appName: APP_NAME })}
                       </a>
 
                       <form
@@ -780,7 +779,7 @@ export default function Success(props: SuccessProps) {
                           const target = e.target as typeof e.target & {
                             email: { value: string };
                           };
-                          router.push(`https://cal.com/signup?email=${target.email.value}`);
+                          router.push(`https://timely/signup?email=${target.email.value}`);
                         }}
                         className="mt-4 flex">
                         <EmailInput
@@ -788,7 +787,7 @@ export default function Success(props: SuccessProps) {
                           id="email"
                           defaultValue={email}
                           className="mr- focus:border-brand-default border-default text-default mt-0 block w-full rounded-none rounded-l-md shadow-sm focus:ring-black  sm:text-sm"
-                          placeholder="rick.astley@cal.com"
+                          placeholder="rick.astley@timely"
                         />
                         <Button
                           size="lg"
@@ -812,7 +811,7 @@ export default function Success(props: SuccessProps) {
                       <span className="underline">
                         <a
                           target="_blank"
-                          href="https://cal.com/blog/google-s-new-spam-policy-may-be-affecting-your-invitations">
+                          href="https://timely/blog/google-s-new-spam-policy-may-be-affecting-your-invitations">
                           {t("resolve")}
                         </a>
                       </span>

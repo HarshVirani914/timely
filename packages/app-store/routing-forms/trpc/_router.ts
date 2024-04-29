@@ -1,6 +1,6 @@
-import authedProcedure from "@calcom/trpc/server/procedures/authedProcedure";
-import publicProcedure from "@calcom/trpc/server/procedures/publicProcedure";
-import { router } from "@calcom/trpc/server/trpc";
+import authedProcedure from "@timely/trpc/server/procedures/authedProcedure";
+import publicProcedure from "@timely/trpc/server/procedures/publicProcedure";
+import { router } from "@timely/trpc/server/trpc";
 
 import { ZDeleteFormInputSchema } from "./deleteForm.schema";
 import { ZFormMutationInputSchema } from "./formMutation.schema";

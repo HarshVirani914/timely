@@ -7,15 +7,15 @@ import { useEffect, useState } from "react";
 import { Controller, useFormContext, useFieldArray } from "react-hook-form";
 import type { MultiValue } from "react-select";
 
-import type { EventLocationType } from "@calcom/app-store/locations";
-import { getEventLocationType, MeetLocationType } from "@calcom/app-store/locations";
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { md } from "@calcom/lib/markdownIt";
-import { slugify } from "@calcom/lib/slugify";
-import turndown from "@calcom/lib/turndownService";
+import type { EventLocationType } from "@timely/app-store/locations";
+import { getEventLocationType, MeetLocationType } from "@timely/app-store/locations";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { md } from "@timely/lib/markdownIt";
+import { slugify } from "@timely/lib/slugify";
+import turndown from "@timely/lib/turndownService";
 import {
   Label,
   Select,
@@ -29,8 +29,8 @@ import {
   PhoneInput,
   Button,
   showToast,
-} from "@calcom/ui";
-import { Plus, X, Check, CornerDownRight } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Plus, X, Check, CornerDownRight } from "@timely/ui/components/icon";
 
 import CheckboxField from "@components/ui/form/CheckboxField";
 import type { SingleValueLocationOption } from "@components/ui/form/LocationSelect";

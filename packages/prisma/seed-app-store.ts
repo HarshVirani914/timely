@@ -3,9 +3,8 @@
  * This file is deprecated. The only use of this file is to seed the database for E2E tests. Each test should take care of seeding it's own data going forward.
  */
 import type { Prisma } from "@prisma/client";
+import { appStoreMetadata } from "@timely/app-store/appStoreMetaData";
 import dotEnv from "dotenv";
-
-import { appStoreMetadata } from "@calcom/app-store/appStoreMetaData";
 
 import prisma from ".";
 import { AppCategories } from "./enums";

@@ -1,11 +1,10 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { default as DatePickerComponent } from "@timely/features/calendars/DatePicker";
+import { useNonEmptyScheduleDays } from "@timely/features/schedules";
+import { weekdayToWeekIndex } from "@timely/lib/date-fns";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import { shallow } from "zustand/shallow";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { default as DatePickerComponent } from "@calcom/features/calendars/DatePicker";
-import { useNonEmptyScheduleDays } from "@calcom/features/schedules";
-import { weekdayToWeekIndex } from "@calcom/lib/date-fns";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { useBookerStore } from "../store";
 import { useEvent, useScheduleForEvent } from "../utils/event";

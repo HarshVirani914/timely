@@ -6,12 +6,12 @@ import type { ComponentProps } from "react";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import type { Options } from "react-select";
 
-import type { CheckedSelectOption } from "@calcom/features/eventtypes/components/CheckedTeamSelect";
-import CheckedTeamSelect from "@calcom/features/eventtypes/components/CheckedTeamSelect";
-import ChildrenEventTypeSelect from "@calcom/features/eventtypes/components/ChildrenEventTypeSelect";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { Label, Select } from "@calcom/ui";
+import type { CheckedSelectOption } from "@timely/features/eventtypes/components/CheckedTeamSelect";
+import CheckedTeamSelect from "@timely/features/eventtypes/components/CheckedTeamSelect";
+import ChildrenEventTypeSelect from "@timely/features/eventtypes/components/ChildrenEventTypeSelect";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { SchedulingType } from "@timely/prisma/enums";
+import { Label, Select } from "@timely/ui";
 
 interface IUserToValue {
   id: number | null;
@@ -155,7 +155,7 @@ const FixedHostHelper = (
     <Link
       className="underline underline-offset-2"
       target="_blank"
-      href="https://cal.com/docs/enterprise-features/teams/round-robin-scheduling#fixed-hosts">
+      href="https://timely/docs/enterprise-features/teams/round-robin-scheduling#fixed-hosts">
       Learn more
     </Link>
   </Trans>

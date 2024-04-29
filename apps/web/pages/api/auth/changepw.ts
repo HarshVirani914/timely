@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { verifyPassword } from "@calcom/features/auth/lib/verifyPassword";
-import prisma from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
+import { ErrorCode } from "@timely/features/auth/lib/ErrorCode";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { verifyPassword } from "@timely/features/auth/lib/verifyPassword";
+import prisma from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession({ req, res });

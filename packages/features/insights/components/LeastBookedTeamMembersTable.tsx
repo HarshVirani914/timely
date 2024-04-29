@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
 import { Title } from "@tremor/react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
 
 import { useFilterContext } from "../context/provider";
 import { CardInsights } from "./Card";

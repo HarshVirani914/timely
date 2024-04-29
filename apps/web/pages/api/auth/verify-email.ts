@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import dayjs from "@calcom/dayjs";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { prisma } from "@calcom/prisma";
+import dayjs from "@timely/dayjs";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { prisma } from "@timely/prisma";
 
 const verifySchema = z.object({
   token: z.string(),

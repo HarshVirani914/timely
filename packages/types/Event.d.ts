@@ -1,4 +1,4 @@
-import type { NewCalendarEventType, AdditionalInformation } from "@calcom/types/Calendar";
+import type { NewCalendarEventType, AdditionalInformation } from "@timely/types/Calendar";
 
 import type { VideoCallData } from "./VideoApiAdapter";
 

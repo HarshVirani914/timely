@@ -4,10 +4,10 @@ import type { InferGetServerSidePropsType } from "next";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-import { AppSetupPage } from "@calcom/app-store/_pages/setup";
-import { getServerSideProps } from "@calcom/app-store/_pages/setup/_getServerSideProps";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { HeadSeo } from "@calcom/ui";
+import { AppSetupPage } from "@timely/app-store/_pages/setup";
+import { getServerSideProps } from "@timely/app-store/_pages/setup/_getServerSideProps";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { HeadSeo } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -31,7 +31,7 @@ export default function SetupInformation(props: InferGetServerSidePropsType<type
   return (
     <>
       {/* So that the set up page does not get indexed by search engines */}
-      <HeadSeo nextSeoProps={{ noindex: true, nofollow: true }} title={`${slug} | Cal.com`} description="" />
+      <HeadSeo nextSeoProps={{ noindex: true, nofollow: true }} title={`${slug} | Timely`} description="" />
       <AppSetupPage slug={slug} {...props} />
     </>
   );

@@ -1,10 +1,9 @@
 import { useId } from "@radix-ui/react-id";
+import cx from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import * as React from "react";
 import type { GroupBase, Props, SingleValue, MultiValue } from "react-select";
 import ReactSelect from "react-select";
-
-import cx from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Label } from "../inputs/Label";
 import { getReactSelectProps } from "./selectTheme";

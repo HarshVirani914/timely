@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
 
-import { Schedule } from "@calcom/features/schedules";
-import { DEFAULT_SCHEDULE } from "@calcom/lib/availability";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { TRPCClientErrorLike } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import type { AppRouter } from "@calcom/trpc/server/routers/_app";
-import { Button, Form } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
+import { Schedule } from "@timely/features/schedules";
+import { DEFAULT_SCHEDULE } from "@timely/lib/availability";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { TRPCClientErrorLike } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import type { AppRouter } from "@timely/trpc/server/routers/_app";
+import { Button, Form } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 
 interface ISetupAvailabilityProps {
   nextStep: () => void;

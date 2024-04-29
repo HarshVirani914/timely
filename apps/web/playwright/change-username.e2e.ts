@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 
-import stripe from "@calcom/features/ee/payments/server/stripe";
-import { WEBAPP_URL } from "@calcom/lib/constants";
+import stripe from "@timely/features/ee/payments/server/stripe";
+import { WEBAPP_URL } from "@timely/lib/constants";
 
 import { test } from "./lib/fixtures";
 
@@ -14,7 +14,7 @@ const IS_STRIPE_ENABLED = !!(
 );
 
 const IS_SELF_HOSTED = !(
-  new URL(WEBAPP_URL).hostname.endsWith(".cal.dev") || !!new URL(WEBAPP_URL).hostname.endsWith(".cal.com")
+  new URL(WEBAPP_URL).hostname.endsWith(".cal.dev") || !!new URL(WEBAPP_URL).hostname.endsWith(".timely")
 );
 
 test.describe("Change username on settings", () => {

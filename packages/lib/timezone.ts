@@ -1,6 +1,5 @@
+import type { ICity } from "@timely/ui/components/form/timezone-select";
 import type { ITimezoneOption } from "react-timezone-select";
-
-import type { ICity } from "@calcom/ui/components/form/timezone-select";
 
 import isProblematicTimezone from "./isProblematicTimezone";
 

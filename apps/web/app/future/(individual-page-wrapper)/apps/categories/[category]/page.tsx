@@ -4,10 +4,10 @@ import { _generateMetadata } from "app/_utils";
 import { notFound } from "next/navigation";
 import z from "zod";
 
-import { getAppRegistry } from "@calcom/app-store/_appRegistry";
-import { APP_NAME } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
-import { AppCategories } from "@calcom/prisma/enums";
+import { getAppRegistry } from "@timely/app-store/_appRegistry";
+import { APP_NAME } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
+import { AppCategories } from "@timely/prisma/enums";
 
 import PageWrapper from "@components/PageWrapperAppDir";
 

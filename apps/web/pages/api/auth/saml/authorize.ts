@@ -1,8 +1,8 @@
 import type { OAuthReq } from "@boxyhq/saml-jackson";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import jackson from "@calcom/features/ee/sso/lib/jackson";
-import type { HttpError } from "@calcom/lib/http-error";
+import jackson from "@timely/features/ee/sso/lib/jackson";
+import type { HttpError } from "@timely/lib/http-error";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { oauthController } = await jackson();

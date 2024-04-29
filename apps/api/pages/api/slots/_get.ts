@@ -2,13 +2,13 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import dayjs from "@calcom/dayjs";
-import { isSupportedTimeZone } from "@calcom/lib/date-fns";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { createContext } from "@calcom/trpc/server/createContext";
-import { getScheduleSchema } from "@calcom/trpc/server/routers/viewer/slots/types";
-import { getAvailableSlots } from "@calcom/trpc/server/routers/viewer/slots/util";
+import dayjs from "@timely/dayjs";
+import { isSupportedTimeZone } from "@timely/lib/date-fns";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { createContext } from "@timely/trpc/server/createContext";
+import { getScheduleSchema } from "@timely/trpc/server/routers/viewer/slots/types";
+import { getAvailableSlots } from "@timely/trpc/server/routers/viewer/slots/util";
 
 import { TRPCError } from "@trpc/server";
 import { getHTTPStatusCodeFromError } from "@trpc/server/http";

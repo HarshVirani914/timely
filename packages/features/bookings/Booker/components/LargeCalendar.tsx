@@ -1,10 +1,9 @@
+import dayjs from "@timely/dayjs";
+import { Calendar } from "@timely/features/calendars/weeklyview";
+import type { CalendarEvent } from "@timely/features/calendars/weeklyview/types/events";
+import type { CalendarAvailableTimeslots } from "@timely/features/calendars/weeklyview/types/state";
+import { localStorage } from "@timely/lib/webstorage";
 import { useMemo, useEffect } from "react";
-
-import dayjs from "@calcom/dayjs";
-import { Calendar } from "@calcom/features/calendars/weeklyview";
-import type { CalendarEvent } from "@calcom/features/calendars/weeklyview/types/events";
-import type { CalendarAvailableTimeslots } from "@calcom/features/calendars/weeklyview/types/state";
-import { localStorage } from "@calcom/lib/webstorage";
 
 import { useBookerStore } from "../store";
 import { useEvent, useScheduleForEvent } from "../utils/event";

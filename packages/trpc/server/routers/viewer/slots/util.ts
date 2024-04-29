@@ -1,25 +1,24 @@
 // eslint-disable-next-line no-restricted-imports
+import { getAggregatedAvailability } from "@timely/core/getAggregatedAvailability";
+import type { CurrentSeats } from "@timely/core/getUserAvailability";
+import { getUserAvailability } from "@timely/core/getUserAvailability";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { getSlugOrRequestedSlug, orgDomainConfig } from "@timely/ee/organizations/lib/orgDomains";
+import { isEventTypeLoggingEnabled } from "@timely/features/bookings/lib/isEventTypeLoggingEnabled";
+import { getDefaultEvent } from "@timely/lib/defaultEvents";
+import isTimeOutOfBounds from "@timely/lib/isOutOfBounds";
+import logger from "@timely/lib/logger";
+import { performance } from "@timely/lib/server/perfObserver";
+import getSlots from "@timely/lib/slots";
+import prisma, { availabilityUserSelect } from "@timely/prisma";
+import { SchedulingType } from "@timely/prisma/enums";
+import { BookingStatus } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import type { EventBusyDate } from "@timely/types/Calendar";
 import { countBy } from "lodash";
 import { v4 as uuid } from "uuid";
-
-import { getAggregatedAvailability } from "@calcom/core/getAggregatedAvailability";
-import type { CurrentSeats } from "@calcom/core/getUserAvailability";
-import { getUserAvailability } from "@calcom/core/getUserAvailability";
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { getSlugOrRequestedSlug, orgDomainConfig } from "@calcom/ee/organizations/lib/orgDomains";
-import { isEventTypeLoggingEnabled } from "@calcom/features/bookings/lib/isEventTypeLoggingEnabled";
-import { getDefaultEvent } from "@calcom/lib/defaultEvents";
-import isTimeOutOfBounds from "@calcom/lib/isOutOfBounds";
-import logger from "@calcom/lib/logger";
-import { performance } from "@calcom/lib/server/perfObserver";
-import getSlots from "@calcom/lib/slots";
-import prisma, { availabilityUserSelect } from "@calcom/prisma";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import type { EventBusyDate } from "@calcom/types/Calendar";
 
 import { TRPCError } from "@trpc/server";
 

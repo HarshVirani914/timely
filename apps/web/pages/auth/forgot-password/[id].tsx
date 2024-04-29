@@ -5,10 +5,10 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { useForm } from "react-hook-form";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import prisma from "@calcom/prisma";
-import { Button, PasswordField, Form } from "@calcom/ui";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import prisma from "@timely/prisma";
+import { Button, PasswordField, Form } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import AuthContainer from "@components/ui/AuthContainer";

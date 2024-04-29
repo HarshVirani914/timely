@@ -1,9 +1,8 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
+import { entityPrismaWhereClause, canEditEntity } from "@timely/lib/entityPermissionUtils";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
-
-import { entityPrismaWhereClause, canEditEntity } from "@calcom/lib/entityPermissionUtils";
-import prisma from "@calcom/prisma";
 
 import { getSerializableForm } from "../../lib/getSerializableForm";
 import type { Response, SerializableForm } from "../../types/types";
@@ -18,7 +17,7 @@ async function* getResponses(
   let responses;
   let skip = 0;
   // Keep it small enough to be in Vercel limits of Serverless Function in terms of memory.
-  // To avoid limit in terms of execution time there is an RFC https://linear.app/calcom/issue/CAL-204/rfc-routing-form-improved-csv-exports
+  // To avoid limit in terms of execution time there is an RFC https://linear.app/timely/issue/CAL-204/rfc-routing-form-improved-csv-exports
   const take = 100;
   while (
     (responses = await prisma.app_RoutingForms_FormResponse.findMany({

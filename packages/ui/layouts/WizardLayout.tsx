@@ -1,12 +1,11 @@
 // eslint-disable-next-line no-restricted-imports
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, SkeletonText, StepCard, Steps } from "@timely/ui";
 import { noop } from "lodash";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
-
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, SkeletonText, StepCard, Steps } from "@calcom/ui";
 
 export function WizardLayout({
   children,

@@ -1,4 +1,4 @@
-import { CAL_URL } from "@calcom/lib/constants";
+import { CAL_URL } from "@timely/lib/constants";
 
 export default function getCalLink(eventType: {
   team?: { slug: string | null } | null;

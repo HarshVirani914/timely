@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import React from "react";
-
-import dayjs from "@calcom/dayjs";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 type Props = {
   days: dayjs.Dayjs[];

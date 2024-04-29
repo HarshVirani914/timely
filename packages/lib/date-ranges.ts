@@ -1,6 +1,6 @@
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import type { Availability } from "@calcom/prisma/client";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import type { Availability } from "@timely/prisma/client";
 
 export type DateRange = {
   start: Dayjs;

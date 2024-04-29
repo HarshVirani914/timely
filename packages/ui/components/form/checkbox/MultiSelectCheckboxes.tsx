@@ -1,11 +1,10 @@
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import type { Dispatch, SetStateAction } from "react";
 import React from "react";
 import type { GroupBase, OptionProps } from "react-select";
 import { components } from "react-select";
 import type { Props } from "react-select";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Select } from "../select";
 

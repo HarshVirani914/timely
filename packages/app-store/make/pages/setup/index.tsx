@@ -1,13 +1,12 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import { Button, Tooltip, showToast } from "@timely/ui";
+import { Clipboard } from "@timely/ui/components/icon";
 import type { InferGetServerSidePropsType } from "next";
 import { Trans } from "next-i18next";
 import Link from "next/link";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import { Button, Tooltip, showToast } from "@calcom/ui";
-import { Clipboard } from "@calcom/ui/components/icon";
 
 import type { getServerSideProps } from "./_getServerSideProps";
 
@@ -118,10 +117,10 @@ export default function MakeSetup({ inviteLink }: InferGetServerSidePropsType<ty
                     <a href={inviteLink} className="ml-1 mr-1 text-orange-600 underline">
                       Make Invite Link
                     </a>
-                    and install the Cal.com app.
+                    and install the Timely app.
                   </li>
                   <li>Log into your Make account and create a new Scenario.</li>
-                  <li>Select Cal.com as your Trigger app. Also choose a Trigger event.</li>
+                  <li>Select Timely as your Trigger app. Also choose a Trigger event.</li>
                   <li>Choose your account and then enter your Unique API Key.</li>
                   <li>Test your Trigger.</li>
                   <li>You&apos;re set!</li>

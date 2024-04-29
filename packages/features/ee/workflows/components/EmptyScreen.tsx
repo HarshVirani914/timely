@@ -1,11 +1,10 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
+import type { SVGComponent } from "@timely/types/SVGComponent";
+import { CreateButtonWithTeamsList, EmptyScreen as ClassicEmptyScreen, showToast } from "@timely/ui";
+import { Mail, Smartphone, Zap } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
-import type { SVGComponent } from "@calcom/types/SVGComponent";
-import { CreateButtonWithTeamsList, EmptyScreen as ClassicEmptyScreen, showToast } from "@calcom/ui";
-import { Mail, Smartphone, Zap } from "@calcom/ui/components/icon";
 
 type WorkflowExampleType = {
   Icon: SVGComponent;

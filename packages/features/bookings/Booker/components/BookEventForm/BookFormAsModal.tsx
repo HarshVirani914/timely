@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Badge, Dialog, DialogContent } from "@timely/ui";
 import { Calendar, Clock } from "lucide-react";
-
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Badge, Dialog, DialogContent } from "@calcom/ui";
 
 import { useTimePreferences } from "../../../lib";
 import { useBookerStore } from "../../store";

@@ -1,6 +1,6 @@
 {
-    "name": "Cal.com",
-    "short_name": "Cal.com",
+    "name": "Timely",
+    "short_name": "Timely",
     "icons": [
         {
             "src": "/api/logo?type=android-chrome-192",

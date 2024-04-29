@@ -4,7 +4,7 @@ import { _generateMetadata } from "app/_utils";
 export const generateMetadata = async () =>
   await _generateMetadata(
     () => "Feature Flags",
-    () => "Here you can toggle your Cal.com instance features."
+    () => "Here you can toggle your Timely instance features."
   );
 
 export default Page;

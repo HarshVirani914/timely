@@ -1,6 +1,6 @@
 ## How to build an App using the CLI
 
-Refer to https://developer.cal.com/guides/how-to-build-an-app
+Refer to https://developer.timely/guides/how-to-build-an-app
 
 ## TODO
 

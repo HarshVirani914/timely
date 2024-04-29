@@ -1,7 +1,6 @@
 import { Prisma } from "@prisma/client";
-
-import { HttpError as HttpCode } from "@calcom/lib/http-error";
-import prisma from "@calcom/prisma";
+import { HttpError as HttpCode } from "@timely/lib/http-error";
+import prisma from "@timely/prisma";
 
 import stripe from "./server";
 

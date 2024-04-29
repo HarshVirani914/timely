@@ -1,12 +1,11 @@
 import type { DestinationCalendar } from "@prisma/client";
-
 import type {
   AdditionalInformation,
   CalendarEvent,
   ConferenceData,
   Person,
   VideoCallData,
-} from "@calcom/types/Calendar";
+} from "@timely/types/Calendar";
 
 class CalendarEventClass implements CalendarEvent {
   bookerUrl?: string | undefined;

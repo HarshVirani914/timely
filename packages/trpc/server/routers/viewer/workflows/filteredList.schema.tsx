@@ -1,8 +1,7 @@
 "use client";
 
+import { filterQuerySchemaStrict } from "@timely/features/filters/lib/getTeamsFiltersFromQuery";
 import { z } from "zod";
-
-import { filterQuerySchemaStrict } from "@calcom/features/filters/lib/getTeamsFiltersFromQuery";
 
 export const ZFilteredListInputSchema = z
   .object({

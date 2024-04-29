@@ -1,4 +1,4 @@
-import { APP_NAME, SENDER_NAME, SUPPORT_MAIL_ADDRESS } from "@calcom/lib/constants";
+import { APP_NAME, SENDER_NAME, SUPPORT_MAIL_ADDRESS } from "@timely/lib/constants";
 
 import type { EmailVerifyCode } from "../../templates/attendee-verify-email";
 import { BaseEmailHtml } from "../components";
@@ -35,7 +35,7 @@ export const VerifyEmailByCode = (
               style={{ color: "#3E3E3E" }}
               target="_blank"
               rel="noreferrer">
-              <>{props.language("the_calcom_team", { companyName: SENDER_NAME })}</>
+              <>{props.language("the_timely_team", { companyName: SENDER_NAME })}</>
             </a>
           </>
         </p>

@@ -1,7 +1,7 @@
 import type { Browser, Page } from "@playwright/test";
 import { expect } from "@playwright/test";
 
-import prisma from "@calcom/prisma";
+import prisma from "@timely/prisma";
 
 import { test } from "../lib/fixtures";
 import { getInviteLink } from "../lib/testUtils";
@@ -32,7 +32,7 @@ test.describe.serial("Organization", () => {
           page,
           emails,
           invitedUserEmail,
-          `${org.name}'s admin invited you to join the organization ${org.name} on Cal.com`,
+          `${org.name}'s admin invited you to join the organization ${org.name} on Timely`,
           "signup?token"
         );
 
@@ -117,7 +117,7 @@ test.describe.serial("Organization", () => {
           page,
           emails,
           invitedUserEmail,
-          `${team.name}'s admin invited you to join the team ${org.name} on Cal.com`,
+          `${team.name}'s admin invited you to join the team ${org.name} on Timely`,
           "signup?token"
         );
 
@@ -197,7 +197,7 @@ test.describe.serial("Organization", () => {
           page,
           emails,
           invitedUserEmail,
-          `${org.name}'s admin invited you to join the organization ${org.name} on Cal.com`,
+          `${org.name}'s admin invited you to join the organization ${org.name} on Timely`,
           "signup?token"
         );
 
@@ -285,7 +285,7 @@ test.describe.serial("Organization", () => {
           page,
           emails,
           invitedUserEmail,
-          `${team.name}'s admin invited you to join the organization ${org.name} on Cal.com`,
+          `${team.name}'s admin invited you to join the organization ${org.name} on Timely`,
           "signup?token"
         );
 

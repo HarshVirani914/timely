@@ -1,16 +1,9 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import Link from "next/link";
-import React, { useCallback, useState } from "react";
-import { Query, Builder, Utils as QbUtils } from "react-awesome-query-builder";
-// types
-import type { JsonTree, ImmutableTree, BuilderProps } from "react-awesome-query-builder";
-import type { UseFormReturn } from "react-hook-form";
-
-import Shell from "@calcom/features/shell/Shell";
-import { areTheySiblingEntitites } from "@calcom/lib/entityPermissionUtils";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
+import Shell from "@timely/features/shell/Shell";
+import { areTheySiblingEntitites } from "@timely/lib/entityPermissionUtils";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
 import {
   SelectField,
   FormCard,
@@ -19,7 +12,13 @@ import {
   TextField,
   Badge,
   Divider,
-} from "@calcom/ui";
+} from "@timely/ui";
+import Link from "next/link";
+import React, { useCallback, useState } from "react";
+import { Query, Builder, Utils as QbUtils } from "react-awesome-query-builder";
+// types
+import type { JsonTree, ImmutableTree, BuilderProps } from "react-awesome-query-builder";
+import type { UseFormReturn } from "react-hook-form";
 
 import type { RoutingFormWithResponseCount } from "../../components/SingleForm";
 import SingleForm, {

@@ -1,19 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-// eslint-disable-next-line no-restricted-imports
-import { noop } from "lodash";
-import type { FC } from "react";
-import { useReducer, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
-
-import AppCategoryNavigation from "@calcom/app-store/_components/AppCategoryNavigation";
-import { appKeysSchemas } from "@calcom/app-store/apps.keys-schemas.generated";
-import { classNames as cs } from "@calcom/lib";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { AppCategories } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import AppCategoryNavigation from "@timely/app-store/_components/AppCategoryNavigation";
+import { appKeysSchemas } from "@timely/app-store/apps.keys-schemas.generated";
+import { classNames as cs } from "@timely/lib";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { AppCategories } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   ConfirmationDialogContent,
@@ -30,8 +23,14 @@ import {
   SkeletonText,
   Switch,
   TextField,
-} from "@calcom/ui";
-import { AlertCircle, Edit } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { AlertCircle, Edit } from "@timely/ui/components/icon";
+// eslint-disable-next-line no-restricted-imports
+import { noop } from "lodash";
+import type { FC } from "react";
+import { useReducer, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 import AppListCard from "../../../apps/web/components/AppListCard";
 

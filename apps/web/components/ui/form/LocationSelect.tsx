@@ -1,10 +1,10 @@
 import type { GroupBase, Props, SingleValue } from "react-select";
 import { components } from "react-select";
 
-import type { EventLocationType } from "@calcom/app-store/locations";
-import { classNames } from "@calcom/lib";
-import invertLogoOnDark from "@calcom/lib/invertLogoOnDark";
-import { Select } from "@calcom/ui";
+import type { EventLocationType } from "@timely/app-store/locations";
+import { classNames } from "@timely/lib";
+import invertLogoOnDark from "@timely/lib/invertLogoOnDark";
+import { Select } from "@timely/ui";
 
 export type LocationOption = {
   label: string;

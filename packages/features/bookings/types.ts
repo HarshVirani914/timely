@@ -1,8 +1,7 @@
+import type { BookingCreateBody } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { AppsStatus } from "@timely/types/Calendar";
 import type { ErrorOption, FieldPath } from "react-hook-form";
-
-import type { BookingCreateBody } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { AppsStatus } from "@calcom/types/Calendar";
 
 export type PublicEvent = NonNullable<RouterOutputs["viewer"]["public"]["event"]>;
 export type ValidationErrors<T extends object> = { key: FieldPath<T>; error: ErrorOption }[];
@@ -30,9 +29,9 @@ export type RecurringBookingCreateBody = BookingCreateBody & {
 };
 
 export type BookingResponse = Awaited<
-  ReturnType<typeof import("@calcom/features/bookings/lib/handleNewBooking").default>
+  ReturnType<typeof import("@timely/features/bookings/lib/handleNewBooking").default>
 >;
 
 export type InstatBookingResponse = Awaited<
-  ReturnType<typeof import("@calcom/features/instant-meeting/handleInstantMeeting").default>
+  ReturnType<typeof import("@timely/features/instant-meeting/handleInstantMeeting").default>
 >;

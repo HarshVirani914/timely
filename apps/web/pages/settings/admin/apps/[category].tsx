@@ -1,8 +1,8 @@
 "use client";
 
-import AdminAppsList from "@calcom/features/apps/AdminAppsList";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Meta } from "@calcom/ui";
+import AdminAppsList from "@timely/features/apps/AdminAppsList";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Meta } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import { getLayout } from "@components/auth/layouts/AdminLayout";

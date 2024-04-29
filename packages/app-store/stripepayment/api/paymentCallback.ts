@@ -1,12 +1,11 @@
+import { getCustomerAndCheckoutSession } from "@timely/app-store/stripepayment/lib/getCustomerAndCheckoutSession";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import { prisma } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import z from "zod";
-
-import { getCustomerAndCheckoutSession } from "@calcom/app-store/stripepayment/lib/getCustomerAndCheckoutSession";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import { prisma } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
 
 const querySchema = z.object({
   callbackUrl: z.string().transform((url) => {
@@ -74,7 +73,7 @@ async function getHandler(req: NextApiRequest, res: NextApiResponse) {
         url: req.url,
         method: req.method,
         message:
-          "We have received your payment. Your premium username could still not be reserved. Please contact support@cal.com and mention your premium username",
+          "We have received your payment. Your premium username could still not be reserved. Please contact support@timely and mention your premium username",
       });
     }
   }

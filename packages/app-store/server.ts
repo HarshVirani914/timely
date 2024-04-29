@@ -1,11 +1,10 @@
 import type { Prisma } from "@prisma/client";
+import { defaultVideoAppCategories } from "@timely/app-store/utils";
+import getEnabledAppsFromCredentials from "@timely/lib/apps/getEnabledAppsFromCredentials";
+import { prisma } from "@timely/prisma";
+import { AppCategories } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 import type { TFunction } from "next-i18next";
-
-import { defaultVideoAppCategories } from "@calcom/app-store/utils";
-import getEnabledAppsFromCredentials from "@calcom/lib/apps/getEnabledAppsFromCredentials";
-import { prisma } from "@calcom/prisma";
-import { AppCategories } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
 
 import { defaultLocations } from "./locations";
 

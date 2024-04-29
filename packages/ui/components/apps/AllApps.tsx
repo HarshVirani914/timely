@@ -1,15 +1,14 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import type { AppCategories } from "@prisma/client";
+import type { UserAdminTeams } from "@timely/features/ee/teams/lib/getUserAdminTeams";
+import { classNames } from "@timely/lib";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { AppFrontendPayload as App } from "@timely/types/App";
+import type { CredentialFrontendPayload as Credential } from "@timely/types/Credential";
 import { usePathname, useRouter } from "next/navigation";
 import type { UIEvent } from "react";
 import { useEffect, useRef, useState } from "react";
-
-import type { UserAdminTeams } from "@calcom/features/ee/teams/lib/getUserAdminTeams";
-import { classNames } from "@calcom/lib";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { AppFrontendPayload as App } from "@calcom/types/App";
-import type { CredentialFrontendPayload as Credential } from "@calcom/types/Credential";
 
 import { EmptyScreen } from "../empty-screen";
 import { ChevronLeft, ChevronRight, Search } from "../icon";

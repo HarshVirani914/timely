@@ -1,9 +1,9 @@
-import { getLayout } from "@calcom/features/MainLayout";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { UpgradeTip } from "@calcom/features/tips";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, ButtonGroup } from "@calcom/ui";
-import { BarChart, CreditCard, Globe, Lock, Paintbrush, Users } from "@calcom/ui/components/icon";
+import { getLayout } from "@timely/features/MainLayout";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { UpgradeTip } from "@timely/features/tips";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, ButtonGroup } from "@timely/ui";
+import { BarChart, CreditCard, Globe, Lock, Paintbrush, Users } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -54,10 +54,10 @@ export default function EnterprisePage() {
           buttons={
             <div className="space-y-2 rtl:space-x-reverse sm:space-x-2">
               <ButtonGroup>
-                <Button color="primary" href="https://i.cal.com/sales/enterprise?duration=25" target="_blank">
+                <Button color="primary" href="https://i.timely/sales/enterprise?duration=25" target="_blank">
                   {t("contact_sales")}
                 </Button>
-                <Button color="minimal" href="https://cal.com/enterprise" target="_blank">
+                <Button color="minimal" href="https://timely/enterprise" target="_blank">
                   {t("learn_more")}
                 </Button>
               </ButtonGroup>

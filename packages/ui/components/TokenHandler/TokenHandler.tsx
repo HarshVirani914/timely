@@ -1,5 +1,5 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Label, Input } from "@calcom/ui";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Label, Input } from "@timely/ui";
 
 type Digit = {
   value: number;

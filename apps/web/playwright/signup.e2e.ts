@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 import { randomBytes } from "crypto";
 
-import { APP_NAME, IS_PREMIUM_USERNAME_ENABLED, IS_MAILHOG_ENABLED } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
+import { APP_NAME, IS_PREMIUM_USERNAME_ENABLED, IS_MAILHOG_ENABLED } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 
 import { test } from "./lib/fixtures";
 import { getEmailsReceivedByUser, localize } from "./lib/testUtils";
@@ -72,7 +72,7 @@ test.describe("Signup Flow Test", async () => {
   });
   test("Premium Username Flow - creates stripe checkout", async ({ page, users, prisma }) => {
     // eslint-disable-next-line playwright/no-skipped-test
-    test.skip(!IS_PREMIUM_USERNAME_ENABLED, "Only run on Cal.com");
+    test.skip(!IS_PREMIUM_USERNAME_ENABLED, "Only run on Timely");
     const userToCreate = users.buildForSignup({
       username: "rock",
       password: "Password99!",
@@ -258,7 +258,7 @@ test.describe("Signup Flow Test", async () => {
         page,
         emails,
         invitedUserEmail,
-        `${team.name}'s admin invited you to join the team ${team.name} on Cal.com`,
+        `${team.name}'s admin invited you to join the team ${team.name} on Timely`,
         "signup?token"
       );
 

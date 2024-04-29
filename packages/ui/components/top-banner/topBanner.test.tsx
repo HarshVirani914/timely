@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
-
-import { ArrowDown } from "@calcom/ui/components/icon";
+import { ArrowDown } from "@timely/ui/components/icon";
 
 import { TopBanner } from "./TopBanner";
 

@@ -1,11 +1,10 @@
 import type { User } from "@prisma/client";
+import { getSession } from "@timely/features/auth/lib/getSession";
+import prisma from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
 import type { Session } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { z } from "zod";
-
-import { getSession } from "@calcom/features/auth/lib/getSession";
-import prisma from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
 
 const teamIdschema = z.object({
   teamId: z.preprocess((a) => parseInt(z.string().parse(a), 10), z.number().positive()),

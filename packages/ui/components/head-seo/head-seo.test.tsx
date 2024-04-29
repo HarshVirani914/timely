@@ -21,7 +21,7 @@ vi.mock("next-seo", () => {
   };
 });
 
-vi.mock("@calcom/lib/OgImages", async () => {
+vi.mock("@timely/lib/OgImages", async () => {
   return {
     constructAppImage() {
       return "constructAppImage";
@@ -37,8 +37,8 @@ vi.mock("@calcom/lib/OgImages", async () => {
 
 const basicProps = {
   image: "image.png",
-  siteName: "calcomsite",
-  url: "calcom.com",
+  siteName: "timelysite",
+  url: "timely.com",
   canonical: "test canonical",
   title: "Test Title",
   description: "Test Description",
@@ -60,7 +60,7 @@ describe("Tests for HeadSeo component", () => {
     const { container } = render(<HeadSeo {...basicProps} />);
     await waitFor(async () => {
       const titleEl = container.querySelector("title");
-      expect(titleEl?.getAttribute("title")).toEqual(`${basicProps.title} | Cal.com`);
+      expect(titleEl?.getAttribute("title")).toEqual(`${basicProps.title} | Timely`);
     });
   });
 

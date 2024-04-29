@@ -1,8 +1,6 @@
-import { useState, useRef, useMemo, useCallback, useEffect } from "react";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useDebounce } from "@calcom/lib/hooks/useDebounce";
-import { trpc } from "@calcom/trpc/react";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useDebounce } from "@timely/lib/hooks/useDebounce";
+import { trpc } from "@timely/trpc/react";
 import {
   Badge,
   ConfirmationDialogContent,
@@ -12,8 +10,9 @@ import {
   Table,
   TextField,
   Avatar,
-} from "@calcom/ui";
-import { Edit, Trash, Lock } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Edit, Trash, Lock } from "@timely/ui/components/icon";
+import { useState, useRef, useMemo, useCallback, useEffect } from "react";
 
 import { withLicenseRequired } from "../../common/components/LicenseRequired";
 

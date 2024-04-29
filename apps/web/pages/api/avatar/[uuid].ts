@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { AVATAR_FALLBACK } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
+import { AVATAR_FALLBACK } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 
 const querySchema = z.object({
   uuid: z.string().transform((objectKey) => objectKey.split(".")[0]),

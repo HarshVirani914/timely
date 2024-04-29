@@ -1,7 +1,6 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { TopBanner } from "@timely/ui";
 import type { SessionContextValue } from "next-auth/react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { TopBanner } from "@calcom/ui";
 
 export type ImpersonatingBannerProps = { data: SessionContextValue["data"] };
 

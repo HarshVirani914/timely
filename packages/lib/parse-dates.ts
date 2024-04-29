@@ -1,9 +1,8 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { detectBrowserTimeFormat, TimeFormat } from "@timely/lib/timeFormat";
+import type { RecurringEvent } from "@timely/types/Calendar";
 import { RRule } from "rrule";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { detectBrowserTimeFormat, TimeFormat } from "@calcom/lib/timeFormat";
-import type { RecurringEvent } from "@calcom/types/Calendar";
 
 import { parseZone } from "./parse-zone";
 

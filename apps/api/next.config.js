@@ -4,14 +4,14 @@ const { withSentryConfig } = require("@sentry/nextjs");
 const plugins = [withAxiom];
 const nextConfig = {
   transpilePackages: [
-    "@calcom/app-store",
-    "@calcom/core",
-    "@calcom/dayjs",
-    "@calcom/emails",
-    "@calcom/features",
-    "@calcom/lib",
-    "@calcom/prisma",
-    "@calcom/trpc",
+    "@timely/app-store",
+    "@timely/core",
+    "@timely/dayjs",
+    "@timely/emails",
+    "@timely/features",
+    "@timely/lib",
+    "@timely/prisma",
+    "@timely/trpc",
   ],
   async headers() {
     return [

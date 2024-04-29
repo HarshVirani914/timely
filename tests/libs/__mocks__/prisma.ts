@@ -1,10 +1,9 @@
+import logger from "@timely/lib/logger";
+import * as selects from "@timely/prisma/selects";
 import { PrismockClient } from "prismock";
 import { beforeEach, vi } from "vitest";
 
-import logger from "@calcom/lib/logger";
-import * as selects from "@calcom/prisma/selects";
-
-vi.mock("@calcom/prisma", () => ({
+vi.mock("@timely/prisma", () => ({
   default: prisma,
   prisma,
   ...selects,

@@ -1,11 +1,10 @@
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { nameOfDay } from "@timely/lib/weekday";
+import { BookerLayouts } from "@timely/prisma/zod-utils";
 import { shallow } from "zustand/shallow";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { nameOfDay } from "@calcom/lib/weekday";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
 
 import { useBookerStore } from "../Booker/store";
 import { TimeFormatToggle } from "./TimeFormatToggle";

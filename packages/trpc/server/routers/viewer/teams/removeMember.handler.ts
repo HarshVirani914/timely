@@ -1,11 +1,11 @@
-import { updateQuantitySubscriptionFromStripe } from "@calcom/features/ee/teams/lib/payments";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { isTeamAdmin, isTeamOwner } from "@calcom/lib/server/queries/teams";
-import { closeComDeleteTeamMembership } from "@calcom/lib/sync/SyncServiceManager";
-import type { PrismaClient } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { updateQuantitySubscriptionFromStripe } from "@timely/features/ee/teams/lib/payments";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { isTeamAdmin, isTeamOwner } from "@timely/lib/server/queries/teams";
+import { closeComDeleteTeamMembership } from "@timely/lib/sync/SyncServiceManager";
+import type { PrismaClient } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

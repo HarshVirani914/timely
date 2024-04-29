@@ -1,15 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { isPasswordValid } from "@timely/features/auth/lib/isPasswordValid";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { trpc } from "@timely/trpc/react";
+import { Alert, Button, Form, PasswordField } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { isPasswordValid } from "@calcom/features/auth/lib/isPasswordValid";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { trpc } from "@calcom/trpc/react";
-import { Alert, Button, Form, PasswordField } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
 
 const querySchema = z.object({
   id: z.string(),

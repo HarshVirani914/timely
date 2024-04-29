@@ -1,10 +1,9 @@
+import classNames from "@timely/lib/classNames";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import type { RouterOutputs } from "@timely/trpc";
+import { Avatar, TextField } from "@timely/ui";
 import type { PropsWithChildren } from "react";
 import { useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import type { RouterOutputs } from "@calcom/trpc";
-import { Avatar, TextField } from "@calcom/ui";
 
 type TeamInviteFromOrgProps = PropsWithChildren<{
   selectedEmails?: string | string[];

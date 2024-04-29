@@ -1,11 +1,10 @@
+import { formatPrice } from "@timely/lib/price";
 import dynamic from "next/dynamic";
-
-import { formatPrice } from "@calcom/lib/price";
 
 import type { EventPrice } from "../../types";
 
 const AlbyPriceComponent = dynamic(
-  () => import("@calcom/app-store/alby/components/AlbyPriceComponent").then((m) => m.AlbyPriceComponent),
+  () => import("@timely/app-store/alby/components/AlbyPriceComponent").then((m) => m.AlbyPriceComponent),
   {
     ssr: false,
   }

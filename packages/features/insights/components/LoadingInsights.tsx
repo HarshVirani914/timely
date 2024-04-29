@@ -1,5 +1,5 @@
-import { classNames } from "@calcom/lib";
-import { SkeletonText } from "@calcom/ui";
+import { classNames } from "@timely/lib";
+import { SkeletonText } from "@timely/ui";
 
 import { CardInsights } from "./Card";
 

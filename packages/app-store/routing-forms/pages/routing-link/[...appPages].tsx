@@ -1,21 +1,20 @@
+import { sdkActionManager, useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import classNames from "@timely/lib/classNames";
+import useGetBrandingColours from "@timely/lib/getBrandColours";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import useTheme from "@timely/lib/hooks/useTheme";
+import { trpc } from "@timely/trpc/react";
+import type { AppGetServerSidePropsContext, AppPrisma } from "@timely/types/AppGetServerSideProps";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { Button, showToast, useTimelyTheme } from "@timely/ui";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
-
-import { sdkActionManager, useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import classNames from "@calcom/lib/classNames";
-import useGetBrandingColours from "@calcom/lib/getBrandColours";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import useTheme from "@calcom/lib/hooks/useTheme";
-import { trpc } from "@calcom/trpc/react";
-import type { AppGetServerSidePropsContext, AppPrisma } from "@calcom/types/AppGetServerSideProps";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { Button, showToast, useCalcomTheme } from "@calcom/ui";
 
 import FormInputFields from "../../components/FormInputFields";
 import getFieldIdentifier from "../../lib/getFieldIdentifier";
@@ -36,7 +35,7 @@ const useBrandColors = ({
     lightVal: brandColor,
     darkVal: darkBrandColor,
   });
-  useCalcomTheme(brandTheme);
+  useTimelyTheme(brandTheme);
 };
 
 function RoutingForm({ form, profile, ...restProps }: Props) {
@@ -133,7 +132,7 @@ function RoutingForm({ form, profile, ...restProps }: Props) {
         {!customPageMessage ? (
           <>
             <Head>
-              <title>{`${form.name} | Cal.com Forms`}</title>
+              <title>{`${form.name} | Timely Forms`}</title>
             </Head>
             <div className={classNames("mx-auto my-0 max-w-3xl", isEmbed ? "" : "md:my-24")}>
               <div className="w-full max-w-4xl ltr:mr-2 rtl:ml-2">

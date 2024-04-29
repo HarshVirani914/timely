@@ -2,11 +2,11 @@ import type { Prisma } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import dayjs from "@calcom/dayjs";
-import { sendMonthlyDigestEmails } from "@calcom/emails/email-manager";
-import { EventsInsights } from "@calcom/features/insights/server/events";
-import { getTranslation } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
+import dayjs from "@timely/dayjs";
+import { sendMonthlyDigestEmails } from "@timely/emails/email-manager";
+import { EventsInsights } from "@timely/features/insights/server/events";
+import { getTranslation } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 
 const querySchema = z.object({
   page: z.coerce.number().min(0).optional().default(0),

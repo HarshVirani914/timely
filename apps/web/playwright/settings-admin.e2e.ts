@@ -8,7 +8,7 @@ test.describe("Settings/admin A/B tests", () => {
   test("should point to the /future/settings/admin page", async ({ page, users, context }) => {
     await context.addCookies([
       {
-        name: "x-calcom-future-routes-override",
+        name: "x-timely-future-routes-override",
         value: "1",
         url: "http://localhost:3000",
       },

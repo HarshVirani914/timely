@@ -1,10 +1,10 @@
 import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 
-import { purchaseTeamSubscription } from "@calcom/features/ee/teams/lib/payments";
-import { IS_TEAM_BILLING_ENABLED } from "@calcom/lib/constants";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { purchaseTeamSubscription } from "@timely/features/ee/teams/lib/payments";
+import { IS_TEAM_BILLING_ENABLED } from "@timely/lib/constants";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,4 +1,4 @@
-import { _PaymentModel as Payment } from "@calcom/prisma/zod";
+import { _PaymentModel as Payment } from "@timely/prisma/zod";
 
 // FIXME: Payment seems a delicate endpoint, do we need to remove anything here?
 export const schemaPaymentBodyParams = Payment.omit({ id: true });

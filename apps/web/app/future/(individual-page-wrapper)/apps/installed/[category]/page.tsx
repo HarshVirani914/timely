@@ -3,8 +3,8 @@ import { _generateMetadata } from "app/_utils";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 
-import { APP_NAME } from "@calcom/lib/constants";
-import { AppCategories } from "@calcom/prisma/enums";
+import { APP_NAME } from "@timely/lib/constants";
+import { AppCategories } from "@timely/prisma/enums";
 
 const querySchema = z.object({
   category: z.nativeEnum(AppCategories),

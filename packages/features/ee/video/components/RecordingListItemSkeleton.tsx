@@ -1,4 +1,4 @@
-import { SkeletonText, SkeletonButton } from "@calcom/ui";
+import { SkeletonText, SkeletonButton } from "@timely/ui";
 
 export default function RecordingListItemSkeleton() {
   return (

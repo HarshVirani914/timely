@@ -1,17 +1,16 @@
+import dayjs from "@timely/dayjs";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { useHasTeamPlan } from "@timely/lib/hooks/useHasPaidPlan";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RecordingItemSchema } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import type { PartialReference } from "@timely/types/EventManager";
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader } from "@timely/ui";
+import { Button } from "@timely/ui";
+import { Download } from "@timely/ui/components/icon";
 import { useRouter } from "next/navigation";
 import { useState, Suspense } from "react";
-
-import dayjs from "@calcom/dayjs";
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { useHasTeamPlan } from "@calcom/lib/hooks/useHasPaidPlan";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RecordingItemSchema } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import type { PartialReference } from "@calcom/types/EventManager";
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader } from "@calcom/ui";
-import { Button } from "@calcom/ui";
-import { Download } from "@calcom/ui/components/icon";
 
 import RecordingListSkeleton from "./components/RecordingListSkeleton";
 

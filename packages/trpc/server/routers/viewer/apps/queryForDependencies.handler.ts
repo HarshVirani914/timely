@@ -1,5 +1,5 @@
-import { getAppFromSlug } from "@calcom/app-store/utils";
-import { prisma } from "@calcom/prisma";
+import { getAppFromSlug } from "@timely/app-store/utils";
+import { prisma } from "@timely/prisma";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import type { TQueryForDependenciesInputSchema } from "./queryForDependencies.schema";

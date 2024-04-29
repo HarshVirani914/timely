@@ -1,9 +1,8 @@
 import type { EventType } from "@prisma/client";
+import type { PaymentPageProps } from "@timely/ee/payments/pages/payment";
+import type { BookingResponse } from "@timely/features/bookings/types";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
 import { useRouter } from "next/navigation";
-
-import type { PaymentPageProps } from "@calcom/ee/payments/pages/payment";
-import type { BookingResponse } from "@calcom/features/bookings/types";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
 
 function getNewSeachParams(args: {
   query: Record<string, string | null | undefined | boolean>;

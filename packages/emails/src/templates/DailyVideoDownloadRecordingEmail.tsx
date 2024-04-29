@@ -1,6 +1,5 @@
+import { WEBAPP_URL, APP_NAME, COMPANY_NAME } from "@timely/lib/constants";
 import type { TFunction } from "next-i18next";
-
-import { WEBAPP_URL, APP_NAME, COMPANY_NAME } from "@calcom/lib/constants";
 
 import { V2BaseEmailHtml, CallToAction } from "../components";
 
@@ -91,7 +90,7 @@ export const DailyVideoDownloadRecordingEmail = (
         <>{props.language("happy_scheduling")},</>
       </p>
       <p style={{ fontWeight: 400, lineHeight: "24px", marginTop: "0px" }}>
-        <>{props.language("the_calcom_team", { companyName: COMPANY_NAME })}</>
+        <>{props.language("the_timely_team", { companyName: COMPANY_NAME })}</>
       </p>
     </V2BaseEmailHtml>
   );

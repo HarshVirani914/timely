@@ -1,7 +1,6 @@
 import type { Account, IdentityProvider, Prisma, User, VerificationToken } from "@prisma/client";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-
-import type { PrismaClient } from "@calcom/prisma";
+import type { PrismaClient } from "@timely/prisma";
 
 import { identityProviderNameMap } from "./identityProviderNameMap";
 

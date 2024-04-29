@@ -1,9 +1,8 @@
 import type { Prisma } from "@prisma/client";
+import { IS_PRODUCTION, WEBAPP_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 import { v4 as uuidv4 } from "uuid";
 import z from "zod";
-
-import { IS_PRODUCTION, WEBAPP_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
 
 class Paypal {
   url: string;

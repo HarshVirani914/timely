@@ -1,7 +1,4 @@
-import { useState } from "react";
-import type { UseFormReturn } from "react-hook-form";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import {
   Dropdown,
   DropdownMenuContent,
@@ -9,8 +6,10 @@ import {
   DropdownItem,
   DropdownMenuTrigger,
   TextField,
-} from "@calcom/ui";
-import { ChevronDown } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { ChevronDown } from "@timely/ui/components/icon";
+import { useState } from "react";
+import type { UseFormReturn } from "react-hook-form";
 
 import { getWorkflowTimeUnitOptions } from "../lib/getOptions";
 import type { FormValues } from "../pages/workflow";

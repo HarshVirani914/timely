@@ -1,10 +1,9 @@
+import dayjs from "@timely/dayjs";
+import { getRichDescription } from "@timely/lib/CalEventParser";
+import { APP_NAME } from "@timely/lib/constants";
+import type { CalendarEvent } from "@timely/types/Calendar";
 import type { DateArray, Person } from "ics";
 import { createEvent } from "ics";
-
-import dayjs from "@calcom/dayjs";
-import { getRichDescription } from "@calcom/lib/CalEventParser";
-import { APP_NAME } from "@calcom/lib/constants";
-import type { CalendarEvent } from "@calcom/types/Calendar";
 
 import { renderEmail } from "..";
 import generateIcsString from "../lib/generateIcsString";
@@ -66,7 +65,7 @@ export default class OrganizerRequestedToRescheduleEmail extends OrganizerSchedu
         .slice(0, 6)
         .map((v, i) => (i === 1 ? v + 1 : v)) as DateArray,
       startInputType: "utc",
-      productId: "calcom/ics",
+      productId: "timely/ics",
       title: this.t("ics_event_title", {
         eventType: this.calEvent.type,
         name: this.calEvent.attendees[0].name,

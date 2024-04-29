@@ -1,6 +1,6 @@
-import jackson from "@calcom/features/ee/sso/lib/jackson";
-import { samlProductID, samlTenantID } from "@calcom/features/ee/sso/lib/saml";
-import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
+import jackson from "@timely/features/ee/sso/lib/jackson";
+import { samlProductID, samlTenantID } from "@timely/features/ee/sso/lib/saml";
+import { HOSTED_CAL_FEATURES } from "@timely/lib/constants";
 
 import { TRPCError } from "@trpc/server";
 

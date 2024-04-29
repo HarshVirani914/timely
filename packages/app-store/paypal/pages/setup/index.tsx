@@ -1,12 +1,11 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Button, showToast, TextField } from "@timely/ui";
 import { AlertCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Button, showToast, TextField } from "@calcom/ui";
 
 export default function PayPalSetup() {
   const [newClientId, setNewClientId] = useState("");
@@ -82,7 +81,7 @@ export default function PayPalSetup() {
             <div>
               <p className="text-lgf text-default mt-5 font-bold">Getting started with Paypal APP</p>
               <p className="text-default font-semi mt-2">
-                Here in Cal.com we offer Paypal as one of our payment gateway. You can use your own Paypal
+                Here in Timely we offer Paypal as one of our payment gateway. You can use your own Paypal
                 Business account to receive payments from your customers enabling and setting up price and
                 currency for each of your event types.
               </p>

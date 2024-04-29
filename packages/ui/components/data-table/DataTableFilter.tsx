@@ -1,8 +1,7 @@
 import type { Column } from "@tanstack/react-table";
+import { classNames } from "@timely/lib";
 import type { LucideIcon } from "lucide-react";
 import { Check, Filter } from "lucide-react";
-
-import { classNames } from "@calcom/lib";
 
 import { Badge } from "../badge";
 import { Button } from "../button";

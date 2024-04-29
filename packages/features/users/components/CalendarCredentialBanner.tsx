@@ -1,8 +1,7 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { type RouterOutputs } from "@timely/trpc";
+import { TopBanner } from "@timely/ui";
 import Link from "next/link";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { type RouterOutputs } from "@calcom/trpc";
-import { TopBanner } from "@calcom/ui";
 
 export type CalendarCredentialBannerProps = {
   data: RouterOutputs["viewer"]["getUserTopBanners"]["calendarCredentialBanner"];

@@ -1,5 +1,5 @@
-import Shell, { MobileNavigationMoreItems } from "@calcom/features/shell/Shell";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import Shell, { MobileNavigationMoreItems } from "@timely/features/shell/Shell";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 
 import PageWrapper from "@components/PageWrapper";
 

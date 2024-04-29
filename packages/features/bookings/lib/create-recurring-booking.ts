@@ -1,4 +1,4 @@
-import { post } from "@calcom/lib/fetch-wrapper";
+import { post } from "@timely/lib/fetch-wrapper";
 
 import type { RecurringBookingCreateBody, BookingResponse } from "../types";
 

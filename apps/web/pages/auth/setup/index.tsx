@@ -2,16 +2,16 @@ import type { GetServerSidePropsContext } from "next";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-import AdminAppsList from "@calcom/features/apps/AdminAppsList";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { getDeploymentKey } from "@calcom/features/ee/deployment/lib/getDeploymentKey";
-import { APP_NAME } from "@calcom/lib/constants";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import prisma from "@calcom/prisma";
-import { UserPermissionRole } from "@calcom/prisma/enums";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { Meta, WizardForm } from "@calcom/ui";
+import AdminAppsList from "@timely/features/apps/AdminAppsList";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { getDeploymentKey } from "@timely/features/ee/deployment/lib/getDeploymentKey";
+import { APP_NAME } from "@timely/lib/constants";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import prisma from "@timely/prisma";
+import { UserPermissionRole } from "@timely/prisma/enums";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { Meta, WizardForm } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 import { AdminUserContainer as AdminUser } from "@components/setup/AdminUser";

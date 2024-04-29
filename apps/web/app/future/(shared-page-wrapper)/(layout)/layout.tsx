@@ -2,7 +2,7 @@
 import { headers } from "next/headers";
 import { type ReactElement } from "react";
 
-import { getLayout } from "@calcom/features/MainLayoutAppDir";
+import { getLayout } from "@timely/features/MainLayoutAppDir";
 
 import PageWrapper from "@components/PageWrapperAppDir";
 

@@ -1,6 +1,6 @@
 // This route is reachable by
 // 1. /team/[slug]
-// 2. / (when on org domain e.g. http://calcom.cal.com/. This is through a rewrite from next.config.js)
+// 2. / (when on org domain e.g. http://timely.timely/. This is through a rewrite from next.config.js)
 // Also the getServerSideProps and default export are reused by
 // 1. org/[orgSlug]/team/[slug]
 // 2. org/[orgSlug]/[user]/[type]
@@ -10,26 +10,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-import { sdkActionManager, useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { orgDomainConfig } from "@calcom/features/ee/organizations/lib/orgDomains";
-import EventTypeDescription from "@calcom/features/eventtypes/components/EventTypeDescription";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import useTheme from "@calcom/lib/hooks/useTheme";
-import logger from "@calcom/lib/logger";
-import { markdownToSafeHTML } from "@calcom/lib/markdownToSafeHTML";
-import { getTeamWithMembers } from "@calcom/lib/server/queries/teams";
-import slugify from "@calcom/lib/slugify";
-import { stripMarkdown } from "@calcom/lib/stripMarkdown";
-import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
-import prisma from "@calcom/prisma";
-import { RedirectType } from "@calcom/prisma/client";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { Avatar, Button, HeadSeo, UnpublishedEntity } from "@calcom/ui";
-import { ArrowRight } from "@calcom/ui/components/icon";
+import { sdkActionManager, useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { orgDomainConfig } from "@timely/features/ee/organizations/lib/orgDomains";
+import EventTypeDescription from "@timely/features/eventtypes/components/EventTypeDescription";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { getBookerBaseUrlSync } from "@timely/lib/getBookerUrl/client";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import useTheme from "@timely/lib/hooks/useTheme";
+import logger from "@timely/lib/logger";
+import { markdownToSafeHTML } from "@timely/lib/markdownToSafeHTML";
+import { getTeamWithMembers } from "@timely/lib/server/queries/teams";
+import slugify from "@timely/lib/slugify";
+import { stripMarkdown } from "@timely/lib/stripMarkdown";
+import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@timely/lib/telemetry";
+import prisma from "@timely/prisma";
+import { RedirectType } from "@timely/prisma/client";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { Avatar, Button, HeadSeo, UnpublishedEntity } from "@timely/ui";
+import { ArrowRight } from "@timely/ui/components/icon";
 
 import { useToggleQuery } from "@lib/hooks/useToggleQuery";
 import type { inferSSRProps } from "@lib/types/inferSSRProps";

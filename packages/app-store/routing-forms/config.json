@@ -6,12 +6,12 @@
   "slug": "routing-forms",
   "type": "routing-forms_other",
   "logo": "icon-dark.svg",
-  "url": "https://cal.com/resources/feature/routing-forms",
+  "url": "https://timely/resources/feature/routing-forms",
   "variant": "other",
   "categories": ["automation"],
-  "publisher": "Cal.com, Inc.",
+  "publisher": "Timely, Inc.",
   "simplePath": "/apps/routing-forms",
-  "email": "help@cal.com",
+  "email": "help@timely",
   "licenseRequired": true,
   "teamsPlanRequired": {
     "upgradeUrl": "/routing-forms/forms"

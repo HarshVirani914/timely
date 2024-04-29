@@ -1,8 +1,7 @@
 /* eslint-disable playwright/missing-playwright-await */
 import { fireEvent, render } from "@testing-library/react";
+import { TableActions } from "@timely/ui";
 import { vi } from "vitest";
-
-import { TableActions } from "@calcom/ui";
 
 import { TableNewExampleComponent } from "./TableExamples";
 

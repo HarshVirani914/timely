@@ -1,17 +1,16 @@
+import dayjs from "@timely/dayjs";
+import { useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { useTimePreferences } from "@timely/features/bookings/lib";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { localStorage } from "@timely/lib/webstorage";
+import { trpc } from "@timely/trpc/react";
+import { Button, Switch } from "@timely/ui";
+import { Settings } from "@timely/ui/components/icon";
 import { useSession } from "next-auth/react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useCallback, useEffect } from "react";
 import { shallow } from "zustand/shallow";
-
-import dayjs from "@calcom/dayjs";
-import { useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { localStorage } from "@calcom/lib/webstorage";
-import { trpc } from "@calcom/trpc/react";
-import { Button, Switch } from "@calcom/ui";
-import { Settings } from "@calcom/ui/components/icon";
 
 import { useBookerStore } from "../../store";
 import { OverlayCalendarContinueModal } from "../OverlayCalendar/OverlayCalendarContinueModal";

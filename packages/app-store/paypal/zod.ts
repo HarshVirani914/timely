@@ -1,6 +1,5 @@
+import { eventTypeAppCardZod } from "@timely/app-store/eventTypeAppCardZod";
 import { z } from "zod";
-
-import { eventTypeAppCardZod } from "@calcom/app-store/eventTypeAppCardZod";
 
 const paymentOptionSchema = z.object({
   label: z.string(),

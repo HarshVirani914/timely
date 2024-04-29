@@ -1,7 +1,7 @@
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { WebhookTriggerEvents } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { WebhookTriggerEvents } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
 import {
   Badge,
   Button,
@@ -14,8 +14,8 @@ import {
   showToast,
   Switch,
   Tooltip,
-} from "@calcom/ui";
-import { Edit, MoreHorizontal, Trash, Zap } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Edit, MoreHorizontal, Trash, Zap } from "@timely/ui/components/icon";
 
 type WebhookProps = {
   id: string;

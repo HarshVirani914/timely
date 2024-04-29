@@ -1,4 +1,4 @@
-# @calcom/embed-snippet
+# @timely/embed-snippet
 
 ## 1.1.2
 
@@ -6,7 +6,7 @@
 
 - Improve UI instruction layout typings
 - Updated dependencies
-  - @calcom/embed-core@1.3.2
+  - @timely/embed-core@1.3.2
 
 ## 1.1.1
 
@@ -14,7 +14,7 @@
 
 - layout type fix as zod-utils can't be used in npm package
 - Updated dependencies
-  - @calcom/embed-core@1.3.1
+  - @timely/embed-core@1.3.1
 
 ## 1.1.0
 
@@ -25,7 +25,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @calcom/embed-core@1.3.0
+  - @timely/embed-core@1.3.0
 
 ## 1.0.9
 
@@ -33,14 +33,14 @@
 
 - Fix the build for embed-react
 - Updated dependencies
-  - @calcom/embed-core@1.2.1
+  - @timely/embed-core@1.2.1
 
 ## 1.0.8
 
 ### Patch Changes
 
 - Updated dependencies
-  - @calcom/embed-core@1.2.0
+  - @timely/embed-core@1.2.0
 
 ## 1.0.7
 
@@ -48,4 +48,4 @@
 
 - Add changesets. Use prepack instead of prePublish and prepublish only as that works with both yarn and npm
 - Updated dependencies
-  - @calcom/embed-core@1.1.5
+  - @timely/embed-core@1.1.5

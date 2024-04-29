@@ -1,10 +1,9 @@
+import { symmetricEncrypt } from "@timely/lib/crypto";
+import { HttpError } from "@timely/lib/http-error";
+import logger from "@timely/lib/logger";
+import { defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import type { NextApiRequest } from "next";
-
-import { symmetricEncrypt } from "@calcom/lib/crypto";
-import { HttpError } from "@calcom/lib/http-error";
-import logger from "@calcom/lib/logger";
-import { defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import checkSession from "../../_utils/auth";
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";

@@ -1,7 +1,7 @@
-import classNames from "@calcom/lib/classNames";
-import { getOrgAvatarUrl } from "@calcom/lib/getAvatarUrl";
-// import { Avatar } from "@calcom/ui";
-import { UserAvatar } from "@calcom/web/components/ui/avatar/UserAvatar";
+import classNames from "@timely/lib/classNames";
+import { getOrgAvatarUrl } from "@timely/lib/getAvatarUrl";
+// import { Avatar } from "@timely/ui";
+import { UserAvatar } from "@timely/web/components/ui/avatar/UserAvatar";
 
 type OrganizationMemberAvatarProps = React.ComponentProps<typeof UserAvatar> & {
   organization: {

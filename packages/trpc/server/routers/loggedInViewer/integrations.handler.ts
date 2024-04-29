@@ -1,16 +1,15 @@
 import type { Prisma } from "@prisma/client";
-
-import appStore from "@calcom/app-store";
-import type { CredentialOwner } from "@calcom/app-store/types";
-import getEnabledAppsFromCredentials from "@calcom/lib/apps/getEnabledAppsFromCredentials";
-import getInstallCountPerApp from "@calcom/lib/apps/getInstallCountPerApp";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import prisma from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { PaymentApp } from "@calcom/types/PaymentService";
+import appStore from "@timely/app-store";
+import type { CredentialOwner } from "@timely/app-store/types";
+import getEnabledAppsFromCredentials from "@timely/lib/apps/getEnabledAppsFromCredentials";
+import getInstallCountPerApp from "@timely/lib/apps/getInstallCountPerApp";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import prisma from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { PaymentApp } from "@timely/types/PaymentService";
 
 import type { TIntegrationsInputSchema } from "./integrations.schema";
 
@@ -25,7 +24,7 @@ type TeamQuery = Prisma.TeamGetPayload<{
   select: {
     id: true;
     credentials: {
-      select: typeof import("@calcom/prisma/selects/credential").credentialForCalendarServiceSelect;
+      select: typeof import("@timely/prisma/selects/credential").credentialForCalendarServiceSelect;
     };
     name: true;
     logo: true;

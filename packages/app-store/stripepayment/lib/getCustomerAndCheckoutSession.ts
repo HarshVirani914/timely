@@ -1,4 +1,4 @@
-import stripe from "@calcom/app-store/stripepayment/lib/server";
+import stripe from "@timely/app-store/stripepayment/lib/server";
 
 export async function getCustomerAndCheckoutSession(checkoutSessionId: string) {
   const checkoutSession = await stripe.checkout.sessions.retrieve(checkoutSessionId);

@@ -1,20 +1,19 @@
 import { Prisma } from "@prisma/client";
-
-import appStore from "@calcom/app-store";
-import { sendDeclinedEmails } from "@calcom/emails";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { handleConfirmation } from "@calcom/features/bookings/lib/handleConfirmation";
-import { handleWebhookTrigger } from "@calcom/features/bookings/lib/handleWebhookTrigger";
-import type { EventTypeInfo } from "@calcom/features/webhooks/lib/sendPayload";
-import { isPrismaObjOrUndefined, parseRecurringEvent } from "@calcom/lib";
-import { getTeamIdFromEventType } from "@calcom/lib/getTeamIdFromEventType";
-import { getTranslation } from "@calcom/lib/server";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import { prisma } from "@calcom/prisma";
-import { BookingStatus, MembershipRole, SchedulingType, WebhookTriggerEvents } from "@calcom/prisma/enums";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService, PaymentApp } from "@calcom/types/PaymentService";
+import appStore from "@timely/app-store";
+import { sendDeclinedEmails } from "@timely/emails";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { handleConfirmation } from "@timely/features/bookings/lib/handleConfirmation";
+import { handleWebhookTrigger } from "@timely/features/bookings/lib/handleWebhookTrigger";
+import type { EventTypeInfo } from "@timely/features/webhooks/lib/sendPayload";
+import { isPrismaObjOrUndefined, parseRecurringEvent } from "@timely/lib";
+import { getTeamIdFromEventType } from "@timely/lib/getTeamIdFromEventType";
+import { getTranslation } from "@timely/lib/server";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import { prisma } from "@timely/prisma";
+import { BookingStatus, MembershipRole, SchedulingType, WebhookTriggerEvents } from "@timely/prisma/enums";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService, PaymentApp } from "@timely/types/PaymentService";
 
 import { TRPCError } from "@trpc/server";
 

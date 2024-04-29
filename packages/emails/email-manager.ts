@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-restricted-imports
+import type { EventNameObjectType } from "@timely/core/event";
+import { getEventName } from "@timely/core/event";
+import type BaseEmail from "@timely/emails/templates/_base-email";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 import { cloneDeep } from "lodash";
 import type { TFunction } from "next-i18next";
-
-import type { EventNameObjectType } from "@calcom/core/event";
-import { getEventName } from "@calcom/core/event";
-import type BaseEmail from "@calcom/emails/templates/_base-email";
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
 
 import type { MonthlyDigestEmailData } from "./src/templates/MonthlyDigestEmail";
 import type { EmailVerifyLink } from "./templates/account-verify-email";

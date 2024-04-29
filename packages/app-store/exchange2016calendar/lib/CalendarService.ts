@@ -1,3 +1,15 @@
+import { symmetricDecrypt } from "@timely/lib/crypto";
+// Probably don't need
+// import { CALENDAR_INTEGRATIONS_TYPES } from "@timely/lib/integrations/calendar/constants/generals";
+import logger from "@timely/lib/logger";
+import type {
+  Calendar,
+  CalendarEvent,
+  EventBusyDate,
+  IntegrationCalendar,
+  NewCalendarEventType,
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 import {
   Appointment,
   Attendee,
@@ -19,19 +31,6 @@ import {
   WebCredentials,
   WellKnownFolderName,
 } from "ews-javascript-api";
-
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-// Probably don't need
-// import { CALENDAR_INTEGRATIONS_TYPES } from "@calcom/lib/integrations/calendar/constants/generals";
-import logger from "@calcom/lib/logger";
-import type {
-  Calendar,
-  CalendarEvent,
-  EventBusyDate,
-  IntegrationCalendar,
-  NewCalendarEventType,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
 
 export default class ExchangeCalendarService implements Calendar {
   private url = "";

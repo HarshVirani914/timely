@@ -1,4 +1,4 @@
-import WeebhooksView from "@calcom/features/webhooks/pages/webhooks-view";
+import WeebhooksView from "@timely/features/webhooks/pages/webhooks-view";
 
 import type { CalPageWrapper } from "@components/PageWrapper";
 import PageWrapper from "@components/PageWrapper";

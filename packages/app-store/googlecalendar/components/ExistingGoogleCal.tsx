@@ -1,8 +1,7 @@
+import { CAL_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { AlertCircle, ArrowRight, Check } from "@timely/ui/components/icon";
 import Link from "next/link";
-
-import { CAL_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { AlertCircle, ArrowRight, Check } from "@calcom/ui/components/icon";
 
 const ExistingGoogleCal = ({ gCalInstalled, appName }: { gCalInstalled?: boolean; appName: string }) => {
   const { t } = useLocale();

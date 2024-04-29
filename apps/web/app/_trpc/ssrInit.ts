@@ -3,10 +3,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { headers, cookies } from "next/headers";
 import superjson from "superjson";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { CALCOM_VERSION } from "@calcom/lib/constants";
-import prisma, { readonlyPrisma } from "@calcom/prisma";
-import { appRouter } from "@calcom/trpc/server/routers/_app";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { CALCOM_VERSION } from "@timely/lib/constants";
+import prisma, { readonlyPrisma } from "@timely/prisma";
+import { appRouter } from "@timely/trpc/server/routers/_app";
 
 import { createTRPCNextLayout } from "./createTRPCNextLayout";
 

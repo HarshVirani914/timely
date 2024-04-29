@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import prisma from "@calcom/prisma";
-import { generateSecret } from "@calcom/trpc/server/routers/viewer/oAuth/addClient.handler";
+import prisma from "@timely/prisma";
+import { generateSecret } from "@timely/trpc/server/routers/viewer/oAuth/addClient.handler";
 
 export type OAuthTokenPayload = {
   userId?: number | null;

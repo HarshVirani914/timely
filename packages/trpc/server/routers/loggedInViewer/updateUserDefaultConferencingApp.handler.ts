@@ -1,10 +1,9 @@
+import getApps from "@timely/app-store/utils";
+import { getUsersCredentials } from "@timely/lib/server/getUsersCredentials";
+import { prisma } from "@timely/prisma";
+import { userMetadata } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 import z from "zod";
-
-import getApps from "@calcom/app-store/utils";
-import { getUsersCredentials } from "@calcom/lib/server/getUsersCredentials";
-import { prisma } from "@calcom/prisma";
-import { userMetadata } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

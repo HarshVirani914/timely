@@ -1,11 +1,10 @@
+import { useAppContextWithSchema } from "@timely/app-store/EventTypeAppContext";
+import AppCard from "@timely/app-store/_components/AppCard";
+import useIsAppEnabled from "@timely/app-store/_utils/useIsAppEnabled";
+import type { EventTypeAppCardComponent } from "@timely/app-store/types";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Tooltip, TextField } from "@timely/ui";
 import { useState } from "react";
-
-import { useAppContextWithSchema } from "@calcom/app-store/EventTypeAppContext";
-import AppCard from "@calcom/app-store/_components/AppCard";
-import useIsAppEnabled from "@calcom/app-store/_utils/useIsAppEnabled";
-import type { EventTypeAppCardComponent } from "@calcom/app-store/types";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Tooltip, TextField } from "@calcom/ui";
 
 import type { appDataSchema } from "../zod";
 

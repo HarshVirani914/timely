@@ -1,12 +1,12 @@
 {
-  "name": "@calcom/embed-react",
+  "name": "@timely/embed-react",
   "sideEffects": false,
   "version": "1.3.1",
   "description": "Embed Cal Link as a React Component",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/calcom/cal.com",
+    "url": "https://github.com/timely/timely",
     "directory": "packages/embeds/embed-react"
   },
   "scripts": {
@@ -20,10 +20,10 @@
     "embed-tests-quick": "QUICK=true yarn embed-tests",
     "embed-tests-update-snapshots:ci": "yarn embed-tests-quick --update-snapshots",
     "packaged:tests": "cd test/packaged && yarn tsc --noEmit && yarn run -T test -- --packaged-embed-tests-only",
-    "withEmbedPublishEnv": "NEXT_PUBLIC_EMBED_LIB_URL='https://app.cal.com/embed/embed.js' NEXT_PUBLIC_WEBAPP_URL='https://app.cal.com' yarn",
-    "prepack": "yarn ../../../ lint --filter='@calcom/embed-react' && yarn withEmbedPublishEnv build && yarn packaged:tests",
-    "embed-web-start": "yarn workspace @calcom/web start",
-    "embed-dev": "yarn workspace @calcom/embed-react dev",
+    "withEmbedPublishEnv": "NEXT_PUBLIC_EMBED_LIB_URL='https://app.timely/embed/embed.js' NEXT_PUBLIC_WEBAPP_URL='https://app.timely' yarn",
+    "prepack": "yarn ../../../ lint --filter='@timely/embed-react' && yarn withEmbedPublishEnv build && yarn packaged:tests",
+    "embed-web-start": "yarn workspace @timely/web start",
+    "embed-dev": "yarn workspace @timely/embed-react dev",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "main": "./dist/Cal.umd.js",
@@ -54,7 +54,7 @@
     "vite": "^4.1.2"
   },
   "dependencies": {
-    "@calcom/embed-core": "workspace:*",
-    "@calcom/embed-snippet": "workspace:*"
+    "@timely/embed-core": "workspace:*",
+    "@timely/embed-snippet": "workspace:*"
   }
 }

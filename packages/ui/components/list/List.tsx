@@ -1,8 +1,7 @@
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import Link from "next/link";
 import { createElement } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Badge } from "../badge";
 

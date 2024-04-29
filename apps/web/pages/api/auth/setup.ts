@@ -1,13 +1,13 @@
 import type { NextApiRequest } from "next";
 import z from "zod";
 
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { isPasswordValid } from "@calcom/features/auth/lib/isPasswordValid";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { isPasswordValid } from "@timely/features/auth/lib/isPasswordValid";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
 
 const querySchema = z.object({
   username: z

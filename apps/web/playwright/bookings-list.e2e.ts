@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 
-import { BookingStatus } from "@calcom/prisma/client";
+import { BookingStatus } from "@timely/prisma/client";
 
 import type { Fixtures } from "./lib/fixtures";
 import { test } from "./lib/fixtures";
@@ -25,9 +25,9 @@ test.describe("Bookings", () => {
         organizer: firstUser,
         organizerEventType: firstUser.eventTypes[0],
         attendees: [
-          { name: "First", email: "first@cal.com", timeZone: "Europe/Berlin" },
-          { name: "Second", email: "second@cal.com", timeZone: "Europe/Berlin" },
-          { name: "Third", email: "third@cal.com", timeZone: "Europe/Berlin" },
+          { name: "First", email: "first@timely", timeZone: "Europe/Berlin" },
+          { name: "Second", email: "second@timely", timeZone: "Europe/Berlin" },
+          { name: "Third", email: "third@timely", timeZone: "Europe/Berlin" },
         ],
       });
       const bookingWhereFirstUserIsOrganizer = await bookingWhereFirstUserIsOrganizerFixture.self();
@@ -41,8 +41,8 @@ test.describe("Bookings", () => {
         organizerEventType: secondUser.eventTypes[0],
         attendees: [
           { name: "OrganizerAsBooker", email: firstUser.email, timeZone: "Europe/Berlin" },
-          { name: "Second", email: "second@cal.com", timeZone: "Europe/Berlin" },
-          { name: "Third", email: "third@cal.com", timeZone: "Europe/Berlin" },
+          { name: "Second", email: "second@timely", timeZone: "Europe/Berlin" },
+          { name: "Third", email: "third@timely", timeZone: "Europe/Berlin" },
         ],
       });
       const bookingWhereFirstUserIsAttendee = await bookingWhereFirstUserIsAttendeeFixture.self();

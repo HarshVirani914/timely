@@ -1,5 +1,5 @@
-import dayjs from "@calcom/dayjs";
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import dayjs from "@timely/dayjs";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 import { getErrorFromUnknown } from "../errors";
 import { HttpError } from "../http-error";

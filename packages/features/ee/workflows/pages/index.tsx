@@ -1,17 +1,16 @@
+import { getLayout } from "@timely/features/MainLayout";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { classNames } from "@timely/lib";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useRouterQuery } from "@timely/lib/hooks/useRouterQuery";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
+import { AnimatedPopover, Avatar, CreateButtonWithTeamsList, showToast } from "@timely/ui";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
-
-import { getLayout } from "@calcom/features/MainLayout";
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { classNames } from "@calcom/lib";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useRouterQuery } from "@calcom/lib/hooks/useRouterQuery";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
-import { AnimatedPopover, Avatar, CreateButtonWithTeamsList, showToast } from "@calcom/ui";
 
 import { FilterResults } from "../../../filters/components/FilterResults";
 import { TeamsFilter } from "../../../filters/components/TeamsFilter";

@@ -1,4 +1,4 @@
-import { featureFlagRouter } from "@calcom/features/flags/server/router";
-import { createNextApiHandler } from "@calcom/trpc/server/createNextApiHandler";
+import { featureFlagRouter } from "@timely/features/flags/server/router";
+import { createNextApiHandler } from "@timely/trpc/server/createNextApiHandler";
 
 export default createNextApiHandler(featureFlagRouter, true, "features");

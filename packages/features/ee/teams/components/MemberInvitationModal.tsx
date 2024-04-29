@@ -1,18 +1,11 @@
-import { BuildingIcon, PaperclipIcon, UserIcon, Users } from "lucide-react";
-import { useSession } from "next-auth/react";
-import { Trans } from "next-i18next";
-import { useMemo, useState, useRef } from "react";
-import type { FormEvent } from "react";
-import { Controller, useForm } from "react-hook-form";
-
-import TeamInviteFromOrg from "@calcom/ee/organizations/components/TeamInviteFromOrg";
-import { classNames } from "@calcom/lib";
-import { IS_TEAM_BILLING_ENABLED, MAX_NB_INVITES } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import type { RouterOutputs } from "@calcom/trpc";
-import { trpc } from "@calcom/trpc";
-import { isEmail } from "@calcom/trpc/server/routers/viewer/teams/util";
+import TeamInviteFromOrg from "@timely/ee/organizations/components/TeamInviteFromOrg";
+import { classNames } from "@timely/lib";
+import { IS_TEAM_BILLING_ENABLED, MAX_NB_INVITES } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import type { RouterOutputs } from "@timely/trpc";
+import { trpc } from "@timely/trpc";
+import { isEmail } from "@timely/trpc/server/routers/viewer/teams/util";
 import {
   Button,
   Dialog,
@@ -25,8 +18,14 @@ import {
   ToggleGroup,
   Select,
   TextAreaField,
-} from "@calcom/ui";
-import { Link } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Link } from "@timely/ui/components/icon";
+import { BuildingIcon, PaperclipIcon, UserIcon, Users } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { Trans } from "next-i18next";
+import { useMemo, useState, useRef } from "react";
+import type { FormEvent } from "react";
+import { Controller, useForm } from "react-hook-form";
 
 import type { PendingMember } from "../lib/types";
 import { GoogleWorkspaceInviteButton } from "./GoogleWorkspaceInviteButton";

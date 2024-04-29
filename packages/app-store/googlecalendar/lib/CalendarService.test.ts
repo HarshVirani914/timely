@@ -8,7 +8,7 @@ afterEach(() => {
   vi.resetAllMocks();
 });
 
-vi.mock("@calcom/features/flags/server/utils", () => ({
+vi.mock("@timely/features/flags/server/utils", () => ({
   getFeatureFlagMap: vi.fn().mockResolvedValue({
     "calendar-cache": true,
   }),
@@ -37,14 +37,14 @@ const testCredential = {
   key: googleTestCredential,
   type: "test",
   userId: 1,
-  user: { email: "example@cal.com" },
+  user: { email: "example@timely" },
   teamId: 1,
 };
 
 const testSelectedCalendar = {
   userId: 1,
   integration: "google_calendar",
-  externalId: "example@cal.com",
+  externalId: "example@timely",
 };
 
 const testFreeBusyResponse = {
@@ -52,7 +52,7 @@ const testFreeBusyResponse = {
   timeMax: "2024-01-01T20:59:59.000Z",
   timeMin: "2023-11-30T20:00:00.000Z",
   calendars: {
-    "example@cal.com": {
+    "example@timely": {
       busy: [
         { end: "2023-12-01T19:00:00Z", start: "2023-12-01T18:00:00Z" },
         { end: "2023-12-04T19:00:00Z", start: "2023-12-04T18:00:00Z" },

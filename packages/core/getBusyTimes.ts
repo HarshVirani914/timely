@@ -1,16 +1,15 @@
 import type { Booking, EventType } from "@prisma/client";
-
-import { getBusyCalendarTimes } from "@calcom/core/CalendarManager";
-import dayjs from "@calcom/dayjs";
-import { subtract } from "@calcom/lib/date-ranges";
-import logger from "@calcom/lib/logger";
-import { getPiiFreeBooking } from "@calcom/lib/piiFreeData";
-import { performance } from "@calcom/lib/server/perfObserver";
-import prisma from "@calcom/prisma";
-import type { Prisma, SelectedCalendar } from "@calcom/prisma/client";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { EventBusyDetails } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
+import { getBusyCalendarTimes } from "@timely/core/CalendarManager";
+import dayjs from "@timely/dayjs";
+import { subtract } from "@timely/lib/date-ranges";
+import logger from "@timely/lib/logger";
+import { getPiiFreeBooking } from "@timely/lib/piiFreeData";
+import { performance } from "@timely/lib/server/perfObserver";
+import prisma from "@timely/prisma";
+import type { Prisma, SelectedCalendar } from "@timely/prisma/client";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { EventBusyDetails } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 
 export async function getBusyTimes(params: {
   credentials: CredentialPayload[];
@@ -71,7 +70,7 @@ export async function getBusyTimes(params: {
    *   - The current user has a different booking at this time he/she attends
    *
    * See further discussion within this GH issue:
-   * https://github.com/calcom/cal.com/issues/6374
+   * https://github.com/timely/timely/issues/6374
    *
    * NOTE: Changes here will likely require changes to some mocking
    *  logic within getSchedule.test.ts:addBookings

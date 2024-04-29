@@ -1,4 +1,4 @@
-import classNames from "@calcom/lib/classNames";
+import classNames from "@timely/lib/classNames";
 
 import { Avatar } from "./Avatar";
 

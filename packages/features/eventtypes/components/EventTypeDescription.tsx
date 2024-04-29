@@ -1,17 +1,16 @@
 import type { Prisma } from "@prisma/client";
+import { Price } from "@timely/features/bookings/components/event-meta/Price";
+import { getPriceIcon } from "@timely/features/bookings/components/event-meta/getPriceIcon";
+import { classNames, parseRecurringEvent } from "@timely/lib";
+import getPaymentAppData from "@timely/lib/getPaymentAppData";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { baseEventTypeSelect } from "@timely/prisma";
+import { SchedulingType } from "@timely/prisma/enums";
+import type { EventTypeModel } from "@timely/prisma/zod";
+import { Badge } from "@timely/ui";
+import { Clock, Users, RefreshCw, Clipboard, Plus, User, Lock } from "@timely/ui/components/icon";
 import { useMemo } from "react";
 import type { z } from "zod";
-
-import { Price } from "@calcom/features/bookings/components/event-meta/Price";
-import { getPriceIcon } from "@calcom/features/bookings/components/event-meta/getPriceIcon";
-import { classNames, parseRecurringEvent } from "@calcom/lib";
-import getPaymentAppData from "@calcom/lib/getPaymentAppData";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { baseEventTypeSelect } from "@calcom/prisma";
-import { SchedulingType } from "@calcom/prisma/enums";
-import type { EventTypeModel } from "@calcom/prisma/zod";
-import { Badge } from "@calcom/ui";
-import { Clock, Users, RefreshCw, Clipboard, Plus, User, Lock } from "@calcom/ui/components/icon";
 
 export type EventTypeDescriptionProps = {
   eventType: Pick<

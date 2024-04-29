@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-restricted-imports
+import classNames from "@timely/lib/classNames";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
 import { noop } from "lodash";
 import { useRouter } from "next/navigation";
 import type { Dispatch, SetStateAction } from "react";
 import { useEffect, useState } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
 
 import { Button, Steps } from "../../..";
 

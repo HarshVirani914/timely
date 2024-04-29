@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import { APP_NAME, WEBSITE_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button } from "@calcom/ui";
+import { APP_NAME, WEBSITE_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

@@ -1,28 +1,27 @@
 import type { Booking, Prisma, EventType as PrismaEventType } from "@prisma/client";
-import { z } from "zod";
-
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { parseBookingLimit, parseDurationLimit } from "@calcom/lib";
-import { getWorkingHours } from "@calcom/lib/availability";
-import { buildDateRanges, subtract } from "@calcom/lib/date-ranges";
-import { HttpError } from "@calcom/lib/http-error";
-import { descendingLimitKeys, intervalLimitKeyToUnit } from "@calcom/lib/intervalLimit";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { checkBookingLimit } from "@calcom/lib/server";
-import { performance } from "@calcom/lib/server/perfObserver";
-import { getTotalBookingDuration } from "@calcom/lib/server/queries";
-import prisma, { availabilityUserSelect } from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { EventTypeMetaDataSchema, stringToDayjs } from "@calcom/prisma/zod-utils";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { parseBookingLimit, parseDurationLimit } from "@timely/lib";
+import { getWorkingHours } from "@timely/lib/availability";
+import { buildDateRanges, subtract } from "@timely/lib/date-ranges";
+import { HttpError } from "@timely/lib/http-error";
+import { descendingLimitKeys, intervalLimitKeyToUnit } from "@timely/lib/intervalLimit";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { checkBookingLimit } from "@timely/lib/server";
+import { performance } from "@timely/lib/server/perfObserver";
+import { getTotalBookingDuration } from "@timely/lib/server/queries";
+import prisma, { availabilityUserSelect } from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import { EventTypeMetaDataSchema, stringToDayjs } from "@timely/prisma/zod-utils";
 import type {
   EventBusyDate,
   EventBusyDetails,
   IntervalLimit,
   IntervalLimitUnit,
-} from "@calcom/types/Calendar";
+} from "@timely/types/Calendar";
+import { z } from "zod";
 
 import { getBusyTimes, getBusyTimesForLimitChecks } from "./getBusyTimes";
 import monitorCallbackAsync, { monitorCallbackSync } from "./sentryWrapper";

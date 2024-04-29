@@ -1,16 +1,15 @@
 import type { BookingSeat, DestinationCalendar, Prisma, SelectedCalendar } from "@prisma/client";
+import type { bookingResponse } from "@timely/features/bookings/lib/getBookingResponsesSchema";
+import type { Calendar } from "@timely/features/calendars/weeklyview";
+import type { TimeFormat } from "@timely/lib/timeFormat";
+import type { SchedulingType } from "@timely/prisma/enums";
+import type { Frequency } from "@timely/prisma/zod-utils";
+import type { CredentialPayload } from "@timely/types/Credential";
 import type { Dayjs } from "dayjs";
 import type { calendar_v3 } from "googleapis";
 import type { Time } from "ical.js";
 import type { TFunction } from "next-i18next";
 import type z from "zod";
-
-import type { bookingResponse } from "@calcom/features/bookings/lib/getBookingResponsesSchema";
-import type { Calendar } from "@calcom/features/calendars/weeklyview";
-import type { TimeFormat } from "@calcom/lib/timeFormat";
-import type { SchedulingType } from "@calcom/prisma/enums";
-import type { Frequency } from "@calcom/prisma/zod-utils";
-import type { CredentialPayload } from "@calcom/types/Credential";
 
 import type { Ensure } from "./utils";
 

@@ -1,7 +1,6 @@
+import classNames from "@timely/lib/classNames";
 import type { GroupBase, InputProps, Props } from "react-select";
 import ReactSelect, { components } from "react-select";
-
-import classNames from "@calcom/lib/classNames";
 
 export type SelectProps<
   Option,

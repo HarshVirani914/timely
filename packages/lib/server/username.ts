@@ -1,7 +1,6 @@
+import slugify from "@timely/lib/slugify";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import slugify from "@calcom/lib/slugify";
-import prisma from "@calcom/prisma";
 
 import { IS_PREMIUM_USERNAME_ENABLED } from "../constants";
 import notEmpty from "../notEmpty";
@@ -48,7 +47,7 @@ export const isPremiumUserName = IS_PREMIUM_USERNAME_ENABLED
   ? async (username: string) => {
       return username.length <= 4 || isBlacklisted(username);
     }
-  : // outside of cal.com the concept of premium username needs not exist.
+  : // outside of timely the concept of premium username needs not exist.
     () => Promise.resolve(false);
 
 export const generateUsernameSuggestion = async (users: string[], username: string) => {

@@ -1,21 +1,20 @@
+import { useEmbedUiConfig, useIsEmbed } from "@timely/embed-core/embed-iframe";
+import { EventDetails, EventMembers, EventMetaSkeleton, EventTitle } from "@timely/features/bookings";
+import { SeatsAvailabilityText } from "@timely/features/bookings/components/SeatsAvailabilityText";
+import { EventMetaBlock } from "@timely/features/bookings/components/event-meta/Details";
+import { useTimePreferences } from "@timely/features/bookings/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Calendar, Globe, User } from "@timely/ui/components/icon";
 import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import { shallow } from "zustand/shallow";
-
-import { useEmbedUiConfig, useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { EventDetails, EventMembers, EventMetaSkeleton, EventTitle } from "@calcom/features/bookings";
-import { SeatsAvailabilityText } from "@calcom/features/bookings/components/SeatsAvailabilityText";
-import { EventMetaBlock } from "@calcom/features/bookings/components/event-meta/Details";
-import { useTimePreferences } from "@calcom/features/bookings/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Calendar, Globe, User } from "@calcom/ui/components/icon";
 
 import { fadeInUp } from "../config";
 import { useBookerStore } from "../store";
 import { FromToTime } from "../utils/dates";
 import { useEvent } from "../utils/event";
 
-const TimezoneSelect = dynamic(() => import("@calcom/ui").then((mod) => mod.TimezoneSelect), {
+const TimezoneSelect = dynamic(() => import("@timely/ui").then((mod) => mod.TimezoneSelect), {
   ssr: false,
 });
 

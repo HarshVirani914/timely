@@ -1,9 +1,8 @@
+import { CAL_URL } from "@timely/lib/constants";
+import { getSafeRedirectUrl } from "@timely/lib/getSafeRedirectUrl";
+import logger from "@timely/lib/logger";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { CAL_URL } from "@calcom/lib/constants";
-import { getSafeRedirectUrl } from "@calcom/lib/getSafeRedirectUrl";
-import logger from "@calcom/lib/logger";
-import prisma from "@calcom/prisma";
 
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 import getInstalledAppPath from "../../_utils/getInstalledAppPath";

@@ -2,11 +2,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type Stripe from "stripe";
 import { z } from "zod";
 
-import stripe from "@calcom/features/ee/payments/server/stripe";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultHandler, defaultResponder } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
+import stripe from "@timely/features/ee/payments/server/stripe";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultHandler, defaultResponder } from "@timely/lib/server";
+import prisma from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
 
 const querySchema = z.object({
   session_id: z.string().min(1),

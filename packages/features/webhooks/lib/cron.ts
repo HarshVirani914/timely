@@ -1,9 +1,8 @@
 /* Cron job for scheduled webhook events triggers */
+import dayjs from "@timely/dayjs";
+import { defaultHandler } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import dayjs from "@calcom/dayjs";
-import { defaultHandler } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
 
 import { jsonParse } from "./sendPayload";
 

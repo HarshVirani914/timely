@@ -1,6 +1,5 @@
+import { EmbedDialog, EmbedButton } from "@timely/features/embed/Embed";
 import type { ComponentProps } from "react";
-
-import { EmbedDialog, EmbedButton } from "@calcom/features/embed/Embed";
 
 import { tabs } from "./lib/EmbedTabs";
 import { useEmbedTypes } from "./lib/hooks";

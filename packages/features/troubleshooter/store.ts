@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
 import { useEffect } from "react";
 import { create } from "zustand";
-
-import dayjs from "@calcom/dayjs";
 
 import { updateQueryParam, getQueryParam, removeQueryParam } from "../bookings/Booker/utils/query-param";
 

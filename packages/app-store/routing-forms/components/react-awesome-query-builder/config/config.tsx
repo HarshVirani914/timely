@@ -1,11 +1,10 @@
+import { EmailField } from "@timely/ui";
 import type { ChangeEvent } from "react";
 import type { Settings, Widgets, SelectWidgetProps } from "react-awesome-query-builder";
 // Figure out why routing-forms/env.d.ts doesn't work
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import BasicConfig from "react-awesome-query-builder/lib/config/basic";
-
-import { EmailField } from "@calcom/ui";
 
 import widgetsComponents from "../widgets";
 
@@ -47,7 +46,7 @@ const settings: Settings = {
 };
 
 // react-query-builder types have missing type property on Widget
-//TODO: Reuse FormBuilder Components - FormBuilder components are built considering Cal.com design system and coding guidelines. But when awesome-query-builder renders these components, it passes its own props which are different from what our Components expect.
+//TODO: Reuse FormBuilder Components - FormBuilder components are built considering Timely design system and coding guidelines. But when awesome-query-builder renders these components, it passes its own props which are different from what our Components expect.
 // So, a mapper should be written here that maps the props provided by awesome-query-builder to the props that our components expect.
 const widgets: Widgets & { [key in keyof Widgets]: Widgets[key] & { type: string } } = {
   ...BasicConfig.widgets,

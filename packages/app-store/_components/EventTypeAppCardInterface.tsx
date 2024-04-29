@@ -1,8 +1,8 @@
-import type { GetAppData, SetAppData } from "@calcom/app-store/EventTypeAppContext";
-import EventTypeAppContext from "@calcom/app-store/EventTypeAppContext";
-import { EventTypeAddonMap } from "@calcom/app-store/apps.browser.generated";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { ErrorBoundary } from "@calcom/ui";
+import type { GetAppData, SetAppData } from "@timely/app-store/EventTypeAppContext";
+import EventTypeAppContext from "@timely/app-store/EventTypeAppContext";
+import { EventTypeAddonMap } from "@timely/app-store/apps.browser.generated";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { ErrorBoundary } from "@timely/ui";
 
 import type { EventTypeAppCardComponentProps, CredentialOwner } from "../types";
 import { DynamicComponent } from "./DynamicComponent";

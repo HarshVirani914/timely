@@ -1,8 +1,8 @@
-import { generateTeamCheckoutSession } from "@calcom/features/ee/teams/lib/payments";
-import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@calcom/lib/constants";
-import { closeComUpsertTeamUser } from "@calcom/lib/sync/SyncServiceManager";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
+import { generateTeamCheckoutSession } from "@timely/features/ee/teams/lib/payments";
+import { IS_TEAM_BILLING_ENABLED, WEBAPP_URL } from "@timely/lib/constants";
+import { closeComUpsertTeamUser } from "@timely/lib/sync/SyncServiceManager";
+import { prisma } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
 
 import { TRPCError } from "@trpc/server";
 

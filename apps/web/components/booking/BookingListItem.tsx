@@ -1,27 +1,27 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import type { EventLocationType, getEventLocationValue } from "@calcom/app-store/locations";
+import type { EventLocationType, getEventLocationValue } from "@timely/app-store/locations";
 import {
   getEventLocationType,
   getSuccessPageLocationMessage,
   guessEventLocationType,
-} from "@calcom/app-store/locations";
-import dayjs from "@calcom/dayjs";
+} from "@timely/app-store/locations";
+import dayjs from "@timely/dayjs";
 // TODO: Use browser locale, implement Intl in Dayjs maybe?
-import "@calcom/dayjs/locales";
-import ViewRecordingsDialog from "@calcom/features/ee/video/ViewRecordingsDialog";
-import classNames from "@calcom/lib/classNames";
-import { formatTime } from "@calcom/lib/date-fns";
-import getPaymentAppData from "@calcom/lib/getPaymentAppData";
-import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { getEveryFreqFor } from "@calcom/lib/recurringStrings";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { RouterInputs, RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import type { ActionType } from "@calcom/ui";
+import "@timely/dayjs/locales";
+import ViewRecordingsDialog from "@timely/features/ee/video/ViewRecordingsDialog";
+import classNames from "@timely/lib/classNames";
+import { formatTime } from "@timely/lib/date-fns";
+import getPaymentAppData from "@timely/lib/getPaymentAppData";
+import { useBookerUrl } from "@timely/lib/hooks/useBookerUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { getEveryFreqFor } from "@timely/lib/recurringStrings";
+import { BookingStatus } from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
+import type { RouterInputs, RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import type { ActionType } from "@timely/ui";
 import {
   Badge,
   Button,
@@ -34,8 +34,8 @@ import {
   TableActions,
   TextAreaField,
   Tooltip,
-} from "@calcom/ui";
-import { Ban, Check, Clock, CreditCard, MapPin, RefreshCcw, Send, X } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Ban, Check, Clock, CreditCard, MapPin, RefreshCcw, Send, X } from "@timely/ui/components/icon";
 
 import { ChargeCardDialog } from "@components/dialog/ChargeCardDialog";
 import { EditLocationDialog } from "@components/dialog/EditLocationDialog";

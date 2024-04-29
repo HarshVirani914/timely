@@ -1,6 +1,5 @@
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import React from "react";
-
-import type { SVGComponent } from "@calcom/types/SVGComponent";
 
 interface LinkIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   Icon: SVGComponent;

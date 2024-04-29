@@ -1,9 +1,9 @@
-import { useAppContextWithSchema } from "@calcom/app-store/EventTypeAppContext";
-import AppCard from "@calcom/app-store/_components/AppCard";
-import useIsAppEnabled from "@calcom/app-store/_utils/useIsAppEnabled";
-import { SelectGifInput } from "@calcom/app-store/giphy/components";
-import type { EventTypeAppCardComponent } from "@calcom/app-store/types";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { useAppContextWithSchema } from "@timely/app-store/EventTypeAppContext";
+import AppCard from "@timely/app-store/_components/AppCard";
+import useIsAppEnabled from "@timely/app-store/_utils/useIsAppEnabled";
+import { SelectGifInput } from "@timely/app-store/giphy/components";
+import type { EventTypeAppCardComponent } from "@timely/app-store/types";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 
 import type { appDataSchema } from "../zod";
 

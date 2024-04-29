@@ -1,13 +1,13 @@
-import { sendScheduledEmails } from "@calcom/emails";
-import { getCalEventResponses } from "@calcom/features/bookings/lib/getCalEventResponses";
-import { isPrismaObjOrUndefined } from "@calcom/lib";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import { getTimeFormatStringFromUserTimeFormat } from "@calcom/lib/timeFormat";
-import { prisma } from "@calcom/prisma";
-import { BookingStatus } from "@calcom/prisma/enums";
-import { bookingMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import { sendScheduledEmails } from "@timely/emails";
+import { getCalEventResponses } from "@timely/features/bookings/lib/getCalEventResponses";
+import { isPrismaObjOrUndefined } from "@timely/lib";
+import { getTranslation } from "@timely/lib/server/i18n";
+import { getTimeFormatStringFromUserTimeFormat } from "@timely/lib/timeFormat";
+import { prisma } from "@timely/prisma";
+import { BookingStatus } from "@timely/prisma/enums";
+import { bookingMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 import { TRPCError } from "@trpc/server";
 

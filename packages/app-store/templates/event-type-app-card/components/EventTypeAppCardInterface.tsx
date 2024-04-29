@@ -1,8 +1,8 @@
-import { useAppContextWithSchema } from "@calcom/app-store/EventTypeAppContext";
-import AppCard from "@calcom/app-store/_components/AppCard";
-import useIsAppEnabled from "@calcom/app-store/_utils/useIsAppEnabled";
-import type { EventTypeAppCardComponent } from "@calcom/app-store/types";
-import { Sunrise, Sunset } from "@calcom/ui/components/icon";
+import { useAppContextWithSchema } from "@timely/app-store/EventTypeAppContext";
+import AppCard from "@timely/app-store/_components/AppCard";
+import useIsAppEnabled from "@timely/app-store/_utils/useIsAppEnabled";
+import type { EventTypeAppCardComponent } from "@timely/app-store/types";
+import { Sunrise, Sunset } from "@timely/ui/components/icon";
 
 import type { appDataSchema } from "../zod";
 

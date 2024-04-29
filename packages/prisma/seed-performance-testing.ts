@@ -3,13 +3,12 @@
  *  TODO: Make it more structured and configurable from CLI
  *  Run it as `npx ts-node --transpile-only ./seed-performance-testing.ts`
  */
+import dailyMeta from "@timely/app-store/dailyvideo/_metadata";
+import googleMeetMeta from "@timely/app-store/googlevideo/_metadata";
+import zoomMeta from "@timely/app-store/zoomvideo/_metadata";
+import dayjs from "@timely/dayjs";
+import { BookingStatus } from "@timely/prisma/enums";
 import { uuid } from "short-uuid";
-
-import dailyMeta from "@calcom/app-store/dailyvideo/_metadata";
-import googleMeetMeta from "@calcom/app-store/googlevideo/_metadata";
-import zoomMeta from "@calcom/app-store/zoomvideo/_metadata";
-import dayjs from "@calcom/dayjs";
-import { BookingStatus } from "@calcom/prisma/enums";
 
 import { createUserAndEventType } from "./seed-utils";
 

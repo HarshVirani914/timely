@@ -1,4 +1,4 @@
-import type { RouterOutputs } from "@calcom/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
 
 export type IEventTypesFilters = RouterOutputs["viewer"]["eventTypes"]["listWithTeam"];
 export type IEventTypeFilter = IEventTypesFilters[0];

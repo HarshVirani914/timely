@@ -1,4 +1,4 @@
-import type { CalendarEvent, Person } from "@calcom/types/Calendar";
+import type { CalendarEvent, Person } from "@timely/types/Calendar";
 
 import { BaseScheduledEmail } from "./BaseScheduledEmail";
 

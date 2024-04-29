@@ -1,7 +1,6 @@
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
 
 import {
   schemaAvailabilityCreateBodyParams,
@@ -61,7 +60,7 @@ import {
  *     tags:
  *     - availabilities
  *     externalDocs:
- *        url: https://docs.cal.com/availability
+ *        url: https://docs.timely/availability
  *     responses:
  *       201:
  *         description: OK, availability created

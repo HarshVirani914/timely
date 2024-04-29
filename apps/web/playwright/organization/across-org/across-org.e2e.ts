@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 
 import { test } from "../../lib/fixtures";
 

@@ -1,8 +1,8 @@
-import app_Basecamp3 from "@calcom/app-store/basecamp3/trpc-router";
-import app_RoutingForms from "@calcom/app-store/routing-forms/trpc-router";
-import { userAdminRouter } from "@calcom/features/ee/users/server/trpc-router";
-import { featureFlagRouter } from "@calcom/features/flags/server/router";
-import { insightsRouter } from "@calcom/features/insights/server/trpc-router";
+import app_Basecamp3 from "@timely/app-store/basecamp3/trpc-router";
+import app_RoutingForms from "@timely/app-store/routing-forms/trpc-router";
+import { userAdminRouter } from "@timely/features/ee/users/server/trpc-router";
+import { featureFlagRouter } from "@timely/features/flags/server/router";
+import { insightsRouter } from "@timely/features/insights/server/trpc-router";
 
 import { mergeRouters, router } from "../../trpc";
 import { loggedInViewerRouter } from "../loggedInViewer/_router";
@@ -44,7 +44,7 @@ export const viewerRouter = mergeRouters(
     saml: ssoRouter,
     insights: insightsRouter,
     payments: paymentsRouter,
-    // NOTE: Add all app related routes in the bottom till the problem described in @calcom/app-store/trpc-routers.ts is solved.
+    // NOTE: Add all app related routes in the bottom till the problem described in @timely/app-store/trpc-routers.ts is solved.
     // After that there would just one merge call here for all the apps.
     appRoutingForms: app_RoutingForms,
     appBasecamp3: app_Basecamp3,

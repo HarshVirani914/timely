@@ -3,10 +3,10 @@ import { useRouter } from "next/navigation";
 import type { ComponentProps } from "react";
 import React from "react";
 
-import { ShellMain } from "@calcom/features/shell/Shell";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { EmptyScreen } from "@calcom/ui";
-import { AlertCircle } from "@calcom/ui/components/icon";
+import { ShellMain } from "@timely/features/shell/Shell";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { EmptyScreen } from "@timely/ui";
+import { AlertCircle } from "@timely/ui/components/icon";
 
 type AppsLayoutProps = {
   children: React.ReactNode;

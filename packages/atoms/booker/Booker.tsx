@@ -1,5 +1,5 @@
-import type { BookerProps } from "@calcom/features/bookings/Booker";
-import { Booker as BookerComponent } from "@calcom/features/bookings/Booker";
+import type { BookerProps } from "@timely/features/bookings/Booker";
+import { Booker as BookerComponent } from "@timely/features/bookings/Booker";
 
 import type { AtomsGlobalConfigProps } from "../types";
 

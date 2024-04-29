@@ -2,10 +2,10 @@ import type { BaseSyntheticEvent } from "react";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
-import { useCallbackRef } from "@calcom/lib/hooks/useCallbackRef";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Dialog, DialogContent, DialogFooter, Form, PasswordField, showToast } from "@calcom/ui";
+import { ErrorCode } from "@timely/features/auth/lib/ErrorCode";
+import { useCallbackRef } from "@timely/lib/hooks/useCallbackRef";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Dialog, DialogContent, DialogFooter, Form, PasswordField, showToast } from "@timely/ui";
 
 import TwoFactor from "@components/auth/TwoFactor";
 

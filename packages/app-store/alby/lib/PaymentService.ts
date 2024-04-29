@@ -1,14 +1,13 @@
 import { LightningAddress } from "@getalby/lightning-tools";
 import type { Booking, Payment, PaymentOption, Prisma } from "@prisma/client";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import prisma from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService } from "@timely/types/PaymentService";
 import { v4 as uuidv4 } from "uuid";
 import type z from "zod";
-
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import prisma from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService } from "@calcom/types/PaymentService";
 
 import { albyCredentialKeysSchema } from "./albyCredentialKeysSchema";
 
@@ -51,7 +50,7 @@ export class PaymentService implements IAbstractPaymentService {
       const invoice = await lightningAddress.requestInvoice({
         satoshi: payment.amount,
         payerdata: {
-          appId: "cal.com",
+          appId: "timely",
           referenceId: uid,
         },
       });

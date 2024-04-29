@@ -1,4 +1,4 @@
-import { useLocale } from "@calcom/lib/hooks/useLocale";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 
 import { useIntercom } from "./useIntercom";
 

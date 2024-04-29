@@ -1,13 +1,12 @@
+import dayjs from "@timely/dayjs";
+import { getFeatureFlagMap } from "@timely/features/flags/server/utils";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { serverConfig } from "@timely/lib/serverConfig";
+import { setTestEmail } from "@timely/lib/testEmails";
+import prisma from "@timely/prisma";
 import { decodeHTML } from "entities";
 import { createTransport } from "nodemailer";
 import { z } from "zod";
-
-import dayjs from "@calcom/dayjs";
-import { getFeatureFlagMap } from "@calcom/features/flags/server/utils";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { serverConfig } from "@calcom/lib/serverConfig";
-import { setTestEmail } from "@calcom/lib/testEmails";
-import prisma from "@calcom/prisma";
 
 export default class BaseEmail {
   name = "";

@@ -1,11 +1,10 @@
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { IS_PRODUCTION } from "@timely/lib/constants";
+import logger from "@timely/lib/logger";
+import { totpRawCheck } from "@timely/lib/totp";
+import type { ZVerifyCodeInputSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 import { createHash } from "crypto";
-
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
-import logger from "@calcom/lib/logger";
-import { totpRawCheck } from "@calcom/lib/totp";
-import type { ZVerifyCodeInputSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

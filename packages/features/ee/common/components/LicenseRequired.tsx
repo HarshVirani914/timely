@@ -1,12 +1,11 @@
+import { SUPPORT_MAIL_ADDRESS, WEBAPP_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { EmptyScreen, Alert } from "@timely/ui";
+import { AlertTriangle } from "@timely/ui/components/icon";
 import { useSession } from "next-auth/react";
 import { Trans } from "next-i18next";
 import type { AriaRole, ComponentType } from "react";
 import React, { Fragment, useEffect } from "react";
-
-import { SUPPORT_MAIL_ADDRESS, WEBAPP_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { EmptyScreen, Alert } from "@calcom/ui";
-import { AlertTriangle } from "@calcom/ui/components/icon";
 
 type LicenseRequiredProps = {
   as?: keyof JSX.IntrinsicElements | "";

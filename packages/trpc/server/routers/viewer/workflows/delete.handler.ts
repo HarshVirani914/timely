@@ -1,8 +1,8 @@
-import { deleteScheduledEmailReminder } from "@calcom/features/ee/workflows/lib/reminders/emailReminderManager";
-import { deleteScheduledSMSReminder } from "@calcom/features/ee/workflows/lib/reminders/smsReminderManager";
-import { prisma } from "@calcom/prisma";
-import { WorkflowMethods } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { deleteScheduledEmailReminder } from "@timely/features/ee/workflows/lib/reminders/emailReminderManager";
+import { deleteScheduledSMSReminder } from "@timely/features/ee/workflows/lib/reminders/smsReminderManager";
+import { prisma } from "@timely/prisma";
+import { WorkflowMethods } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

@@ -1,5 +1,5 @@
-import { prisma } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
+import { prisma } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

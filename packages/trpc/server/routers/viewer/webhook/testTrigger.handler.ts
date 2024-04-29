@@ -1,6 +1,6 @@
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { getTranslation } from "@calcom/lib/server/i18n";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { getTranslation } from "@timely/lib/server/i18n";
 
 import type { TTestTriggerInputSchema } from "./testTrigger.schema";
 
@@ -33,7 +33,7 @@ export const testTriggerHandler = async ({ ctx: _ctx, input }: TestTriggerOption
     ],
     organizer: {
       name: "Cal",
-      email: "no-reply@cal.com",
+      email: "no-reply@timely",
       timeZone: "Europe/London",
       language,
     },

@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Meta, SkeletonButton, SkeletonContainer, SkeletonText } from "@calcom/ui";
-import { Plus } from "@calcom/ui/components/icon";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Meta, SkeletonButton, SkeletonContainer, SkeletonText } from "@timely/ui";
+import { Plus } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 import { CalendarListContainer } from "@components/apps/CalendarListContainer";

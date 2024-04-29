@@ -1,10 +1,10 @@
-import { AboutOrganizationForm } from "@calcom/features/ee/organizations/components";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Meta, WizardLayout } from "@calcom/ui";
+import { AboutOrganizationForm } from "@timely/features/ee/organizations/components";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Meta, WizardLayout } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 
-export { getServerSideProps } from "@calcom/features/ee/organizations/pages/organization";
+export { getServerSideProps } from "@timely/features/ee/organizations/pages/organization";
 
 const AboutOrganizationPage = () => {
   const { t } = useLocale();

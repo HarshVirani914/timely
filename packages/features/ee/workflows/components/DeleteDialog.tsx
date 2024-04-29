@@ -1,9 +1,8 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { HttpError } from "@timely/lib/http-error";
+import { trpc } from "@timely/trpc/react";
+import { ConfirmationDialogContent, Dialog, showToast } from "@timely/ui";
 import type { Dispatch, SetStateAction } from "react";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { HttpError } from "@calcom/lib/http-error";
-import { trpc } from "@calcom/trpc/react";
-import { ConfirmationDialogContent, Dialog, showToast } from "@calcom/ui";
 
 interface IDeleteDialog {
   isOpenDialog: boolean;

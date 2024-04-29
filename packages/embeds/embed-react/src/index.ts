@@ -1,7 +1,7 @@
 "use client";
 
-import type { GlobalCal } from "@calcom/embed-core";
-import EmbedSnippet from "@calcom/embed-snippet";
+import type { GlobalCal } from "@timely/embed-core";
+import EmbedSnippet from "@timely/embed-snippet";
 
 import Cal from "./Cal";
 

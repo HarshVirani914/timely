@@ -1,4 +1,4 @@
-import { defaultHandler } from "@calcom/lib/server";
+import { defaultHandler } from "@timely/lib/server";
 
 export default defaultHandler({
   POST: import("./_postCheck"),

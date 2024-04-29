@@ -1,7 +1,6 @@
+import { APP_NAME, SEO_IMG_DEFAULT, SEO_IMG_OGIMG } from "@timely/lib/constants";
 import type { DefaultSeoProps, NextSeoProps } from "next-seo";
 import type { Router } from "next/router";
-
-import { APP_NAME, SEO_IMG_DEFAULT, SEO_IMG_OGIMG } from "@calcom/lib/constants";
 
 import type { AppImageProps, MeetingImageProps } from "./OgImages";
 
@@ -34,8 +33,8 @@ export const seoConfig: {
   },
   defaultNextSeo: {
     twitter: {
-      handle: "@calcom",
-      site: "@calcom",
+      handle: "@timely",
+      site: "@timely",
       cardType: "summary_large_image",
     },
   },
@@ -43,7 +42,7 @@ export const seoConfig: {
 
 /**
  * This function builds a canonical URL from a given host and path omitting the query params. Note: on homepage it omits the trailing slash
- * @param origin The protocol + host, e.g. `https://cal.com` or `https://cal.dev`
+ * @param origin The protocol + host, e.g. `https://timely` or `https://cal.dev`
  * @param path NextJS' useRouter().asPath
  * @returns
  */

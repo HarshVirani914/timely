@@ -1,11 +1,10 @@
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Alert, Button, Form, PasswordField, TextField } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster } from "react-hot-toast";
-
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Alert, Button, Form, PasswordField, TextField } from "@calcom/ui";
 
 export default function AppleCalendarSetup() {
   const { t } = useLocale();

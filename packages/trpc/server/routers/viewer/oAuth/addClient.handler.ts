@@ -1,6 +1,5 @@
+import { prisma } from "@timely/prisma";
 import { randomBytes, createHash } from "crypto";
-
-import { prisma } from "@calcom/prisma";
 
 import type { TAddClientInputSchema } from "./addClient.schema";
 

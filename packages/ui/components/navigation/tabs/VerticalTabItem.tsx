@@ -1,10 +1,9 @@
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useUrlMatchesCurrentUrl } from "@timely/lib/hooks/useUrlMatchesCurrentUrl";
+import type { SVGComponent } from "@timely/types/SVGComponent";
 import Link from "next/link";
 import { Fragment } from "react";
-
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useUrlMatchesCurrentUrl } from "@calcom/lib/hooks/useUrlMatchesCurrentUrl";
-import type { SVGComponent } from "@calcom/types/SVGComponent";
 
 import { ChevronRight, ExternalLink } from "../../icon";
 import { Skeleton } from "../../skeleton";

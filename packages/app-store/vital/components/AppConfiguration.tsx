@@ -1,6 +1,5 @@
+import { Button, Select, showToast } from "@timely/ui";
 import { useEffect, useState, useMemo } from "react";
-
-import { Button, Select, showToast } from "@calcom/ui";
 
 export interface IAppConfigurationProps {
   credentialIds: number[];

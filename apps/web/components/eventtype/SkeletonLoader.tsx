@@ -1,5 +1,5 @@
-import { SkeletonAvatar, SkeletonContainer, SkeletonText } from "@calcom/ui";
-import { Clock, User } from "@calcom/ui/components/icon";
+import { SkeletonAvatar, SkeletonContainer, SkeletonText } from "@timely/ui";
+import { Clock, User } from "@timely/ui/components/icon";
 
 function SkeletonLoader() {
   return (

@@ -1,12 +1,11 @@
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { classNames } from "@timely/lib";
+import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@timely/lib/constants";
+import { checkWCAGContrastColor } from "@timely/lib/getBrandColours";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, ColorPicker, SettingsToggle, Alert } from "@timely/ui";
 import { useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { classNames } from "@calcom/lib";
-import { DEFAULT_LIGHT_BRAND_COLOR, DEFAULT_DARK_BRAND_COLOR } from "@calcom/lib/constants";
-import { checkWCAGContrastColor } from "@calcom/lib/getBrandColours";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, ColorPicker, SettingsToggle, Alert } from "@calcom/ui";
 
 type BrandColorsFormValues = {
   brandColor: string;

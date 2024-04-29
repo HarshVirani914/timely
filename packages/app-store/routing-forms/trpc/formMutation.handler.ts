@@ -1,10 +1,9 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
 import { Prisma } from "@prisma/client";
-
-import { entityPrismaWhereClause, canEditEntity } from "@calcom/lib/entityPermissionUtils";
-import type { PrismaClient } from "@calcom/prisma";
-import { TRPCError } from "@calcom/trpc/server";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { entityPrismaWhereClause, canEditEntity } from "@timely/lib/entityPermissionUtils";
+import type { PrismaClient } from "@timely/prisma";
+import { TRPCError } from "@timely/trpc/server";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { createFallbackRoute } from "../lib/createFallbackRoute";
 import { getSerializableForm } from "../lib/getSerializableForm";

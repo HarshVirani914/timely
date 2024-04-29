@@ -1,4 +1,4 @@
-import type dayjs from "@calcom/dayjs";
+import type dayjs from "@timely/dayjs";
 
 export const VeritcalLines = ({ days }: { days: dayjs.Dayjs[] }) => {
   const isRTL = () => {

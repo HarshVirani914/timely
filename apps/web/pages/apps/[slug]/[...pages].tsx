@@ -1,12 +1,12 @@
 import type { GetServerSidePropsContext } from "next";
 
-import { getAppWithMetadata } from "@calcom/app-store/_appRegistry";
-import RoutingFormsRoutingConfig from "@calcom/app-store/routing-forms/pages/app-routing.config";
-import TypeformRoutingConfig from "@calcom/app-store/typeform/pages/app-routing.config";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import prisma from "@calcom/prisma";
-import type { AppGetServerSideProps } from "@calcom/types/AppGetServerSideProps";
+import { getAppWithMetadata } from "@timely/app-store/_appRegistry";
+import RoutingFormsRoutingConfig from "@timely/app-store/routing-forms/pages/app-routing.config";
+import TypeformRoutingConfig from "@timely/app-store/typeform/pages/app-routing.config";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import prisma from "@timely/prisma";
+import type { AppGetServerSideProps } from "@timely/types/AppGetServerSideProps";
 
 import type { AppProps } from "@lib/app-providers";
 

@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import { BookerLayouts } from "@timely/prisma/zod-utils";
 import { useEffect } from "react";
 import { create } from "zustand";
-
-import dayjs from "@calcom/dayjs";
-import { BookerLayouts } from "@calcom/prisma/zod-utils";
 
 import type { GetBookingType } from "../lib/get-booking";
 import type { BookerState, BookerLayout } from "./types";

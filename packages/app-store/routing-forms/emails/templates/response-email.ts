@@ -1,7 +1,6 @@
 import type { App_RoutingForms_Form } from "@prisma/client";
-
-import { renderEmail } from "@calcom/emails";
-import BaseEmail from "@calcom/emails/templates/_base-email";
+import { renderEmail } from "@timely/emails";
+import BaseEmail from "@timely/emails/templates/_base-email";
 
 import type { OrderedResponses } from "../../types/types";
 
@@ -29,7 +28,7 @@ export default class ResponseEmail extends BaseEmail {
     const toAddresses = this.toAddresses;
     const subject = `${this.form.name} has a new response`;
     return {
-      from: `Cal.com <${this.getMailerOptions().from}>`,
+      from: `Timely <${this.getMailerOptions().from}>`,
       to: toAddresses.join(","),
       subject,
       html: await renderEmail("ResponseEmail", {

@@ -1,9 +1,8 @@
+import { useFilterQuery } from "@timely/features/bookings/lib/useFilterQuery";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Tooltip, Badge, Button } from "@timely/ui";
+import { Filter } from "@timely/ui/components/icon";
 import type { Dispatch, SetStateAction } from "react";
-
-import { useFilterQuery } from "@calcom/features/bookings/lib/useFilterQuery";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Tooltip, Badge, Button } from "@calcom/ui";
-import { Filter } from "@calcom/ui/components/icon";
 
 export interface FilterToggleProps {
   setIsFiltersVisible: Dispatch<SetStateAction<boolean>>;

@@ -1,21 +1,20 @@
 import type { Prisma, Workflow, WorkflowsOnEventTypes, WorkflowStep } from "@prisma/client";
-
-import type { EventManagerUser } from "@calcom/core/EventManager";
-import EventManager from "@calcom/core/EventManager";
-import { scheduleMandatoryReminder } from "@calcom/ee/workflows/lib/reminders/scheduleMandatoryReminder";
-import { sendScheduledEmails } from "@calcom/emails";
-import { scheduleWorkflowReminders } from "@calcom/features/ee/workflows/lib/reminders/reminderScheduler";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import { scheduleTrigger } from "@calcom/features/webhooks/lib/scheduleTrigger";
-import type { EventTypeInfo } from "@calcom/features/webhooks/lib/sendPayload";
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import { getTeamIdFromEventType } from "@calcom/lib/getTeamIdFromEventType";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import type { PrismaClient } from "@calcom/prisma";
-import { BookingStatus, WebhookTriggerEvents } from "@calcom/prisma/enums";
-import { EventTypeMetaDataSchema } from "@calcom/prisma/zod-utils";
-import type { AdditionalInformation, CalendarEvent } from "@calcom/types/Calendar";
+import type { EventManagerUser } from "@timely/core/EventManager";
+import EventManager from "@timely/core/EventManager";
+import { scheduleMandatoryReminder } from "@timely/ee/workflows/lib/reminders/scheduleMandatoryReminder";
+import { sendScheduledEmails } from "@timely/emails";
+import { scheduleWorkflowReminders } from "@timely/features/ee/workflows/lib/reminders/reminderScheduler";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import { scheduleTrigger } from "@timely/features/webhooks/lib/scheduleTrigger";
+import type { EventTypeInfo } from "@timely/features/webhooks/lib/sendPayload";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import { getTeamIdFromEventType } from "@timely/lib/getTeamIdFromEventType";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import type { PrismaClient } from "@timely/prisma";
+import { BookingStatus, WebhookTriggerEvents } from "@timely/prisma/enums";
+import { EventTypeMetaDataSchema } from "@timely/prisma/zod-utils";
+import type { AdditionalInformation, CalendarEvent } from "@timely/types/Calendar";
 
 import {
   allowDisablingAttendeeConfirmationEmails,
@@ -380,7 +379,7 @@ export async function handleConfirmation(args: {
       }
 
       const paymentMetadata = {
-        identifier: "cal.com",
+        identifier: "timely",
         bookingId,
         eventTypeId: booking.eventType?.id,
         bookerEmail: evt.attendees[0].email,

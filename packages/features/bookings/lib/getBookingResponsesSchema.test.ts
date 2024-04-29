@@ -1,9 +1,8 @@
 /* eslint-disable playwright/no-conditional-in-test */
+import type { eventTypeBookingFields } from "@timely/prisma/zod-utils";
+import { test } from "@timely/web/test/fixtures/fixtures";
 import { describe, expect } from "vitest";
 import type { z } from "zod";
-
-import type { eventTypeBookingFields } from "@calcom/prisma/zod-utils";
-import { test } from "@calcom/web/test/fixtures/fixtures";
 
 import getBookingResponsesSchema, { getBookingResponsesPartialSchema } from "./getBookingResponsesSchema";
 

@@ -1,11 +1,11 @@
-import { sendAttendeeRequestEmail, sendOrganizerRequestEmail } from "@calcom/emails";
-import { getWebhookPayloadForBooking } from "@calcom/features/bookings/lib/getWebhookPayloadForBooking";
-import getWebhooks from "@calcom/features/webhooks/lib/getWebhooks";
-import sendPayload from "@calcom/features/webhooks/lib/sendPayload";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import { WebhookTriggerEvents } from "@calcom/prisma/enums";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+import { sendAttendeeRequestEmail, sendOrganizerRequestEmail } from "@timely/emails";
+import { getWebhookPayloadForBooking } from "@timely/features/bookings/lib/getWebhookPayloadForBooking";
+import getWebhooks from "@timely/features/webhooks/lib/getWebhooks";
+import sendPayload from "@timely/features/webhooks/lib/sendPayload";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import { WebhookTriggerEvents } from "@timely/prisma/enums";
+import type { CalendarEvent } from "@timely/types/Calendar";
 
 const log = logger.getSubLogger({ prefix: ["[handleBookingRequested] book:user"] });
 

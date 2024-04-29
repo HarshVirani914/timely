@@ -1,12 +1,9 @@
 "use client";
 
-import { Trans } from "next-i18next";
-import { useState } from "react";
-
-import NoSSR from "@calcom/core/components/NoSSR";
-import LicenseRequired from "@calcom/ee/common/components/LicenseRequired";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import NoSSR from "@timely/core/components/NoSSR";
+import LicenseRequired from "@timely/ee/common/components/LicenseRequired";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Meta,
   DropdownActions,
@@ -15,8 +12,10 @@ import {
   Badge,
   ConfirmationDialogContent,
   Dialog,
-} from "@calcom/ui";
-import { Check, CheckCheck, Trash, Edit, BookOpenCheck } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Check, CheckCheck, Trash, Edit, BookOpenCheck } from "@timely/ui/components/icon";
+import { Trans } from "next-i18next";
+import { useState } from "react";
 
 import { getLayout } from "../../../../../settings/layouts/SettingsLayout";
 import { subdomainSuffix } from "../../../../organizations/lib/orgDomains";

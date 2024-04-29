@@ -1,6 +1,5 @@
+import { RoutingFormSettings } from "@timely/prisma/zod-utils";
 import z from "zod";
-
-import { RoutingFormSettings } from "@calcom/prisma/zod-utils";
 
 import { zodFields, zodRoutes } from "../zod";
 

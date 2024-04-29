@@ -1,14 +1,13 @@
 import type { Team } from "@prisma/client";
+import NoSSR from "@timely/core/components/NoSSR";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useParamsWithFallback } from "@timely/lib/hooks/useParamsWithFallback";
+import type { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { trpc } from "@timely/trpc/react";
+import { Button, Form, Meta, TextField, showToast } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import NoSSR from "@calcom/core/components/NoSSR";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useParamsWithFallback } from "@calcom/lib/hooks/useParamsWithFallback";
-import type { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { trpc } from "@calcom/trpc/react";
-import { Button, Form, Meta, TextField, showToast } from "@calcom/ui";
 
 import { getLayout } from "../../../../../settings/layouts/SettingsLayout";
 import LicenseRequired from "../../../../common/components/LicenseRequired";

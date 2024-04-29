@@ -1,7 +1,6 @@
+import MemberChangeRoleModal from "@timely/features/ee/teams/components/MemberChangeRoleModal";
 import { useSession } from "next-auth/react";
 import type { Dispatch } from "react";
-
-import MemberChangeRoleModal from "@calcom/features/ee/teams/components/MemberChangeRoleModal";
 
 import type { Action, State } from "./UserListTable";
 

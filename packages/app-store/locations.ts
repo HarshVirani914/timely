@@ -1,10 +1,9 @@
+import { appStoreMetadata } from "@timely/app-store/bookerAppsMetaData";
+import logger from "@timely/lib/logger";
+import { BookingStatus } from "@timely/prisma/enums";
+import type { Ensure, Optional } from "@timely/types/utils";
 import type { TFunction } from "next-i18next";
 import { z } from "zod";
-
-import { appStoreMetadata } from "@calcom/app-store/bookerAppsMetaData";
-import logger from "@calcom/lib/logger";
-import { BookingStatus } from "@calcom/prisma/enums";
-import type { Ensure, Optional } from "@calcom/types/utils";
 
 import type { EventLocationTypeFromAppMeta } from "../types/App";
 

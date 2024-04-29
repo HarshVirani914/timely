@@ -1,7 +1,6 @@
+import * as trpcNext from "@timely/trpc/server/adapters/next";
+import { createContext as createTrpcContext } from "@timely/trpc/server/createContext";
 import { z } from "zod";
-
-import * as trpcNext from "@calcom/trpc/server/adapters/next";
-import { createContext as createTrpcContext } from "@calcom/trpc/server/createContext";
 
 import type { AnyRouter } from "@trpc/server";
 

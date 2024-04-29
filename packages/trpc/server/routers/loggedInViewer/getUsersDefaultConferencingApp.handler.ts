@@ -1,5 +1,5 @@
-import { userMetadata } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { userMetadata } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 type GetUsersDefaultConferencingAppOptions = {
   ctx: {

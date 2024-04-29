@@ -1,4 +1,4 @@
-import { _EventTypeCustomInputModel as EventTypeCustomInput } from "@calcom/prisma/zod";
+import { _EventTypeCustomInputModel as EventTypeCustomInput } from "@timely/prisma/zod";
 
 export const schemaEventTypeCustomInputBaseBodyParams = EventTypeCustomInput.omit({
   id: true,

@@ -1,1 +1,1 @@
-export { default } from "@calcom/features/webhooks/lib/cron";
+export { default } from "@timely/features/webhooks/lib/cron";

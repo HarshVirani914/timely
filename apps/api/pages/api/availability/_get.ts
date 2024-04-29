@@ -1,12 +1,12 @@
 import type { NextApiRequest } from "next";
 import { z } from "zod";
 
-import { getUserAvailability } from "@calcom/core/getUserAvailability";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
-import { availabilityUserSelect } from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { stringOrNumber } from "@calcom/prisma/zod-utils";
+import { getUserAvailability } from "@timely/core/getUserAvailability";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
+import { availabilityUserSelect } from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
+import { stringOrNumber } from "@timely/prisma/zod-utils";
 
 /**
  * @swagger

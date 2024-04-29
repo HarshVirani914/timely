@@ -1,5 +1,5 @@
-import { getPublicEvent } from "@calcom/features/eventtypes/lib/getPublicEvent";
-import type { PrismaClient } from "@calcom/prisma";
+import { getPublicEvent } from "@timely/features/eventtypes/lib/getPublicEvent";
+import type { PrismaClient } from "@timely/prisma";
 
 import type { TEventInputSchema } from "./event.schema";
 

@@ -1,34 +1,33 @@
 import type { DestinationCalendar } from "@prisma/client";
-// eslint-disable-next-line no-restricted-imports
-import { cloneDeep, merge } from "lodash";
-import { v5 as uuidv5 } from "uuid";
-import type { z } from "zod";
-
-import { getCalendar } from "@calcom/app-store/_utils/getCalendar";
-import { FAKE_DAILY_CREDENTIAL } from "@calcom/app-store/dailyvideo/lib/VideoApiAdapter";
-import { appKeysSchema as calVideoKeysSchema } from "@calcom/app-store/dailyvideo/zod";
-import { getEventLocationTypeFromApp, MeetLocationType } from "@calcom/app-store/locations";
-import getApps from "@calcom/app-store/utils";
-import logger from "@calcom/lib/logger";
+import { getCalendar } from "@timely/app-store/_utils/getCalendar";
+import { FAKE_DAILY_CREDENTIAL } from "@timely/app-store/dailyvideo/lib/VideoApiAdapter";
+import { appKeysSchema as calVideoKeysSchema } from "@timely/app-store/dailyvideo/zod";
+import { getEventLocationTypeFromApp, MeetLocationType } from "@timely/app-store/locations";
+import getApps from "@timely/app-store/utils";
+import logger from "@timely/lib/logger";
 import {
   getPiiFreeDestinationCalendar,
   getPiiFreeUser,
   getPiiFreeCredential,
   getPiiFreeCalendarEvent,
-} from "@calcom/lib/piiFreeData";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import prisma from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
-import { createdEventSchema } from "@calcom/prisma/zod-utils";
-import type { AdditionalInformation, CalendarEvent, NewCalendarEventType } from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
-import type { Event } from "@calcom/types/Event";
+} from "@timely/lib/piiFreeData";
+import { safeStringify } from "@timely/lib/safeStringify";
+import prisma from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
+import { createdEventSchema } from "@timely/prisma/zod-utils";
+import type { AdditionalInformation, CalendarEvent, NewCalendarEventType } from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
+import type { Event } from "@timely/types/Event";
 import type {
   CreateUpdateResult,
   EventResult,
   PartialBooking,
   PartialReference,
-} from "@calcom/types/EventManager";
+} from "@timely/types/EventManager";
+// eslint-disable-next-line no-restricted-imports
+import { cloneDeep, merge } from "lodash";
+import { v5 as uuidv5 } from "uuid";
+import type { z } from "zod";
 
 import { createEvent, updateEvent, deleteEvent } from "./CalendarManager";
 import { createMeeting, updateMeeting, deleteMeeting } from "./videoClient";

@@ -1,18 +1,17 @@
+import type { PaymentPageProps } from "@timely/features/ee/payments/pages/payment";
+import { useBookingSuccessRedirect } from "@timely/lib/bookingSuccessRedirect";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useCopy } from "@timely/lib/hooks/useCopy";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import { Button } from "@timely/ui";
+import { showToast } from "@timely/ui";
+import { ClipboardCheck, Clipboard } from "@timely/ui/components/icon";
+import { Spinner } from "@timely/ui/components/icon/Spinner";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import z from "zod";
-
-import type { PaymentPageProps } from "@calcom/features/ee/payments/pages/payment";
-import { useBookingSuccessRedirect } from "@calcom/lib/bookingSuccessRedirect";
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useCopy } from "@calcom/lib/hooks/useCopy";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import { Button } from "@calcom/ui";
-import { showToast } from "@calcom/ui";
-import { ClipboardCheck, Clipboard } from "@calcom/ui/components/icon";
-import { Spinner } from "@calcom/ui/components/icon/Spinner";
 
 interface IAlbyPaymentComponentProps {
   payment: {

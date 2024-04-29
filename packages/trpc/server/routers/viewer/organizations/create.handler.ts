@@ -1,17 +1,16 @@
+import { sendOrganizationEmailVerification } from "@timely/emails";
+import { sendAdminOrganizationNotification } from "@timely/emails";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@timely/lib/availability";
+import { IS_TEAM_BILLING_ENABLED, RESERVED_SUBDOMAINS, WEBAPP_URL } from "@timely/lib/constants";
+import { createDomain } from "@timely/lib/domainManager/organization";
+import { getTranslation } from "@timely/lib/server/i18n";
+import slugify from "@timely/lib/slugify";
+import { prisma } from "@timely/prisma";
+import { MembershipRole, UserPermissionRole } from "@timely/prisma/enums";
 import { createHash } from "crypto";
 import { lookup } from "dns";
 import { totp } from "otplib";
-
-import { sendOrganizationEmailVerification } from "@calcom/emails";
-import { sendAdminOrganizationNotification } from "@calcom/emails";
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@calcom/lib/availability";
-import { IS_TEAM_BILLING_ENABLED, RESERVED_SUBDOMAINS, WEBAPP_URL } from "@calcom/lib/constants";
-import { createDomain } from "@calcom/lib/domainManager/organization";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import slugify from "@calcom/lib/slugify";
-import { prisma } from "@calcom/prisma";
-import { MembershipRole, UserPermissionRole } from "@calcom/prisma/enums";
 
 import { TRPCError } from "@trpc/server";
 

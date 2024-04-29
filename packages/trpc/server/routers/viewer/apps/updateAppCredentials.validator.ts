@@ -3,7 +3,7 @@ import { TRPCError } from "@trpc/server";
 import type { UpdateAppCredentialsOptions } from "./updateAppCredentials.handler";
 
 const validators = {
-  paypal: () => import("@calcom/paypal/lib/updateAppCredentials.validator"),
+  paypal: () => import("@timely/paypal/lib/updateAppCredentials.validator"),
 };
 
 export const handleCustomValidations = async ({

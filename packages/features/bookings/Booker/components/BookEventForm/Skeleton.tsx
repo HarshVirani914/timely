@@ -1,4 +1,4 @@
-import { SkeletonText } from "@calcom/ui";
+import { SkeletonText } from "@timely/ui";
 
 export const FormSkeleton = () => (
   <div className="flex flex-col">

@@ -2,15 +2,15 @@ import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { identityProviderNameMap } from "@calcom/features/auth/lib/identityProviderNameMap";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import { userMetadata as userMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import { identityProviderNameMap } from "@timely/features/auth/lib/identityProviderNameMap";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { IdentityProvider } from "@timely/prisma/enums";
+import { userMetadata as userMetadataSchema } from "@timely/prisma/zod-utils";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Button,
@@ -23,7 +23,7 @@ import {
   SkeletonButton,
   SkeletonContainer,
   SkeletonText,
-} from "@calcom/ui";
+} from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

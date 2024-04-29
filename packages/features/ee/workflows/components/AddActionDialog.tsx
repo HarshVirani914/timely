@@ -1,14 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { isValidPhoneNumber } from "libphonenumber-js";
-import type { Dispatch, SetStateAction } from "react";
-import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
-
-import { SENDER_ID, SENDER_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { WorkflowActions } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
+import { SENDER_ID, SENDER_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { WorkflowActions } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   CheckboxField,
@@ -23,8 +17,13 @@ import {
   PhoneInput,
   Select,
   Tooltip,
-} from "@calcom/ui";
-import { Info } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Info } from "@timely/ui/components/icon";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import type { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { WORKFLOW_ACTIONS } from "../lib/constants";
 import { onlyLettersNumbersSpaces } from "../pages/workflow";

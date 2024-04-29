@@ -31,6 +31,6 @@ describe("Adds a request ID", () => {
 
     expect(middlewareSpy).toBeCalled();
     expect(res.statusCode).toBe(200);
-    expect(res.getHeader("Calcom-Response-ID")).toBeDefined();
+    expect(res.getHeader("Timely-Response-ID")).toBeDefined();
   });
 });

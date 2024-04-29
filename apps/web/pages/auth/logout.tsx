@@ -3,10 +3,10 @@ import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { WEBSITE_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button } from "@calcom/ui";
-import { Check } from "@calcom/ui/components/icon";
+import { WEBSITE_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button } from "@timely/ui";
+import { Check } from "@timely/ui/components/icon";
 
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 

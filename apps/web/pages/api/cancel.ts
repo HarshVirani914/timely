@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import handleCancelBooking from "@calcom/features/bookings/lib/handleCancelBooking";
-import { defaultResponder, defaultHandler } from "@calcom/lib/server";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import handleCancelBooking from "@timely/features/bookings/lib/handleCancelBooking";
+import { defaultResponder, defaultHandler } from "@timely/lib/server";
 
 async function handler(req: NextApiRequest & { userId?: number }, res: NextApiResponse) {
   const session = await getServerSession({ req, res });

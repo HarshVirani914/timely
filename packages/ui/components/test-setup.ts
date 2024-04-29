@@ -8,19 +8,19 @@ vi.mock("next-auth/react", () => ({
   },
 }));
 
-vi.mock("@calcom/features/ee/organizations/hooks", () => ({
+vi.mock("@timely/features/ee/organizations/hooks", () => ({
   useOrgBrandingValues() {
     return {};
   },
 }));
 
-vi.mock("@calcom/features/ee/organizations/context/provider", () => ({
+vi.mock("@timely/features/ee/organizations/context/provider", () => ({
   useOrgBranding() {
     return {};
   },
 }));
 
-vi.mock("@calcom/trpc/react", () => ({
+vi.mock("@timely/trpc/react", () => ({
   trpc: {},
 }));
 
@@ -40,11 +40,11 @@ vi.mock("next/navigation", async () => ({
   },
 }));
 
-vi.mock("@calcom/lib/OgImages", async () => {
+vi.mock("@timely/lib/OgImages", async () => {
   return {};
 });
 
-vi.mock("@calcom/lib/hooks/useLocale", () => ({
+vi.mock("@timely/lib/hooks/useLocale", () => ({
   useLocale: () => {
     return {
       t: (str: string) => str,

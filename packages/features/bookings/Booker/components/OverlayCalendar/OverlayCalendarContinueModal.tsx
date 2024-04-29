@@ -1,9 +1,8 @@
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Button, Dialog, DialogContent, DialogFooter } from "@timely/ui";
 import { CalendarSearch } from "lucide-react";
 import { useRouter } from "next/navigation";
-
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Button, Dialog, DialogContent, DialogFooter } from "@calcom/ui";
 
 interface IOverlayCalendarContinueModalProps {
   open?: boolean;

@@ -1,10 +1,6 @@
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Fragment, useEffect, useState } from "react";
-
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc/react";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Dialog,
@@ -17,8 +13,11 @@ import {
   DialogClose,
   SkeletonContainer,
   SkeletonText,
-} from "@calcom/ui";
-import { Calendar } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { Calendar } from "@timely/ui/components/icon";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Fragment, useEffect, useState } from "react";
 
 import { useLocalSet } from "../hooks/useLocalSet";
 import { useOverlayCalendarStore } from "./store";

@@ -1,11 +1,10 @@
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { isTeamAdmin } from "@timely/lib/server/queries/teams";
+import { prisma } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import { TRPCError } from "@timely/trpc/server";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 import { randomBytes } from "crypto";
-
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { isTeamAdmin } from "@calcom/lib/server/queries/teams";
-import { prisma } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import { TRPCError } from "@calcom/trpc/server";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
 
 import type { TCreateInviteInputSchema } from "./createInvite.schema";
 

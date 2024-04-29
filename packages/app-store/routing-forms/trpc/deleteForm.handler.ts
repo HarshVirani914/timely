@@ -1,7 +1,7 @@
-import { entityPrismaWhereClause } from "@calcom/lib/entityPermissionUtils";
-import type { PrismaClient } from "@calcom/prisma";
-import { TRPCError } from "@calcom/trpc/server";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { entityPrismaWhereClause } from "@timely/lib/entityPermissionUtils";
+import type { PrismaClient } from "@timely/prisma";
+import { TRPCError } from "@timely/trpc/server";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import getConnectedForms from "../lib/getConnectedForms";
 import { isFormCreateEditAllowed } from "../lib/isFormCreateEditAllowed";

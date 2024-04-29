@@ -1,4 +1,15 @@
 import { XhrApi } from "@ewsjs/xhr";
+import { symmetricDecrypt } from "@timely/lib/crypto";
+import logger from "@timely/lib/logger";
+import type {
+  Calendar,
+  CalendarEvent,
+  EventBusyDate,
+  IntegrationCalendar,
+  NewCalendarEventType,
+  Person,
+} from "@timely/types/Calendar";
+import type { CredentialPayload } from "@timely/types/Credential";
 import type { FindFoldersResults, FindItemsResults } from "ews-javascript-api";
 import {
   Appointment,
@@ -26,18 +37,6 @@ import {
   WebCredentials,
   WellKnownFolderName,
 } from "ews-javascript-api";
-
-import { symmetricDecrypt } from "@calcom/lib/crypto";
-import logger from "@calcom/lib/logger";
-import type {
-  Calendar,
-  CalendarEvent,
-  EventBusyDate,
-  IntegrationCalendar,
-  NewCalendarEventType,
-  Person,
-} from "@calcom/types/Calendar";
-import type { CredentialPayload } from "@calcom/types/Credential";
 
 import { ExchangeAuthentication } from "../enums";
 

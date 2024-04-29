@@ -1,8 +1,8 @@
 import type { TestFunction } from "vitest";
 
-import { test } from "@calcom/web/test/fixtures/fixtures";
-import type { Fixtures } from "@calcom/web/test/fixtures/fixtures";
-import { createOrganization } from "@calcom/web/test/utils/bookingScenario/bookingScenario";
+import { test } from "@timely/web/test/fixtures/fixtures";
+import type { Fixtures } from "@timely/web/test/fixtures/fixtures";
+import { createOrganization } from "@timely/web/test/utils/bookingScenario/bookingScenario";
 
 const _testWithAndWithoutOrg = (
   description: Parameters<typeof testWithAndWithoutOrg>[0],

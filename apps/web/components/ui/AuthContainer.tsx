@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { HeadSeo, Logo } from "@calcom/ui";
+import { HeadSeo, Logo } from "@timely/ui";
 
 import Loader from "@components/Loader";
 

@@ -1,5 +1,5 @@
-import prisma from "@calcom/prisma";
-import { MembershipRole } from "@calcom/prisma/enums";
+import prisma from "@timely/prisma";
+import { MembershipRole } from "@timely/prisma/enums";
 
 import type { TrpcSessionUser } from "../../../trpc";
 import { checkPermissions } from "./_auth-middleware";

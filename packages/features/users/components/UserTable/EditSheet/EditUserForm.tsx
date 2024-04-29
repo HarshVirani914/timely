@@ -1,13 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Dispatch } from "react";
-import { useMemo } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
-import { shallow } from "zustand/shallow";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { MembershipRole } from "@calcom/prisma/enums";
-import { trpc, type RouterOutputs } from "@calcom/trpc/react";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { MembershipRole } from "@timely/prisma/enums";
+import { trpc, type RouterOutputs } from "@timely/trpc/react";
 import {
   Form,
   TextField,
@@ -18,7 +12,12 @@ import {
   showToast,
   Avatar,
   ImageUploader,
-} from "@calcom/ui";
+} from "@timely/ui";
+import type { Dispatch } from "react";
+import { useMemo } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
+import { shallow } from "zustand/shallow";
 
 import type { Action } from "../UserListTable";
 import { useEditMode } from "./store";

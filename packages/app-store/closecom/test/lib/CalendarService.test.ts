@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { expect, vi, afterEach, test } from "vitest";
-
-import CloseCom from "@calcom/lib/CloseCom";
+import CloseCom from "@timely/lib/CloseCom";
 import {
   getCloseComContactIds,
   getCustomActivityTypeInstanceData,
   getCloseComCustomActivityTypeFieldsIds,
   getCloseComLeadId,
-} from "@calcom/lib/CloseComeUtils";
-import type { CalendarEvent } from "@calcom/types/Calendar";
+} from "@timely/lib/CloseComeUtils";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import { expect, vi, afterEach, test } from "vitest";
 
-vi.mock("@calcom/lib/CloseCom", () => ({
+vi.mock("@timely/lib/CloseCom", () => ({
   default: class {
     constructor() {
       /* Mock */
@@ -26,7 +25,7 @@ afterEach(() => {
 test("check generic lead generator: already exists", async () => {
   CloseCom.prototype.lead = {
     list: () => ({
-      data: [{ name: "From Cal.com", id: "abc" }],
+      data: [{ name: "From Timely", id: "abc" }],
     }),
   } as any;
 
@@ -133,7 +132,7 @@ test("retrieve custom fields for custom activity type: type exists, no field cre
 
   CloseCom.prototype.customActivity = {
     type: {
-      get: () => ({ data: [{ id: "typeX", name: "Cal.com Activity" }] }),
+      get: () => ({ data: [{ id: "typeX", name: "Timely Activity" }] }),
     },
   } as any;
 
@@ -251,7 +250,7 @@ test("prepare data to create custom activity type instance: one attendees, with 
 
   CloseCom.prototype.lead = {
     list: () => ({
-      data: [{ name: "From Cal.com", id: "abc" }],
+      data: [{ name: "From Timely", id: "abc" }],
     }),
   } as any;
 

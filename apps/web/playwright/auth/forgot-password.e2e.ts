@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 import { uuid } from "short-uuid";
 
-import { verifyPassword } from "@calcom/features/auth/lib/verifyPassword";
-import prisma from "@calcom/prisma";
+import { verifyPassword } from "@timely/features/auth/lib/verifyPassword";
+import prisma from "@timely/prisma";
 
 import { test } from "../lib/fixtures";
 

@@ -1,14 +1,13 @@
 import type { Prisma } from "@prisma/client";
+import { sendSlugReplacementEmail } from "@timely/emails/email-manager";
+import { getTranslation } from "@timely/lib/server/i18n";
+import type { PrismaClient } from "@timely/prisma";
+import { SchedulingType } from "@timely/prisma/enums";
+import { _EventTypeModel } from "@timely/prisma/zod";
+import { allManagedEventTypeProps, unlockedManagedEventTypeProps } from "@timely/prisma/zod-utils";
 import short from "short-uuid";
 import { v5 as uuidv5 } from "uuid";
 import type { DeepMockProxy } from "vitest-mock-extended";
-
-import { sendSlugReplacementEmail } from "@calcom/emails/email-manager";
-import { getTranslation } from "@calcom/lib/server/i18n";
-import type { PrismaClient } from "@calcom/prisma";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { _EventTypeModel } from "@calcom/prisma/zod";
-import { allManagedEventTypeProps, unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils";
 
 const generateHashedLink = (id: number) => {
   const translator = short();

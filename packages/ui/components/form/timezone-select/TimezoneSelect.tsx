@@ -1,10 +1,9 @@
+import { classNames } from "@timely/lib";
+import { filterByCities, addCitiesToDropdown, handleOptionLabel } from "@timely/lib/timezone";
+import { trpc } from "@timely/trpc/react";
 import { useMemo, useState } from "react";
 import type { ITimezoneOption, ITimezone, Props as SelectProps } from "react-timezone-select";
 import BaseSelect from "react-timezone-select";
-
-import { classNames } from "@calcom/lib";
-import { filterByCities, addCitiesToDropdown, handleOptionLabel } from "@calcom/lib/timezone";
-import { trpc } from "@calcom/trpc/react";
 
 import { getReactSelectProps } from "../select";
 

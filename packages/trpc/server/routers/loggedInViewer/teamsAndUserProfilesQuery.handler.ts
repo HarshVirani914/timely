@@ -1,8 +1,8 @@
-import { isOrganization, withRoleCanCreateEntity } from "@calcom/lib/entityPermissionUtils";
-import { getTeamAvatarUrl, getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import type { PrismaClient } from "@calcom/prisma";
-import { teamMetadataSchema } from "@calcom/prisma/zod-utils";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { isOrganization, withRoleCanCreateEntity } from "@timely/lib/entityPermissionUtils";
+import { getTeamAvatarUrl, getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import type { PrismaClient } from "@timely/prisma";
+import { teamMetadataSchema } from "@timely/prisma/zod-utils";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

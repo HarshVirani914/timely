@@ -1,10 +1,9 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Alert, Button, Form, TextField } from "@timely/ui";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster } from "react-hot-toast";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Alert, Button, Form, TextField } from "@calcom/ui";
 
 export default function Exchange2013CalendarSetup() {
   const { t } = useLocale();

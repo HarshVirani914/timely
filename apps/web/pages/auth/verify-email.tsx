@@ -3,11 +3,11 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import { APP_NAME } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { trpc } from "@calcom/trpc";
-import useEmailVerifyCheck from "@calcom/trpc/react/hooks/useEmailVerifyCheck";
-import { Button, EmptyScreen, showToast } from "@calcom/ui";
+import { APP_NAME } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { trpc } from "@timely/trpc";
+import useEmailVerifyCheck from "@timely/trpc/react/hooks/useEmailVerifyCheck";
+import { Button, EmptyScreen, showToast } from "@timely/ui";
 
 import PageWrapper from "@components/PageWrapper";
 

@@ -5,7 +5,7 @@ import type { DocumentContext, DocumentProps } from "next/document";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { z } from "zod";
 
-import { IS_PRODUCTION } from "@calcom/lib/constants";
+import { IS_PRODUCTION } from "@timely/lib/constants";
 
 import { csp } from "@lib/csp";
 
@@ -28,7 +28,7 @@ class MyDocument extends Document<Props> {
       setHeader(ctx, "x-csp", "initialPropsOnly");
     }
 
-    const getLocaleModule = ctx.req ? await import("@calcom/features/auth/lib/getLocale") : null;
+    const getLocaleModule = ctx.req ? await import("@timely/features/auth/lib/getLocale") : null;
 
     const newLocale =
       ctx.req && getLocaleModule

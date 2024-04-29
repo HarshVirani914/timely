@@ -1,4 +1,4 @@
-import cx from "@calcom/lib/classNames";
+import cx from "@timely/lib/classNames";
 
 import { Input } from "../components/form";
 import { MapPin } from "../components/icon";

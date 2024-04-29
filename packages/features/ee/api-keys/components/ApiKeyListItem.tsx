@@ -1,8 +1,8 @@
-import dayjs from "@calcom/dayjs";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
+import dayjs from "@timely/dayjs";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
 import {
   Badge,
   Button,
@@ -12,8 +12,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   showToast,
-} from "@calcom/ui";
-import { MoreHorizontal, Edit2, Trash } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { MoreHorizontal, Edit2, Trash } from "@timely/ui/components/icon";
 
 export type TApiKeys = RouterOutputs["viewer"]["apiKeys"]["list"][number];
 

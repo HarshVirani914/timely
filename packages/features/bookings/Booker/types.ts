@@ -1,4 +1,4 @@
-import type { BookerLayouts } from "@calcom/prisma/zod-utils";
+import type { BookerLayouts } from "@timely/prisma/zod-utils";
 
 import type { GetBookingType } from "../lib/get-booking";
 

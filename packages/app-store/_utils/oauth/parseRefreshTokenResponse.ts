@@ -1,6 +1,5 @@
+import { APP_CREDENTIAL_SHARING_ENABLED } from "@timely/lib/constants";
 import { z } from "zod";
-
-import { APP_CREDENTIAL_SHARING_ENABLED } from "@calcom/lib/constants";
 
 const minimumTokenResponseSchema = z.object({
   access_token: z.string(),

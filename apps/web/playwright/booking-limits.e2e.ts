@@ -4,11 +4,11 @@
  */
 import { expect } from "@playwright/test";
 
-import type { Dayjs } from "@calcom/dayjs";
-import dayjs from "@calcom/dayjs";
-import { intervalLimitKeyToUnit } from "@calcom/lib/intervalLimit";
-import { entries } from "@calcom/prisma/zod-utils";
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import type { Dayjs } from "@timely/dayjs";
+import dayjs from "@timely/dayjs";
+import { intervalLimitKeyToUnit } from "@timely/lib/intervalLimit";
+import { entries } from "@timely/prisma/zod-utils";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 import { test } from "./lib/fixtures";
 import { bookTimeSlot, createUserWithLimits } from "./lib/testUtils";

@@ -2,7 +2,7 @@ import prismaMock from "../../../tests/libs/__mocks__/prismaMock";
 
 import { describe, it, expect } from "vitest";
 
-import { RedirectType } from "@calcom/prisma/client";
+import { RedirectType } from "@timely/prisma/client";
 
 import { getTemporaryOrgRedirect } from "./getTemporaryOrgRedirect";
 
@@ -34,7 +34,7 @@ function mockARedirectInDB({
 
 describe("getTemporaryOrgRedirect", () => {
   it("should generate event-type URL without existing query params", async () => {
-    mockARedirectInDB({ slug: "slug", toUrl: "https://calcom.cal.com", redirectType: RedirectType.User });
+    mockARedirectInDB({ slug: "slug", toUrl: "https://timely.timely", redirectType: RedirectType.User });
     const redirect = await getTemporaryOrgRedirect({
       slug: "slug",
       redirectType: RedirectType.User,
@@ -45,13 +45,13 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com/30min",
+        destination: "https://timely.timely/30min",
       },
     });
   });
 
   it("should generate event-type URL with existing query params", async () => {
-    mockARedirectInDB({ slug: "slug", toUrl: "https://calcom.cal.com", redirectType: RedirectType.User });
+    mockARedirectInDB({ slug: "slug", toUrl: "https://timely.timely", redirectType: RedirectType.User });
 
     const redirect = await getTemporaryOrgRedirect({
       slug: "slug",
@@ -65,13 +65,13 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com/30min?abc=1",
+        destination: "https://timely.timely/30min?abc=1",
       },
     });
   });
 
   it("should generate User URL with existing query params", async () => {
-    mockARedirectInDB({ slug: "slug", toUrl: "https://calcom.cal.com", redirectType: RedirectType.User });
+    mockARedirectInDB({ slug: "slug", toUrl: "https://timely.timely", redirectType: RedirectType.User });
 
     const redirect = await getTemporaryOrgRedirect({
       slug: "slug",
@@ -85,7 +85,7 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com?abc=1",
+        destination: "https://timely.timely?abc=1",
       },
     });
   });
@@ -93,7 +93,7 @@ describe("getTemporaryOrgRedirect", () => {
   it("should generate Team Profile URL with existing query params", async () => {
     mockARedirectInDB({
       slug: "seeded-team",
-      toUrl: "https://calcom.cal.com",
+      toUrl: "https://timely.timely",
       redirectType: RedirectType.Team,
     });
 
@@ -109,7 +109,7 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com?abc=1",
+        destination: "https://timely.timely?abc=1",
       },
     });
   });
@@ -117,7 +117,7 @@ describe("getTemporaryOrgRedirect", () => {
   it("should generate Team Event URL with existing query params", async () => {
     mockARedirectInDB({
       slug: "seeded-team",
-      toUrl: "https://calcom.cal.com",
+      toUrl: "https://timely.timely",
       redirectType: RedirectType.Team,
     });
 
@@ -133,7 +133,7 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com/30min?abc=1",
+        destination: "https://timely.timely/30min?abc=1",
       },
     });
   });
@@ -141,7 +141,7 @@ describe("getTemporaryOrgRedirect", () => {
   it("should generate Team Event URL without query params", async () => {
     mockARedirectInDB({
       slug: "seeded-team",
-      toUrl: "https://calcom.cal.com",
+      toUrl: "https://timely.timely",
       redirectType: RedirectType.Team,
     });
 
@@ -155,7 +155,7 @@ describe("getTemporaryOrgRedirect", () => {
     expect(redirect).toEqual({
       redirect: {
         permanent: false,
-        destination: "https://calcom.cal.com/30min",
+        destination: "https://timely.timely/30min",
       },
     });
   });

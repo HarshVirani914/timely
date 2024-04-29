@@ -1,8 +1,7 @@
+import dayjs from "@timely/dayjs";
+import classNames from "@timely/lib/classNames";
+import { Tooltip } from "@timely/ui";
 import { cva } from "class-variance-authority";
-
-import dayjs from "@calcom/dayjs";
-import classNames from "@calcom/lib/classNames";
-import { Tooltip } from "@calcom/ui";
 
 import type { CalendarEvent } from "../../types/events";
 

@@ -1,5 +1,5 @@
-import { intervalLimitsType } from "@calcom/prisma/zod-utils";
-import type { IntervalLimit } from "@calcom/types/Calendar";
+import { intervalLimitsType } from "@timely/prisma/zod-utils";
+import type { IntervalLimit } from "@timely/types/Calendar";
 
 export function isBookingLimit(obj: unknown): obj is IntervalLimit {
   return intervalLimitsType.safeParse(obj).success;

@@ -4,16 +4,16 @@ import { Controller, useFormContext } from "react-hook-form";
 import type { OptionProps, SingleValueProps } from "react-select";
 import { components } from "react-select";
 
-import dayjs from "@calcom/dayjs";
-import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
-import classNames from "@calcom/lib/classNames";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { weekdayNames } from "@calcom/lib/weekday";
-import { SchedulingType } from "@calcom/prisma/enums";
-import { trpc } from "@calcom/trpc/react";
-import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
-import { Badge, Button, Select, SettingsToggle, SkeletonText } from "@calcom/ui";
-import { ExternalLink, Globe } from "@calcom/ui/components/icon";
+import dayjs from "@timely/dayjs";
+import useLockedFieldsManager from "@timely/features/ee/managed-event-types/hooks/useLockedFieldsManager";
+import classNames from "@timely/lib/classNames";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { weekdayNames } from "@timely/lib/weekday";
+import { SchedulingType } from "@timely/prisma/enums";
+import { trpc } from "@timely/trpc/react";
+import useMeQuery from "@timely/trpc/react/hooks/useMeQuery";
+import { Badge, Button, Select, SettingsToggle, SkeletonText } from "@timely/ui";
+import { ExternalLink, Globe } from "@timely/ui/components/icon";
 
 import { SelectSkeletonLoader } from "@components/availability/SkeletonLoader";
 

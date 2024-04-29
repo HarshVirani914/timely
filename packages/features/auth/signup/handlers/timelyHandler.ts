@@ -1,20 +1,22 @@
 import type { NextApiResponse } from "next";
 
-import stripe from "@calcom/app-store/stripepayment/lib/server";
-import { getPremiumMonthlyPlanPriceId } from "@calcom/app-store/stripepayment/lib/utils";
-import { hashPassword } from "@calcom/features/auth/lib/hashPassword";
-import { sendEmailVerification } from "@calcom/features/auth/lib/verifyEmail";
-import { createOrUpdateMemberships } from "@calcom/features/auth/signup/utils/createOrUpdateMemberships";
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { getLocaleFromRequest } from "@calcom/lib/getLocaleFromRequest";
-import { HttpError } from "@calcom/lib/http-error";
-import { usernameHandler, type RequestWithUsernameStatus } from "@calcom/lib/server/username";
-import { createWebUser as syncServicesCreateWebUser } from "@calcom/lib/sync/SyncServiceManager";
-import { closeComUpsertTeamUser } from "@calcom/lib/sync/SyncServiceManager";
-import { validateAndGetCorrectedUsernameAndEmail } from "@calcom/lib/validateUsername";
-import { prisma } from "@calcom/prisma";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import { signupSchema, teamMetadataSchema } from "@calcom/prisma/zod-utils";
+import stripe from "@timely/app-store/stripepayment/lib/server";
+import { getPremiumMonthlyPlanPriceId } from "@timely/app-store/stripepayment/lib/utils";
+import { hashPassword } from "@timely/features/auth/lib/hashPassword";
+import { sendEmailVerification } from "@timely/features/auth/lib/verifyEmail";
+import { createOrUpdateMemberships } from "@timely/features/auth/signup/utils/createOrUpdateMemberships";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { getLocaleFromRequest } from "@timely/lib/getLocaleFromRequest";
+import { HttpError } from "@timely/lib/http-error";
+import { usernameHandler, type RequestWithUsernameStatus } from "@timely/lib/server/username";
+import {
+  closeComUpsertTeamUser,
+  createWebUser as syncServicesCreateWebUser,
+} from "@timely/lib/sync/SyncServiceManager";
+import { validateAndGetCorrectedUsernameAndEmail } from "@timely/lib/validateUsername";
+import { prisma } from "@timely/prisma";
+import { IdentityProvider } from "@timely/prisma/enums";
+import { signupSchema, teamMetadataSchema } from "@timely/prisma/zod-utils";
 
 import { joinAnyChildTeamOnOrgInvite } from "../utils/organization";
 import {

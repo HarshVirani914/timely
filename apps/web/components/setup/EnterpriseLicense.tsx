@@ -5,13 +5,13 @@ import { useCallback, useState } from "react";
 import { Controller, FormProvider, useForm, useFormState } from "react-hook-form";
 import * as z from "zod";
 
-import { classNames } from "@calcom/lib";
-import { CONSOLE_URL } from "@calcom/lib/constants";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterInputs, RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { Button, TextField } from "@calcom/ui";
-import { Check, ExternalLink, Loader } from "@calcom/ui/components/icon";
+import { classNames } from "@timely/lib";
+import { CONSOLE_URL } from "@timely/lib/constants";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterInputs, RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { Button, TextField } from "@timely/ui";
+import { Check, ExternalLink, Loader } from "@timely/ui/components/icon";
 
 type EnterpriseLicenseFormValues = {
   licenseKey: string;
@@ -93,7 +93,7 @@ const EnterpriseLicense = (
           <Button
             className="w-full justify-center text-lg"
             EndIcon={ExternalLink}
-            href="https://console.cal.com"
+            href="https://console.timely"
             target="_blank">
             {t("purchase_license")}
           </Button>

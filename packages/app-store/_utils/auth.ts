@@ -1,6 +1,5 @@
+import { HttpError } from "@timely/lib/http-error";
 import type { NextApiRequest } from "next";
-
-import { HttpError } from "@calcom/lib/http-error";
 
 export default function checkSession(req: NextApiRequest) {
   if (!req.session?.user?.id) {

@@ -1,9 +1,8 @@
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { RouterOutputs } from "@timely/trpc/react";
+import { trpc } from "@timely/trpc/react";
+import { showToast, TopBanner } from "@timely/ui";
 import { useRouter } from "next/navigation";
-
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import { trpc } from "@calcom/trpc/react";
-import { showToast, TopBanner } from "@calcom/ui";
 
 export type OrgUpgradeBannerProps = {
   data: RouterOutputs["viewer"]["getUserTopBanners"]["orgUpgradeBanner"];

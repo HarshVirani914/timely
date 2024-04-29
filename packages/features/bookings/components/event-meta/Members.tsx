@@ -1,6 +1,6 @@
-import { SchedulingType } from "@calcom/prisma/enums";
-import { UserAvatarGroup } from "@calcom/web/components/ui/avatar/UserAvatarGroup";
-import { UserAvatarGroupWithOrg } from "@calcom/web/components/ui/avatar/UserAvatarGroupWithOrg";
+import { SchedulingType } from "@timely/prisma/enums";
+import { UserAvatarGroup } from "@timely/web/components/ui/avatar/UserAvatarGroup";
+import { UserAvatarGroupWithOrg } from "@timely/web/components/ui/avatar/UserAvatarGroupWithOrg";
 
 import type { PublicEvent } from "../../types";
 

@@ -1,7 +1,7 @@
-import { isOrganisationAdmin } from "@calcom/lib/server/queries/organisations";
-import { prisma } from "@calcom/prisma";
-import type { Prisma } from "@calcom/prisma/client";
-import { MembershipRole } from "@calcom/prisma/enums";
+import { isOrganisationAdmin } from "@timely/lib/server/queries/organisations";
+import { prisma } from "@timely/prisma";
+import type { Prisma } from "@timely/prisma/client";
+import { MembershipRole } from "@timely/prisma/enums";
 
 import { TRPCError } from "@trpc/server";
 

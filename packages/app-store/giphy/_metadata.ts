@@ -1,4 +1,4 @@
-import type { AppMeta } from "@calcom/types/App";
+import type { AppMeta } from "@timely/types/App";
 
 import _package from "./package.json";
 
@@ -8,14 +8,14 @@ export const metadata = {
   installed: true,
   categories: ["other"],
   logo: "icon.svg",
-  publisher: "Cal.com",
+  publisher: "Timely",
   slug: "giphy",
   title: "Giphy",
   type: "giphy_other",
-  url: "https://cal.com/apps/giphy",
+  url: "https://timely/apps/giphy",
   variant: "other",
   extendsFeature: "EventType",
-  email: "help@cal.com",
+  email: "help@timely",
   dirName: "giphy",
 } as AppMeta;
 

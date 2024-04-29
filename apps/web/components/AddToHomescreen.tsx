@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { X } from "@calcom/ui/components/icon";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { X } from "@timely/ui/components/icon";
 
 export default function AddToHomescreen() {
   const { t } = useLocale();

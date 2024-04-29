@@ -1,6 +1,6 @@
 "use client";
 
-import { FlagListingView } from "@calcom/features/flags/pages/flag-listing-view";
+import { FlagListingView } from "@timely/features/flags/pages/flag-listing-view";
 
 import PageWrapper from "@components/PageWrapper";
 import { getLayout } from "@components/auth/layouts/AdminLayout";

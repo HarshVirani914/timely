@@ -1,5 +1,5 @@
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 
 type MeOptions = {
   ctx: {

@@ -1,9 +1,9 @@
 import type { Prisma } from "@prisma/client";
 import type { NextApiRequest } from "next";
 
-import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@calcom/lib/availability";
-import { HttpError } from "@calcom/lib/http-error";
-import { defaultResponder } from "@calcom/lib/server";
+import { DEFAULT_SCHEDULE, getAvailabilityFromSchedule } from "@timely/lib/availability";
+import { HttpError } from "@timely/lib/http-error";
+import { defaultResponder } from "@timely/lib/server";
 
 import { schemaCreateScheduleBodyParams, schemaSchedulePublic } from "~/lib/validations/schedule";
 

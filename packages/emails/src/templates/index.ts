@@ -25,7 +25,7 @@ export { OrganizerAttendeeCancelledSeatEmail } from "./OrganizerAttendeeCancelle
 export { NoShowFeeChargedEmail } from "./NoShowFeeChargedEmail";
 export { VerifyAccountEmail } from "./VerifyAccountEmail";
 export { VerifyEmailByCode } from "./VerifyEmailByCode";
-export * from "@calcom/app-store/routing-forms/emails/components";
+export * from "@timely/app-store/routing-forms/emails/components";
 export { DailyVideoDownloadRecordingEmail } from "./DailyVideoDownloadRecordingEmail";
 export { OrganisationAccountVerifyEmail } from "./OrganizationAccountVerifyEmail";
 export { OrgAutoInviteEmail } from "./OrgAutoInviteEmail";

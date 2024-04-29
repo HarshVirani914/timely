@@ -1,6 +1,6 @@
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import type { User } from "@calcom/prisma/client";
-import { Avatar } from "@calcom/ui";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import type { User } from "@timely/prisma/client";
+import { Avatar } from "@timely/ui";
 
 type UserAvatarProps = Omit<React.ComponentProps<typeof Avatar>, "alt" | "imageSrc"> & {
   user: Pick<User, "organizationId" | "name" | "username">;

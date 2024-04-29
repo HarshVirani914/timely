@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
-import { passwordResetRequest } from "@calcom/features/auth/lib/passwordResetRequest";
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { defaultHandler } from "@calcom/lib/server";
-import prisma from "@calcom/prisma";
+import { passwordResetRequest } from "@timely/features/auth/lib/passwordResetRequest";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { defaultHandler } from "@timely/lib/server";
+import prisma from "@timely/prisma";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   const email = z

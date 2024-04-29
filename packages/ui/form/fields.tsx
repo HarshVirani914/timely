@@ -1,12 +1,11 @@
 import { useId } from "@radix-ui/react-id";
+import classNames from "@timely/lib/classNames";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import type { ReactElement, ReactNode, Ref } from "react";
 import React, { forwardRef } from "react";
 import type { FieldValues, SubmitHandler, UseFormReturn } from "react-hook-form";
 import { FormProvider, useFormContext } from "react-hook-form";
-
-import classNames from "@calcom/lib/classNames";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Alert, showToast } from "../";
 

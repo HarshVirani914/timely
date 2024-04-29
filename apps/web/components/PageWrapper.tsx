@@ -4,10 +4,10 @@ import localFont from "next/font/local";
 import Head from "next/head";
 import Script from "next/script";
 
-import "@calcom/embed-core/src/embed-iframe";
-import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
-import { IS_CALCOM, WEBAPP_URL } from "@calcom/lib/constants";
-import { buildCanonical } from "@calcom/lib/next-seo.config";
+import "@timely/embed-core/src/embed-iframe";
+import LicenseRequired from "@timely/features/ee/common/components/LicenseRequired";
+import { IS_CALCOM, WEBAPP_URL } from "@timely/lib/constants";
+import { buildCanonical } from "@timely/lib/next-seo.config";
 
 import type { AppProps } from "@lib/app-providers";
 import AppProviders from "@lib/app-providers";
@@ -62,10 +62,10 @@ function PageWrapper(props: AppProps) {
         />
       </Head>
       <DefaultSeo
-        // Set canonical to https://cal.com or self-hosted URL
+        // Set canonical to https://timely or self-hosted URL
         canonical={
           IS_CALCOM
-            ? buildCanonical({ path, origin: "https://cal.com" }) // cal.com & .dev
+            ? buildCanonical({ path, origin: "https://timely" }) // timely & .dev
             : buildCanonical({ path, origin: WEBAPP_URL }) // self-hosted
         }
         {...seoConfig.defaultNextSeo}

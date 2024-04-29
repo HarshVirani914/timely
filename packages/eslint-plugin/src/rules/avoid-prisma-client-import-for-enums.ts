@@ -1,6 +1,6 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
 
-const createRule = ESLintUtils.RuleCreator((name) => `https://developer.cal.com/eslint/rule/${name}`);
+const createRule = ESLintUtils.RuleCreator((name) => `https://developer.timely/eslint/rule/${name}`);
 
 const rule = createRule({
   create(context) {
@@ -34,7 +34,7 @@ const rule = createRule({
       recommended: "error",
     },
     messages: {
-      "avoid-prisma-client-import": `Import { {{enumType}} } from '@calcom/prisma/enums' to avoid including @prisma/client.`,
+      "avoid-prisma-client-import": `Import { {{enumType}} } from '@timely/prisma/enums' to avoid including @prisma/client.`,
     },
     type: "suggestion",
     schema: [],

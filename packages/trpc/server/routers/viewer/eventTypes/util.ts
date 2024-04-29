@@ -1,7 +1,6 @@
+import { MembershipRole, PeriodType } from "@timely/prisma/enums";
+import type { CustomInputSchema } from "@timely/prisma/zod-utils";
 import { z } from "zod";
-
-import { MembershipRole, PeriodType } from "@calcom/prisma/enums";
-import type { CustomInputSchema } from "@calcom/prisma/zod-utils";
 
 import { TRPCError } from "@trpc/server";
 

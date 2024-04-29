@@ -1,4 +1,4 @@
-import type { AppFrontendPayload as App } from "@calcom/types/App";
+import type { AppFrontendPayload as App } from "@timely/types/App";
 
 export const _SBApps: App[] = [
   {
@@ -11,10 +11,10 @@ export const _SBApps: App[] = [
     category: "calendar",
     categories: ["calendar"],
     logo: "/api/app-store/googlecalendar/icon.svg",
-    publisher: "Cal.com",
+    publisher: "Timely",
     slug: "google-calendar",
-    url: "https://cal.com/",
-    email: "help@cal.com",
+    url: "https://timely/",
+    email: "help@timely",
     dirName: "googlecalendar",
   },
   {
@@ -24,12 +24,12 @@ export const _SBApps: App[] = [
     categories: ["video"],
     variant: "conferencing",
     logo: "/api/app-store/zoomvideo/icon.svg",
-    publisher: "Cal.com",
+    publisher: "Timely",
     url: "https://zoom.us/",
     category: "video",
     slug: "zoom",
     title: "Zoom Video",
-    email: "help@cal.com",
+    email: "help@timely",
     appData: {
       location: {
         default: false,

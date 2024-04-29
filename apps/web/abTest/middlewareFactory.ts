@@ -24,8 +24,8 @@ const ROUTES: [URLPattern, boolean][] = [
   enabled,
 ]);
 
-const FUTURE_ROUTES_OVERRIDE_COOKIE_NAME = "x-calcom-future-routes-override";
-const FUTURE_ROUTES_ENABLED_COOKIE_NAME = "x-calcom-future-routes-enabled";
+const FUTURE_ROUTES_OVERRIDE_COOKIE_NAME = "x-timely-future-routes-override";
+const FUTURE_ROUTES_ENABLED_COOKIE_NAME = "x-timely-future-routes-enabled";
 
 const bucketSchema = z.union([z.literal("legacy"), z.literal("future")]);
 

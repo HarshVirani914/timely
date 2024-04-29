@@ -6,7 +6,7 @@ import { vi } from "vitest";
 import HorizontalTabs from "./HorizontalTabs";
 import VerticalTabs from "./VerticalTabs";
 
-vi.mock("@calcom/lib/hooks/useUrlMatchesCurrentUrl", () => ({
+vi.mock("@timely/lib/hooks/useUrlMatchesCurrentUrl", () => ({
   useUrlMatchesCurrentUrl() {
     return {
       route: "/",
@@ -24,7 +24,7 @@ vi.mock("@calcom/lib/hooks/useUrlMatchesCurrentUrl", () => ({
   },
 }));
 
-vi.mock("@calcom/lib/hooks/useLocale", () => ({
+vi.mock("@timely/lib/hooks/useLocale", () => ({
   useLocale: () => ({ t: (key: string) => key, isLocaleReady: true }),
 }));
 

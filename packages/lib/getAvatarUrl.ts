@@ -1,6 +1,6 @@
-import { WEBAPP_URL } from "@calcom/lib/constants";
-import { AVATAR_FALLBACK } from "@calcom/lib/constants";
-import type { User, Team } from "@calcom/prisma/client";
+import { WEBAPP_URL } from "@timely/lib/constants";
+import { AVATAR_FALLBACK } from "@timely/lib/constants";
+import type { User, Team } from "@timely/prisma/client";
 
 /**
  * Gives an organization aware avatar url for a user

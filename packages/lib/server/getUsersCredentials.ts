@@ -1,5 +1,5 @@
-import { prisma } from "@calcom/prisma";
-import { credentialForCalendarServiceSelect } from "@calcom/prisma/selects/credential";
+import { prisma } from "@timely/prisma";
+import { credentialForCalendarServiceSelect } from "@timely/prisma/selects/credential";
 
 export async function getUsersCredentials(userId: number) {
   const credentials = await prisma.credential.findMany({

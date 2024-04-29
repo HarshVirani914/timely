@@ -3,13 +3,13 @@
 import type { GetServerSidePropsContext } from "next";
 import Link from "next/link";
 
-import { getAppRegistry, getAppRegistryWithCredentials } from "@calcom/app-store/_appRegistry";
-import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
-import Shell from "@calcom/features/shell/Shell";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { SkeletonText } from "@calcom/ui";
-import { ArrowLeft, ArrowRight } from "@calcom/ui/components/icon";
+import { getAppRegistry, getAppRegistryWithCredentials } from "@timely/app-store/_appRegistry";
+import { getServerSession } from "@timely/features/auth/lib/getServerSession";
+import Shell from "@timely/features/shell/Shell";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import type { inferSSRProps } from "@timely/types/inferSSRProps";
+import { SkeletonText } from "@timely/ui";
+import { ArrowLeft, ArrowRight } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 

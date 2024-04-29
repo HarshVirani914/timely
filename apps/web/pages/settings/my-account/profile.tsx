@@ -5,21 +5,21 @@ import React, { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
-import OrganizationMemberAvatar from "@calcom/features/ee/organizations/components/OrganizationMemberAvatar";
-import SectionBottomActions from "@calcom/features/settings/SectionBottomActions";
-import { getLayout } from "@calcom/features/settings/layouts/SettingsLayout";
-import { APP_NAME, FULL_NAME_LENGTH_MAX_LIMIT } from "@calcom/lib/constants";
-import { getUserAvatarUrl } from "@calcom/lib/getAvatarUrl";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { md } from "@calcom/lib/markdownIt";
-import turndown from "@calcom/lib/turndownService";
-import { IdentityProvider } from "@calcom/prisma/enums";
-import type { TRPCClientErrorLike } from "@calcom/trpc/client";
-import { trpc } from "@calcom/trpc/react";
-import type { RouterOutputs } from "@calcom/trpc/react";
-import type { AppRouter } from "@calcom/trpc/server/routers/_app";
-import type { Ensure } from "@calcom/types/utils";
+import { ErrorCode } from "@timely/features/auth/lib/ErrorCode";
+import OrganizationMemberAvatar from "@timely/features/ee/organizations/components/OrganizationMemberAvatar";
+import SectionBottomActions from "@timely/features/settings/SectionBottomActions";
+import { getLayout } from "@timely/features/settings/layouts/SettingsLayout";
+import { APP_NAME, FULL_NAME_LENGTH_MAX_LIMIT } from "@timely/lib/constants";
+import { getUserAvatarUrl } from "@timely/lib/getAvatarUrl";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { md } from "@timely/lib/markdownIt";
+import turndown from "@timely/lib/turndownService";
+import { IdentityProvider } from "@timely/prisma/enums";
+import type { TRPCClientErrorLike } from "@timely/trpc/client";
+import { trpc } from "@timely/trpc/react";
+import type { RouterOutputs } from "@timely/trpc/react";
+import type { AppRouter } from "@timely/trpc/server/routers/_app";
+import type { Ensure } from "@timely/types/utils";
 import {
   Alert,
   Button,
@@ -40,8 +40,8 @@ import {
   SkeletonContainer,
   SkeletonText,
   TextField,
-} from "@calcom/ui";
-import { AlertTriangle, Trash2 } from "@calcom/ui/components/icon";
+} from "@timely/ui";
+import { AlertTriangle, Trash2 } from "@timely/ui/components/icon";
 
 import PageWrapper from "@components/PageWrapper";
 import TwoFactor from "@components/auth/TwoFactor";
@@ -136,7 +136,7 @@ const ProfileView = () => {
     showToast(t("Your account was deleted"), "success");
 
     setHasDeleteErrors(false); // dismiss any open errors
-    if (process.env.NEXT_PUBLIC_WEBAPP_URL === "https://app.cal.com") {
+    if (process.env.NEXT_PUBLIC_WEBAPP_URL === "https://app.timely") {
       signOut({ callbackUrl: "/auth/logout?survey=true" });
     } else {
       signOut({ callbackUrl: "/auth/logout" });

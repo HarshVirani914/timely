@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { useState } from "react";
 import type { ControllerRenderProps } from "react-hook-form";
 
-import { Edit2 } from "@calcom/ui/components/icon";
+import { Edit2 } from "@timely/ui/components/icon";
 
 const EditableHeading = function EditableHeading({
   value,

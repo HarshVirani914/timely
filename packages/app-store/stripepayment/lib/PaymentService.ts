@@ -1,16 +1,15 @@
 import type { Booking, Payment, PaymentOption, Prisma } from "@prisma/client";
+import { sendAwaitingPaymentEmail } from "@timely/emails";
+import { ErrorCode } from "@timely/lib/errorCodes";
+import { getErrorFromUnknown } from "@timely/lib/errors";
+import logger from "@timely/lib/logger";
+import { safeStringify } from "@timely/lib/safeStringify";
+import prisma from "@timely/prisma";
+import type { CalendarEvent } from "@timely/types/Calendar";
+import type { IAbstractPaymentService } from "@timely/types/PaymentService";
 import Stripe from "stripe";
 import { v4 as uuidv4 } from "uuid";
 import z from "zod";
-
-import { sendAwaitingPaymentEmail } from "@calcom/emails";
-import { ErrorCode } from "@calcom/lib/errorCodes";
-import { getErrorFromUnknown } from "@calcom/lib/errors";
-import logger from "@calcom/lib/logger";
-import { safeStringify } from "@calcom/lib/safeStringify";
-import prisma from "@calcom/prisma";
-import type { CalendarEvent } from "@calcom/types/Calendar";
-import type { IAbstractPaymentService } from "@calcom/types/PaymentService";
 
 import { paymentOptionEnum } from "../zod";
 import { createPaymentLink } from "./client";
@@ -87,7 +86,7 @@ export class PaymentService implements IAbstractPaymentService {
         payment_method_types: ["card"],
         customer: customer.id,
         metadata: {
-          identifier: "cal.com",
+          identifier: "timely",
           bookingId,
           calAccountId: userId,
           calUsername: username,

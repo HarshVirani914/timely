@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment,prefer-rest-params,prefer-const */
-import type { GlobalCal, GlobalCalWithoutNs } from "@calcom/embed-core";
-// FIXME: embed-snippet is a published package and shouldn't import from @calcom/types which is unpublished
+import type { GlobalCal, GlobalCalWithoutNs } from "@timely/embed-core";
+// FIXME: embed-snippet is a published package and shouldn't import from @timely/types which is unpublished
 // This isn't a problem at the moment because embed-snippet isn't directly imported and embed-react which uses it doesn't depend on this
 // eslint-disable-next-line no-restricted-imports
-import type { Optional } from "@calcom/types/utils";
+import type { Optional } from "@timely/types/utils";
 
 /**
  * As we want to keep control on the size of this snippet but we want some portion of it to be still readable.
@@ -55,7 +55,7 @@ export default function EmbedSnippet(url = EMBED_LIB_URL) {
       // Make 'ns' and 'q' optional as they are set through the snippet above
       Cal: Optional<GlobalCal, "ns" | "q">;
     },
-    //! Replace it with "https://cal.com/embed.js" or the URL where you have embed.js installed
+    //! Replace it with "https://timely/embed.js" or the URL where you have embed.js installed
     url,
     "init"
   );

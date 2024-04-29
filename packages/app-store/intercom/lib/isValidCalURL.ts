@@ -1,10 +1,10 @@
-import { CAL_URL } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
+import { CAL_URL } from "@timely/lib/constants";
+import prisma from "@timely/prisma";
 
 import type { TextComponent } from "../lib";
 
 /**
- * Check if the url is a valid cal.com url
+ * Check if the url is a valid timely url
  * @param url
  * @returns boolean
  */

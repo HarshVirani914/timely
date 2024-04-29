@@ -1,8 +1,8 @@
-import { getEventLocationType, getTranslatedLocation } from "@calcom/app-store/locations";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Tooltip } from "@calcom/ui";
-import { MapPin } from "@calcom/ui/components/icon";
+import { getEventLocationType, getTranslatedLocation } from "@timely/app-store/locations";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { Tooltip } from "@timely/ui";
+import { MapPin } from "@timely/ui/components/icon";
 
 import type { PublicEvent } from "../../types";
 import { EventMetaBlock } from "./Details";

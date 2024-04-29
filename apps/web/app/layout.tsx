@@ -5,8 +5,8 @@ import { headers, cookies } from "next/headers";
 import Script from "next/script";
 import React from "react";
 
-import { getLocale } from "@calcom/features/auth/lib/getLocale";
-import { IS_PRODUCTION } from "@calcom/lib/constants";
+import { getLocale } from "@timely/features/auth/lib/getLocale";
+import { IS_PRODUCTION } from "@timely/lib/constants";
 
 import { prepareRootMetadata } from "@lib/metadata";
 
@@ -22,8 +22,8 @@ const calFont = localFont({
 
 export const generateMetadata = () =>
   prepareRootMetadata({
-    twitterCreator: "@calcom",
-    twitterSite: "@calcom",
+    twitterCreator: "@timely",
+    twitterSite: "@timely",
     robots: {
       index: false,
       follow: false,

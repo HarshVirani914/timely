@@ -1,4 +1,4 @@
-import { APP_CREDENTIAL_SHARING_ENABLED } from "@calcom/lib/constants";
+import { APP_CREDENTIAL_SHARING_ENABLED } from "@timely/lib/constants";
 
 const refreshOAuthTokens = async (refreshFunction: () => any, appSlug: string, userId: number | null) => {
   // Check that app syncing is enabled and that the credential belongs to a user
@@ -8,7 +8,7 @@ const refreshOAuthTokens = async (refreshFunction: () => any, appSlug: string, u
     const response = await fetch(process.env.CALCOM_CREDENTIAL_SYNC_ENDPOINT, {
       method: "POST",
       body: new URLSearchParams({
-        calcomUserId: userId.toString(),
+        timelyUserId: userId.toString(),
         appSlug,
       }),
     });

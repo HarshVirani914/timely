@@ -1,16 +1,11 @@
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-import { useCompatSearchParams } from "@calcom/lib/hooks/useCompatSearchParams";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { HttpError } from "@calcom/lib/http-error";
-import { md } from "@calcom/lib/markdownIt";
-import slugify from "@calcom/lib/slugify";
-import turndown from "@calcom/lib/turndownService";
-import { trpc } from "@calcom/trpc/react";
+import { useCompatSearchParams } from "@timely/lib/hooks/useCompatSearchParams";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { HttpError } from "@timely/lib/http-error";
+import { md } from "@timely/lib/markdownIt";
+import slugify from "@timely/lib/slugify";
+import turndown from "@timely/lib/turndownService";
+import { trpc } from "@timely/trpc/react";
 import {
   Button,
   Dialog,
@@ -21,7 +16,11 @@ import {
   showToast,
   TextField,
   Editor,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 const querySchema = z.object({
   title: z.string(),

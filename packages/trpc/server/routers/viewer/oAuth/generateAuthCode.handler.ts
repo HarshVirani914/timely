@@ -1,9 +1,8 @@
+import dayjs from "@timely/dayjs";
+import { prisma } from "@timely/prisma";
+import type { AccessScope } from "@timely/prisma/enums";
+import type { TrpcSessionUser } from "@timely/trpc/server/trpc";
 import { randomBytes } from "crypto";
-
-import dayjs from "@calcom/dayjs";
-import { prisma } from "@calcom/prisma";
-import type { AccessScope } from "@calcom/prisma/enums";
-import type { TrpcSessionUser } from "@calcom/trpc/server/trpc";
 
 import { TRPCError } from "@trpc/server";
 

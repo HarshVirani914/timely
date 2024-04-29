@@ -1,7 +1,6 @@
+import dayjs from "@timely/dayjs";
+import { useLocale } from "@timely/lib/hooks/useLocale";
 import { DateRangePicker } from "@tremor/react";
-
-import dayjs from "@calcom/dayjs";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { useFilterContext } from "../context/provider";
 import "./DateSelect.css";

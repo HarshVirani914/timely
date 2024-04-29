@@ -1,24 +1,17 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { isValidPhoneNumber } from "libphonenumber-js";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-import { useOrgBranding } from "@calcom/features/ee/organizations/context/provider";
-import { useFlagMap } from "@calcom/features/flags/context/provider";
-import { classNames } from "@calcom/lib";
-import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { useTypedQuery } from "@calcom/lib/hooks/useTypedQuery";
-import { HttpError } from "@calcom/lib/http-error";
-import { md } from "@calcom/lib/markdownIt";
-import slugify from "@calcom/lib/slugify";
-import turndown from "@calcom/lib/turndownService";
-import { SchedulingType, MembershipRole } from "@calcom/prisma/enums";
-import { unlockedManagedEventTypeProps } from "@calcom/prisma/zod-utils";
-import { createEventTypeInput } from "@calcom/prisma/zod/custom/eventtype";
-import { trpc } from "@calcom/trpc/react";
+import { useOrgBranding } from "@timely/features/ee/organizations/context/provider";
+import { useFlagMap } from "@timely/features/flags/context/provider";
+import { classNames } from "@timely/lib";
+import { useLocale } from "@timely/lib/hooks/useLocale";
+import { useTypedQuery } from "@timely/lib/hooks/useTypedQuery";
+import { HttpError } from "@timely/lib/http-error";
+import { md } from "@timely/lib/markdownIt";
+import slugify from "@timely/lib/slugify";
+import turndown from "@timely/lib/turndownService";
+import { SchedulingType, MembershipRole } from "@timely/prisma/enums";
+import { unlockedManagedEventTypeProps } from "@timely/prisma/zod-utils";
+import { createEventTypeInput } from "@timely/prisma/zod/custom/eventtype";
+import { trpc } from "@timely/trpc/react";
 import {
   Alert,
   Button,
@@ -31,7 +24,13 @@ import {
   TextField,
   Editor,
   DialogFooter,
-} from "@calcom/ui";
+} from "@timely/ui";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 // this describes the uniform data needed to create a new event type on Profile or Team
 export interface EventTypeParent {

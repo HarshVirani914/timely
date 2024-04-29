@@ -1,5 +1,5 @@
-import { checkRateLimitAndThrowError } from "@calcom/lib/checkRateLimitAndThrowError";
-import { prisma } from "@calcom/prisma";
+import { checkRateLimitAndThrowError } from "@timely/lib/checkRateLimitAndThrowError";
+import { prisma } from "@timely/prisma";
 
 import type { TrpcSessionUser } from "../../../trpc";
 

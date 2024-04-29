@@ -12,7 +12,7 @@ module.exports = {
     // Mocks must be at the top as they contain vi.mock calls
     "(.*)/__mocks__/(.*)",
     "<THIRD_PARTY_MODULES>",
-    "^@(calcom|ee)/(.*)$",
+    "^@(timely|ee)/(.*)$",
     "^@lib/(.*)$",
     "^@components/(.*)$",
     "^@(server|trpc)/(.*)$",

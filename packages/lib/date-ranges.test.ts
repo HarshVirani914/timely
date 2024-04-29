@@ -1,6 +1,5 @@
+import dayjs from "@timely/dayjs";
 import { describe, expect, it, vi } from "vitest";
-
-import dayjs from "@calcom/dayjs";
 
 import { buildDateRanges, processDateOverride, processWorkingHours, subtract } from "./date-ranges";
 
